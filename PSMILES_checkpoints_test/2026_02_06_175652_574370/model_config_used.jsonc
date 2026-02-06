@@ -1,0 +1,37 @@
+// Configuration used:
+{
+    "seed": 42,
+    "model_type": "gpt-nano",
+    "block_size": 128,
+    "epochs": 10,
+    "learning_rate": 0.003,
+    "batch_size": 16,
+    "num_workers": 0,
+    "starting_state_dict": null,
+    "early_stop_patience": 2,
+    "options": {
+        "save_model_config": true,
+        "log_loss_data": true,
+        "save_best_model": true,
+        "save_checkpoint_every_n_iters": 10,
+        "checkpoint_dir": "C:\\Users\\acer\\Desktop\\Samuele\\Syncthing\\LWF - LightWeigth Folder\\[P] Python\\lele-py-bioinformatics\\PSMILES_checkpoints_test\\2026_02_06_175652_574370"
+    },
+    "dataset": {
+        "csv_file": "C:\\Users\\acer\\Desktop\\Samuele\\Syncthing\\LWF - LightWeigth Folder\\[P] Python\\lele-py-bioinformatics\\DATASETS\\PI1M\\PI1M.csv",
+        "train_validation_test_pecentages": [
+            0.6,
+            0.2,
+            0.2
+        ],
+        "max_size": 1000,
+        "process_raw_smiles": null
+    },
+    "device_info": {
+        "system": "Windows",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "processor": "AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",
+        "python_version": "3.13.10",
+        "pytorch_version": "2.10.0+cpu",
+        "device_type": "cpu"
+    }
+}

@@ -1,0 +1,14 @@
+import lele
+
+BIOINFORMATICS_DIR = lele.P(".")
+REPO_DIR = BIOINFORMATICS_DIR.parent
+DATASETS_DIR = BIOINFORMATICS_DIR/'DATASETS'
+VOCABULARIES_DIR = BIOINFORMATICS_DIR/'VOCABULARIES'
+
+assert BIOINFORMATICS_DIR.exists()
+assert REPO_DIR.exists()
+assert DATASETS_DIR.exists()
+assert VOCABULARIES_DIR.exists()
+
+def test_():
+    pass

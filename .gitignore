@@ -6,8 +6,6 @@ __pycache__/
 *.swp
 .env
 .pylintrc
-lele/MSE/__HELPER_FILES__
-lele/Excalidraw/__HELPER_DIR__
 
 # Environments
 secrets.json

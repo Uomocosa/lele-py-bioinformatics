@@ -3,14 +3,18 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "bioinformatics"
+name = "bio"
 version = "0.0.1"
 authors = [
   { name="Lele", email="maggiori.samuele@gmail.com" },
 ]
 description = "My personal workspace"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = "==3.11.*"
+# requires-python = ">=3.8"
+# COULD NOT USE ">=3.8" as deepchem.feat.smiles_tokenizer.SmilesTokenizer has a bug.
+# By fixing python to 3.11.* I made it work. The reason is unknown, since python's packages are held together by toughts and prayers.    
+# TODO: REMOVE deepchem dependency
 # COULD NOT ADD ANY license BEACUSE IT CAN CAUSE BREAKS ;;
 # license = {text="MIT AND (Apache-2.0 OR BSD-2-Clause)"}
 # license = "MIT AND (Apache-2.0 OR BSD-2-Clause)"
@@ -22,23 +26,40 @@ requires-python = ">=3.8"
 # >>> uv pip install --upgrade torch --torch-backend=cu126
 dependencies = [
     "new-import-system @ git+https://github.com/Uomocosa/new-python-import-system",
-    "lele @ git+https://github.com/Uomocosa/lele-py",
+    # "lele @ git+https://github.com/Uomocosa/lele-py",
+    "lele",
     "mingpt @ git+https://github.com/karpathy/minGPT",
     "pytest",
     "loguru",
     "tyro",
     "torch",
-    "numpy",
+    "torchvision",
+    "transformers[torch]==4.46.*",
+    "pydantic==2.12.*",
+    "numpy==1.26.*",
+    "deepchem==2.8.*",
+    "rdkit==2025.9.*",
+    "matplotlib==3.10.*",
 ]
+
+[tool.uv.sources]
+lele = { path = "../lele-py", editable = true }
 
 [tool.setuptools]
 packages = [
-    "bioinformatics",
+    "bio",
 ]
+
+[project.scripts]
+cacca_train = "bio.cacca_train:main"
+cacca_generate = "bio.cacca_generate:main"
+psmile_train = "bio.psmile_train:main"
+psmile_generate = "bio.psmile_generate:main"
+
 
 [tool.pytest.ini_options]
 python_files = "*.py"
-testpaths = ["bioinformatics"]
+testpaths = ["bio"]
 norecursedirs = [
   "__pycache__",
   ".pytest_cache",
@@ -46,6 +67,12 @@ norecursedirs = [
   ".zed",
   ".vscode",
   "__HELPER_DIR__",
+]
+filterwarnings = [
+    "ignore:'audioop' is deprecated:DeprecationWarning",
+    "ignore:invalid escape sequence:DeprecationWarning",
+    "ignore:.*GraphNetwork:DeprecationWarning",
+    "ignore:.*SelfAttention Layer:DeprecationWarning",
 ]
 markers = [
     "verbose: tests that have some kind of output",

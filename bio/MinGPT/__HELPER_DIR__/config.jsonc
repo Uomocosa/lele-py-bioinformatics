@@ -1,0 +1,24 @@
+{
+    "seed": 42, // int
+    "model_type": "gpt-nano", // str
+    // "model_type": "gpt2-xl", // TO BIG! 
+    "block_size": 128, // int
+    "epochs": 10, // int
+    "learning_rate": 0.0006, // float
+    "batch_size": 64, // int
+    "num_workers": 0, // int
+    "early_stop_patience": 1000, // Optional[int]
+    // "starting_state_dict"
+    "dataset": {
+      "csv_file": "./lele/Dataset/_DATASETS/ZINC_base/smiles.txt", // Path
+      "max_size":  null, // Optional[int]
+      "train_validation_test_percentages": [0.8, 0.1, 0.1], // Tuple[float, float, float]
+    },
+    "options": {
+        "save_model_config": true, // bool
+        "log_loss_data": true, // bool
+        "save_best_model": true, // bool
+        "save_checkpoint_every_n_iters": 1000,
+        "checkpoint_dir": "./bio/MinGPT/__HELPER_DIR__/checkpoints", // Path
+    },
+}
