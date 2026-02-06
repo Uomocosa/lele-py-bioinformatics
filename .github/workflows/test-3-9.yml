@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          # This enables caching to make your builds even faster
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.9
+
+      - name: Install dependencies
+        # This installs pytest and your local package in editable mode
+        run: uv sync --all-extras --dev
+
+      - name: Run Pytest
+        # We use your exact command here
+        run: uv run pytest

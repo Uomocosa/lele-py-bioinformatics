@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bioinformatics"
+version = "0.0.1"
+authors = [
+  { name="Lele", email="maggiori.samuele@gmail.com" },
+]
+description = "My personal workspace"
+readme = "README.md"
+requires-python = ">=3.8"
+# COULD NOT ADD ANY license BEACUSE IT CAN CAUSE BREAKS ;;
+# license = {text="MIT AND (Apache-2.0 OR BSD-2-Clause)"}
+# license = "MIT AND (Apache-2.0 OR BSD-2-Clause)"
+
+# To use your correct CUDA version:
+# >>> uv pip install --upgrade torch --torch-backend=auto
+# To use a specific version of torch run the following command:
+# NOTE! Substitute cu117 with YOUR desired CUDA version.
+# >>> uv pip install --upgrade torch --torch-backend=cu126
+dependencies = [
+    "new-import-system @ git+https://github.com/Uomocosa/new-python-import-system",
+    "lele @ git+https://github.com/Uomocosa/lele-py",
+    "mingpt @ git+https://github.com/karpathy/minGPT",
+    "pytest",
+    "loguru",
+    "tyro",
+    "torch",
+    "numpy",
+]
+
+[tool.setuptools]
+packages = [
+    "bioinformatics",
+]
+
+[tool.pytest.ini_options]
+python_files = "*.py"
+testpaths = ["bioinformatics"]
+norecursedirs = [
+  "__pycache__",
+  ".pytest_cache",
+  ".git",
+  ".zed",
+  ".vscode",
+  "__HELPER_DIR__",
+]
+markers = [
+    "verbose: tests that have some kind of output",
+    "todo: test yet to implement",
+    "above10s: test that require more than 10 seconds",
+    "unreliable: test that depends on external factors, in the future it will fail",
+    "infinite: test will not finish",
+]
+addopts = "-m 'not verbose and not todo and not above10s and not unreliable and not infinite'"

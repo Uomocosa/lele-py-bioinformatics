@@ -1,0 +1,49 @@
+[
+    {
+        "label": "run",
+        "command": "uv run -p .venv pytest -rFP -q -s $ZED_RELATIVE_FILE -o \"addopts=\"",
+        "env": { "LOGURU_LEVEL": "DEBUG" },
+        "use_new_terminal": false,
+        "allow_concurrent_runs": false,
+        "reveal": "always",
+        "hide": "never",
+        "shell": "system",
+        "show_summary": false,
+        "show_command": true
+    },
+    {
+        "label": "RUN_ALL_TESTS",
+        "command": "uv run -p .venv pytest --durations=10",
+        "env": { "LOGURU_LEVEL": "CRITICAL" },
+        "use_new_terminal": false,
+        "allow_concurrent_runs": false,
+        "reveal": "always",
+        "hide": "never",
+        "shell": "system",
+        "show_summary": false,
+        "show_command": false
+    },
+    {
+        "label": "list_tests",
+        "command": "uv run -p .venv pytest --collect-only -q",
+        "env": { "LOGURU_LEVEL": "CRITICAL" },
+        "use_new_terminal": false,
+        "allow_concurrent_runs": false,
+        "reveal": "always",
+        "hide": "never",
+        "shell": "system",
+        "show_summary": false,
+        "show_command": false
+    },
+    // {
+    //     "label": "EXAMPLE: install_executable_scripts",
+    //     "command": "uv tool install --editable ./lele --python 3.11.14",
+    //     "use_new_terminal": false,
+    //     "allow_concurrent_runs": false,
+    //     "reveal": "always",
+    //     "hide": "never",
+    //     "shell": "system",
+    //     "show_summary": true,
+    //     "show_command": true
+    // }
+]
