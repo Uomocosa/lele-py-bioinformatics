@@ -2,7 +2,7 @@
 
 | Python | Status |
 |--------|--------|
-| 3.8 | ![3.8](https://github.com/Uomocosa/lele-py-bioinformatics-bioinformatics/actions/workflows/test-3-8.yml/badge.svg) |
+| 3.8 | ![3.8](https://github.com/Uomocosa/lele-py-bioinformatics/actions/workflows/test-3-8.yml/badge.svg) |
 | 3.9 | ![3.9](https://github.com/Uomocosa/lele-py-bioinformatics/actions/workflows/test-3-9.yml/badge.svg) |
 | 3.10 | ![3.10](https://github.com/Uomocosa/lele-py-bioinformatics/actions/workflows/test-3-10.yml/badge.svg) |
 | 3.11 | ![3.11](https://github.com/Uomocosa/lele-py-bioinformatics/actions/workflows/test-3-11.yml/badge.svg) |
