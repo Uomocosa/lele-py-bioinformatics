@@ -16,7 +16,7 @@
 3. `uv sync`
 4. `uv pip install --upgrade torch --torch-backend=auto` (Optional, if you want to use GPU)
 5. `uv tool install --editable . --python 3.11`
-<!--6. `cacca_train`-->s
+<!--6. `cacca_train`-->
 
 # My personal bioinformatics library
 - I used this library and app for my master's thesis.
