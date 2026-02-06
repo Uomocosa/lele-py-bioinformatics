@@ -26,8 +26,7 @@ requires-python = "==3.11.*"
 # >>> uv pip install --upgrade torch --torch-backend=cu126
 dependencies = [
     "new-import-system @ git+https://github.com/Uomocosa/new-python-import-system",
-    # "lele @ git+https://github.com/Uomocosa/lele-py",
-    "lele",
+    "lele @ git+https://github.com/Uomocosa/lele-py",
     "mingpt @ git+https://github.com/karpathy/minGPT",
     "pytest",
     "loguru",
@@ -41,9 +40,6 @@ dependencies = [
     "rdkit==2025.9.*",
     "matplotlib==3.10.*",
 ]
-
-[tool.uv.sources]
-lele = { path = "../lele-py", editable = true }
 
 [tool.setuptools]
 packages = [
