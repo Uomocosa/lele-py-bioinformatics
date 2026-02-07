@@ -2,6 +2,7 @@
     // I run this directly after done the ssh login: (I didnt like creating a task for this)
     // Setup:
     // cd $HOME; git clone https://github.com/Uomocosa/lele-py-bioinformatics
+    // cd $HOME/lele-py-bioinformatics; uv run -p .venv pytest
     // To train the models:
     // cd $HOME/lele-py-bioinformatics; git fetch origin; git reset --hard origin/main; chmod +x setup.sh; ./setup.sh; chmod +x ssh_cacca_train.sh; ./ssh_cacca_train.sh
     // cd $HOME/lele-py-bioinformatics; git fetch origin; git reset --hard origin/main; chmod +x setup.sh; ./setup.sh; chmod +x ssh_psmile_train.sh; ./ssh_psmile_train.sh
