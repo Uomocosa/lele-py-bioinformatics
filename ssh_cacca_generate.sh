@@ -4,8 +4,8 @@
 # Exit immediately if any command fails
 set -e
 
-if [ -f .env ]; then
-    export $(cat .env | xargs)
+if [ -f $HOME/.env ]; then
+    export $(cat $HOME/.env | xargs)
 fi
 
 # --- Setup Logging ---

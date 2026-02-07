@@ -36,6 +36,10 @@ PYTHON_VERSION="3.11"
 uv tool install --editable . --python "$PYTHON_VERSION"
 echo "--- Task Finished Successfully ---"
 
+if [ -f $HOME/.env ]; then
+    export $(cat $HOME/.env | xargs)
+fi
+
 if [[ -z "$GH_LELE_TOKEN" ]]; then
     echo "ERROR: GH_LELE_TOKEN is not set. You will not be able to push to github."
     exit 1
