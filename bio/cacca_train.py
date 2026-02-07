@@ -26,7 +26,7 @@ CHECKPOINT_TEST_FOLDER = lele.P(r"./SMILES_checkpoints_test")
 
 def main():
     ModelConfig = bio.MinGPT.ModelConfig.ModelConfig
-    Options = bio.MinGPT.ModelConfig.Options.Options
+    Options = bio.MinGPT.ModelConfig.Options
     DatasetConfig = bio.Dataset.Config.Config
         
     basic_dataset_config = DatasetConfig(
