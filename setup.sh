@@ -23,7 +23,6 @@ if ! command -v uv &> /dev/null; then
     # Temporarily add uv to the PATH for this running script
     # (The installer usually puts it in ~/.cargo/bin or ~/.local/bin)
     export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH" 
-    uv tool dir --bin
 else
     echo "uv is already installed."
 fi
