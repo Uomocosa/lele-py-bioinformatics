@@ -42,9 +42,9 @@ dependencies = [
 ]
 
 [tool.setuptools]
-packages = [
-    "bio",
-]
+packages = { find = { where = ["."], include = [
+    "bio*",
+] } }
 
 [project.scripts]
 cacca_train = "bio.cacca_train:main"

@@ -2,9 +2,12 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional, Tuple, Callable
 import pandas as pd
+import math
 import lele
 from bio.Dataset.__global__ import ZINC_BASE_CSV
-
+print(lele)
+print(lele is None)
+print(dir(lele))
 
 @dataclass
 class Config:
@@ -16,7 +19,7 @@ class Config:
     def __post_init__(self):
         err_msg =  f"train_validation_test_pecentages must sum to 1.0\n"
         err_msg += f"You defined: {self.train_validation_test_pecentages}"
-        assert sum(self.train_validation_test_pecentages) == 1, err_msg
+        assert math.isclose(sum(self.train_validation_test_pecentages), 1.0), err_msg
 
 
 import pytest

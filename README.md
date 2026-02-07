@@ -9,5 +9,5 @@
 <!--6. `cacca_train`-->
 
 # My personal bioinformatics library
-- I used this library and app for my master's thesis.
+- I used this library and apps for my master's thesis.
 - It uses my [new-python-import-system](https://github.com/Uomocosa/new-python-import-system). The imports might seem more _magical_ than the usual.

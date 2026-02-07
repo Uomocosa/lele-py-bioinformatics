@@ -58,7 +58,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "deepchem", specifier = "==2.8.*" },
-    { name = "lele", editable = "../lele-py" },
+    { name = "lele", git = "https://github.com/Uomocosa/lele-py" },
     { name = "loguru" },
     { name = "matplotlib", specifier = "==3.10.*" },
     { name = "mingpt", git = "https://github.com/karpathy/minGPT" },
@@ -335,19 +335,10 @@ wheels = [
 [[package]]
 name = "lele"
 version = "0.0.1"
-source = { editable = "../lele-py" }
+source = { git = "https://github.com/Uomocosa/lele-py#d34874c06cf675ef43670744b351f302af9d28d0" }
 dependencies = [
     { name = "loguru" },
     { name = "new-import-system" },
-    { name = "pytest" },
-    { name = "python-rapidjson" },
-    { name = "tyro" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "loguru" },
-    { name = "new-import-system", git = "https://github.com/Uomocosa/new-python-import-system" },
     { name = "pytest" },
     { name = "python-rapidjson" },
     { name = "tyro" },
@@ -443,7 +434,7 @@ wheels = [
 [[package]]
 name = "new-import-system"
 version = "0.0.1"
-source = { git = "https://github.com/Uomocosa/new-python-import-system#4e6af0847d4e68bceb46b22bb0b67842ea48bfc8" }
+source = { git = "https://github.com/Uomocosa/new-python-import-system#44549b5f8083caac0da4af3b9231573899148df8" }
 dependencies = [
     { name = "pytest" },
 ]
