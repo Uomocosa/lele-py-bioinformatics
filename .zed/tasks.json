@@ -6,6 +6,7 @@
     // To train the models:
     // cd $HOME/lele-py-bioinformatics; git fetch origin; git reset --hard origin/main; chmod +x setup.sh; ./setup.sh; chmod +x ssh_cacca_train.sh; ./ssh_cacca_train.sh
     // cd $HOME/lele-py-bioinformatics; git fetch origin; git reset --hard origin/main; chmod +x setup.sh; ./setup.sh; chmod +x ssh_psmile_train.sh; ./ssh_psmile_train.sh
+    // cd $HOME/lele-py-bioinformatics; git fetch origin; git reset --hard origin/main; chmod +x setup.sh; ./setup.sh; chmod +x ssh_combined_train.sh; ./ssh_combined_train.sh
     // ... The others are VERY similar
     {
         "label": "run",

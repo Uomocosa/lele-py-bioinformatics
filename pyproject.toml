@@ -51,6 +51,8 @@ cacca_train = "bio.cacca_train:main"
 cacca_generate = "bio.cacca_generate:main"
 psmile_train = "bio.psmile_train:main"
 psmile_generate = "bio.psmile_generate:main"
+combined_train = "bio.combined_train:main"
+combined_generate = "bio.combined_generate:main"
 
 
 [tool.pytest.ini_options]
