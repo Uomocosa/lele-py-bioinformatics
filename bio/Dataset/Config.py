@@ -6,7 +6,6 @@ import math
 import lele
 from bio.Dataset.__global__ import ZINC_BASE_CSV
 
-
 @dataclass
 class Config:
     csv_file: Path = ZINC_BASE_CSV

@@ -2,9 +2,7 @@ import re
 from rdkit import Chem, rdBase
 from dataclasses import dataclass
 import lele, bio
-print(lele)
-print(dir(lele))
-Smile = lele.type(bio.Bioinformatics.Smile)
+Smile = bio.Bioinformatics.Smile.Smile
 
 @dataclass
 class PSmile:

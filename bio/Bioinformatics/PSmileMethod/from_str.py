@@ -12,7 +12,7 @@ Are NOT recognized as valid PSmile strings.
 import re
 from loguru import logger
 import lele, bio
-PSmile = lele.type(bio.Bioinformatics.PSmile)
+PSmile = bio.Bioinformatics.PSmile.PSmile
 
 
 def from_str(psmile: str) -> PSmile:

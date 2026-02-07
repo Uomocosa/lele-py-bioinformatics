@@ -25,9 +25,9 @@ CHECKPOINT_FOLDER = lele.P(r"./SMILES_checkpoints")
 CHECKPOINT_TEST_FOLDER = lele.P(r"./SMILES_checkpoints_test") 
 
 def main():
-    ModelConfig = lele.type(bio.MinGPT.ModelConfig)
-    Options = lele.type(bio.MinGPT.ModelConfig.Options)
-    DatasetConfig = lele.type(bio.Dataset.Config)
+    ModelConfig = bio.MinGPT.ModelConfig.ModelConfig
+    Options = bio.MinGPT.ModelConfig.Options.Options
+    DatasetConfig = bio.Dataset.Config.Config
         
     basic_dataset_config = DatasetConfig(
         csv_file=ZINC_BASE_CSV,

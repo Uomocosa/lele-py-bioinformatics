@@ -31,7 +31,7 @@ class UnlabeledSmiles:
         return dataset
 
 
-DatasetConfig = lele.type(bio.Dataset.Config)
+DatasetConfig = bio.Dataset.Config.Config
 def from_config(config: DatasetConfig) -> UnlabeledSmiles:
     assert config.csv_file.exists(), f"File '{config.csv_file}' does not exist"
     read_args = {'header': None, 'names': ['smiles']} # Expects no header, only a long list of smiles

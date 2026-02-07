@@ -7,7 +7,7 @@ TODO: 1, 2, 3 and 5 are MAGIC NUMBERS.
 
 from loguru import logger
 import lele, bio
-PSmile = lele.type(bio.Bioinformatics.PSmile)
+PSmile = bio.Bioinformatics.PSmile.PSmile
 
 def is_psmile_string_valid(psmile: str) -> bool:
     psmile = PSmile.from_str(psmile)

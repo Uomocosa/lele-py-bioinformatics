@@ -7,8 +7,8 @@ import platform
 import psutil
 from loguru import logger
 import lele, bio
-from bio import Dataset
 from bio.MinGPT.__global__ import HELPER_DIR
+DatasetConfig = bio.Dataset.Config.Config
 
 @dataclass
 class Options:
@@ -34,7 +34,7 @@ class ModelConfig:
     starting_state_dict: Optional[Path] = None 
     early_stop_patience: Optional[int] = 1000 
     options: Options = field(default_factory=Options)
-    dataset: lele.type(Dataset.Config) = field(default_factory=Dataset.Config)
+    dataset: DatasetConfig = field(default_factory=DatasetConfig)
     
     def __post_init__(self):
         bio.ML.set_seed(self.seed)
