@@ -35,3 +35,8 @@ echo "--- Starinting task: INSTALL bio scripts ---"
 PYTHON_VERSION="3.11"
 uv tool install --editable . --python "$PYTHON_VERSION"
 echo "--- Task Finished Successfully ---"
+
+if [[ -z "$GH_LELE_TOKEN" ]]; then
+    echo "ERROR: GH_LELE_TOKEN is not set. You will not be able to push to github."
+    exit 1
+fi
