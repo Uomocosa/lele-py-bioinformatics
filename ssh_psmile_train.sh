@@ -22,9 +22,9 @@ echo "--- Starinting task ---"
 echo "--- RUNNING: 'psmile_train' ---"
 CHECKPOINTS_DIR="PSMILES_checkpoints"
 # TO TEST USE THIS: 
-uv run --no-sync psmile_train --checkpoint_dir="$CHECKPOINTS_DIR"_test --early-stop-patience=1 --epochs=2 --dataset.max-size=1000
+# uv run --no-sync psmile_train --checkpoint_dir="$CHECKPOINTS_DIR"_test --early-stop-patience=1 --epochs=2 --dataset.max-size=1000
 # OTHERWISE USE THIS:
-# uv run --no-sync psmile_train --checkpoint_dir="$CHECKPOINTS_DIR"
+uv run --no-sync psmile_train --checkpoint_dir="$CHECKPOINTS_DIR"
 
 echo "--- RUNNING: 'git push' ---"
 if [[ -n $(git status --porcelain "$CHECKPOINTS_DIR") ]]; then
