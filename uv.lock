@@ -335,7 +335,7 @@ wheels = [
 [[package]]
 name = "lele"
 version = "0.0.1"
-source = { git = "https://github.com/Uomocosa/lele-py#d34874c06cf675ef43670744b351f302af9d28d0" }
+source = { git = "https://github.com/Uomocosa/lele-py#d0333deb16c94f96c46bce91423a042b4149b756" }
 dependencies = [
     { name = "loguru" },
     { name = "new-import-system" },
@@ -434,7 +434,7 @@ wheels = [
 [[package]]
 name = "new-import-system"
 version = "0.0.1"
-source = { git = "https://github.com/Uomocosa/new-python-import-system#44549b5f8083caac0da4af3b9231573899148df8" }
+source = { git = "https://github.com/Uomocosa/new-python-import-system#7e0e754d2deb32eb94945e7d1d5f3d32d3835bbc" }
 dependencies = [
     { name = "pytest" },
 ]

@@ -1,13 +1,11 @@
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional, Tuple, Callable
+from typing import Optional, Tuple, Callable, List
 import pandas as pd
 import math
 import lele
 from bio.Dataset.__global__ import ZINC_BASE_CSV
-print(lele)
-print(lele is None)
-print(dir(lele))
+
 
 @dataclass
 class Config:
@@ -25,13 +23,13 @@ class Config:
 import pytest
 def test_():
     Config(
-        csv_file = ".",
+        csv_file = ZINC_BASE_CSV,
         train_validation_test_pecentages=(0.1, 0.1, 0.8),
     )
 
 def test_failing_():
     with pytest.raises(AssertionError):
         Config(
-            csv_file = ".",
+            csv_file = ZINC_BASE_CSV,
             train_validation_test_pecentages=(5.0, 0.1, 0.8),
         )

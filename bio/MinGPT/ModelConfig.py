@@ -19,8 +19,9 @@ class Options:
     checkpoint_dir: Path = HELPER_DIR / "checkpoints"
 
 
-
-# @dataclass(kw_only=True)
+"""
+TODO: Rename it to Config, change all mentions to MinGPT.Config
+"""
 @dataclass
 class ModelConfig:
     seed: int = 42
