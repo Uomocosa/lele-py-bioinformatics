@@ -1,0 +1,41 @@
+// Configuration used:
+{
+    "seed": 42,
+    "model_type": "gpt-nano",
+    "block_size": 128,
+    "epochs": 10,
+    "learning_rate": 0.0006,
+    "batch_size": 64,
+    "num_workers": 0,
+    "starting_state_dict": null,
+    "early_stop_patience": 1000,
+    "options": {
+        "save_model_config": true,
+        "log_loss_data": true,
+        "save_best_model": true,
+        "save_checkpoint_every_n_iters": 1000,
+        "checkpoint_dir": "PSMILES_checkpoints/2026_02_07_121136_450914"
+    },
+    "dataset": {
+        "csv_file": "/home/maggiori/lele-py-bioinformatics/DATASETS/PI1M/PI1M.csv",
+        "train_validation_test_pecentages": [
+            0.6,
+            0.2,
+            0.2
+        ],
+        "max_size": null,
+        "process_raw_smiles": null
+    },
+    "device_info": {
+        "system": "Linux",
+        "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+        "processor": "x86_64",
+        "python_version": "3.11.14",
+        "pytorch_version": "2.10.0+cu129",
+        "device_type": "cuda",
+        "device_count": 2,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "gpu_total_memory_gb": 23.65,
+        "cuda_version": "12.9"
+    }
+}
