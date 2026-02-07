@@ -1,4 +1,11 @@
 [
+    // I run this directly after done the ssh login: (I didnt like creating a task for this)
+    // Setup:
+    // cd $HOME; git clone https://github.com/Uomocosa/lele-py-bioinformatics
+    // To train the models:
+    // cd $HOME/lele-py-bioinformatics; git fetch origin; git reset --hard origin/main; chmod +x setup.sh; ./setup.sh; chmod +x ssh_cacca_train.sh; ./ssh_cacca_train.sh
+    // cd $HOME/lele-py-bioinformatics; git fetch origin; git reset --hard origin/main; chmod +x setup.sh; ./setup.sh; chmod +x ssh_psmile_train.sh; ./ssh_psmile_train.sh
+    // ... The others are VERY similar
     {
         "label": "run",
         "command": "uv run -p .venv pytest -rFP -q -s $ZED_RELATIVE_FILE -o \"addopts=\"",
@@ -37,7 +44,7 @@
     },
     // {
     //     "label": "EXAMPLE: install_executable_scripts",
-    //     "command": "uv tool install --editable ./lele --python 3.11.14",
+    //     "command": "uv tool install --editable . --python 3.11",
     //     "use_new_terminal": false,
     //     "allow_concurrent_runs": false,
     //     "reveal": "always",
