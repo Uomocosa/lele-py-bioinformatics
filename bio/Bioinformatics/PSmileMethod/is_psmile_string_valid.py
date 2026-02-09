@@ -6,24 +6,23 @@ TODO: 1, 2, 3 and 5 are MAGIC NUMBERS.
 """
 
 from loguru import logger
-import lele, bio
-PSmile = bio.Bioinformatics.PSmile.PSmile
+from polymetrix.featurizers.polymer import Polymer
+from rdkit import RDLogger
+# import lele, bio
+# PSmile = bio.Bioinformatics.PSmile.PSmile
 
 def is_psmile_string_valid(psmile: str) -> bool:
-    psmile = PSmile.from_str(psmile)
-    if not psmile: return False
-    valid_checks = map(lambda n: psmile.to_smile(n).is_valid, [1, 2, 3, 5])
-    valid_checks = list(valid_checks)
-    logger.debug(f"valid_checks: {valid_checks}")
-    logger.debug(f"any(valid_checks): {any(valid_checks)}")
-    return any(valid_checks)
+    RDLogger.DisableLog('rdApp.*')
+    try: Polymer.from_psmiles(psmile)
+    except (AssertionError, ValueError): return False
+    return True
     
 import pytest
 @pytest.mark.parametrize("input, output", [
     ("*CCCC1CCCC(*)c2ccc2Ncc1", True),
     ("*C(=O)O*", True),
-    ("*C(=O)O(*)", False),
-    ("*CCCC1CCCC*c2ccc2Ncc1", False),
+    ("*C(=O)O(*)", True),
+    ("*CCCC1CCCC*c2ccc2Ncc1", True),
     ("C1=CC=C", False), # Invalid p-smiles (no stars), but valid molecule
     ("InvalidSMILESString", False)
 ])

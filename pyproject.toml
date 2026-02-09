@@ -34,6 +34,7 @@ dependencies = [
     "torch",
     "torchvision",
     "transformers[torch]==4.46.*",
+    "polymetrix==0.2.0",
     "pydantic==2.12.*",
     "numpy==1.26.*",
     "deepchem==2.8.*",
