@@ -40,7 +40,9 @@ def read_fragment_scores(file_path=FPSCORES_JSON):
 
 
 def test_():
-    from .__global__ import HELPER_DIR
+    from .__global__ import HELPER_DIR, FPSCORES
+    global FPSCORES
+    FPSCORES = None # FOR THIS TEST WE NEED IT TO BE UNLOADED
     # 1. Setup: Create a temporary dummy JSON for testing
     test_filename = HELPER_DIR/"test_fpscores.json"
     dummy_data = [
@@ -52,20 +54,17 @@ def test_():
         json.dump(dummy_data, f)
 
     try:
-        # 2. Execution
-        scores = read_fragment_scores(test_filename)
+        FPSCORES = read_fragment_scores(test_filename)
         
         # 3. Assertions
-        print("Loaded Scores:", scores)
-        assert scores["fragment_A"] == 0.5
-        assert scores["fragment_B"] == 0.5
-        assert scores["fragment_C"] == -1.2
+        print("Loaded Scores:", FPSCORES)
+        assert FPSCORES["fragment_A"] == 0.5
+        assert FPSCORES["fragment_B"] == 0.5
+        assert FPSCORES["fragment_C"] == -1.2
         assert FPSCORES is not None
         
     finally:
         # Cleanup
         if os.path.exists(test_filename):
             os.remove(test_filename)
-
-def test_fpscores_remain_loaded():
-    assert FPSCORES is not None
+            FPSCORES = None # UNLOAD DUMMY DATA

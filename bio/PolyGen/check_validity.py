@@ -2,7 +2,7 @@ import sys
 import io
 import pandas as pd
 from rdkit import Chem
-from rdkit import rdBase
+from rdkit import RDLogger
 
 """
 NOTE! Refactored using GEMINI (AI)
@@ -26,9 +26,7 @@ def get_validity_label(smiles, column_name):
     RDLogger.DisableLog('rdApp.*') # disable warnings
     mol = Chem.MolFromSmiles(smiles)
 
-    if mol is None:
-        # Extract the specific error message from RDKit
-        return sio.getvalue().strip()[11:]
+    if mol is None: return "invalid smile"
 
     # Structural Checks (Cu/Au specific)
     # 1. Count check (Must have exactly one Cu and one Au)
