@@ -15,6 +15,7 @@ def is_a_valid_smile_or_psmile(string: str) -> bool:
 
 import pytest
 @pytest.mark.parametrize("input, expected", [
+    ("CCOc1cc(oc1)/C=C\\2/N(C(=O)N(C2=O)C)CC(=O)N", True), # TODO: really??? this is valid??? 
     ("*CCCCCC", False)
 ])
 def test_(input, expected):
