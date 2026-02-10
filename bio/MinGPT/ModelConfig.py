@@ -1,3 +1,8 @@
+"""TODO:
+    - At the moment I cannot load an 'unserializable data' from a json file
+        - 'unserializable data': like functions.
+    - Rename 'ModelConfig' to just 'Config', change all mentions to 'MinGPT.Config'
+"""
 import re
 import pydantic
 from pathlib import Path
@@ -19,9 +24,6 @@ class Options:
     checkpoint_dir: Path = HELPER_DIR / "checkpoints"
 
 
-"""
-TODO: Rename it to Config, change all mentions to MinGPT.Config
-"""
 @dataclass
 class ModelConfig:
     seed: int = 42
@@ -56,6 +58,7 @@ class ModelConfig:
     
 def load(path: str, add_unique_id=True) -> ModelConfig:
     config_dict = lele.Json.get_dict_from_jsonc(lele.P(path))
+    config_dict = remove_unserializable_data(config_dict)
     logger.debug(f"config_dict: {config_dict}")
     try:
         adapter = pydantic.TypeAdapter(ModelConfig)
@@ -71,7 +74,9 @@ def load(path: str, add_unique_id=True) -> ModelConfig:
         config.options.checkpoint_dir.mkdir(exist_ok=False, parents=True)
     return config
 
-
+def remove_unserializable_data(dictionary: dict) -> dict:
+    dictionary = {k: v for k, v in dictionary.items() if not "not serializable" in str(v)}
+    return dictionary
 
 def test_():
     from bio.MinGPT.__global__ import MIN_GPT_CONFIG_FILE

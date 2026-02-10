@@ -15,9 +15,10 @@ import lele, bio
 from lele.Path import P
 from lele.String import get_substring 
 from bio.Bioinformatics import Smile
-from bio.MinGPT.__global__ import CHECKPOINT_FOLDER
 import logging; logging.getLogger("deepchem").setLevel(logging.ERROR)
 
+CHECKPOINT_FOLDER = lele.P(r"./SMILES_checkpoints") 
+CHECKPOINT_TEST_FOLDER = lele.P(r"./SMILES_checkpoints_test") 
 
 @dataclass
 class GenerateConfig():
@@ -34,8 +35,11 @@ import pytest
 @pytest.mark.above10s
 def test_():
     config = GenerateConfig()
-    config.smiles_to_generate = 3
-    run_with_config(config)
+    config.smiles_to_generate = 10
+    config.batch_size = 1
+    config.model_dir = CHECKPOINT_TEST_FOLDER
+    bio.cacca_generate.run_with_config(config)
+
     
 def main():
     config = tyro.cli(GenerateConfig)
