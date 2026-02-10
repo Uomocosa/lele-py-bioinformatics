@@ -4,8 +4,13 @@
 # Exit immediately if any command fails
 set -e
 
-if [ -f .env ]; then
-    export $(cat .env | xargs)
+if [ -f $HOME/.env ]; then
+    export $(cat $HOME/.env | xargs)
+fi
+
+if [[ -z "$GH_LELE_TOKEN" ]]; then
+    echo "ERROR: GH_LELE_TOKEN is not set. Cannot push."
+    exit 1
 fi
 
 # --- Setup Logging ---
@@ -29,10 +34,6 @@ uv run --no-sync combined_generate --model_dir="$CHECKPOINTS_DIR" --batch_size=1
 
 echo "--- RUNNING: 'git push' ---"
 if [[ -n $(git status --porcelain "$CHECKPOINTS_DIR") ]]; then
-    if [[ -z "$GH_LELE_TOKEN" ]]; then
-        echo "ERROR: GH_LELE_TOKEN is not set. Cannot push."
-        exit 1
-    fi
     echo "--- Changes detected in $CHECKPOINTS_DIR. Staging, committing, and pushing. ---"
     git config user.email "maggiori.samuele@gmail.com"
     git config user.name "lele-mecai"

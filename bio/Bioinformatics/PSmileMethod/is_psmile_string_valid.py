@@ -12,6 +12,7 @@ from rdkit import RDLogger
 # PSmile = bio.Bioinformatics.PSmile.PSmile
 
 def is_psmile_string_valid(psmile: str) -> bool:
+    if psmile.count('*') != 2: return False
     RDLogger.DisableLog('rdApp.*')
     try: Polymer.from_psmiles(psmile)
     except (AssertionError, ValueError): return False
@@ -24,6 +25,8 @@ import pytest
     ("*C(=O)O(*)", True),
     ("*CCCC1CCCC*c2ccc2Ncc1", True),
     ("C1=CC=C", False), # Invalid p-smiles (no stars), but valid molecule
+    ("*C1=CC=C", False), # Invalid p-smiles (1 star)
+    ("*CCCCCC", False), # Invalid p-smiles (1 star)
     ("InvalidSMILESString", False)
 ])
 def test_(input, output):

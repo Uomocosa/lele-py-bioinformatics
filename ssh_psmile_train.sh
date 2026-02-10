@@ -8,6 +8,11 @@ if [ -f $HOME/.env ]; then
     export $(cat $HOME/.env | xargs)
 fi
 
+if [[ -z "$GH_LELE_TOKEN" ]]; then
+    echo "ERROR: GH_LELE_TOKEN is not set. Cannot push."
+    exit 1
+fi
+
 # --- Setup Logging ---
 LOG_DIR="$HOME/cli_logs"
 echo "$LOG_DIR"
@@ -28,10 +33,6 @@ uv run --no-sync psmile_train --checkpoint_dir="$CHECKPOINTS_DIR"
 
 echo "--- RUNNING: 'git push' ---"
 if [[ -n $(git status --porcelain "$CHECKPOINTS_DIR") ]]; then
-    if [[ -z "$GH_LELE_TOKEN" ]]; then
-        echo "ERROR: GH_LELE_TOKEN is not set. Cannot push."
-        exit 1
-    fi
     echo "--- Changes detected in $CHECKPOINTS_DIR. Staging, committing, and pushing. ---"
     git config user.email "maggiori.samuele@gmail.com"
     git config user.name "lele-mecai"

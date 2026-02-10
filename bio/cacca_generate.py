@@ -1,3 +1,9 @@
+"""
+TODO:
+    - Do not use the custom Smile or PSmile classes, instead use the polymatrix Molecule.Smiles and Polymers.PSmile (or similar)
+    - Remove the bio.Bioinformatics.PSmileMethod and bio.Bioinformatics.SmileMethod, they only contain a single function. Useless
+"""
+
 import tyro
 import torch
 import time, warnings
@@ -21,7 +27,7 @@ class GenerateConfig():
     temperature: float = 1.0 # 0.8 = conservative, 1.0 = standard, 1.2 = creative/chaotic
     max_new_tokens: int = 128
     use_best_model_in_subfolders: bool = True
-    is_smile_valid: Callable[[Smile], bool] = lambda smile: smile.is_valid
+    is_smile_valid: Callable[[str], bool] = lambda smile: smile.is_valid
 
 import pytest
 @pytest.mark.above10s
@@ -36,6 +42,7 @@ def main():
 
 def run_with_config(config: GenerateConfig):
     warnings.filterwarnings("ignore", ".*'pin_memory' argument is set as true.*") # cannot change pin_memory settings.
+    logger.debug(f"config: {config}")
     assert config.model_dir.exists()
     if config.use_best_model_in_subfolders: 
         model_file = find_latest_best_model(config.model_dir)
@@ -45,11 +52,13 @@ def run_with_config(config: GenerateConfig):
         assert len(model_files) > 0, "No models found in the directory"
         assert len(model_files) == 1, "Found multiple models in the directory"
         model_file = model_files[0]
+    unique_str = lele.String.unique()
     output_dir = config.model_dir / get_output_dir_name(config)
     logger.info(f"Generated SMILES will be saved in: {output_dir}")
     output_dir.mkdir(parents=True, exist_ok=True)
     create_jsonc_config(config, output_dir)
-    output_file = output_dir / "generated_smiles.csv"
+    output_dir = output_dir / unique_str
+    output_file = output_dir/"generated_smiles.csv"
     setup_genereted_smile_logger(output_file)
     lele.Loguru.simple_format()
     lele.Loguru.add_csv_logger(
@@ -58,7 +67,7 @@ def run_with_config(config: GenerateConfig):
         label = "GENERATED_SMILE",
     )
     lele.Loguru.add_csv_logger(
-        csv_file = output_file.parent/"valid_smiles.csv",
+        csv_file = output_dir/"valid_smiles.csv",
         csv_header = "valid_smiles",
         label = "VALID_SMILE",
     )
@@ -125,6 +134,9 @@ def run_with_config(config: GenerateConfig):
                     logger.bind(type="GENERATED_SMILE").trace(smile)
                     generated_count += 1
                 if config.is_smile_valid(smile): 
+                    print("THIS SMILE PASSED THE FUNCTION config.is_smile_valid")
+                    print(f"smile: {smile}")
+                    print(f"config.is_smile_valid(smile): {config.is_smile_valid(smile)}")
                     logger.bind(type="VALID_SMILE").info(smile)
                     num_smile_valid += 1
 
