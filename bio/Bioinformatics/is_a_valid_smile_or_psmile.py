@@ -1,4 +1,5 @@
 import bio
+from loguru import logger
 
 def is_a_valid_smile_or_psmile(string: str) -> bool:
     if bio.Bioinformatics.PSmileMethod.is_psmile_string_valid(string):
