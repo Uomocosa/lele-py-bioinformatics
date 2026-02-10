@@ -17,7 +17,7 @@ CHECKPOINT_TEST_FOLDER = lele.P(r"./PSMILES_checkpoints_test")
 @dataclass
 class PSmileGenerateConfig(bio.cacca_generate.GenerateConfig):
     model_dir: Path = CHECKPOINT_FOLDER
-    is_smile_valid: Callable[[str], bool] = lambda psmile: bio.Bioinformatics.PSmileMethod.is_psmile_string_valid(psmile)
+    is_smile_valid: Callable[[str], bool] = lambda psmile: bio.Bioinformatics.is_psmiles_string_valid(psmile)
 
 import pytest
 @pytest.mark.above10s

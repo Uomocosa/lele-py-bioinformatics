@@ -1,17 +1,8 @@
-"""
-We test 1x, 2x, 3x, and 5x lengths to ensure ring closures and 
-syntax work when polymerized.
-TODO: This might not be the best way to validate p-smiles.
-TODO: 1, 2, 3 and 5 are MAGIC NUMBERS.
-"""
-
 from loguru import logger
 from polymetrix.featurizers.polymer import Polymer
 from rdkit import RDLogger
-# import lele, bio
-# PSmile = bio.Bioinformatics.PSmile.PSmile
 
-def is_psmile_string_valid(psmile: str) -> bool:
+def is_psmiles_string_valid(psmile: str) -> bool:
     if psmile.count('*') != 2: return False
     RDLogger.DisableLog('rdApp.*')
     try: Polymer.from_psmiles(psmile)
@@ -30,4 +21,4 @@ import pytest
     ("InvalidSMILESString", False)
 ])
 def test_(input, output):
-    assert is_psmile_string_valid(input) == output
+    assert is_psmiles_string_valid(input) == output

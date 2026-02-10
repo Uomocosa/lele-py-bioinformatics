@@ -2,7 +2,7 @@ import bio
 from loguru import logger
 
 def is_a_valid_smile_or_psmile(string: str) -> bool:
-    if bio.Bioinformatics.PSmileMethod.is_psmile_string_valid(string):
+    if bio.Bioinformatics.is_psmiles_string_valid(string):
         logger.debug(f"P-SMILE string '{string}' is valid.")
         return True
     if "*" in string: 
