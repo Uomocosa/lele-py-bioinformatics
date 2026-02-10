@@ -28,9 +28,9 @@ echo "--- RUNNING: 'cacca_generate' ---"
 CHECKPOINTS_DIR="SMILES_checkpoints"
 
 # TO TEST USE THIS: 
-# uv run --no-sync cacca_generate --checkpoint_dir="$CHECKPOINTS_DIR"_test --early-stop-patience=1 --epochs=1 --dataset.max-size=100
+# uv run --no-sync cacca_generate --model_dir="$CHECKPOINTS_DIR"_test
 # OTHERWISE USE THIS:
-uv run --no-sync cacca_generate --checkpoint_dir="$CHECKPOINTS_DIR"
+uv run --no-sync cacca_generate --model_dir="$CHECKPOINTS_DIR" --batch_size=128 --smiles_to_generate=12800
 
 echo "--- RUNNING: 'git push' ---"
 if [[ -n $(git status --porcelain "$CHECKPOINTS_DIR") ]]; then

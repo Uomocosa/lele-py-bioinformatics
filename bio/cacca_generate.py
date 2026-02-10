@@ -29,6 +29,7 @@ class GenerateConfig():
     use_best_model_in_subfolders: bool = True
     is_smile_valid: Callable[[str], bool] = lambda smile: smile.is_valid
 
+
 import pytest
 @pytest.mark.above10s
 def test_():
