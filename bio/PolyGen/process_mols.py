@@ -16,13 +16,7 @@ def process_mols(mols: List[Chem.Mol]) -> None:
         print(f"{smiles}\t{name}\t{s:.3f}")
 
 
-import pytest
-@pytest.mark.parametrize("smiles,expected", [
-    (["CCO"], None),
-    (["c1ccccc1"], None)
-])
-def test_process_mols(smiles, expected):
-    print()
+def test_():
+    smiles = ["CCO", "c1ccccc1"]
     mols = [Chem.MolFromSmiles(smile) for smile in smiles]
-    result = process_mols(mols)
-    assert result == expected, f"Expected {expected}, but got {result}"
+    print(process_mols(mols))

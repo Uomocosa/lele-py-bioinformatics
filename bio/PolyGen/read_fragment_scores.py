@@ -5,19 +5,14 @@ import lele
 
 """
 NOTE! Refactored using GEMINI (AI)
-NOTE! Useless for my application
+NOTE! This is typically used to calculate the Synthetic Accessibility (SA) of a molecule.
 
-FUNCTION SUMMARY:
 Loads a pre-computed dictionary of fragment importance scores from a JSON file.
 The function flattens a nested list structure into a lookup table where:
 - Keys: Fragment identifiers (strings or integers).
 - Values: The statistical score/weight associated with that fragment.
-This is typically used to calculate the Synthetic Accessibility (SA) of a molecule.
 """
 def read_fragment_scores(file_path=FPSCORES_JSON):
-    """
-    NOTE! Useless for my application
-    """
     global FPSCORES
     if FPSCORES is not None: return FPSCORES
     
