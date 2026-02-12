@@ -127,13 +127,40 @@ def add_metrics_to_df(df_smiles_and_psmiles: pd.DataFrame, column_name: str):
         df = pd.concat([df, expanded_feats], axis=1)
     return df
 
+
+# import pytest
+# @pytest.mark.above10s
+# def test_psmiles():
+#     from bio.__global__ import DATASETS_DIR
+#     from bio.Metric.__global__ import HELPER_DIR
+#     csv_file = HELPER_DIR / "add_metrics_to_df_psmiles.csv"
+#     dataset_csv = DATASETS_DIR / "PI1M" / "PI1M.csv"
+#     df = pd.read_csv(dataset_csv)
+#     df = add_metrics_to_df(df.head(100), column_name="PSMILES")
+#     print(df)
+#     df.to_csv(csv_file, index=False)
+
+
+# import pytest
+# @pytest.mark.above10s
+# def test_combined():
+#     from bio.__global__ import DATASETS_DIR
+#     from bio.Metric.__global__ import HELPER_DIR
+#     csv_file = HELPER_DIR / "add_metrics_to_df_combined.csv"
+#     dataset_csv = DATASETS_DIR / "PI1M+ZINC_base" / "combined.csv"
+#     df = pd.read_csv(dataset_csv)
+#     df = add_metrics_to_df(df.head(100), column_name="PSMILES")
+#     print(df)
+#     df.to_csv(csv_file, index=False)
+
+
 import pytest
 @pytest.mark.above10s
-def test_():
-    from bio.__global__ import DATASETS_DIR
+def test_generated():
+    from bio.__global__ import BIOINFORMATICS_DIR
     from bio.Metric.__global__ import HELPER_DIR
-    csv_file = HELPER_DIR / "add_metrics_to_df.csv"
-    dataset_csv = DATASETS_DIR / "PI1M+ZINC_base" / "combined.csv"
+    dataset_csv = BIOINFORMATICS_DIR / "COMBINED_checkpoints" / "2026_02_07_202304_051020" / "generate_mnt128_t100000000" / "2026_02_10_093248_774466" / "generated_smiles.csv"
+    csv_file = HELPER_DIR / "add_metrics_to_df_generated.csv"
     df = pd.read_csv(dataset_csv)
     df = add_metrics_to_df(df.head(100), column_name="PSMILES")
     print(df)
