@@ -1,0 +1,43 @@
+# pixi.toml
+[workspace]
+channels = ["conda-forge", "pytorch", "nvidia", "anaconda"]
+platforms = ["win-64", "linux-64"]
+
+[dependencies]
+python = "3.11.*"
+tblite-python = "0.5.*"
+ase = "*"
+
+[pypi-dependencies]
+bio = { path = "." , editable = true }
+new-import-system = { git = "https://github.com/Uomocosa/new-python-import-system" }
+lele = { git = "https://github.com/Uomocosa/lele-py" }
+mingpt = { git = "git+https://github.com/karpathy/minGPT" }
+pytest = "*"
+loguru = "*"
+tyro = "*"
+# torch = "*"
+# torchvision = "*"
+# transformers = { version = "== 4.46.*", extras = ["torch"] }
+transformers = "== 4.46.*"
+polymetrix = "== 0.2.*"
+pydantic = "== 2.12.*"
+numpy = "*"
+deepchem = "== 2.8.*"
+rdkit = "== 2025.9.*"
+matplotlib = "== 3.10.*"
+dimorphite_dl = "== 2.0.*"
+
+[feature.cpu.dependencies]
+pytorch = "*"
+torchvision = "*"
+cpuonly = "*"
+
+[feature.cuda.dependencies]
+pytorch = "*"
+torchvision = "*"
+pytorch-cuda = "*" 
+
+[environments]
+default = ["cpu"]
+cuda = ["cuda"]

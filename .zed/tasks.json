@@ -12,7 +12,7 @@
     // cd $HOME/lele-py-bioinformatics; git fetch origin; git reset --hard origin/main; chmod +x setup.sh; ./setup.sh; chmod +x ssh_combined_generate.sh; ./ssh_combined_generate.sh
     {
         "label": "run",
-        "command": "uv run -p .venv pytest -rFP -q -s $ZED_RELATIVE_FILE -o \"addopts=\"",
+        "command": "pixi run pytest -rFP -q -s $ZED_RELATIVE_FILE -o \"addopts=\"",
         "env": { "LOGURU_LEVEL": "DEBUG" },
         "use_new_terminal": false,
         "allow_concurrent_runs": false,
@@ -24,7 +24,7 @@
     },
     {
         "label": "RUN_ALL_TESTS",
-        "command": "uv run -p .venv pytest --durations=10",
+        "command": "pixi run pytest --durations=10 .",
         "env": { "LOGURU_LEVEL": "CRITICAL" },
         "use_new_terminal": false,
         "allow_concurrent_runs": false,
@@ -32,11 +32,11 @@
         "hide": "never",
         "shell": "system",
         "show_summary": false,
-        "show_command": false
+        "show_command": true
     },
     {
         "label": "list_tests",
-        "command": "uv run -p .venv pytest --collect-only -q",
+        "command": "pixi run pytest --collect-only -q .",
         "env": { "LOGURU_LEVEL": "CRITICAL" },
         "use_new_terminal": false,
         "allow_concurrent_runs": false,
@@ -44,9 +44,10 @@
         "hide": "never",
         "shell": "system",
         "show_summary": false,
-        "show_command": false
+        "show_command": true
     },
     // {
+    // TODO!!! SWHITCHED TO PIXI!!!
     //     "label": "EXAMPLE: install_executable_scripts",
     //     "command": "uv tool install --editable . --python 3.11",
     //     "use_new_terminal": false,

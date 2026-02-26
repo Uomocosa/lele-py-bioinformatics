@@ -1,33 +1,32 @@
-# pyproject.toml
-[project]
-name = "bio"
+[workspace]
+authors = ["Lele <maggiori.samuele@gmail.com>"]
+channels = ["conda-forge", "anaconda"]
+name = "mytblite"
+platforms = ["win-64", "linux-64"]
 version = "0.0.1"
-authors = [
-  { name="Lele", email="maggiori.samuele@gmail.com" },
-]
-description = "My personal workspace"
-readme = "README.md"
-requires-python = "==3.11"
+description = "Library for BIOLOGY development"
 
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+[dependencies]
+python = "3.11.*"
+tblite-python = "0.5.*"
+ase = "*"
 
-[scripts]
-cacca_train = "bio.cacca_train:main"
-cacca_generate = "bio.cacca_generate:main"
-psmile_train = "bio.psmile_train:main"
-psmile_generate = "bio.psmile_generate:main"
-combined_train = "bio.combined_train:main"
-combined_generate = "bio.combined_generate:main"
+[pypi-dependencies]
+new-import-system = { git = "https://github.com/Uomocosa/new-python-import-system" }
+lele = { git = "https://github.com/Uomocosa/lele-py" }
+pytest = "*"
+loguru = "*"
+tyro = "*"
+# mytblite = { path = ".", editable = true } # <-- Add this line
 
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["bio*"]
+[tool.setuptools]
+packages = { find = { where = ["."], include = [
+    "mytblite*",
+] } }
 
 [tool.pytest.ini_options]
 python_files = "*.py"
-testpaths = ["bio"]
+testpaths = ["mytblite"]
 norecursedirs = [
   "__pycache__",
   ".pytest_cache",

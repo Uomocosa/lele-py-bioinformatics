@@ -14,27 +14,27 @@ LOG_FILE="$LOG_DIR/session-$(date +%Y_%m_%d-%H_%M_%S).log"
 # 'tee' will write output to *both* the log file and the VSCode terminal
 exec > >(tee -a "$LOG_FILE") 2>&1
 
-echo "--- Starinting task: INSTALL UV ---"
-if ! command -v uv &> /dev/null; then
-    echo "uv not found. Installing now..."
-    # Download and install uv to the local user directory
-    curl -LsSf https://astral.sh/uv/install.sh | sh
+echo "--- Starinting task: INSTALL PIXI ---"
+if ! command -v pixi &> /dev/null; then
+    echo "pixi not found. Installing now..."
+    # Download and install pixi to the local user directory
+    curl -fsSL https://pixi.sh/install.sh | bash
     
-    # Temporarily add uv to the PATH for this running script
+    # Temporarily add pixi to the PATH for this running script
     # (The installer usually puts it in ~/.cargo/bin or ~/.local/bin)
     export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH" 
 else
-    echo "uv is already installed."
+    echo "pixi is already installed."
 fi
 
 echo "--- Starinting task: UV SYNC ---"
-uv sync
+pixi install
 uv pip install --upgrade torch --torch-backend=auto
 
-echo "--- Starinting task: INSTALL bio scripts ---"
-PYTHON_VERSION="3.11"
-uv tool install --editable . --python "$PYTHON_VERSION"
-echo "--- Task Finished Successfully ---"
+# echo "--- Starinting task: INSTALL bio scripts ---"
+# PYTHON_VERSION="3.11"
+# uv tool install --editable . --python "$PYTHON_VERSION"
+# echo "--- Task Finished Successfully ---"
 
 if [ -f $HOME/.env ]; then
     export $(cat $HOME/.env | xargs)

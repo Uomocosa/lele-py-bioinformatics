@@ -8,6 +8,10 @@ import pandas as pd
 
 from polymetrix.featurizers.polymer import Polymer
 from polymetrix.featurizers.molecule import Molecule
+from polymetrix.featurizers.sidechain_backbone_featurizer import (
+    SideChainFeaturizer,
+    BackBoneFeaturizer,
+)
 from polymetrix.featurizers.chemical_featurizer import (
     NumHBondDonors,
     NumHBondAcceptors,
@@ -95,6 +99,20 @@ MOLECULE_FEATURIZERS = [
 ]
 MOLECULE_MULTI_FEATURIZER = MultipleFeaturizer(MOLECULE_FEATURIZERS)
 
+SIDECHAIN_FEATURIZERS = [ # Sidechain H-Bond Dynamics
+    SideChainFeaturizer(NumHBondDonors()),
+    SideChainFeaturizer(NumHBondAcceptors())
+]
+SIDECHAIN_MULTI_FEATURIZER = MultipleFeaturizer(SIDECHAIN_FEATURIZERS)
+
+BACKBONE_FEATURIZERS = [ # Backbone Connectivity and Hybridization
+    BackBoneFeaturizer(NumAtoms()), 
+    BackBoneFeaturizer(Sp2CarbonCountFeaturizer()), 
+    BackBoneFeaturizer(Sp3CarbonCountFeaturizer())
+]
+BACKBONE_MULTI_FEATURIZER = MultipleFeaturizer(BACKBONE_FEATURIZERS)
+
+
 """
 For Polymetrix featurizes take a look at this examples/links:
 - https://lamalab-org.github.io/PolyMetriX/use_featurizers/
@@ -102,7 +120,7 @@ For Polymetrix featurizes take a look at this examples/links:
     - SIDECHAIN_MULTI_FEATURIZER and BACKBONE_MULTI_FEATURIZER
     - Comparators to Compare Polymer and Molecule Features
 """
-def add_metrics_to_df(df_smiles_and_psmiles: pd.DataFrame, column_name: str):
+def add_polymetrix_to_df(df_smiles_and_psmiles: pd.DataFrame, column_name: str):
     df = df_smiles_and_psmiles.copy()
     is_psmiles = df[column_name].apply(lambda x: bio.Bioinformatics.is_psmiles_string_valid(str(x)))
     is_smiles = ~is_psmiles & df[column_name].apply(lambda x: bio.Bioinformatics.Smile(str(x)).is_valid)
@@ -117,14 +135,24 @@ def add_metrics_to_df(df_smiles_and_psmiles: pd.DataFrame, column_name: str):
         molecules = smiles.apply(Molecule.from_smiles)
         feat_values = molecules.apply(MOLECULE_MULTI_FEATURIZER.featurize)
         labels = MOLECULE_MULTI_FEATURIZER.feature_labels()
-        expanded_feats = pd.DataFrame(feat_values.tolist(), index=smiles.index, columns=labels)
-        df = pd.concat([df, expanded_feats], axis=1)
+        molecule_feats = pd.DataFrame(feat_values.tolist(), index=smiles.index, columns=labels)
+        df = pd.concat([df, molecule_feats], axis=1)
     if not psmiles.empty:
         polymers = psmiles.apply(Polymer.from_psmiles)
-        feat_values = polymers.apply(POLYMER_MULTI_FEATURIZER.featurize)
-        labels = POLYMER_MULTI_FEATURIZER.feature_labels()
-        expanded_feats = pd.DataFrame(feat_values.tolist(), index=psmiles.index, columns=labels)
-        df = pd.concat([df, expanded_feats], axis=1)
+        
+        polymer_feat_values = polymers.apply(POLYMER_MULTI_FEATURIZER.featurize)
+        polymer_labels = POLYMER_MULTI_FEATURIZER.feature_labels()
+        polymer_feats = pd.DataFrame(polymer_feat_values.tolist(), index=psmiles.index, columns=polymer_labels)
+        
+        sc_feat_values = polymers.apply(SIDECHAIN_MULTI_FEATURIZER.featurize)
+        sc_labels = SIDECHAIN_MULTI_FEATURIZER.feature_labels()
+        sc_feats = pd.DataFrame(sc_feat_values.tolist(), index=psmiles.index, columns=sc_labels)
+        
+        bb_feat_values = polymers.apply(BACKBONE_MULTI_FEATURIZER.featurize)
+        bb_labels = BACKBONE_MULTI_FEATURIZER.feature_labels()
+        bb_feats = pd.DataFrame(bb_feat_values.tolist(), index=psmiles.index, columns=bb_labels)
+        
+        df = pd.concat([df, polymer_feats, sc_feats, bb_feats], axis=1)
     return df
 
 
@@ -133,10 +161,10 @@ def add_metrics_to_df(df_smiles_and_psmiles: pd.DataFrame, column_name: str):
 # def test_psmiles():
 #     from bio.__global__ import DATASETS_DIR
 #     from bio.Metric.__global__ import HELPER_DIR
-#     csv_file = HELPER_DIR / "add_metrics_to_df_psmiles.csv"
+#     csv_file = HELPER_DIR / "add_polymetrix_to_df_psmiles.csv"
 #     dataset_csv = DATASETS_DIR / "PI1M" / "PI1M.csv"
 #     df = pd.read_csv(dataset_csv)
-#     df = add_metrics_to_df(df.head(100), column_name="PSMILES")
+#     df = add_polymetrix_to_df(df.head(100), column_name="PSMILES")
 #     print(df)
 #     df.to_csv(csv_file, index=False)
 
@@ -146,10 +174,10 @@ def add_metrics_to_df(df_smiles_and_psmiles: pd.DataFrame, column_name: str):
 # def test_combined():
 #     from bio.__global__ import DATASETS_DIR
 #     from bio.Metric.__global__ import HELPER_DIR
-#     csv_file = HELPER_DIR / "add_metrics_to_df_combined.csv"
+#     csv_file = HELPER_DIR / "add_polymetrix_to_df_combined.csv"
 #     dataset_csv = DATASETS_DIR / "PI1M+ZINC_base" / "combined.csv"
 #     df = pd.read_csv(dataset_csv)
-#     df = add_metrics_to_df(df.head(100), column_name="PSMILES")
+#     df = add_polymetrix_to_df(df.head(100), column_name="PSMILES")
 #     print(df)
 #     df.to_csv(csv_file, index=False)
 
@@ -160,8 +188,8 @@ def test_generated():
     from bio.__global__ import BIOINFORMATICS_DIR
     from bio.Metric.__global__ import HELPER_DIR
     dataset_csv = BIOINFORMATICS_DIR / "COMBINED_checkpoints" / "2026_02_07_202304_051020" / "generate_mnt128_t100000000" / "2026_02_10_093248_774466" / "generated_smiles.csv"
-    csv_file = HELPER_DIR / "add_metrics_to_df_generated.csv"
+    csv_file = HELPER_DIR / "add_polymetrix_to_df_generated.csv"
     df = pd.read_csv(dataset_csv)
-    df = add_metrics_to_df(df.head(100), column_name="PSMILES")
+    df = add_polymetrix_to_df(df.head(100), column_name="PSMILES")
     print(df)
     df.to_csv(csv_file, index=False)
