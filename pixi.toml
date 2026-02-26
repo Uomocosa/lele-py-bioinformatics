@@ -27,6 +27,7 @@ deepchem = "== 2.8.*"
 rdkit = "== 2025.9.*"
 matplotlib = "== 3.10.*"
 dimorphite_dl = "== 2.0.*"
+qcelemental = "== 0.30.*"
 
 [feature.cpu.dependencies]
 pytorch = "*"

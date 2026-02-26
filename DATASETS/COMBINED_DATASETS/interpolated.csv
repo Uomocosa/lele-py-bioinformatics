@@ -1,0 +1,109 @@
+POLYMER_USED,DRUG,CONCENTRATION,CAPACITY
+C-lys,2.4D,25.0,50.81
+C-lys,Ampicillin,25.0,13.44
+C-lys,Doxycycline,25.0,6.75
+C-lys,Fluconazole,25.0,0.0
+C-lys,Lomefloxacin,25.0,0.0
+C-lys,Methylene Violet,25.0,0.0
+C-lys,Moxidectin,25.0,13.17
+C-lys,Piroxicam,25.0,13.78
+C-lys,Thymol Blue,25.0,22.63
+C-mA,2.4D,25.0,0.0
+C-mA,Ampicillin,25.0,0.0
+C-mA,Doxycycline,25.0,7.91
+C-mA,Fluconazole,25.0,0.0
+C-mA,Lomefloxacin,25.0,23.67
+C-mA,Methylene Violet,25.0,24.44
+C-mA,Moxidectin,25.0,22.69
+C-mA,Piroxicam,25.0,0.0
+C-mA,Thymol Blue,25.0,0.0
+C-megl,2.4D,25.0,24.38
+C-megl,2.4D,25.0,22.19
+C-megl,2.4D,37.5,33.665
+C-megl,2.4D,50.0,45.14
+C-megl,2.4D,75.0,68.205
+C-megl,2.4D,100.0,91.27
+C-megl,Ampicillin,25.0,0.0
+C-megl,Doxycycline,25.0,0.0
+C-megl,Fluconazole,25.0,0.0
+C-megl,Lomefloxacin,25.0,0.0
+C-megl,Methylene Violet,25.0,0.0
+C-megl,Moxidectin,25.0,15.13
+C-megl,Moxidectin,25.0,15.21
+C-megl,Moxidectin,37.5,22.815
+C-megl,Moxidectin,50.0,30.42
+C-megl,Moxidectin,75.0,45.73
+C-megl,Moxidectin,100.0,61.04
+C-megl,Piroxicam,25.0,22.87
+C-megl,Piroxicam,25.0,23.72
+C-megl,Piroxicam,37.5,35.455
+C-megl,Piroxicam,50.0,47.19
+C-megl,Piroxicam,75.0,70.415
+C-megl,Piroxicam,100.0,93.64
+C-megl,Thymol Blue,25.0,24.17
+C-megl,Thymol Blue,25.0,24.38
+C-megl,Thymol Blue,37.5,35.695
+C-megl,Thymol Blue,50.0,47.01
+C-megl,Thymol Blue,75.0,70.52
+C-megl,Thymol Blue,100.0,94.03
+C-ph,2.4D,25.0,3.46
+C-ph,Ampicillin,25.0,4.2
+C-ph,Doxycycline,25.0,13.26
+C-ph,Fluconazole,25.0,0.0
+C-ph,Lomefloxacin,25.0,0.0
+C-ph,Methylene Violet,25.0,24.46
+C-ph,Moxidectin,25.0,5.6
+C-ph,Piroxicam,25.0,0.0
+C-ph,Thymol Blue,25.0,14.73
+polyPhOx,Aspirin,10.0,0.1865
+polyPhOx,Aspirin,17.5,0.26425
+polyPhOx,Aspirin,25.0,0.342
+polyPhOx,Aspirin,37.5,0.4974
+polyPhOx,Aspirin,50.0,0.6528
+polyPhOx,Aspirin,75.0,1.1814
+polyPhOx,Aspirin,100.0,1.71
+polyPhOx,Aspirin,150.0,2.57
+polyPhOx,Aspirin,200.0,3.43
+polyPhOx,Ibuprofen,25.0,9.728
+polyPhOx,Ibuprofen,37.5,11.254
+polyPhOx,Ibuprofen,50.0,12.78
+polyPhOx,Ibuprofen,75.0,19.075
+polyPhOx,Ibuprofen,100.0,25.37
+polyPhOx,Ibuprofen,150.0,28.8
+polyPhOx,Ibuprofen,200.0,32.23
+polyPhOx,Indomethacin,10.0,1.144
+polyPhOx,Indomethacin,17.5,1.5255
+polyPhOx,Indomethacin,25.0,1.907
+polyPhOx,Indomethacin,37.5,3.3375
+polyPhOx,Indomethacin,50.0,4.768
+polyPhOx,Indomethacin,75.0,6.1035
+polyPhOx,Indomethacin,100.0,7.439
+polyPhOx,Indomethacin,150.0,13.6395
+polyPhOx,Indomethacin,200.0,19.84
+polyPhOx,Metoclopramide,10.0,0.07254
+polyPhOx,Metoclopramide,17.5,0.10362
+polyPhOx,Metoclopramide,25.0,0.1347
+polyPhOx,Metoclopramide,37.5,0.21245
+polyPhOx,Metoclopramide,50.0,0.2902
+polyPhOx,Metoclopramide,75.0,0.5907
+polyPhOx,Metoclopramide,100.0,0.8912
+polyPhOx,Metoclopramide,150.0,1.5491
+polyPhOx,Metoclopramide,200.0,2.207
+polyPhOx,Oestradiol,10.0,3.243
+polyPhOx,Oestradiol,17.5,4.292
+polyPhOx,Oestradiol,25.0,5.341
+polyPhOx,Oestradiol,37.5,6.0085
+polyPhOx,Oestradiol,50.0,6.676
+polyPhOx,Oestradiol,75.0,18.118
+polyPhOx,Oestradiol,100.0,29.56
+polyPhOx,Oestradiol,150.0,43.01
+polyPhOx,Oestradiol,200.0,56.46
+polyPhOx,Pyramidone,10.0,0.1347
+polyPhOx,Pyramidone,17.5,0.14505
+polyPhOx,Pyramidone,25.0,0.1554
+polyPhOx,Pyramidone,37.5,0.1606
+polyPhOx,Pyramidone,50.0,0.1658
+polyPhOx,Pyramidone,75.0,0.2798
+polyPhOx,Pyramidone,100.0,0.3938
+polyPhOx,Pyramidone,150.0,0.60625
+polyPhOx,Pyramidone,200.0,0.8187

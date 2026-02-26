@@ -1,0 +1,11 @@
+PSMILES,homo_lumo_energies
+CCOc1cc(oc1)/C=C\2/N(C(=O)N(C2=O)C)CC(=O)N,"[(np.float64(19.29809294207605), np.float64(-20.05448509170201))]"
+CNc1cc(cc(c1)S(=O)(=O)N2CC[NH+](CC2)C#N)[N+](=O)[O-],"[(np.float64(31.29751365093338), np.float64(-21.417817945925595))]"
+*CCCCCCCCCCCCCC[Si](C)(CCCCCCCCCCCCCCc1ccc(*)cc1)C,"[(np.float64(17.38233476623684), np.float64(-20.008261774294194)), (np.float64(17.18106733070603), np.float64(-20.01121485437247)), (np.float64(17.31951233043402), np.float64(-20.03557663463445))]"
+*Oc1ccccc1C(=O)NCCCSCCSCSc1cc(*)s1,
+c1cc2c(cc1C(=O)[C@H]2c3ccccc3C(=O)[O-])Br,
+*Oc1ccccc1C(=O)Nc1ccc(C(=O)Nc2ccc(-c3ccc(C(*)=O)cc3)cc2)cc1,"[(np.float64(17.996932604069432), np.float64(-20.198547408681367)), (np.float64(18.048316999977693), np.float64(-20.67225344930733)), (np.float64(18.056991199659915), np.float64(-20.281778372595234))]"
+CCN(CC)OC(=O)COc1ccccc1OC,"[(np.float64(17.42723689416811), np.float64(-20.100336437189508))]"
+*CCCSc1ccc(*)s1,"[(np.float64(18.344103258197837), np.float64(-20.474340504872522)), (np.float64(18.336563803442033), np.float64(-20.02672584584363)), (np.float64(18.497604791008946), np.float64(-19.956596854599788))]"
+CCOC(=O)c1c([nH]c(n1C)SCC(=O)Nc2cc(cc2)Cl)C(=O)Nc3cccc4c(c3)OC,
+c1ccc2c(c1)c(=O)[nH]c2Sc3on2CO3,

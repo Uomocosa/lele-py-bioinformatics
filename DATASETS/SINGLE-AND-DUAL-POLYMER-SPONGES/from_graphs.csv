@@ -1,0 +1,49 @@
+POLYMER_USED,DRUG,CONCENTRATION,CAPACITY,PERC_ABSORBTION
+C-megl,Piroxicam,25,,9.151e+1
+C-megl,Ampicillin,25,,0
+C-megl,Doxycycline,25,,0
+C-megl,Lomefloxacin,25,,0
+C-megl,Fluconazole,25,,0
+C-megl,Moxidectin,25,,6.055e+1
+C-megl,2.4D,25,,9.753e+1
+C-megl,Thymol Blue,25,,9.671e+1
+C-megl,Methylene Violet,25,,0
+C-mA,Piroxicam,25,,0
+C-mA,Ampicillin,25,,0
+C-mA,Doxycycline,25,,3.165e+1
+C-mA,Lomefloxacin,25,,9.468e+1
+C-mA,Fluconazole,25,,0
+C-mA,Moxidectin,25,,9.076e+1
+C-mA,2.4D,25,,0
+C-mA,Thymol Blue,25,,0
+C-mA,Methylene Violet,25,,9.776e+1
+C-lys,Piroxicam,25,,5.514e+1
+C-lys,Ampicillin,25,,5.378e+1
+C-lys,Doxycycline,25,,2.703e+0
+C-lys,Lomefloxacin,25,,0
+C-lys,Fluconazole,25,,0
+C-lys,Moxidectin,25,,5.27e+1
+C-lys,2.4D,25,,5.081e+1
+C-lys,Thymol Blue,25,,9.054e+1
+C-lys,Methylene Violet,25,,0
+C-ph,Piroxicam,25,,0
+C-ph,Ampicillin,25,,1.68e+1
+C-ph,Doxycycline,25,,5.307e+1
+C-ph,Lomefloxacin,25,,0
+C-ph,Fluconazole,25,,0
+C-ph,Moxidectin,25,,2.24e+1
+C-ph,2.4D,25,,1.387e+1
+C-ph,Thymol Blue,25,,5.893e+1
+C-ph,Methylene Violet,25,,9.787e+1
+C-megl,Piroxicam,25,2.372e+1,
+C-megl,Piroxicam,50,4.719e+1,
+C-megl,Piroxicam,100,9.364e+1,
+C-megl,Moxidectin,25,1.521e+1,
+C-megl,Moxidectin,50,3.042e+1,
+C-megl,Moxidectin,100,6.104e+1,
+C-megl,2.4D,25,2.219e+1,
+C-megl,2.4D,50,4.514e+1,
+C-megl,2.4D,100,9.127e+1,
+C-megl,Thymol Blue,25,2.438e+1,
+C-megl,Thymol Blue,50,4.701e+1,
+C-megl,Thymol Blue,100,9.403e+1,

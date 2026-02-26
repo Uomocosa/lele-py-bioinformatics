@@ -1,0 +1,78 @@
+POLYMER_USED,DRUG,CONCENTRATION,CAPACITY
+polyPhOx,Aspirin,10,0.1865
+polyPhOx,Aspirin,25,0.342
+polyPhOx,Aspirin,50,0.6528
+polyPhOx,Aspirin,100,1.71
+polyPhOx,Aspirin,200,3.43
+polyPhOx,Ibuprofen,25,9.728
+polyPhOx,Ibuprofen,50,12.78
+polyPhOx,Ibuprofen,100,25.37
+polyPhOx,Ibuprofen,200,32.23
+polyPhOx,Metoclopramide,10,0.07254
+polyPhOx,Metoclopramide,25,0.1347
+polyPhOx,Metoclopramide,50,0.2902
+polyPhOx,Metoclopramide,100,0.8912
+polyPhOx,Metoclopramide,200,2.207
+polyPhOx,Pyramidone,10,0.1347
+polyPhOx,Pyramidone,25,0.1554
+polyPhOx,Pyramidone,50,0.1658
+polyPhOx,Pyramidone,100,0.3938
+polyPhOx,Pyramidone,200,0.8187
+polyPhOx,Oestradiol,10,3.243
+polyPhOx,Oestradiol,25,5.341
+polyPhOx,Oestradiol,50,6.676
+polyPhOx,Oestradiol,100,29.56
+polyPhOx,Oestradiol,200,56.46
+polyPhOx,Indomethacin,10,1.144
+polyPhOx,Indomethacin,25,1.907
+polyPhOx,Indomethacin,50,4.768
+polyPhOx,Indomethacin,100,7.439
+polyPhOx,Indomethacin,200,19.84
+C-megl,Piroxicam,25,22.87
+C-megl,Ampicillin,25,0
+C-megl,Doxycycline,25,0
+C-megl,Lomefloxacin,25,0
+C-megl,Fluconazole,25,0
+C-megl,Moxidectin,25,15.13
+C-megl,2.4D,25,24.38
+C-megl,Thymol Blue,25,24.17
+C-megl,Methylene Violet,25,0
+C-mA,Piroxicam,25,0
+C-mA,Ampicillin,25,0
+C-mA,Doxycycline,25,7.91
+C-mA,Lomefloxacin,25,23.67
+C-mA,Fluconazole,25,0
+C-mA,Moxidectin,25,22.69
+C-mA,2.4D,25,0
+C-mA,Thymol Blue,25,0
+C-mA,Methylene Violet,25,24.44
+C-lys,Piroxicam,25,13.78
+C-lys,Ampicillin,25,13.44
+C-lys,Doxycycline,25,6.75
+C-lys,Lomefloxacin,25,0
+C-lys,Fluconazole,25,0
+C-lys,Moxidectin,25,13.17
+C-lys,2.4D,25,50.81
+C-lys,Thymol Blue,25,22.63
+C-lys,Methylene Violet,25,0
+C-ph,Piroxicam,25,0
+C-ph,Ampicillin,25,4.2
+C-ph,Doxycycline,25,13.26
+C-ph,Lomefloxacin,25,0
+C-ph,Fluconazole,25,0
+C-ph,Moxidectin,25,5.6
+C-ph,2.4D,25,3.46
+C-ph,Thymol Blue,25,14.73
+C-ph,Methylene Violet,25,24.46
+C-megl,Piroxicam,25,23.72
+C-megl,Piroxicam,50,47.19
+C-megl,Piroxicam,100,93.64
+C-megl,Moxidectin,25,15.21
+C-megl,Moxidectin,50,30.42
+C-megl,Moxidectin,100,61.04
+C-megl,2.4D,25,22.19
+C-megl,2.4D,50,45.14
+C-megl,2.4D,100,91.27
+C-megl,Thymol Blue,25,24.38
+C-megl,Thymol Blue,50,47.01
+C-megl,Thymol Blue,100,94.03
