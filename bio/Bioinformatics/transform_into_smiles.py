@@ -2,65 +2,82 @@ from loguru import logger
 from rdkit import Chem
 from rdkit import RDLogger
 
-"""
-NOTE! Made using AI.
+from rdkit import Chem
+from rdkit import RDLogger
 
-Takes a P-SMILES or SMILES string.
-Returns a list of valid standard SMILES by replacing dummy atoms (*).
-If the base molecule is invalid or no caps work, returns an empty list.
-"""
-def transform_into_smiles(smiles_str: str) -> list:
-    RDLogger.DisableLog('rdApp.*') # disable warnings
-    if not isinstance(smiles_str, str): return []
+# Mapping atomic numbers to their periodic symbols
+DEFAULT_CAPPING_ATOMS = {
+    "H": 1,
+    "C": 6,
+    "O": 8
+}
+
+def transform_into_smiles(
+    psmiles_str: str,
+    capping_atoms_dict: dict = DEFAULT_CAPPING_ATOMS
+) -> dict:
+    """
+    NOTE! Made using AI.
+    TODO! Change the return type instead of a list it should be a dict {atom: smile}
     
-    mol = Chem.MolFromSmiles(smiles_str)
-    if mol is None: return [] 
+    Takes a P-SMILES string containing dummy atoms (*).
+    Returns a dict {atom_symbol: smile} of valid standard SMILES.
+    """
+    RDLogger.DisableLog('rdApp.*') 
+    if not isinstance(psmiles_str, str): 
+        return {}
+    
+    mol = Chem.MolFromSmiles(psmiles_str)
+    if mol is None:  return {}
         
-    # Find all dummy atoms (*)
     dummy_indices = [atom.GetIdx() for atom in mol.GetAtoms() if atom.GetAtomicNum() == 0]
     
     # CASE 1: Standard SMILES (No dummy atoms)
     if not dummy_indices:
         try:
             Chem.SanitizeMol(mol)
-            return [Chem.MolToSmiles(mol)]
+            return {"": Chem.MolToSmiles(mol)}
         except Exception: 
-            return []
+            return {}
             
     # CASE 2: P-SMILES (Has dummy atoms)
-    valid_smiles = set() # Use a set to prevent duplicate SMILES strings
-    
-    # Try replacing all dummy atoms uniformly with H, C, and O
-    CAPPING_ATOMIC_NUMS=(1, 6, 8)
-    for atomic_num in CAPPING_ATOMIC_NUMS:
-        mol_copy = Chem.Mol(mol) # Create a fresh copy for each attempt
+    results = {}
+
+
+    for symbol, atomic_num in capping_atoms_dict.items():
+        mol_copy = Chem.Mol(mol)
         
-        # Apply the current cap to all dummy atoms
+        # Replace all dummy atoms with the target element
         for idx in dummy_indices:
             atom = mol_copy.GetAtomWithIdx(idx)
             atom.SetAtomicNum(atomic_num)
+            # Ensure isotope/formal charge info from dummy is cleared
+            atom.SetIsotope(0) 
             
         try:
-            # The strict chemistry test
+            # Check chemical validity (valency, aromaticity, etc.)
             Chem.SanitizeMol(mol_copy)
             
-            # Clean up the molecule (removes explicit Hydrogens we may have just added)
-            # so the resulting SMILES looks standard (e.g., 'C' instead of '[H]C')
-            mol_copy = Chem.RemoveHs(mol_copy) 
+            # For H-capping, we usually want to remove explicit [H] 
+            # for a "clean" standard SMILES string.
+            clean_mol = Chem.RemoveHs(mol_copy)
+            clean_smiles = Chem.MolToSmiles(clean_mol)
             
-            clean_smiles = Chem.MolToSmiles(mol_copy)
-            valid_smiles.add(clean_smiles)
+            results[symbol] = clean_smiles
         except Exception:
-            # If replacing with this atom breaks valency (e.g., H on a double bond), we just skip it
-            pass 
-            
-    return list(valid_smiles)
-
+            # Skip if the capping element violates valency rules
+            continue 
+    return results
+    
+    
 import pytest
-@pytest.mark.parametrize("input, expected", [
-    ["*/C=C/c1cc(CCCCCC)c(*)s1", ['C/C=C/c1cc(CCCCCC)c(C)s1', 'CCCCCCc1cc(/C=C/O)sc1O', '[H]/C=C/c1cc(CCCCCC)cs1']],
-    ["*Oc1ccccc1C(=O)NCCCSCCSCSc1cc(*)s1", []],  # non-closed parentesis
+@pytest.mark.parametrize("psmiles, expected_keys", [
+    ("*/C=C/c1cc(CCCCCC)c(*)s1", ["H", "C", "O"]),
+    ("*Oc1ccccc1C(=O)NCCCSCCSCSc1cc(*)s1", []), # Invalid SMILES (unclosed ring/paren)
+    ("c1ccccc1", [""]), # No dummies
 ])
-def test_(input, expected):
-    output = sorted(transform_into_smiles(input))
-    assert output == expected, f"\n\tExpected: >>> {expected}\n\tGot: >>> {output}"
+def test_transform(psmiles, expected_keys):
+    output = transform_into_smiles(psmiles)
+    print(f"\nInput: {psmiles}.\nOutput:\n\t{output}\n\n")
+    assert isinstance(output, dict)
+    assert sorted(list(output.keys())) == sorted(expected_keys)

@@ -1,0 +1,14 @@
+{
+    "hidden_dims": [
+        128,
+        64,
+        32
+    ],
+    "dropout": 0.2,
+    "epochs": 100,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "early_stop_patience": 1000,
+    "best_model_save_dir": "/home/uomocosa/Syncthing/LWF - LightWeigth Folder/[P] Python/lele-py-bioinformatics/MLP_checkpoints",
+    "seed": 42
+}

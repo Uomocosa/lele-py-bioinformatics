@@ -4,6 +4,7 @@ from rdkit.Chem import Descriptors
 from rdkit import RDLogger
 from dimorphite_dl import protonate_smiles
 import bio
+from bio.Bioinformatics.transform_into_smiles import DEFAULT_CAPPING_ATOMS
 from loguru import logger
 
 
@@ -16,34 +17,50 @@ def calculate_logd(
     column_name: str, 
     ph_min: float = 7.0, 
     ph_max: float = 7.4, 
-    precision: float = 0.5
+    precision: float = 0.5,
+    capping_atoms_dict: dict = DEFAULT_CAPPING_ATOMS
 ) -> pd.DataFrame:
     RDLogger.DisableLog('rdApp.*') # disable RDKit warnings
     df_out = df.copy()    
-    stats_df = df_out[column_name].apply(lambda x: compute_min_max_logd(x, ph_min, ph_max, precision))
+    stats_df = df_out[column_name].apply(lambda s: compute_min_max_logd(s, ph_min, ph_max, precision, capping_atoms_dict))
     df_out = pd.concat([df_out, stats_df], axis=1)
     return df_out
 
 
-def compute_min_max_logd(smiles_str: str, ph_min: float, ph_max: float, precision: float) -> pd.Series:
+def compute_min_max_logd(
+    smiles_str: str, 
+    ph_min: float, ph_max: float, precision: float,
+    capping_atoms_dict: dict
+) -> pd.Series:
     """
     Protonates a single SMILES string across a pH range and 
     calculates the min/max logD.
     """
     smiles_str = str(smiles_str)
-    min_lable = f'min_logd_pH_{ph_min}-{ph_max}'
-    max_lable = f'max_logd_pH_{ph_min}-{ph_max}'
-    null_result = pd.Series({min_lable: None, max_lable: None})
+    lable = f'logd_pH_{ph_min}-{ph_max}'
+    null_result = pd.Series({})
     if pd.isna(smiles_str): return null_result
-    valid_smiles_list = bio.Bioinformatics.transform_into_smiles(smiles_str)
-    if not valid_smiles_list: return null_result
-    protonated_mols = protonate_smiles(valid_smiles_list, ph_min=ph_min, ph_max=ph_max, precision=precision)
-    protonated_mols = [Chem.MolFromSmiles(p_mol) for p_mol in protonated_mols]
-    protonated_mols = [p_mol for p_mol in protonated_mols if p_mol]
-    logd_values = [Descriptors.MolLogP(p_mol) for p_mol in protonated_mols]
-    logger.debug(f"logd_values: {logd_values}")
-    if not logd_values: return null_result
-    return pd.Series({min_lable: min(logd_values), max_lable: max(logd_values)})
+    valid_smiles_dict = bio.Bioinformatics.transform_into_smiles(smiles_str, capping_atoms_dict)
+    if not valid_smiles_dict: return null_result
+    # protonated_mols = protonate_smiles(valid_smiles_dict, ph_min=ph_min, ph_max=ph_max, precision=precision)
+    df = dict()
+    for atom, smile in valid_smiles_dict.items():
+        protonated_mols = protonate_smiles(
+            smile,
+            ph_min=ph_min, ph_max=ph_max, precision=precision,
+        )
+        logger.debug(f"atom: {atom}")
+        logger.debug(f"smile: {smile}")
+        logger.debug(f"protonated_mols: {protonated_mols}")
+        mols = [Chem.MolFromSmiles(p_mol) for p_mol in protonated_mols]
+        logd_values = [Descriptors.MolLogP(mol) for mol in mols]
+        if not mols: continue
+        key = f"{lable}_{atom}"
+        key = key.removesuffix('_')
+        df[f"min_{key}"] = min(logd_values)
+        df[f"max_{key}"] = max(logd_values)
+    logger.debug(f"logd values: {df}")
+    return pd.Series(df)
 
 
 import pytest

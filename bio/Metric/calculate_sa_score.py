@@ -2,30 +2,44 @@ import pandas as pd
 from rdkit import Chem
 
 import bio
+from bio.Bioinformatics.transform_into_smiles import DEFAULT_CAPPING_ATOMS
 from loguru import logger
 
 
 def calculate_sa_score(
     df: pd.DataFrame, 
     column_name: str, 
+    capping_atoms_dict: dict = DEFAULT_CAPPING_ATOMS
 ) -> pd.DataFrame:
-    stats_df = df[column_name].apply(compute_min_max_sa_score)
+    df_out = df.copy()    
+    stats_df = df_out[column_name].apply(lambda s: single_calculation(s, capping_atoms_dict))
     df_out = pd.concat([df, stats_df], axis=1)
     return df_out
 
-def compute_min_max_sa_score(smiles_str: str) -> pd.Series:
-    min_lable = f'min_sa_score'
-    max_lable = f'max_sa_score'
-    null_result = pd.Series({min_lable: None, max_lable: None})
+
+def single_calculation(smiles_str: str, capping_atoms_dict: dict) -> pd.Series:
     smiles_str = str(smiles_str)
-    valid_smiles_list = bio.Bioinformatics.transform_into_smiles(smiles_str)
-    if not valid_smiles_list: return null_result
-    mols = [Chem.MolFromSmiles(smile) for smile in valid_smiles_list]
-    scores = [bio.PolyGen.calculate_sa_score(mol) for mol in mols]
-    scores = [sa for sa in scores if sa is not None]
-    if not scores: return null_result
-    logger.debug(f'scores: {scores}')
-    return pd.Series({min_lable: min(scores), max_lable: max(scores)})
+    lable = f'sa_score'
+    # null_result = pd.Series({min_lable: None, max_lable: None})
+    null_result = pd.Series({})
+    if not smiles_str: return null_result
+    
+    valid_smiles_dict = bio.Bioinformatics.transform_into_smiles(smiles_str, capping_atoms_dict)
+    if not valid_smiles_dict: return null_result
+    
+    df = dict()
+    for atom, smile in valid_smiles_dict.items():
+        mol = Chem.MolFromSmiles(smile)
+        if mol is None: continue
+        key = f"{lable}_{atom}"
+        key = key.removesuffix('_')
+        sa_score = bio.PolyGen.calculate_sa_score(mol)
+        if sa_score is None: continue
+        df[key] = sa_score
+        
+    logger.debug(f"sa scores: {df}")
+    return pd.Series(df)
+
 
 import pytest
 @pytest.mark.above10s

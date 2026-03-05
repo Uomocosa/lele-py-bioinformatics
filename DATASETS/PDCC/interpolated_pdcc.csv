@@ -1,0 +1,151 @@
+POLYMER_USED,DRUG,WATER_PH,CONCENTRATION,CAPACITY,SOURCE
+C-lys,2.4D,6.5,25.0,50.81,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Ampicillin,6.5,25.0,13.44,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Doxycycline,6.5,25.0,6.75,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Fluconazole,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Lomefloxacin,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Methylene Violet,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Moxidectin,6.5,25.0,13.17,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Piroxicam,6.5,25.0,13.78,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Thymol Blue,6.5,25.0,22.63,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,2.4D,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Ampicillin,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Doxycycline,6.5,25.0,7.91,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Fluconazole,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Lomefloxacin,6.5,25.0,23.67,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Methylene Violet,6.5,25.0,24.44,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Moxidectin,6.5,25.0,22.69,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Piroxicam,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Thymol Blue,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,2.4D,6.5,25.0,24.38,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,2.4D,6.5,25.0,22.19,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,2.4D,,33.33333,29.84,interpolated
+C-megl,2.4D,,41.66667,37.49,interpolated
+C-megl,2.4D,6.5,50.0,45.14,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,2.4D,,66.66667,60.51667,interpolated
+C-megl,2.4D,,83.33333,75.89333,interpolated
+C-megl,2.4D,6.5,100.0,91.27,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Ampicillin,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Doxycycline,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Fluconazole,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Lomefloxacin,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Methylene Violet,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Moxidectin,6.5,25.0,15.13,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Moxidectin,6.5,25.0,15.21,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Moxidectin,,33.33333,20.28,interpolated
+C-megl,Moxidectin,,41.66667,25.35,interpolated
+C-megl,Moxidectin,6.5,50.0,30.42,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Moxidectin,,66.66667,40.62667,interpolated
+C-megl,Moxidectin,,83.33333,50.83333,interpolated
+C-megl,Moxidectin,6.5,100.0,61.04,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Piroxicam,6.5,25.0,22.87,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Piroxicam,6.5,25.0,23.72,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Piroxicam,,33.33333,31.54333,interpolated
+C-megl,Piroxicam,,41.66667,39.36667,interpolated
+C-megl,Piroxicam,6.5,50.0,47.19,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Piroxicam,,66.66667,62.67333,interpolated
+C-megl,Piroxicam,,83.33333,78.15667,interpolated
+C-megl,Piroxicam,6.5,100.0,93.64,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Thymol Blue,6.5,25.0,24.17,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Thymol Blue,6.5,25.0,24.38,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Thymol Blue,,33.33333,31.92333,interpolated
+C-megl,Thymol Blue,,41.66667,39.46667,interpolated
+C-megl,Thymol Blue,6.5,50.0,47.01,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Thymol Blue,,66.66667,62.68333,interpolated
+C-megl,Thymol Blue,,83.33333,78.35667,interpolated
+C-megl,Thymol Blue,6.5,100.0,94.03,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,2.4D,6.5,25.0,3.46,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Ampicillin,6.5,25.0,4.2,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Doxycycline,6.5,25.0,13.26,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Fluconazole,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Lomefloxacin,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Methylene Violet,6.5,25.0,24.46,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Moxidectin,6.5,25.0,5.6,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Piroxicam,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Thymol Blue,6.5,25.0,14.73,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+Methacrylic acid,diclofenac,6.0,2.0,0.0717,https://link.springer.com/article/10.1007/s11356-022-19130-0
+Methacrylic acid,ibuprofen,6.0,2.0,0.07,https://link.springer.com/article/10.1007/s11356-022-19130-0
+Methacrylic acid,naproxen,6.0,2.0,0.0719,https://link.springer.com/article/10.1007/s11356-022-19130-0
+Vinylpyridine,diclofenac,6.0,2.0,0.0728,https://link.springer.com/article/10.1007/s11356-022-19130-0
+Vinylpyridine,ibuprofen,6.0,2.0,0.0789,https://link.springer.com/article/10.1007/s11356-022-19130-0
+Vinylpyridine,naproxen,6.0,2.0,0.0798,https://link.springer.com/article/10.1007/s11356-022-19130-0
+polyPhOx,Aspirin,8.2,10.0,0.1865,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Aspirin,,15.0,0.23833,interpolated
+polyPhOx,Aspirin,,20.0,0.29017,interpolated
+polyPhOx,Aspirin,8.2,25.0,0.342,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Aspirin,,33.33333,0.4456,interpolated
+polyPhOx,Aspirin,,41.66667,0.5492,interpolated
+polyPhOx,Aspirin,8.2,50.0,0.6528,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Aspirin,,66.66667,1.0052,interpolated
+polyPhOx,Aspirin,,83.33333,1.3576,interpolated
+polyPhOx,Aspirin,8.2,100.0,1.71,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Aspirin,,133.33333,2.28333,interpolated
+polyPhOx,Aspirin,,166.66667,2.85667,interpolated
+polyPhOx,Aspirin,8.2,200.0,3.43,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Ibuprofen,8.2,25.0,9.728,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Ibuprofen,,33.33333,10.74533,interpolated
+polyPhOx,Ibuprofen,,41.66667,11.76267,interpolated
+polyPhOx,Ibuprofen,8.2,50.0,12.78,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Ibuprofen,,66.66667,16.97667,interpolated
+polyPhOx,Ibuprofen,,83.33333,21.17333,interpolated
+polyPhOx,Ibuprofen,8.2,100.0,25.37,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Ibuprofen,,133.33333,27.65667,interpolated
+polyPhOx,Ibuprofen,,166.66667,29.94333,interpolated
+polyPhOx,Ibuprofen,8.2,200.0,32.23,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Indomethacin,8.2,10.0,1.144,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Indomethacin,,15.0,1.39833,interpolated
+polyPhOx,Indomethacin,,20.0,1.65267,interpolated
+polyPhOx,Indomethacin,8.2,25.0,1.907,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Indomethacin,,33.33333,2.86067,interpolated
+polyPhOx,Indomethacin,,41.66667,3.81433,interpolated
+polyPhOx,Indomethacin,8.2,50.0,4.768,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Indomethacin,,66.66667,5.65833,interpolated
+polyPhOx,Indomethacin,,83.33333,6.54867,interpolated
+polyPhOx,Indomethacin,8.2,100.0,7.439,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Indomethacin,,133.33333,11.57267,interpolated
+polyPhOx,Indomethacin,,166.66667,15.70633,interpolated
+polyPhOx,Indomethacin,8.2,200.0,19.84,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Metoclopramide,8.2,10.0,0.07254,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Metoclopramide,,15.0,0.09326,interpolated
+polyPhOx,Metoclopramide,,20.0,0.11398,interpolated
+polyPhOx,Metoclopramide,8.2,25.0,0.1347,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Metoclopramide,,33.33333,0.18653,interpolated
+polyPhOx,Metoclopramide,,41.66667,0.23837,interpolated
+polyPhOx,Metoclopramide,8.2,50.0,0.2902,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Metoclopramide,,66.66667,0.49053,interpolated
+polyPhOx,Metoclopramide,,83.33333,0.69087,interpolated
+polyPhOx,Metoclopramide,8.2,100.0,0.8912,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Metoclopramide,,133.33333,1.3298,interpolated
+polyPhOx,Metoclopramide,,166.66667,1.7684,interpolated
+polyPhOx,Metoclopramide,8.2,200.0,2.207,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,8.2,10.0,3.243,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,,15.0,3.94233,interpolated
+polyPhOx,Oestradiol,,20.0,4.64167,interpolated
+polyPhOx,Oestradiol,8.2,25.0,5.341,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,,33.33333,5.786,interpolated
+polyPhOx,Oestradiol,,41.66667,6.231,interpolated
+polyPhOx,Oestradiol,8.2,50.0,6.676,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,,66.66667,14.304,interpolated
+polyPhOx,Oestradiol,,83.33333,21.932,interpolated
+polyPhOx,Oestradiol,8.2,100.0,29.56,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,,133.33333,38.52667,interpolated
+polyPhOx,Oestradiol,,166.66667,47.49333,interpolated
+polyPhOx,Oestradiol,8.2,200.0,56.46,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Pyramidone,8.2,10.0,0.1347,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Pyramidone,,15.0,0.1416,interpolated
+polyPhOx,Pyramidone,,20.0,0.1485,interpolated
+polyPhOx,Pyramidone,8.2,25.0,0.1554,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Pyramidone,,33.33333,0.15887,interpolated
+polyPhOx,Pyramidone,,41.66667,0.16233,interpolated
+polyPhOx,Pyramidone,8.2,50.0,0.1658,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Pyramidone,,66.66667,0.2418,interpolated
+polyPhOx,Pyramidone,,83.33333,0.3178,interpolated
+polyPhOx,Pyramidone,8.2,100.0,0.3938,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Pyramidone,,133.33333,0.53543,interpolated
+polyPhOx,Pyramidone,,166.66667,0.67707,interpolated
+polyPhOx,Pyramidone,8.2,200.0,0.8187,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyethylene,atorvastatin,7.8,0.5,0.0691,https://www.sciencedirect.com/science/article/pii/S0048969721071473
+polyethylene,carbamazepine,7.8,0.5,0.0837,https://www.sciencedirect.com/science/article/pii/S0048969721071473
+polyethylene,fluoxetine,7.8,0.5,0.362,https://www.sciencedirect.com/science/article/pii/S0048969721071473
+polyethylene,ketamine,7.8,0.5,0.0809,https://www.sciencedirect.com/science/article/pii/S0048969721071473
+polyethylene,propranolol,7.8,0.5,0.186,https://www.sciencedirect.com/science/article/pii/S0048969721071473

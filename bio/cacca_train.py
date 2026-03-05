@@ -21,8 +21,6 @@ from bio.Dataset.__global__ import ZINC_BASE_CSV
 from loguru import logger
 import logging; logging.getLogger("deepchem").setLevel(logging.ERROR)
 
-print("UPDTATED!!!")
-
 CHECKPOINT_FOLDER = lele.P(r"./SMILES_checkpoints") 
 CHECKPOINT_TEST_FOLDER = lele.P(r"./SMILES_checkpoints_test") 
 

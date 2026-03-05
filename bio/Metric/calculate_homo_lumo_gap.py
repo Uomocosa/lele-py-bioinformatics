@@ -10,38 +10,45 @@ from tblite.ase import TBLite
 from typing import Optional
 
 import bio
+from bio.Bioinformatics.transform_into_smiles import DEFAULT_CAPPING_ATOMS
 from loguru import logger
 
 
 def calculate_homo_lumo_gap(
     df: pd.DataFrame, 
     column_name: str, 
+    capping_atoms_dict: dict = DEFAULT_CAPPING_ATOMS
 ) -> pd.DataFrame:
     """
     Calculates the HOMO-LUMO gap for each SMILES in the dataframe.
     """
-    stats_df = df[column_name].apply(compute_min_max_gap)
+    stats_df = df[column_name].apply(lambda s: compute_min_max_gap(s, capping_atoms_dict))
     df_out = pd.concat([df, stats_df], axis=1)
     return df_out
 
 
-def compute_min_max_gap(smiles_str: str) -> pd.Series:
+def compute_min_max_gap(smiles_str: str, capping_atoms_dict: dict) -> pd.Series:
     """
     Performs 3D optimization and GFN2-xTB calculation to find the HOMO-LUMO gap.
     """
-    min_lable = f'min_homo_lumo_gap'
-    max_lable = f'max_homo_lumo_gap'
-    null_result = pd.Series({min_lable: None, max_lable: None})
+    lable = f'homo_lumo_gap'
+    # null_result = pd.Series({lable: None})
+    null_result = pd.Series({})
     smiles_str = str(smiles_str)
-    valid_smiles_list = bio.Bioinformatics.transform_into_smiles(smiles_str)
-    if not valid_smiles_list: return null_result
-    mols = [Chem.MolFromSmiles(smile) for smile in valid_smiles_list]
-    energies = [bio.Metric.calculate_homo_lumo_energies.from_mol(mol) for mol in mols]
-    energies = [energy for energy in energies if energy is not None]
-    if not energies: return null_result
-    gaps = [lumo_eV - homo_eV for homo_eV, lumo_eV in energies]
-    logger.debug(f'gaps: {gaps}')
-    return pd.Series({min_lable: min(gaps), max_lable: max(gaps)})
+    valid_smiles_dict = bio.Bioinformatics.transform_into_smiles(smiles_str, capping_atoms_dict)
+    if not valid_smiles_dict: return null_result
+    mols = {atom: Chem.MolFromSmiles(smile) for atom, smile in valid_smiles_dict.items()}
+    energies_dict = {atom: bio.Metric.calculate_homo_lumo_energies.from_mol(mol) for atom, mol in mols.items()}
+    energies_dict = {atom: energies for atom, energies in energies_dict.items() if energies is not None}
+    if not energies_dict: return null_result
+    df = dict()
+    for atom, energies in energies_dict.items():
+        homo_eV, lumo_eV = energies
+        key = f"{lable}_{atom}"
+        key = key.removesuffix('_')
+        df[key] = lumo_eV - homo_eV
+    logger.debug(f'gaps: {df}')
+    return pd.Series(df)
     
 
 import pytest

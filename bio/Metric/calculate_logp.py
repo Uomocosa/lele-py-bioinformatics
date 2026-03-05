@@ -2,50 +2,41 @@ import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import Descriptors
 from rdkit import RDLogger
+from bio.Bioinformatics.transform_into_smiles import DEFAULT_CAPPING_ATOMS
 import bio
 from loguru import logger
 
-def calculate_logp(df_smiles_and_psmiles: pd.DataFrame, column_name: str) -> pd.DataFrame:
+def calculate_logp(
+    df_smiles_and_psmiles: pd.DataFrame, 
+    column_name: str,
+    capping_atoms_dict: dict = DEFAULT_CAPPING_ATOMS
+) -> pd.DataFrame:
     RDLogger.DisableLog('rdApp.*') # disable warnings
-    df = df_smiles_and_psmiles.copy()    
-    stats_df = df[column_name].apply(compute_min_max_logp)
-    df = pd.concat([df, stats_df], axis=1)
-    return df
+    df_out = df_smiles_and_psmiles.copy()    
+    stats_df = df_out[column_name].apply(lambda s: single_calculation(s, capping_atoms_dict))
+    df_out = pd.concat([df_out, stats_df], axis=1)
+    return df_out
 
 
-"""
-NOTE! Made using AI.
-"""
-def compute_min_max_logp(smiles_str):
-        # Default return if something fails
+def single_calculation(smiles_str: str, capping_atoms_dict: dict):
         smiles_str = str(smiles_str)
-        null_result = pd.Series({'min_logp': None, 'max_logp': None})
-        if pd.isna(smiles_str): return null_result
+        # null_result = pd.Series({'min_logp': None, 'max_logp': None})
+        lable = f'logp'
+        null_result = pd.Series({})
+        if not smiles_str: return null_result
             
-        # 1. Get the list of all valid capped SMILES
-        valid_smiles_list = bio.Bioinformatics.transform_into_smiles(smiles_str)
+        valid_smiles_dict = bio.Bioinformatics.transform_into_smiles(smiles_str, capping_atoms_dict)
+        if not valid_smiles_dict: return null_result
         
-        if not valid_smiles_list: return null_result
-            
-        # 2. Calculate logp for EVERY valid variant
-        logp_values = []
-        for chosen_smiles in valid_smiles_list:
-            mol = Chem.MolFromSmiles(chosen_smiles)
-            if mol is not None: 
-                try:
-                    val = Descriptors.MolLogP(mol)
-                    logp_values.append(val)
-                except Exception:
-                    pass
-                    
-        # 3. Find the minimum and maximum values
-        if logp_values:
-            return pd.Series({
-                'min_logp': min(logp_values), 
-                'max_logp': max(logp_values)
-            })
-        else:
-            return null_result
+        df = dict()
+        for atom, smile in valid_smiles_dict.items():
+            mol = Chem.MolFromSmiles(smile)
+            if not mol: continue
+            key = f"{lable}_{atom}"
+            key = key.removesuffix('_')
+            df[key] = Descriptors.MolLogP(mol)
+        logger.debug(f"logp values: {df}")
+        return pd.Series(df)
 
 
 import pytest

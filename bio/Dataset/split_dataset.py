@@ -8,7 +8,7 @@ def split_dataset(
     train_percentage: float,
     validation_percentage: float,
     test_percentage: float,
-    seed: int,
+    seed: int = 42,
 ) -> bio.Dataset.Splitted:
     total_pct = train_percentage + validation_percentage + test_percentage
     assert abs(total_pct - 1.0) < 1e-5, f"Percentages must sum to 1.0, got {total_pct}"
@@ -26,6 +26,7 @@ def split_dataset(
     )
     
     return bio.Dataset.Splitted(
+        original=dataset,
         train=train_ds,
         validation=val_ds,
         test=test_ds
