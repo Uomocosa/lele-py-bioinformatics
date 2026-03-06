@@ -1,6 +1,6 @@
 # pixi.toml
 [workspace]
-channels = ["conda-forge", "pytorch", "nvidia", "anaconda"]
+channels = ["conda-forge", "nvidia", "pytorch", "anaconda"]
 platforms = ["win-64", "linux-64"]
 
 [tasks]
