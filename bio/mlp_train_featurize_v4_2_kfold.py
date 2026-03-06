@@ -46,8 +46,8 @@ CPU_MODEL_CONFIG = bio.mlp_train.ModelConfig(
 
 
 def main():
-    # pixi run -e cpu python -c "from bio.mlp_train_featurize_v4_2_loocv import main; main()"
-    # pixi run -e cuda python -c "from bio.mlp_train_featurize_v4_2_loocv import main; main()"
+    # pixi run -e cpu python -c "from bio.mlp_train_featurize_v4_2_kfold import main; main()"
+    # pixi run -e cuda python -c "from bio.mlp_train_featurize_v4_2_kfold import main; main()"
     lele.Loguru.simple_format()
     dataset_config = bio.mlp_train.CommonDatasetConfig()
     featurize_options = FeaturizeOptions()
@@ -62,8 +62,8 @@ def main():
     )
 
 def test_():
-    # pixi run -e cpu python -c "from bio.mlp_train_featurize_v4_2_loocv import test_; test_()"
-    # pixi run -e cuda python -c "from bio.mlp_train_featurize_v4_2_loocv import test_; test_()"
+    # pixi run -e cpu python -c "from bio.mlp_train_featurize_v4_2_kfold import test_; test_()"
+    # pixi run -e cuda python -c "from bio.mlp_train_featurize_v4_2_kfold import test_; test_()"
     lele.Loguru.simple_format()
     dataset_config = bio.mlp_train.CommonDatasetConfig()
     featurize_options = FeaturizeOptions()

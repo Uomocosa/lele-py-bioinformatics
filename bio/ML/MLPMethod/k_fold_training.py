@@ -19,10 +19,10 @@ def k_fold_training(model: MLP, k: int = 5):
     untrained_weights = copy.deepcopy(model.state_dict())
     all_targets = []
     all_predictions = []
-    logger.info(f"Starting Leave-One-Out Training for {n_samples} samples...")
+    logger.info(f"K-Fold Training for {n_samples} samples (k={k})...")
     
     for fold, (train_index, val_index) in enumerate(kf.split(range(n_samples))):
-        logger.info(f"--- LOO Fold {fold + 1}/{n_samples} ---")
+        logger.info(f"--- K-Fold {fold + 1}/{n_samples} ---")
         model.load_state_dict(copy.deepcopy(untrained_weights))
         model.data.train = Subset(full_dataset, train_index.tolist())
         model.data.validation = Subset(full_dataset, val_index.tolist())
