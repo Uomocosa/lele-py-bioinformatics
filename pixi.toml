@@ -2,8 +2,6 @@
 [workspace]
 channels = ["conda-forge", "nvidia", "pytorch", "anaconda"]
 platforms = ["win-64", "linux-64"]
-# platforms = ["linux-64"]
-# channel-priority = "flexible"
 
 [tasks]
 mlp_train = "python -c 'from bio.mlp_train import main; main()'"
@@ -44,7 +42,7 @@ cpuonly = "*"
 [feature.cuda.dependencies]
 pytorch = "*"
 torchvision = "*"
-pytorch-cuda = "== 12.1"
+pytorch-cuda = "12.1"
 
 [environments]
 default = ["cpu"]
