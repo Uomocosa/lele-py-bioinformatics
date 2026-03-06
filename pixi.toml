@@ -1,7 +1,7 @@
 # pixi.toml
 [workspace]
 channels = ["conda-forge", "nvidia", "pytorch", "anaconda"]
-platforms = ["linux-64"]
+platforms = ["win-64", "linux-64"]
 channel-priority = "flexible"
 
 [tasks]
@@ -47,4 +47,4 @@ pytorch-cuda = "12.1.*"
 
 [environments]
 default = ["cpu"]
-cuda = ["cuda"]
+cuda = { features = ["cuda"], platforms = ["linux-64"] }   # ← linux only
