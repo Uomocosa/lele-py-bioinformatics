@@ -76,6 +76,7 @@ def test_():
         dataset_config,
         model_config,
         featurize,
+        scaler = StandardScaler(),
     )
 
 
@@ -84,6 +85,7 @@ def run_with_config(
     dataset_config: PDCC.Config, 
     model_config: MLP.Config,
     featurize_fn: Optional[Callable[pd.DataFrame, pd.DataFrame]],
+    scaler = StandardScaler(),
 ):
     """
     TODO! Need to save configurations and featurizer options
@@ -108,11 +110,11 @@ def run_with_config(
     val_torch_dataset = val_dataset.to_torch_dataset()
     test_torch_dataset = test_dataset.to_torch_dataset()
 
-    scaler = StandardScaler()
-    scaler.fit(train_torch_dataset.X)
-    train_torch_dataset.transform(scaler)
-    val_torch_dataset.transform(scaler)
-    test_torch_dataset.transform(scaler)
+    if scaler is not None:
+        scaler.fit(train_torch_dataset.X)
+        train_torch_dataset.transform(scaler)
+        val_torch_dataset.transform(scaler)
+        test_torch_dataset.transform(scaler)
     
     splitted_dataset = bio.Dataset.Splitted.from_datasets(
         train_dataset = train_torch_dataset,

@@ -19,17 +19,14 @@ if ! command -v pixi &> /dev/null; then
     echo "pixi not found. Installing now..."
     # Download and install pixi to the local user directory
     curl -fsSL https://pixi.sh/install.sh | bash
-    
-    # Temporarily add pixi to the PATH for this running script
-    # (The installer usually puts it in ~/.cargo/bin or ~/.local/bin)
-    export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH" 
+    export PATH="/home/maggiori/.pixi/bin:$PATH" 
 else
     echo "pixi is already installed."
 fi
 
-echo "--- Starinting task: UV SYNC ---"
-pixi install
-uv pip install --upgrade torch --torch-backend=auto
+echo "--- Starinting task: PIXI INSTALL ---"
+pixi install -e cuda
+# uv pip install --upgrade torch --torch-backend=auto
 
 # echo "--- Starinting task: INSTALL bio scripts ---"
 # PYTHON_VERSION="3.11"

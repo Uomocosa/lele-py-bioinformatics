@@ -24,6 +24,8 @@ class FeaturizeOptions(PDCCMethod.featurize_v4.Options):
 
 
 def test_():
+    # pixi run -e cpu python -c "from bio.mlp_train_featurize_v4_only_fingerprint import test_; test_()"
+    # pixi run -e cuda python -c "from bio.mlp_train_featurize_v4_only_fingerprint import test_; test_()"
     lele.Loguru.simple_format()
     dataset_config = bio.mlp_train.CommonDatasetConfig()
     model_config = bio.mlp_train.ModelConfig(
@@ -48,4 +50,5 @@ def test_():
         dataset_config,
         model_config,
         featurize,
+        scaler = None
     )
