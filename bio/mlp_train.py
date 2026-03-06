@@ -7,7 +7,7 @@ from sklearn.model_selection import GroupShuffleSplit
 from pathlib import Path
 from typing import Optional, Callable, Tuple
 from bio.Dataset import PDCC, PDCCMethod
-from bio.ML import MLP
+from bio.ML import MLP, MLPMethod
 import lele, bio
 from bio.__global__ import BIOINFORMATICS_DIR, DATASETS_DIR
 from loguru import logger
@@ -128,9 +128,9 @@ def run_with_config(
         scaler = scaler,
         config = model_config,
     )
-    MLP.train_model(model)
-    MLP.save_model(model)
-    accuracy = MLP.check_model_accuracy(model)
+    MLPMethod.train_model(model)
+    MLPMethod.save_model(model)
+    accuracy = MLPMethod.check_model_accuracy(model)
     # logger.info(f"model accuracy: {accuracy}")
     logger.info(f"Train dataset size: {len(model.data.train)}")
     logger.info(f"Validation dataset size: {len(model.data.validation)}")
