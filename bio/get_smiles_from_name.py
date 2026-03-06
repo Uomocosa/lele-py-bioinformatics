@@ -27,7 +27,18 @@ def test_():
     # get_smiles_from_name('naproxen') #  C[C@@H](C1=CC2=C(C=C1)C=C(C=C2)OC)C(=O)O
     # get_smiles_from_name('Methacrylic acid') #  CC(=C)C(=O)O
     # get_smiles_from_name('Vinylpyridine') #  C=CC1=CC=CC=N1
-    
+    # get_smiles_from_name('N-isopropylacrylamide') #  CC(C)NC(=O)C=C
+    # get_smiles_from_name('Cd(II)') # [Cd+2]
+    # get_smiles_from_name('Pb(II)') # [Pb+2]
+    # get_smiles_from_name('Silver') # [Ag]
+    # get_smiles_from_name('Congo red') # C1=CC=C2C(=C1)C(=CC(=C2N)N=NC3=CC=C(C=C3)C4=CC=C(C=C4)N=NC5=C(C6=CC=CC=C6C(=C5)S(=O)(=O)[O-])N)S(=O)(=O)[O-].[Na+].[Na+]
+    # get_smiles_from_name('ethyleneimine') # C1CN1
+    get_smiles_from_name('Clarithromycin') # CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O
+    get_smiles_from_name('Amoxicillin trihydrate') # 
+    get_smiles_from_name('Sulfamethoxazole') # 
+    get_smiles_from_name('Trimethoprim') # 
+    get_smiles_from_name('Azithromycin dihydrate') # 
+    # get_smiles_from_name('') # 
     
 
 

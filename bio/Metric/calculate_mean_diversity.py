@@ -2,6 +2,7 @@ import numpy as np
 from typing import List, Tuple
 from rdkit.DataStructs import TanimotoSimilarity
 import bio
+from loguru import logger
 
 """
 Computes pairwise Tanimoto similarity between all unique fingerprint pairs
@@ -16,6 +17,7 @@ for evaluating molecule generation tasks[47]. A detailed quantitative breakdown 
 computed can be found in the Methods section.
 """
 def calculate_mean_diversity(smiles_list: List[str]) -> Tuple[np.ndarray, np.ndarray]:
+    logger.warning("NEEDS REVISION!")
     fingerprints = bio.PolyGen.calculate_morgan_fingerprint(smiles_list)
     n = len(smiles_list)
     diversity_matrix = np.zeros((n, n))

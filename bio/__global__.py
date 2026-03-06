@@ -21,11 +21,18 @@ PSMILES_DICT = {
     # THIS WAS TAKEN OUT OF THE AIR!!! 
     # TODO!!! HOW DO WE FIND THIS???
     # "polyPhOx": "*N(C(=O)C(c1ccccc1)c2ccccc2)CC*",
-    "polyPhOx": "*N(C(=O)c1ccccc1)CC*",
-    # probably is somenthing like "*C1COC(=N1)C(C2=CC=CC=C2)C3=CC=CC=C3*"
+    # "polyPhOx": "*N(C(=O)c1ccccc1)CC*",
+    # "polyPhOx": "*C1COC(=N1)C(C2=CC=CC=C2)C3=CC=CC=C3*",
+    "polyPhOx": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", # dedotto dal paper CACCA
     "polyethylene": "*C=C*",
     'Methacrylic acid': '*CC(=C)C(=O)O*',
     'Vinylpyridine': '*C=CC1=CC=CC=N1*',
+    'polyethyleneimine': '*C1CN1*',
+    'Polyamide 4/6 Nanofibers': '*NCCCCNC(=O)CCCC(=O)*',
+    
+    # UNDER THIS LINE THERE ARE ONLY "WRONG P-SMILES!"
+    'CP-APM': '*OC1C(O)C(O)C(*)OC1COC(=O)CC(O)(C(=O)O)CC(=O)NCCN', # MOST LIKELY THIS IS WRONG!
+    'Poly(N-isopropylacrylamide) ferrogel': '*CC(C(=O)NC(C)C)*', # THIS IS WRONG (not a ferrogel)!
 }
 
 
@@ -56,6 +63,15 @@ SMILES_DICT = {
     'carbamazepine': 'C1=CC=C2C(=C1)C=CC3=CC=CC=C3N2C(=O)N',
     'diclofenac': 'C1=CC=C(C(=C1)CC(=O)O)NC2=C(C=CC=C2Cl)Cl',
     'naproxen': 'C[C@@H](C1=CC2=C(C=C1)C=C(C=C2)OC)C(=O)O',
+    'Cd(II)': '[Cd+2]',
+    'Pb(II)': '[Pb+2]',
+    'Silver': '[Ag]',
+    'Congo red': 'C1=CC=C2C(=C1)C(=CC(=C2N)N=NC3=CC=C(C=C3)C4=CC=C(C=C4)N=NC5=C(C6=CC=CC=C6C(=C5)S(=O)(=O)[O-])N)S(=O)(=O)[O-].[Na+].[Na+]',
+    'Clarithromycin': 'CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O',
+    'Amoxicillin trihydrate': 'CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O',
+    'Sulfamethoxazole': 'CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N',
+    'Trimethoprim': 'COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N',
+    'Azithromycin dihydrate': 'CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O',
 }
 
 assert BIOINFORMATICS_DIR.exists()

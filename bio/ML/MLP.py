@@ -136,10 +136,13 @@ def train_model(model: MLP):
                 val_loss += loss.item() * batch_x.size(0)
         
         val_loss /= len(val_ds)
-
-        if (epoch + 1) % 10 == 0 or epoch == 0:
-            logger.info(f"Epoch {epoch+1:03d} | Train MSE: {train_loss:.4f} | Val MSE: {val_loss:.4f}")
-
+        
+        is_best = val_loss < best_val_loss
+        if (epoch + 1) % 10 == 0 or epoch == 0 or is_best:
+            log_msg = f"Epoch {epoch+1:03d} | Train MSE: {train_loss:.4f} | Val MSE: {val_loss:.4f}"
+            if is_best: log_msg = f"<green>{log_msg}</green>"
+            logger.opt(colors=True).info(log_msg)
+        
         if model.config.early_stop_patience > 0:
             if val_loss < best_val_loss:
                 best_val_loss = val_loss

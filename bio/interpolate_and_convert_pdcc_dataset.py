@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import math
 from scipy.interpolate import interp1d
+from scipy.interpolate import PchipInterpolator
 from sklearn.model_selection import GroupShuffleSplit
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
@@ -21,17 +22,39 @@ def main():
     n_points = 2
     assert PDCC_CSV.exists()
     df = pd.read_csv(PDCC_CSV)
-    df = interpolate(df, n_points)
+    df = interpolate(
+        df, 
+        n_points, 
+        # interpolate_fn=PchipInterpolator
+    )
     logger.debug(df)
     PDCC_DIR = INTERPOLATED_PDCC_CSV.parent
     df.to_csv(INTERPOLATED_PDCC_CSV, index=False)
-    df = df.drop(columns=['SOURCE'], errors='ignore')
     splitted_df = polymer_division(
         df, 
-        train_polymers = ['polyPhOx', 'polyethylene', 'C-ph', 'Methacrylic acid', 'Vinylpyridine'],
-        validation_polymers = ['C-lys', 'C-mA'],
-        test_polymers = ['C-megl'],
+        train_polymers = [
+            'polyPhOx', 
+            'polyethylene', 
+            'Methacrylic acid', 
+            'Vinylpyridine',
+            'polyethyleneimine',
+            'Polyamide 4/6 Nanofibers',
+            'CP-APM',
+            'Poly(N-isopropylacrylamide) ferrogel',
+        ],
+        validation_polymers = [
+            'C-lys', 
+            'C-ph', 
+            'C-mA',
+        ],
+        test_polymers = [
+            'C-megl',
+        ],
     )
+    splitted_df.train = splitted_df.train[splitted_df.train['SOURCE'] != 'interpolated'].copy()
+    splitted_df.test = splitted_df.test.drop(columns=['SOURCE'], errors='ignore')
+    splitted_df.validation = splitted_df.validation.drop(columns=['SOURCE'], errors='ignore')
+    splitted_df.train = splitted_df.train.drop(columns=['SOURCE'], errors='ignore')
     splitted_df.train = convert(splitted_df.train, PSMILES_DICT, SMILES_DICT)
     splitted_df.validation = convert(splitted_df.validation, PSMILES_DICT, SMILES_DICT)
     splitted_df.test = convert(splitted_df.test, PSMILES_DICT, SMILES_DICT)
@@ -190,7 +213,11 @@ def convert(df: pd.DataFrame, psmiles_dict: dict, smiles_dict: dict):
     
     
     
-def interpolate(df: pd.DataFrame, n_points):
+def interpolate(
+    df: pd.DataFrame, 
+    n_points: int, 
+    interpolate_fn = lambda x, y: interp1d(x, y, kind='linear')
+):
     df = bio.Dataset.convert_from_scientific_notation(df, column_name="CAPACITY")
     df['CONCENTRATION'] = pd.to_numeric(df['CONCENTRATION'])
     df['CAPACITY'] = pd.to_numeric(df['CAPACITY'])
@@ -208,8 +235,7 @@ def interpolate(df: pd.DataFrame, n_points):
         group = group.sort_values('CONCENTRATION')
         x = group['CONCENTRATION'].values
         y = group['CAPACITY'].values
-        f = interp1d(x, y, kind='linear')
-        # middle_points = [np.linspace(x[i], x[i+1], num=n_points + 2)[1:-1] for i in range(len(x)-1)]
+        f = interpolate_fn(x, y)
         middle_points = get_middle_points(x, n_points)
         middle_results = [f(p) for p in middle_points]
         significant_digits = 5

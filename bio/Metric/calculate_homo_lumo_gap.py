@@ -17,22 +17,32 @@ from loguru import logger
 def calculate_homo_lumo_gap(
     df: pd.DataFrame, 
     column_name: str, 
-    capping_atoms_dict: dict = DEFAULT_CAPPING_ATOMS
+    capping_atoms_dict: dict = DEFAULT_CAPPING_ATOMS,
+    starting_lable: str = '',
 ) -> pd.DataFrame:
     """
     Calculates the HOMO-LUMO gap for each SMILES in the dataframe.
     """
-    stats_df = df[column_name].apply(lambda s: compute_min_max_gap(s, capping_atoms_dict))
+    fn = lambda s: single_calculation(
+        s, 
+        capping_atoms_dict,
+        starting_lable,
+    )
+    stats_df = df[column_name].apply(fn)
     df_out = pd.concat([df, stats_df], axis=1)
     return df_out
 
 
-def compute_min_max_gap(smiles_str: str, capping_atoms_dict: dict) -> pd.Series:
+def single_calculation(
+    smiles_str: str, 
+    capping_atoms_dict: dict, 
+    starting_lable: str,
+) -> pd.Series:
     """
     Performs 3D optimization and GFN2-xTB calculation to find the HOMO-LUMO gap.
     """
-    lable = f'homo_lumo_gap'
-    # null_result = pd.Series({lable: None})
+    lable = f'{starting_lable}_homo_lumo_gap'
+    if not starting_lable: lable = lable.removeprefix("_")
     null_result = pd.Series({})
     smiles_str = str(smiles_str)
     valid_smiles_dict = bio.Bioinformatics.transform_into_smiles(smiles_str, capping_atoms_dict)
@@ -62,34 +72,3 @@ def test_generated():
     df = calculate_homo_lumo_gap(df, column_name="PSMILES")
     print(df)
     df.to_csv(csv_file, index=False)
-
-    
-# def from_mol(mol: Chem.Mol) -> Optional[float]:
-#     """
-#     based on :
-#         - https://tblite.readthedocs.io/en/latest/tutorial/python/singlepoint.html#homo-lumo-gap
-#     """
-#     mol_3D = bio.Bioinformatics.transform_into_3D_geometry(mol)
-#     if mol_3D is None: return None
-#     atomic_numbers = np.array([atom.GetAtomicNum() for atom in mol_3D.GetAtoms()])
-#     coords_angstrom = mol_3D.GetConformer().GetPositions()
-#     logger.debug(f"atomic_numbers: {atomic_numbers}")
-#     logger.debug(f"coords_angstrom:\n{coords_angstrom}")
-    
-#     angstrom_to_bohr = qcel.constants.conversion_factor("angstrom", "bohr")
-#     geometry_bohr = coords_angstrom * angstrom_to_bohr
-    
-#     xtb = tb.Calculator("GFN2-xTB", atomic_numbers, geometry_bohr)
-#     xtb.set("verbosity", 0) # Disable energy table output
-#     results = xtb.singlepoint()
-    
-#     logger.debug(f"Energy: {results['energy']} Hartree")
-    
-#     orbital_energies = results["orbital-energies"]
-#     orbital_occupations = results["orbital-occupations"]
-    
-#     lumo_index = np.argmax(orbital_occupations)
-#     homo_index = lumo_index - 1
-#     gap_ev = (orbital_energies[lumo_index] - orbital_energies[homo_index]) * qcel.constants.conversion_factor("hartree", "eV")
-#     logger.debug(f"HOMO-LUMO Gap: {gap_ev:.4f} eV")
-#     return gap_ev

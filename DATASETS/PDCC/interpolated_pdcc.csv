@@ -63,9 +63,137 @@ C-ph,Methylene Violet,6.5,25.0,24.46,https://www.researchgate.net/publication/36
 C-ph,Moxidectin,6.5,25.0,5.6,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
 C-ph,Piroxicam,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
 C-ph,Thymol Blue,6.5,25.0,14.73,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+CP-APM,Cd(II),5.0,100.0,43.5,https://www.sciencedirect.com/science/article/pii/S0141813022004779
+CP-APM,Pb(II),5.0,100.0,65.7,https://www.sciencedirect.com/science/article/pii/S0141813022004779
 Methacrylic acid,diclofenac,6.0,2.0,0.0717,https://link.springer.com/article/10.1007/s11356-022-19130-0
 Methacrylic acid,ibuprofen,6.0,2.0,0.07,https://link.springer.com/article/10.1007/s11356-022-19130-0
 Methacrylic acid,naproxen,6.0,2.0,0.0719,https://link.springer.com/article/10.1007/s11356-022-19130-0
+Poly(N-isopropylacrylamide) ferrogel,Silver,6.6,100.0,13.6,https://www.sciencedirect.com/science/article/pii/S2213343718305608
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,8.2,6.18e-05,0.000106766,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,,0.0001,0.00018,interpolated
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,,0.00013,0.00025,interpolated
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,8.2,0.0001713,0.00031752,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,,0.00024,0.00055,interpolated
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,,0.00032,0.00078,interpolated
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,8.2,0.0003904,0.0010122667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,,0.00042,0.00121,interpolated
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,,0.00044,0.00142,interpolated
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,8.2,0.0004691,0.0016180333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,,0.00215,0.00691,interpolated
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,,0.00384,0.0122,interpolated
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,7.0,0.005519,0.0174953333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,,0.006,0.0195,interpolated
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,,0.00648,0.02151,interpolated
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,7.0,0.006967,0.0235116667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,,0.00946,0.04207,interpolated
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,,0.01196,0.06062,interpolated
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,7.0,0.01446,0.07918,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,,0.01786,0.16521,interpolated
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,,0.02125,0.25125,interpolated
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,7.0,0.02465,0.3372833333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,,0.02593,0.43746,interpolated
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,,0.02722,0.53763,interpolated
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,7.0,0.0285,0.6378,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,8.2,0.0002051,0.0004171633,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,,0.00022,0.00052,interpolated
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,,0.00024,0.00061,interpolated
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,8.2,0.000264,0.0007131,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,,0.00028,0.00079,interpolated
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,,0.0003,0.00086,interpolated
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,8.2,0.0003146,0.0009330333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,,0.00032,0.00097,interpolated
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,,0.00032,0.00101,interpolated
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,8.2,0.0003258,0.0010534,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,,0.00241,0.01701,interpolated
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,,0.00449,0.03297,interpolated
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,7.0,0.006568,0.0489266667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,,0.01055,0.10683,interpolated
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,,0.01453,0.16474,interpolated
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,7.0,0.01851,0.22265,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,,0.01871,0.22748,interpolated
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,,0.01891,0.23232,interpolated
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,7.0,0.01911,0.23715,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,,0.02169,0.38058,interpolated
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,,0.02427,0.52402,interpolated
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,7.0,0.02685,0.66745,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,8.2,0.000118,0.0002117367,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.00012,0.00023,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.00013,0.00024,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,8.2,0.0001376,0.0002519333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.00014,0.00027,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.00015,0.00028,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,8.2,0.0001573,0.0002941867,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.00026,0.00053,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.00037,0.00076,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,8.2,0.0004803,0.0009964,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.00052,0.00112,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.00057,0.00125,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,8.2,0.0006096,0.0013776,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.00125,0.00538,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.00188,0.00939,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,7.0,0.002521,0.0133986667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.00314,0.01652,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.00375,0.01965,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,7.0,0.004369,0.0227716667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.00872,0.12599,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.01306,0.2292,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,7.0,0.01741,0.3324166667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.01799,0.36186,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.01858,0.39129,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,7.0,0.01916,0.4207333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.02008,0.45526,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,,0.02099,0.48979,interpolated
+Polyamide 4/6 Nanofibers,Clarithromycin,7.0,0.02191,0.5243166667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,8.2,1.404e-05,3.658e-05,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,,7e-05,0.00013,interpolated
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,,0.00013,0.00022,interpolated
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,8.2,0.0001826,0.0003156333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,,0.0002,0.00037,interpolated
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,,0.00022,0.00042,interpolated
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,8.2,0.0002444,0.0004694833,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,,0.00026,0.00081,interpolated
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,,0.00028,0.00114,interpolated
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,8.2,0.0002949,0.0014783,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,,0.00072,0.00523,interpolated
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,,0.00115,0.00897,interpolated
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,7.0,0.001572,0.01272,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,,0.00375,0.02985,interpolated
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,,0.00593,0.04698,interpolated
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,7.0,0.008116,0.0641066667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,,0.01071,0.08494,interpolated
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,,0.01331,0.10578,interpolated
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,7.0,0.01591,0.1266166667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,,0.01881,0.33024,interpolated
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,,0.0217,0.53387,interpolated
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,7.0,0.0246,0.7375,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,,0.02487,0.63358,interpolated
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,,0.02513,0.52966,interpolated
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,7.0,0.0254,0.4257333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,8.2,2.247e-05,6.005e-05,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,,5e-05,0.00012,interpolated
+Polyamide 4/6 Nanofibers,Trimethoprim,,8e-05,0.00017,interpolated
+Polyamide 4/6 Nanofibers,Trimethoprim,8.2,0.0001124,0.0002249933,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,,0.00015,0.00031,interpolated
+Polyamide 4/6 Nanofibers,Trimethoprim,,0.0002,0.0004,interpolated
+Polyamide 4/6 Nanofibers,Trimethoprim,8.2,0.0002388,0.00049405,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,,0.00025,0.00055,interpolated
+Polyamide 4/6 Nanofibers,Trimethoprim,,0.00026,0.0006,interpolated
+Polyamide 4/6 Nanofibers,Trimethoprim,8.2,0.0002781,0.0006556,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,,0.00029,0.00073,interpolated
+Polyamide 4/6 Nanofibers,Trimethoprim,,0.0003,0.00079,interpolated
+Polyamide 4/6 Nanofibers,Trimethoprim,8.2,0.0003062,0.0008643333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,,0.00084,0.0224,interpolated
+Polyamide 4/6 Nanofibers,Trimethoprim,,0.00138,0.04394,interpolated
+Polyamide 4/6 Nanofibers,Trimethoprim,7.0,0.001922,0.0654733333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,,0.00245,0.07987,interpolated
+Polyamide 4/6 Nanofibers,Trimethoprim,,0.00299,0.09427,interpolated
+Polyamide 4/6 Nanofibers,Trimethoprim,7.0,0.00352,0.1086666667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,,0.00475,0.19915,interpolated
+Polyamide 4/6 Nanofibers,Trimethoprim,,0.00598,0.28964,interpolated
+Polyamide 4/6 Nanofibers,Trimethoprim,7.0,0.007217,0.3801283333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,,0.00732,0.39799,interpolated
+Polyamide 4/6 Nanofibers,Trimethoprim,,0.00742,0.41586,interpolated
+Polyamide 4/6 Nanofibers,Trimethoprim,7.0,0.007517,0.4337283333,https://link.springer.com/article/10.1007/s11270-023-06281-0
 Vinylpyridine,diclofenac,6.0,2.0,0.0728,https://link.springer.com/article/10.1007/s11356-022-19130-0
 Vinylpyridine,ibuprofen,6.0,2.0,0.0789,https://link.springer.com/article/10.1007/s11356-022-19130-0
 Vinylpyridine,naproxen,6.0,2.0,0.0798,https://link.springer.com/article/10.1007/s11356-022-19130-0
@@ -149,3 +277,13 @@ polyethylene,carbamazepine,7.8,0.5,0.0837,https://www.sciencedirect.com/science/
 polyethylene,fluoxetine,7.8,0.5,0.362,https://www.sciencedirect.com/science/article/pii/S0048969721071473
 polyethylene,ketamine,7.8,0.5,0.0809,https://www.sciencedirect.com/science/article/pii/S0048969721071473
 polyethylene,propranolol,7.8,0.5,0.186,https://www.sciencedirect.com/science/article/pii/S0048969721071473
+polyethyleneimine,Congo red,6.0,300.0,105.0,https://link.springer.com/article/10.1007/s13369-023-08604-z
+polyethyleneimine,Congo red,,375.0,70.7,interpolated
+polyethyleneimine,Congo red,,450.0,36.4,interpolated
+polyethyleneimine,Congo red,6.0,525.0,2.1,https://link.springer.com/article/10.1007/s13369-023-08604-z
+polyethyleneimine,Congo red,,583.33333,2.33333,interpolated
+polyethyleneimine,Congo red,,641.66667,2.56667,interpolated
+polyethyleneimine,Congo red,6.0,700.0,2.8,https://link.springer.com/article/10.1007/s13369-023-08604-z
+polyethyleneimine,Congo red,,933.33333,3.73333,interpolated
+polyethyleneimine,Congo red,,1166.66667,4.66667,interpolated
+polyethyleneimine,Congo red,6.0,1400.0,5.6,https://link.springer.com/article/10.1007/s13369-023-08604-z

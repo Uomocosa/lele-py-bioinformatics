@@ -17,31 +17,52 @@ from loguru import logger
 def calculate_homo_lumo_energies(
     df: pd.DataFrame, 
     column_name: str, 
-    capping_atoms_dict: dict = DEFAULT_CAPPING_ATOMS
+    capping_atoms_dict: dict = DEFAULT_CAPPING_ATOMS,
+    starting_lable: str = '',
 ) -> pd.DataFrame:
     """
     Calculates the HOMO-LUMO gap for each SMILES in the dataframe.
     """
-    stats_df = df[column_name].apply(lambda s: single_calculation(s, capping_atoms_dict))
+    fn = lambda s: single_calculation(
+        s, 
+        capping_atoms_dict,
+        starting_lable,
+    )
+    stats_df = df[column_name].apply(fn)
     df_out = pd.concat([df, stats_df], axis=1)
     return df_out
 
 
-def single_calculation(smiles_str: str, capping_atoms_dict: dict) -> pd.Series:
+def single_calculation(
+    smiles_str: str, 
+    capping_atoms_dict: dict, 
+    starting_lable: str,
+) -> pd.Series:
     """
     Performs 3D optimization and GFN2-xTB calculation to find the HOMO-LUMO gap.
     """
-    homo_lable = "homo_eV"
-    lumo_lable = "lumo_eV"
-    # null_result = pd.Series({homo_lable: None, lumo_lable: None})
+    homo_lable = f"{starting_lable}_homo_eV"
+    lumo_lable = f"{starting_lable}_lumo_eV"
+    if not starting_lable: homo_lable = homo_lable.removeprefix("_")
+    if not starting_lable: lumo_lable = lumo_lable.removeprefix("_")
     null_result = pd.Series({})
     smiles_str = str(smiles_str)
     valid_smiles_dict = bio.Bioinformatics.transform_into_smiles(smiles_str, capping_atoms_dict)
     logger.debug(f"valid_smiles_dict: {valid_smiles_dict}")
     if not valid_smiles_dict: return null_result
+    
     mols = {atom: Chem.MolFromSmiles(smile) for atom, smile in valid_smiles_dict.items()}
-    homo_lumo_energies = {atom: from_mol(mol) for atom, mol in mols.items()}
+    homo_lumo_energies = dict()
+    for atom, mol in mols.items():
+        if mol is None:
+            continue
+        try:
+            homo_lumo_energies[atom] = from_mol(mol)
+        except Exception as e:
+            logger.error(f"xTB calculation failed for atom {atom}: {e}")
+            homo_lumo_energies[atom] = None
     homo_lumo_energies = {atom: eVs for atom, eVs in homo_lumo_energies.items() if eVs is not None}
+    
     df = dict()
     for atom, energies in homo_lumo_energies.items():
         homo_eV, lumo_eV = energies
@@ -63,6 +84,12 @@ def from_mol(mol: Chem.Mol) -> Optional[Tuple[float, float]]:
     """
     mol_3D = bio.Bioinformatics.transform_into_3D_geometry(mol)
     if mol_3D is None: return None
+    
+    try:
+        AllChem.MMFFOptimizeMolecule(mol_3D)
+    except Exception as e:
+        logger.warning(f"MMFF optimization failed, proceeding with unoptimized 3D: {e}")
+            
     atomic_numbers = np.array([atom.GetAtomicNum() for atom in mol_3D.GetAtoms()])
     coords_angstrom = mol_3D.GetConformer().GetPositions()
     logger.trace(f"atomic_numbers: {atomic_numbers}")
@@ -80,7 +107,10 @@ def from_mol(mol: Chem.Mol) -> Optional[Tuple[float, float]]:
     orbital_energies = results["orbital-energies"]
     orbital_occupations = results["orbital-occupations"]
     
-    lumo_index = np.argmax(orbital_occupations)
+    # lumo_index = np.argmax(orbital_occupations) # This is taken from the official docs!
+    lumo_index = np.argmin(orbital_occupations) # GEMINI AI: Use argmin instead of argmax to find the first 0.0 occupation
+    homo_index = lumo_index - 1
+        
     homo_index = lumo_index - 1
     homo_energy = orbital_energies[homo_index] * qcel.constants.conversion_factor("hartree", "eV")
     lumo_energy = orbital_energies[lumo_index] * qcel.constants.conversion_factor("hartree", "eV")

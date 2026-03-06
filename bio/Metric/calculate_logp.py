@@ -9,34 +9,44 @@ from loguru import logger
 def calculate_logp(
     df_smiles_and_psmiles: pd.DataFrame, 
     column_name: str,
-    capping_atoms_dict: dict = DEFAULT_CAPPING_ATOMS
+    capping_atoms_dict: dict = DEFAULT_CAPPING_ATOMS,
+    starting_lable: str = '',
 ) -> pd.DataFrame:
     RDLogger.DisableLog('rdApp.*') # disable warnings
-    df_out = df_smiles_and_psmiles.copy()    
-    stats_df = df_out[column_name].apply(lambda s: single_calculation(s, capping_atoms_dict))
+    df_out = df_smiles_and_psmiles.copy()
+    fn = lambda s: single_calculation(
+        s, 
+        capping_atoms_dict,
+        starting_lable,
+    )
+    stats_df = df_out[column_name].apply(fn)
     df_out = pd.concat([df_out, stats_df], axis=1)
     return df_out
 
 
-def single_calculation(smiles_str: str, capping_atoms_dict: dict):
-        smiles_str = str(smiles_str)
-        # null_result = pd.Series({'min_logp': None, 'max_logp': None})
-        lable = f'logp'
-        null_result = pd.Series({})
-        if not smiles_str: return null_result
-            
-        valid_smiles_dict = bio.Bioinformatics.transform_into_smiles(smiles_str, capping_atoms_dict)
-        if not valid_smiles_dict: return null_result
+def single_calculation(
+    smiles_str: str, 
+    capping_atoms_dict: dict,
+    starting_lable: str,
+):
+    smiles_str = str(smiles_str)
+    null_result = pd.Series({})
+    if not smiles_str: return null_result
+    lable = f'{starting_lable}_logp'
+    if not starting_lable: lable = lable.removeprefix("_")
         
-        df = dict()
-        for atom, smile in valid_smiles_dict.items():
-            mol = Chem.MolFromSmiles(smile)
-            if not mol: continue
-            key = f"{lable}_{atom}"
-            key = key.removesuffix('_')
-            df[key] = Descriptors.MolLogP(mol)
-        logger.debug(f"logp values: {df}")
-        return pd.Series(df)
+    valid_smiles_dict = bio.Bioinformatics.transform_into_smiles(smiles_str, capping_atoms_dict)
+    if not valid_smiles_dict: return null_result
+    
+    df = dict()
+    for atom, smile in valid_smiles_dict.items():
+        mol = Chem.MolFromSmiles(smile)
+        if not mol: continue
+        key = f"{lable}_{atom}"
+        key = key.removesuffix('_')
+        df[key] = Descriptors.MolLogP(mol)
+    logger.debug(f"logp values: {df}")
+    return pd.Series(df)
 
 
 import pytest
