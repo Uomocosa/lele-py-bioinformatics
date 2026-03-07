@@ -1,3 +1,4 @@
+import sys
 import pandas as pd
 import torch
 import torch.nn as nn
@@ -29,8 +30,8 @@ BACKBONE_FEATURES = ALL_FEATURES
 
 DEFAULT_CAPPING_ATOMS = {
     'H': 1,
-    'C': 6,
-    'O': 8
+    # 'C': 6,
+    # 'O': 8
 }
 
 @dataclass
@@ -82,7 +83,9 @@ CUDA_MODEL_CONFIG = ModelConfig(
 
 def main_cuda():
     # pixi run -e cuda python -c "from bio.mlp_train_featurize_k5_fold import main_cuda; main_cuda()"
-    lele.Loguru.simple_format()
+    # lele.Loguru.simple_format()
+    logger.remove()
+    logger.add(sys.stderr, level="INFO")
     dataset_config = bio.Dataset.PDCC.Config()
     featurize_options = FeaturizeOptions()
     featurize_fn = lambda df: PDCCMethod.featurize(df, featurize_options)
@@ -95,7 +98,6 @@ def main_cuda():
 def test_():
     # pixi run -e cpu python -c "from bio.mlp_train_featurize_k5_fold import test_; test_()"
     # lele.Loguru.simple_format()
-    import sys
     logger.remove()
     logger.add(sys.stderr, level="INFO")
     dataset_config = bio.Dataset.PDCC.Config(
