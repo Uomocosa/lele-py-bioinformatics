@@ -78,7 +78,7 @@ CUDA_MODEL_CONFIG = ModelConfig(
     dropout = 0.3,
     hidden_dims = [2048, 1024, 256, 64, 8],
     num_workers = 4,
-    batch_size = 128,
+    batch_size = 256,
 )
 
 def main_cuda():
