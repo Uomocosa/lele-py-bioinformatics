@@ -88,8 +88,6 @@ CUDA_MODEL_CONFIG = ModelConfig(
     batch_size = 256,
 )
 
-DatasetConfig()
-
 def main_cuda():
     # pixi run -e cuda python -c "from bio.mlp_train_featurize_k5_fold_only_fingerprints_3 import main_cuda; main_cuda()"
     logger.remove()
