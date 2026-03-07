@@ -28,7 +28,7 @@ class PDCCtorch(Dataset):
         self.df = dataset.featurize(self.df)
         
         y = self.df['CAPACITY'].values
-        X = self.df.drop(columns=['CAPACITY']).values
+        X = self.df.drop(columns=['CAPACITY']).select_dtypes(include='number').values
         
         # Convert to Tensors
         self.X = torch.tensor(X, dtype=torch.float32)

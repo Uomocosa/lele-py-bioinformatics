@@ -108,7 +108,7 @@ def test_no_ph_range():
     csv_file = HELPER_DIR / "calculate_logd_no_ph_range_generated.csv"
     df = pd.read_csv(dataset_csv)
     df = calculate_logd(
-        df.head(100), 
+        df.head(1000), 
         column_name="PSMILES", 
         ph_min = 7.0,
         ph_max = 7.0,

@@ -2,8 +2,6 @@
 [workspace]
 channels = ["pytorch", "nvidia", "conda-forge", "anaconda"]
 platforms = ["win-64", "linux-64"]
-# channels = ["conda-forge", "nvidia", "pytorch", "anaconda"]
-# platforms = ["win-64", "linux-64"]
 
 [tasks]
 mlp_train = "python -c 'from bio.mlp_train import main; main()'"

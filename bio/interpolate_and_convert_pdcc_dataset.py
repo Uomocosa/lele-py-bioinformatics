@@ -29,7 +29,11 @@ def main():
     )
     logger.debug(df)
     PDCC_DIR = INTERPOLATED_PDCC_CSV.parent
-    df.to_csv(INTERPOLATED_PDCC_CSV, index=False)
+    # df.to_csv(INTERPOLATED_PDCC_CSV, index=False)
+    converted_df = df.copy()
+    converted_df = convert(converted_df, PSMILES_DICT, SMILES_DICT)
+    converted_df.to_csv(CONVERTED_PDCC_CSV, index=False)
+
     splitted_df = polymer_division(
         df, 
         train_polymers = [
@@ -221,17 +225,16 @@ def interpolate(
     df = bio.Dataset.convert_from_scientific_notation(df, column_name="CAPACITY")
     df['CONCENTRATION'] = pd.to_numeric(df['CONCENTRATION'])
     df['CAPACITY'] = pd.to_numeric(df['CAPACITY'])
+    core_cols = ['POLYMER_USED', 'DRUG', 'CONCENTRATION', 'CAPACITY', 'SOURCE']
+    static_cols = [col for col in df.columns if col not in core_cols]
     
     # Group by unique identifiers
     groups = df.groupby(['POLYMER_USED', 'DRUG'])
     interpolated_list = []
     for (polymer, drug), group in groups:
         if len(group) < 2: continue
-        
         logger.debug(f"polymer: {polymer}")
         logger.debug(f"drug: {drug}")
-        logger.debug(f"group: {group}")
-        
         group = group.sort_values('CONCENTRATION')
         x = group['CONCENTRATION'].values
         y = group['CAPACITY'].values
@@ -244,13 +247,15 @@ def interpolate(
         logger.debug(f"x: {x}")
         logger.debug(f"middle_points: {middle_points}")
         logger.debug(f"middle_results: {middle_results}")
-        interp_df = pd.DataFrame({
+        interp_data = {
             'POLYMER_USED': polymer, 
-            'DRUG': drug, 
+            'DRUG': drug,
             'CONCENTRATION': middle_points, 
             'CAPACITY': middle_results,
             'SOURCE': 'interpolated'
-        })
+        }
+        for col in static_cols: interp_data[col] = group.iloc[0][col]
+        interp_df = pd.DataFrame(interp_data)
         df = pd.concat([df, interp_df], ignore_index=True)
     
     df = df.sort_values(by=['POLYMER_USED', 'DRUG', 'CONCENTRATION'], ascending=True)

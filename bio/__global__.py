@@ -83,3 +83,53 @@ assert PDCC_DATASET.exists()
 
 def test_():
     pass
+
+import pytest
+@pytest.mark.skip(reason="I needed this once")
+def test_specific_rows_data():
+    """
+    Test specific row numbers to ensure they contain expected data.
+    Note: pandas is zero-indexed, so row 37 in a CSV might be index 35 or 36 depending on headers.
+    Adjust the indices below if needed.
+    """
+    import pandas as pd
+    my_dataframe = pd.read_csv(PDCC_CSV)
+    target_rows = [37, 46, 55, 64, 73, 74, 75]
+    
+    # Check that the dataframe is long enough to contain these rows
+    max_row = max(target_rows)
+    assert len(my_dataframe) > max_row, f"DataFrame only has {len(my_dataframe)} rows, expected at least {max_row + 1}"
+    
+    # Extract the specific rows
+    extracted_data = my_dataframe.iloc[target_rows]
+    
+    # Example assertion: Ensure none of these specific rows are completely empty
+    # Replace this with whatever specific logic you usually test for!
+    assert not extracted_data.empty, "The extracted rows are empty."
+    
+import pytest
+@pytest.mark.skip(reason="I needed this once")
+def test_no_nan_values_in_csv():
+    """
+    Test to ensure there are no NaN values anywhere in the dataset.
+    If there are, fail the test and print their locations.
+    """
+    import pandas as pd
+    my_dataframe = pd.read_csv(PDCC_CSV)
+    # Check if there are any NaNs in the entire dataframe
+    has_nans = my_dataframe.isna().any().any()
+    
+    if has_nans:
+        # Find exactly where the NaNs are to make debugging easier
+        nan_locations = my_dataframe[my_dataframe.isna().any(axis=1)]
+        
+        # Get a count of NaNs per column
+        nan_counts = my_dataframe.isna().sum()
+        nan_counts = nan_counts[nan_counts > 0]
+        
+        error_msg = (
+            f"Found NaN values in the dataset!\n"
+            f"Columns with NaNs and their counts:\n{nan_counts.to_string()}\n"
+            f"Row indices containing NaNs: {nan_locations.index.tolist()}"
+        )
+        pytest.fail(error_msg)

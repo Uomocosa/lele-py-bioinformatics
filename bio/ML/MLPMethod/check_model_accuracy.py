@@ -3,7 +3,7 @@ import torch
 from torch.utils.data import DataLoader
 import torch.nn.functional as F
 from bio.ML.MLP import MLP
-from bio.utils.logger import logger
+from loguru import logger
 
 
 def check_model_accuracy(model: MLP) -> float:

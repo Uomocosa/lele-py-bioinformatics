@@ -65,7 +65,6 @@ def test_():
     df = pd.read_csv(PDCC_DATASET)
     df['POLYMER_USED'] = df['POLYMER_USED'].map(PSMILES_DICT)
     df['DRUG'] = df['DRUG'].map(SMILES_DICT)
-    df = featurize_v4(df)
-    print(df.head(10))
-    # Cannot save it as a csv since it contains binary data
+    df = featurize_v4(df.head(10))
+    print(df)
     df.to_csv(HELPER_DIR / "featurize_v4.csv", index=False)
