@@ -2,7 +2,6 @@ import pandas as pd
 import torch
 import torch.nn as nn
 from dataclasses import dataclass, field, replace
-from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import GroupShuffleSplit
 from pathlib import Path
 from typing import Optional, Callable, Tuple

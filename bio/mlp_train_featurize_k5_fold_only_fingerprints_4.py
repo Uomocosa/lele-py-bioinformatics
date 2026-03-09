@@ -22,10 +22,11 @@ ALL_FEATURES = [
     MaxEStateIndex, SmrVSA5, FpDensityMorgan1, HalogenCounts, BondCounts,
     BridgingRingsCount, MaxRingSize, HeteroatomCount, HeteroatomDensity,
 ]
-POLYMER_FEATURES = ALL_FEATURES
-MOLECULE_FEATURES = ALL_FEATURES
-SIDECHAIN_FEATURES = ALL_FEATURES
-BACKBONE_FEATURES = ALL_FEATURES
+# ALL polymetrix feature
+# POLYMER_FEATURES = MOLECULE_FEATURES = SIDECHAIN_FEATURES = BACKBONE_FEATURES = ALL_FEATURES
+
+# NO polymetrix feature
+POLYMER_FEATURES = MOLECULE_FEATURES = SIDECHAIN_FEATURES = BACKBONE_FEATURES = []
 
 DEFAULT_CAPPING_ATOMS = {
     'H': 1,
@@ -37,13 +38,19 @@ DEFAULT_CAPPING_ATOMS = {
 class FeaturizeOptions(PDCCMethod.featurize.Options):
     capping_atoms_dict: dict = field(default_factory=lambda: DEFAULT_CAPPING_ATOMS)
     fingerprint_radius: int = 2
-    fingerprint_n_bits: int = 2048
+    fingerprint_n_bits: int = 256
     protonate_precision: float = 1.0
     molecule_features_to_calculate: list = field(default_factory=lambda: [
-        'logp', 'logd', 'homo_lumo_eV', 'fingerprint',
+        # 'logp',
+        # 'logd',
+        # 'homo_lumo_eV',
+        'fingerprint',
     ])
     polymer_features_to_calculate: list = field(default_factory=lambda: [
-        'logp', 'logd', 'homo_lumo_eV', 'fingerprint',
+        # 'logp', 
+        # 'logd', 
+        # 'homo_lumo_eV',
+        'fingerprint',
     ])
     molecule_polymetrix_features: list = field(default_factory=lambda: MOLECULE_FEATURES)
     polymer_polymetrix_features: list = field(default_factory=lambda: POLYMER_FEATURES)
@@ -55,6 +62,7 @@ class ModelConfig(MLP.Config):
     k_fold: int = 5
     hidden_dims: list = field(default_factory=lambda: [128, 64, 32])
     dropout: float = 0.2
+    weight_decay: float = 1e-4
     criterion: nn.Module = nn.MSELoss()
     learning_rate: float = 1e-3
     epochs: int = 1000
@@ -68,16 +76,21 @@ CPU_MODEL_CONFIG = ModelConfig(
     epochs = 500,
     early_stop_patience = 50,
     dropout = 0.3,
-    hidden_dims = [1024, 256, 64],
+    hidden_dims = [128, 32, 4],
+    # 12:34:47 | === 5-Fold Evaluation Results ===
+    # 12:34:47 | Aggregate MSE  : 70.2601
+    # 12:34:47 | Aggregate RMSE : 8.3821
+    # 12:34:47 | Aggregate MAE  : 3.5936
+    # 12:34:47 | Aggregate R²   : 0.8065
 )
 
 CUDA_MODEL_CONFIG = ModelConfig(
     epochs = 500,
     early_stop_patience = 50,
     dropout = 0.3,
-    hidden_dims = [2048, 1024, 256, 64, 8],
+    hidden_dims = [256, 128, 64],
     num_workers = 4,
-    batch_size = 256,
+    batch_size = 16,
 )
 
 def setup_loguru():
@@ -107,24 +120,15 @@ def main_cuda():
     )
 
 def test_():
-    # pixi run -e cpu python -c "from bio.mlp_train_featurize_k5_fold import test_; test_()"
     setup_loguru()
     dataset_config = bio.Dataset.PDCC.Config()
-    featurize_options = FeaturizeOptions(
-        molecule_features_to_calculate = ['logd'],
-        polymer_features_to_calculate = ['logd'],
-        molecule_polymetrix_features = [],
-        polymer_polymetrix_features = [],
-        sidechain_polymetrix_features = [],
-        backbone_polymetrix_features = [],
-    )
+    featurize_options = FeaturizeOptions()
     featurize_fn = lambda df: PDCCMethod.featurize(df, featurize_options)
     run_with_config(
         dataset_config,
         CPU_MODEL_CONFIG,
         featurize_fn,
     )
-    # logger.add(sys.stderr, level="WARNING")
 
 
 def run_with_config(

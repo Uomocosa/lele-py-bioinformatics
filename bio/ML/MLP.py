@@ -24,6 +24,7 @@ MLP_TEST_DIR = BIOINFORMATICS_DIR / "MLP_checkpoints_test"
 class Config:
     hidden_dims: list = field(default_factory=lambda: [128, 64, 32])
     dropout: float = 0.2
+    weight_decay: float = 1e-4
     criterion: nn.Module = nn.MSELoss()
     learning_rate: float = 1e-3
     epochs: int = 1000

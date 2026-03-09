@@ -9,6 +9,7 @@ INTERPOLATED_CSV = DATASETS_DIR / "PDCC" / "interpolated_pdcc.csv"
 PDCC_CSV = PDCC_DATASET
 INTERPOLATED_PDCC_CSV = INTERPOLATED_CSV
 CONVERTED_PDCC_CSV = DATASETS_DIR / "PDCC" / "converted_pdcc.csv"
+LOGURU_SIMPLE_FORMAT = "<green>{time:HH:mm:ss}</green> | <level>{message}</level>"
 
 PSMILES_DICT = {
     # First I used https://decimer.ai/ to get the SMILES representation from the papers images.

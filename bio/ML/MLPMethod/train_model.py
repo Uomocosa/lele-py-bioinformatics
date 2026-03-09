@@ -30,7 +30,11 @@ def train_model(model: MLP):
         pin_memory=use_cuda,
         num_workers=model.config.num_workers if use_cuda else 0
     )
-    optimizer = optim.Adam(model.parameters(), lr=model.config.learning_rate)
+    optimizer = optim.Adam(
+        model.parameters(), 
+        lr=model.config.learning_rate,
+        weight_decay=model.config.weight_decay,
+    )
 
     best_val_loss = float('inf')
     patience_counter = 0
