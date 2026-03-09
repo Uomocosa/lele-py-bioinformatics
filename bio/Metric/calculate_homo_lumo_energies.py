@@ -59,7 +59,8 @@ def single_calculation(
         try:
             homo_lumo_energies[atom] = from_mol(mol)
         except Exception as e:
-            logger.error(f"xTB calculation failed for atom {atom}: {e}")
+            if not atom: logger.warning(f"xTB calculation failed: {e}")
+            else: logger.warning(f"xTB calculation failed for atom '{atom}': {e}")
             homo_lumo_energies[atom] = None
     homo_lumo_energies = {atom: eVs for atom, eVs in homo_lumo_energies.items() if eVs is not None}
     
@@ -83,30 +84,35 @@ def from_mol(mol: Chem.Mol) -> Optional[Tuple[float, float]]:
         - https://tblite.readthedocs.io/en/latest/tutorial/python/singlepoint.html#homo-lumo-gap
     """
     mol_3D = bio.Bioinformatics.transform_into_3D_geometry(mol)
-    if mol_3D is None: return None
+    
+    if mol_3D is None:
+        logger.warning("Skipping QM calculation: Could not generate 3D geometry.")
+        return None
+        
+    atomic_numbers = np.array([atom.GetAtomicNum() for atom in mol_3D.GetAtoms()])
+    logger.trace(f"atomic_numbers: {atomic_numbers}")
     
     try:
-        AllChem.MMFFOptimizeMolecule(mol_3D)
-    except Exception as e:
-        logger.warning(f"MMFF optimization failed, proceeding with unoptimized 3D: {e}")
-            
-    atomic_numbers = np.array([atom.GetAtomicNum() for atom in mol_3D.GetAtoms()])
-    coords_angstrom = mol_3D.GetConformer().GetPositions()
-    logger.trace(f"atomic_numbers: {atomic_numbers}")
-    logger.trace(f"coords_angstrom:\n{coords_angstrom}")
-    
+        coords_angstrom = mol_3D.GetConformer().GetPositions()
+    except ValueError:
+        logger.warning("Molecule has no 3D coordinates generated. Skipping.")
+        return None
     angstrom_to_bohr = qcel.constants.conversion_factor("angstrom", "bohr")
     geometry_bohr = coords_angstrom * angstrom_to_bohr
+    logger.trace(f"geometry_bohr: {geometry_bohr}")
     
     xtb = tb.Calculator("GFN2-xTB", atomic_numbers, geometry_bohr)
     xtb.set("verbosity", 0) # Disable energy table output
-    results = xtb.singlepoint()
-    
-    logger.trace(f"Energy: {results['energy']} Hartree")
+    try:
+        results = xtb.singlepoint()
+    except Exception as e:
+        logger.error(f"xTB singlepoint failed (likely SCF non-convergence or clashing atoms): {e}")
+        return None 
+    logger.trace(f"Energy: {results['energy']} Hartree")    
     
     orbital_energies = results["orbital-energies"]
-    orbital_occupations = results["orbital-occupations"]
-    
+    orbital_occupations = results["orbital-occupations"]   
+
     # lumo_index = np.argmax(orbital_occupations) # This is taken from the official docs!
     lumo_index = np.argmin(orbital_occupations) # GEMINI AI: Use argmin instead of argmax to find the first 0.0 occupation
     homo_index = lumo_index - 1
@@ -119,6 +125,8 @@ def from_mol(mol: Chem.Mol) -> Optional[Tuple[float, float]]:
     return homo_energy, lumo_energy
 
 
+import pytest
+# @pytest.mark.skip("REMOVE THIS LINE")
 def test_():
     from bio.__global__ import BIOINFORMATICS_DIR
     from bio.Metric.__global__ import HELPER_DIR
@@ -128,10 +136,12 @@ def test_():
     df = calculate_homo_lumo_energies(df, column_name="PSMILES", capping_atoms_dict={"H": 1})
     print(df)
     df.to_csv(csv_file, index=False)
-    
+  
+   
     
 import pytest
 @pytest.mark.above10s
+# @pytest.mark.skip("REMOVE THIS LINE")
 def test_generated():
     from bio.__global__ import BIOINFORMATICS_DIR
     from bio.Metric.__global__ import HELPER_DIR
@@ -139,5 +149,32 @@ def test_generated():
     csv_file = HELPER_DIR / "calculate_homo_lumo_energies_generated.csv"
     df = pd.read_csv(dataset_csv).head(10) # Start small, xTB is ~1000x slower than RDKit
     df = calculate_homo_lumo_energies(df, column_name="PSMILES")
+    print(df)
+    df.to_csv(csv_file, index=False)
+
+
+    
+import pytest
+@pytest.mark.above10s    
+@pytest.mark.skip("changes logger")
+def test_all():
+    import sys
+    import lele
+    from bio.__global__ import CONVERTED_PDCC_CSV, LOGURU_SIMPLE_FORMAT
+    from bio.Metric.__global__ import HELPER_DIR
+    logger.remove()
+    logger.add(
+        sys.stderr,
+        format = LOGURU_SIMPLE_FORMAT,
+        level = "INFO"
+    )
+    csv_file = HELPER_DIR / "calculate_homo_lumo_energies_polymer_used.csv"
+    df = pd.read_csv(CONVERTED_PDCC_CSV) 
+    df = calculate_homo_lumo_energies(df, column_name="POLYMER_USED", capping_atoms_dict={"H": 1})
+    print(df)
+    df.to_csv(csv_file, index=False)
+    csv_file = HELPER_DIR / "calculate_homo_lumo_energies_drugs.csv"
+    df = pd.read_csv(CONVERTED_PDCC_CSV) 
+    df = calculate_homo_lumo_energies(df, column_name="DRUG", capping_atoms_dict={"H": 1})
     print(df)
     df.to_csv(csv_file, index=False)

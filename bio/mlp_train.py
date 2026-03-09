@@ -87,9 +87,6 @@ def run_with_config(
     featurize_fn: Optional[Callable[pd.DataFrame, pd.DataFrame]],
     scaler = StandardScaler(),
 ):
-    """
-    TODO! Need to save configurations and featurizer options
-    """
     assert dataset_config.seed == model_config.seed
     bio.ML.set_seed(dataset_config.seed)
     save_dir = model_config.best_model_save_dir

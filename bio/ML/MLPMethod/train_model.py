@@ -68,6 +68,13 @@ def train_model(model: MLP):
         
         val_loss /= len(val_ds)
         
+        logger.bind(
+            log_type="epoch_trace",
+            epoch=epoch + 1,
+            train_loss=float(train_loss),
+            val_loss=float(val_loss)
+        ).trace("epoch_metrics")
+        
         is_best = val_loss < best_val_loss
         if (epoch + 1) % 10 == 0 or epoch == 0 or is_best:
             log_msg = f"Epoch {epoch+1:03d} | Train MSE: {train_loss:.4f} | Val MSE: {val_loss:.4f}"

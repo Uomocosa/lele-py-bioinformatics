@@ -5,6 +5,7 @@ platforms = ["win-64", "linux-64"]
 
 [tasks]
 mlp_train = "python -c 'from bio.mlp_train import main; main()'"
+experiment = "python -c 'import experiment; experiment()'"
 # interpolate_pdcc_dataset = "python -c 'from bio.interpolate_pdcc_dataset import main; main()'"
 
 [dependencies]
@@ -30,6 +31,7 @@ numpy = "*"
 deepchem = "== 2.8.*"
 rdkit = "== 2025.9.*"
 matplotlib = "== 3.10.*"
+seaborn = "== 0.13.*"
 dimorphite_dl = "== 2.0.*"
 qcelemental = "== 0.30.*"
 pubchempy = "== 1.0.*"
