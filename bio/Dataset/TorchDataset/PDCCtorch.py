@@ -25,6 +25,8 @@ class PDCCtorch(Dataset):
             if col in self.df.columns: continue
             raise ValueError(f"Dataset is missing required column: {col}\n Dataset has the following columns: {self.df.columns}")
         
+        self.metadata = self.df[['POLYMER_USED', 'DRUG']].copy()
+        
         self.df = dataset.featurize(self.df)
         
         y = self.df['CAPACITY'].values

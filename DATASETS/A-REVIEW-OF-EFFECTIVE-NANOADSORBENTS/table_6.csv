@@ -1,0 +1,24 @@
+POLYMER_USED,DRUG,WATER_PH,CONCENTRATION,CAPACITY,SOURCE
+Graphene oxide (GO),Atenolol,2,60,116,Kyzas et al. 2015
+Graphene oxide (GO),Propranolol,1,60,67,Kyzas et al. 2015
+Graphene oxide,Doxorubicin,3.4,350,1428.57,Wu et al. 2013a
+Magnetic graphene oxide functionalized with nitricacid(NDMGO),Ciprofloxacin,9,50,334.78,Li et al. 2017a
+GO/sodium alginate hydrogels,Ciprofloxacin,4,50,86.12,Fei et al. 2016
+GO/calcium alginate fibers,Ciprofloxacin,5.9,60,66.25,Wu et al. 2013b
+Porous graphene oxide-chitosan aerogel (PGO-CS),Tetracycline,9,2000,1470,Zhao et al. 2014
+Fe3O4@SiO2 Chitosan/GO,Tetracycline,6,50,32.5,Huang et al. 2017
+Graphene oxide,Tetracycline,7,20,323,Ghadim et al. 2013
+NDMGO,Tetracycline,4,50,400,Li et al. 2017b
+Thiourea-dioxide-reduced magnetic graphene oxide (TDMGO),Tetracycline,4,100,1233,Yang et al. 2017
+Diethylenetriaminepenta-acetic acid-functionalized magnetic graphene oxide (DDMGO),Tetracycline,3,50,110,Li et al. 2018
+Diethylenetriaminepenta-acetic acid-functionalized magnetic graphene oxide (DDMGO),Ciprofloxacin,8,50,300,Li et al. 2018
+Pristine graphene,Sulfamethoxazole,2,100,239,Chen et al. 2014
+Graphene oxide nanoparticles,Metformin,6.26,300,122.61,Balasubramani et al. 2020
+Graphene oxide,Ketoprofen,4,50,16.45,Lawal et al. 2020
+Graphene oxide-ionic liquids,Ketoprofen,8,50,87.88,Lawal et al. 2020
+Nitrogen-doped reduced graphene oxide/Fe3O4 nanocomposite,Ketoprofen,7,20,468,Peng et al. 2018
+Nitrogen-doped reduced graphene oxide/Fe3O4 nanocomposite,Norfloxacin,10,20,158,Peng et al. 2018
+Magnetic genipin-crosslinked chitosan/graphene oxide-SO3H composite,Ibuprofen,6,10,138,Alothman et al. 2022
+Magnetically modified graphene nanoplatelets,Amoxicillin,5,10,14.10,Kerkez-Kuyumcu et al. 2016
+Graphene oxide,Carbamazepine,2.0,50,28.24,Lawal et al. 2020
+Graphene oxide-ionic liquids,Carbamazepine,2.0,50,61.88,Lawal et al. 2020

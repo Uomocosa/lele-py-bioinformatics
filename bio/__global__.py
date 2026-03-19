@@ -25,15 +25,70 @@ PSMILES_DICT = {
     # "polyPhOx": "*N(C(=O)c1ccccc1)CC*",
     # "polyPhOx": "*C1COC(=N1)C(C2=CC=CC=C2)C3=CC=CC=C3*",
     "polyPhOx": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", # dedotto dal paper CACCA
-    "polyethylene": "*C=C*",
-    'Methacrylic acid': '*CC(=C)C(=O)O*',
-    'Vinylpyridine': '*C=CC1=CC=CC=N1*',
-    'polyethyleneimine': '*C1CN1*',
+    "polyethylene": "*CC*",
+    'Methacrylic acid': '*CC(C)(C(=O)O)*', # same as C-mA
+    'Vinylpyridine': '*CC(c1ccncc1)*',
+    'polyethyleneimine': '*CCN*',
     'Polyamide 4/6 Nanofibers': '*NCCCCNC(=O)CCCC(=O)*',
     
-    # UNDER THIS LINE THERE ARE ONLY "WRONG P-SMILES!"
     'CP-APM': '*OC1C(O)C(O)C(*)OC1COC(=O)CC(O)(C(=O)O)CC(=O)NCCN', # MOST LIKELY THIS IS WRONG!
-    'Poly(N-isopropylacrylamide) ferrogel': '*CC(C(=O)NC(C)C)*', # THIS IS WRONG (not a ferrogel)!
+    'Poly(N-isopropylacrylamide) ferrogel': '*CC(C(=O)NC(C)C)*', # Just the polyemer, cannot represetn a ferrogel!
+    
+    "Graphene oxide (GO)": "",
+    "Graphene oxide": "",
+    "Magnetic graphene oxide functionalized with nitricacid(NDMGO)": "",
+    "GO/sodium alginate hydrogels": "",
+    "GO/calcium alginate fibers": "",
+    "Porous graphene oxide-chitosan aerogel (PGO-CS)": "",
+    "Fe3O4@SiO2 Chitosan/GO": "",
+    "NDMGO": "",
+    "Thiourea-dioxide-reduced magnetic graphene oxide (TDMGO)": "",
+    "Diethylenetriaminepenta-acetic acid-functionalized magnetic graphene oxide (DDMGO)": "",
+    "Pristine graphene": "",
+    "Graphene oxide nanoparticles": "",
+    "Graphene oxide-ionic liquids": "",
+    "Nitrogen-doped reduced graphene oxide/Fe3O4 nanocomposite": "",
+    "Magnetic genipin-crosslinked chitosan/graphene oxide-SO3H composite": "",
+    "Magnetically modified graphene nanoplatelets": "",
+    "Fe3O4 nanoparticle": "",
+    "NiFe2O4/biochar composites": "",
+    "Biochar/MgFe2O4": "",
+    "Magnetic NPs coated with Rhamnolipids (Rh-cMNP)": "",
+    "Magnetic mesoporous silica microspheres": "",
+    "Iron, copper oxides composite particles (Fe/Cu oxides CPs)": "",
+    "MgFe2O4": "",
+    "MgO": "",
+    "ZnO-MgO nanocomposites": "",
+    "Fe3O4@C Matrix": "",
+    "Fe3O4/Douglas fir biochar": "",
+    "(α-Fe2O3)": "",
+    "Magnetic Fe3O4 NPs coated zeolite": "",
+    "MnO2@carbonmicrospheres": "",
+    "Magnetic cadmiumbased MOFs modified with chitosan \n(Fe3O4@Cd-MOF@CS)": "",
+    "Mn-Zn ferrite/biochar (MZF-BC)": "",
+    "NiFe2O4-COF-chitosanterphthalaldehyde nanocomposites film": "",
+    "Fe3O4/CD/AC/SA": "",
+    "Fe3O4/red mud": "",
+    "Amine-coated magnetic Nanocomposite NiFe2O4@SiO2": "",
+    "Rape straw biomass fiber/β-Cyclodextrin/Fe3O4": "",
+    "Plantain peel activated carbon-supported zinc oxide (PPAC-ZnO) nanocomposite": "",
+    "Polyacrylonitrile/Polyaniline (PAN/PANI)": "*NC1=CC=C(C=C1)*", # This is the simplified repeating unit
+    "Polypyrrole functionalized Calotropis gigantea fiber (PPy-O-CGF)": "",
+    "PPy-PANI copolymer": "",
+    "Poly(aniline-co-pyrrole)": "",
+    "Functional Polyaniline/multiwalled carbon nanotube composite (PANI/MWCNT)": "",
+    "Polyaniline-deposited cellulose fiber composite": "",
+    "Poly(aniline-co-pyrrole)/multi-walled carbon nanotubes": "",
+    "Pristine polypyrrole": "*c1ccc(*)[nH]1", 
+    "Polypyrrole/Zinc oxide (PPy/ZnO)": "*c1ccc(*)[nH]1", # just PPy
+    "Amberlite-XAD-16 polymer": "*CC(c1ccccc1)*", # This is the simplified repeating unit 
+    "Amberlite-XAD-4 polymer": "*CC(c1ccccc1)*", # This is the simplified repeating unit
+    "Poly(styrene-block-acrylic acid) deblock copolymer/Fe3O4 magnetic": "",
+    "Polyaniline/Graphene Oxide Based Nanocomposites": "*NC1=CC=C(C=C1)*", # Just PANI
+    "Polyaniline-coated magnetic nanoparticles": "*NC1=CC=C(C=C1)*", # Just PANI
+    "Fe3O4 coated polymer (clay: chitosan) composite": "",
+    "Chitosan-carbon nanotubes": "",
+    "Poly(acrylic acid) grafted chitosan/Graphite oxide": "*CC(C(=O)O)*", # Just the PAA graft
 }
 
 
@@ -73,6 +128,37 @@ SMILES_DICT = {
     'Sulfamethoxazole': 'CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N',
     'Trimethoprim': 'COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N',
     'Azithromycin dihydrate': 'CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O',
+    'Atenolol': '',
+    'Propranolol': '',
+    'Doxorubicin': '',
+    'Ciprofloxacin': '',
+    'Tetracycline': '',
+    'Metformin': '',
+    'Ketoprofen': '',
+    'Norfloxacin': '',
+    'Amoxicillin': '',
+    'Carbamazepine': '',
+    'Levofloxacin': '',
+    'Acetaminophen': '',
+    'Paracetamol': '',
+    'Ofloxacin': '',
+    'Chlorpyrifos': '',
+    'Linezolid antibiotic': '',
+    'Acetylsalicylic acid': '',
+    'Cephalexin': '',
+    'Cefotaxime': '',
+    'Chloroquine for COVID-19 treatment': '',
+    'Chloroxylenol': '',
+    'N,N-diethyl-meta-toluamide': '',
+    'Enrofloxacin': '',
+    'Metronidazole': '',
+    'Phenylbutazone': '',
+    'Ceftiofur': '',
+    'Prednisolone': '',
+    'Meloxicam': '',
+    'Anti-inflammatory': '', 
+    'Gemfibrozil': '',
+    'Dorzolamide': '',
 }
 
 assert BIOINFORMATICS_DIR.exists()

@@ -4,8 +4,9 @@ from loguru import logger
 
 
 def test_():
-    # d = {s: get_smiles_from_name(s) for s in SMILES_DICT.keys()}
-    # print(d)
+    smiles_to_find = [name for name, smile in SMILES_DICT.items() if smile == '']
+    d = {name: get_smiles_from_name(name) for name in smiles_to_find}
+    print(d)
 
     # get_smiles_from_name('2-benzhydryl-4,5-dihydro-1,3-oxazole') # C1COC(=N1)C(C2=CC=CC=C2)C3=CC=CC=C3
     # get_smiles_from_name('Granular Activated Carbon') # Not a polymer
@@ -33,12 +34,7 @@ def test_():
     # get_smiles_from_name('Silver') # [Ag]
     # get_smiles_from_name('Congo red') # C1=CC=C2C(=C1)C(=CC(=C2N)N=NC3=CC=C(C=C3)C4=CC=C(C=C4)N=NC5=C(C6=CC=CC=C6C(=C5)S(=O)(=O)[O-])N)S(=O)(=O)[O-].[Na+].[Na+]
     # get_smiles_from_name('ethyleneimine') # C1CN1
-    get_smiles_from_name('Clarithromycin') # CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O
-    get_smiles_from_name('Amoxicillin trihydrate') # 
-    get_smiles_from_name('Sulfamethoxazole') # 
-    get_smiles_from_name('Trimethoprim') # 
-    get_smiles_from_name('Azithromycin dihydrate') # 
-    # get_smiles_from_name('') # 
+    # get_smiles_from_name('Clarithromycin') # CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O
     
 
 

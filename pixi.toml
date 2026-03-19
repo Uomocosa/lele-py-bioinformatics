@@ -9,42 +9,44 @@ experiment = "python -c 'import experiment; experiment()'"
 # interpolate_pdcc_dataset = "python -c 'from bio.interpolate_pdcc_dataset import main; main()'"
 
 [dependencies]
-python = "3.11.*"
-tblite-python = "0.5.*"
-ase = "*"
+python = ">=3.11.9,<3.12"
+tblite-python = ">=0.5.0,<0.6"
+ase = ">=3.27.0,<4"
+adjusttext = ">=1.3.0,<2"
+fastcluster = ">=1.3.0,<2"
 
 [pypi-dependencies]
 bio = { path = "." , editable = true }
 new-import-system = { git = "https://github.com/Uomocosa/new-python-import-system" }
 lele = { git = "https://github.com/Uomocosa/lele-py" }
 mingpt = { git = "git+https://github.com/karpathy/minGPT" }
-pytest = "*"
-loguru = "*"
-tyro = "*"
+pytest = ">=9.0.2, <10"
+loguru = ">=0.7.3, <0.8"
+tyro = ">=1.0.9, <2"
 # torch = "*"
 # torchvision = "*"
 # transformers = { version = "== 4.46.*", extras = ["torch"] }
-transformers = "== 4.46.*"
-polymetrix = "== 0.2.*"
-pydantic = "== 2.12.*"
+transformers = ">=5.3.0, <6"
+polymetrix = ">=0.2.0, <0.3"
+pydantic = ">=2.12.5, <3"
 numpy = "*"
-deepchem = "== 2.8.*"
-rdkit = "== 2025.9.*"
-matplotlib = "== 3.10.*"
-seaborn = "== 0.13.*"
-dimorphite_dl = "== 2.0.*"
-qcelemental = "== 0.30.*"
-pubchempy = "== 1.0.*"
+deepchem = ">=2.8.0, <3"
+rdkit = ">=2025.9.6, <2026"
+matplotlib = "*"
+seaborn = ">=0.13.2, <0.14"
+dimorphite_dl = ">=2.0.2, <3"
+qcelemental = ">=0.30.1, <0.31"
+pubchempy = ">=1.0.5, <2"
 
 [feature.cpu.dependencies]
-pytorch = "*"
-torchvision = "*"
-cpuonly = "*"
+pytorch = ">=2.3.1,<3"
+torchvision = ">=0.18.1,<0.21"
+cpuonly = ">=2.0,<3"
 
 [feature.cuda.dependencies]
-pytorch = "*"
-torchvision = "*"
-pytorch-cuda = "12.1.*"
+pytorch = ">=2.3.1,<3"
+torchvision = ">=0.18.1,<0.21"
+pytorch-cuda = ">=11.8,<12"
 
 [environments]
 default = ["cpu"]

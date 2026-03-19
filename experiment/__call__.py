@@ -11,10 +11,14 @@ from pathlib import Path
 from typing import Optional, Callable, Tuple, Annotated
 from polymetrix.featurizers.chemical_featurizer import *
 import lele, bio
+import experiment
 from bio.ML import MLP, MLPMethod
 from bio.Dataset import PDCC, PDCCMethod
 from bio.__global__ import CONVERTED_PDCC_CSV
 from loguru import logger
+
+print(dir(lele.Loguru))
+from lele.Loguru import CleanJSONLSink
 
 ALL_POSSIBLE_FEATURES = [
     NumHBondDonors, NumHBondAcceptors, NumRotatableBonds, NumRings,
@@ -136,7 +140,7 @@ class Experiment():
     seed: int = 42
 
 def __call__():
-    # pixi run experiment --help
+    # pixi run example --help
     """Entry point for handling YAML and CLI overriding."""
     cli_args = tyro.cli(Experiment)
     default_experiment = Experiment()
@@ -149,25 +153,25 @@ def __call__():
     
     run(final_args)
     
-def run(experiment: Experiment):
+def run(exp: Experiment):
     save_dir = lele.P(__file__).parent
-    setup_loguru(experiment, save_dir)
+    setup_loguru(exp, save_dir)
     yaml.SafeDumper.add_multi_representer(
         Path, 
         lambda dumper, data: dumper.represent_str(str(data))
     )
     formatted_config = yaml.safe_dump(
-        asdict(experiment), 
+        asdict(exp), 
         default_flow_style=False, 
         sort_keys=False
     )
-    logger.info(f"Running Experiment '{experiment.name}' with config:\n{formatted_config}")
+    logger.info(f"Running Experiment '{exp.name}' with config:\n{formatted_config}")
         
-    bio.ML.set_seed(experiment.seed)
+    bio.ML.set_seed(exp.seed)
     
-    pdcc_config = experiment.dataset.to_pdcc_config(seed=experiment.seed)
-    mlp_config = experiment.model.to_mlp_config(seed=experiment.seed, save_dir=None)
-    featurizer_options = experiment.features.to_featurizer_config()
+    pdcc_config = exp.dataset.to_pdcc_config(seed=exp.seed)
+    mlp_config = exp.model.to_mlp_config(seed=exp.seed, save_dir=None)
+    featurizer_options = exp.features.to_featurizer_config()
     
     dataset = bio.Dataset.PDCC(pdcc_config)
     featurize_fn = lambda df: PDCCMethod.featurize(df, featurizer_options)
@@ -179,7 +183,7 @@ def run(experiment: Experiment):
         train_percentage = trn,
         validation_percentage = val,
         test_percentage = tst,
-        seed = experiment.seed,
+        seed = exp.seed,
     )
     
     model = MLP(
@@ -191,172 +195,58 @@ def run(experiment: Experiment):
     
     MLPMethod.k_fold_cross_validation(model, k=mlp_config.k_fold)
     
-    config_save_path = save_dir / f"{experiment.name}" / "config.yaml"
+    config_save_path = save_dir / f"{exp.name}" / "config.yaml"
     with open(config_save_path, "w") as f:
         # asdict converts the entire Experiment dataclass tree into a dictionary
-        yaml.safe_dump(asdict(experiment), f, default_flow_style=False, sort_keys=False)
+        yaml.safe_dump(asdict(exp), f, default_flow_style=False, sort_keys=False)
 
-    create_graphs_from_logs(experiment, save_dir)
+    create_graphs_from_logs(exp, save_dir)
 
 
 
-class CleanJSONLSink:
-    def __init__(self, filepath: Path):
-        # Open in 'w' mode to start fresh every time you run the experiment
-        filepath.parent.mkdir(parents=True, exist_ok=True)
-        self.file = filepath.open("w")
-        
-    def __call__(self, message):
-        # Extract ONLY the bound variables and write as JSON
-        json.dump(message.record["extra"], self.file)
-        self.file.write("\n")
-        self.file.flush()
-        
-        
-def get_log_files(experiment: Experiment, save_dir: Path):
-    return {
-        "traing_epochs": save_dir / f"{experiment.name}" / "traing_epochs.jsonl",
-        "fold_predictions": save_dir / f"{experiment.name}" / "fold_predictions.jsonl",
-        "fold_metrics": save_dir / f"{experiment.name}" / "fold_metrics.jsonl",
-        "aggregate": save_dir / f"{experiment.name}" / "aggregated_results.jsonl",
-    }
-
-def setup_loguru(experiment: Experiment, save_dir: Path):
-    log = get_log_files(experiment, save_dir)
+def setup_loguru(exp: Experiment, save_dir: Path):
+    log = experiment.get_log_files(exp, save_dir)
     logger.remove()
     logger.add(
         sys.stderr,
         format = bio.__global__.LOGURU_SIMPLE_FORMAT,
         filter = {
             "bio.ML.MLPMethod.train_model": "WARNING",
-            # "": "INFO",
         },
         level = "INFO"
     )
     logger.add(
-        CleanJSONLSink(log["traing_epochs"]),
+        lele.Loguru.CleanJSONLSink(log["traing_epochs"]),
         filter=lambda record: record["extra"].get("log_type") == "epoch_trace",
         level="TRACE",
     )    
     logger.add(
-        CleanJSONLSink(log["fold_predictions"]),
+        lele.Loguru.CleanJSONLSink(log["fold_predictions"]),
         filter=lambda record: record["extra"].get("log_type") == "prediction_trace",
         level="TRACE",
     )
     logger.add(
-        CleanJSONLSink(log["fold_metrics"]),
+        lele.Loguru.CleanJSONLSink(log["fold_metrics"]),
         filter=lambda record: record["extra"].get("log_type") == "fold_metric_trace",
         level="TRACE",
     )
     logger.add(
-        CleanJSONLSink(log["aggregate"]),
+        lele.Loguru.CleanJSONLSink(log["aggregate"]),
         filter=lambda record: record["extra"].get("log_type") == "aggregate_metrics",
         level="TRACE",
     )
     return logger
     
     
-def create_graphs_from_logs(experiment: Experiment, save_dir: Path):
-    log = get_log_files(experiment, save_dir)
+def create_graphs_from_logs(exp: Experiment, save_dir: Path):
+    """Orchestrates the creation of all example visualizations."""
+    log = experiment.get_log_files(exp, save_dir)
     sns.set_theme(style="whitegrid", palette="muted")
-    if log["traing_epochs"].exists():
-        """
-        Generates learning curves by plotting Training and Validation loss against the number of epochs. 
-        
-        This graph tracks the model's progress over time:
-        - It serves as a diagnostic tool for **overfitting** (where training loss continues to drop 
-          but validation loss rises) and **underfitting** (where neither loss reaches a low value).
-        - Since k-fold cross-validation is used, the lines represent the mean loss across all folds, 
-          providing a more robust view of the model's convergence than a single run.
-        """
-        df_epochs = pd.read_json(log["traing_epochs"], lines=True)
-        if not df_epochs.empty:
-            plt.figure(figsize=(10, 6))
-            
-            # If your epochs log has a 'fold' column, Seaborn will automatically 
-            # plot the mean line and a shaded confidence interval across all folds!
-            sns.lineplot(data=df_epochs, x="epoch", y="train_loss", label="Train Loss", linewidth=2)
-            sns.lineplot(data=df_epochs, x="epoch", y="val_loss", label="Validation Loss", linewidth=2)
-            
-            plt.title(f"{experiment.name} - Learning Curves (Mean across K-Folds)")
-            plt.xlabel("Epoch")
-            plt.ylabel(f"Loss ({experiment.model.criterion.upper()})")
-            plt.legend()
-            
-            plt.tight_layout()
-            plt.savefig(save_dir / f"{experiment.name}" / "plot_learning_curves.png", dpi=300)
-            plt.close()
-            logger.info("Saved learning curves plot.")
-
-    # --- 2. PARITY PLOT (Actual vs Predicted) ---
-    if log["fold_predictions"].exists():
-        """
-        Generates a Parity Plot (also known as a predicted-vs-actual plot).
-        
-        This graph visualizes the accuracy and precision of the regression model:
-        - The **Red Dashed Line** represents a perfect model where predicted values exactly equal actual values ($y=x$).
-        - **Closer clusters** to this line indicate higher accuracy.
-        - Coloring the points by **fold** allows for the detection of "outlier folds," helping 
-          determine if the model's performance is consistent across different subsets of data.
-        - Dispersion (spread) away from the line indicates the error variance.
-        """
-        df_preds = pd.read_json(log["fold_predictions"], lines=True)
-        if not df_preds.empty:
-            plt.figure(figsize=(8, 8))
-            
-            # Scatter plot, colored by fold to see if one fold behaved weirdly
-            hue_arg = "fold" if "fold" in df_preds.columns else None
-            sns.scatterplot(data=df_preds, x="actual", y="predicted", hue=hue_arg, alpha=0.7, edgecolor=None)
-            
-            # Draw the perfect prediction y = x line
-            min_val = min(df_preds["actual"].min(), df_preds["predicted"].min())
-            max_val = max(df_preds["actual"].max(), df_preds["predicted"].max())
-            plt.plot([min_val, max_val], [min_val, max_val], color="red", linestyle="--", label="Perfect Prediction")
-            
-            plt.title(f"{experiment.name} - Parity Plot")
-            plt.xlabel("Actual Value")
-            plt.ylabel("Predicted Value")
-            plt.legend()
-            
-            plt.tight_layout()
-            plt.savefig(save_dir / f"{experiment.name}" / "plot_parity.png", dpi=300)
-            plt.close()
-            logger.info("Saved parity plot.")
-
-    # --- 3. FOLD METRICS SUMMARY ---
-    if log["fold_metrics"].exists():
-        """
-        Generates a bar chart comparing the Coefficient of Determination ($R^2$) across all k-folds.
-        
-        This graph assesses the **stability and reliability** of the model:
-        - The **Bar Height** shows the $R^2$ for each specific fold, indicating how much variance 
-          in the target variable was captured by that specific model instance.
-        - The **Mean $R^2$ Line** provides a high-level summary of expected performance.
-        - Large discrepancies between bars suggest that the model is sensitive to the 
-          particular data split (high variance), while uniform bars suggest a stable, generalizable model.
-        """
-        df_metrics = pd.read_json(log["fold_metrics"], lines=True)
-        if not df_metrics.empty and "fold" in df_metrics.columns and "r2" in df_metrics.columns:
-            plt.figure(figsize=(8, 5))
-            
-            # Bar plot of R² per fold
-            ax = sns.barplot(data=df_metrics, x="fold", y="r2", color="cornflowerblue")
-            
-            # Add a horizontal line representing the mean R²
-            mean_r2 = df_metrics["r2"].mean()
-            plt.axhline(mean_r2, color="red", linestyle="--", label=f"Mean $R^2$ ({mean_r2:.3f})")
-            
-            plt.title(f"{experiment.name} - $R^2$ Variance Across Folds")
-            plt.xlabel("Fold")
-            plt.ylabel("$R^2$ Score")
-            plt.ylim(0, 1) # Assuming R2 is between 0 and 1, adjust if needed
-            plt.legend()
-            
-            plt.tight_layout()
-            plt.savefig(save_dir / f"{experiment.name}" / "plot_fold_variance.png", dpi=300)
-            plt.close()
-            logger.info("Saved fold variance plot.")
+    experiment.plot_learning_curves(exp, save_dir, log["traing_epochs"])
+    experiment.plot_parity(exp, save_dir, log["fold_predictions"])
+    experiment.plot_fold_variance(exp, save_dir, log["fold_metrics"])
     
+        
 def test_():
     default_experiment = Experiment()
     default_experiment.dataset.max_size = 10

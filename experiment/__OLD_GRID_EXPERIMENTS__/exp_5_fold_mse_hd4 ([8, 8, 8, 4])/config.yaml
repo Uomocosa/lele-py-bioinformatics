@@ -1,0 +1,51 @@
+name: exp_5_fold_mse_hd4 ([8, 8, 8, 4])
+yaml_base_config: null
+dataset:
+  csv_file: C:\Users\acer\Desktop\Samuele\Syncthing\LWF - LightWeigth Folder\[P] Python\lele-py-bioinformatics\DATASETS\PDCC\converted_pdcc.csv
+  train_validation_test_pecentages:
+  - 0.6
+  - 0.2
+  - 0.2
+  max_size: null
+model:
+  k_fold: 5
+  hidden_dims:
+  - 8
+  - 8
+  - 8
+  - 4
+  dropout: 0.2
+  weight_decay: 0.0001
+  criterion: mse
+  learning_rate: 0.001
+  epochs: 1000
+  early_stop_patience: 100
+  batch_size: 16
+  num_workers: 0
+features:
+  capping_atoms:
+  - H
+  - C
+  - O
+  fingerprint_radius: 2
+  fingerprint_n_bits: 256
+  protonate_precision: 1.0
+  molecule_features_to_calculate:
+  - logp
+  - logd
+  - homo_lumo_eV
+  - fingerprint
+  polymer_features_to_calculate:
+  - logp
+  - logd
+  - homo_lumo_eV
+  - fingerprint
+  molecule_polymetrix_features:
+  - ALL
+  polymer_polymetrix_features:
+  - ALL
+  sidechain_polymetrix_features:
+  - ALL
+  backbone_polymetrix_features:
+  - ALL
+seed: 42

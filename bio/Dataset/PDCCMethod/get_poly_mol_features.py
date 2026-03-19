@@ -14,10 +14,10 @@ class Options:
     fingerprint_n_bits: int = 2048
     protonate_precision: float = 1.0
     molecule_features_to_calculate: list = field(default_factory=lambda: [
-        'logp', 'logd', 'homo_lumo_eV', 'fingerprint',
+        'logp', 'logd', 'homo_lumo_eV', 'net_charge', 'fingerprint',
     ])
     polymer_features_to_calculate: list = field(default_factory=lambda: [
-        'logp', 'logd', 'homo_lumo_eV', 'fingerprint',
+        'logp', 'logd', 'homo_lumo_eV', 'net_charge', 'fingerprint',
     ])
 
 
@@ -67,6 +67,19 @@ def get_poly_mol_features(
             options.capping_atoms_dict
         )
         
+    if 'net_charge' in options.molecule_features_to_calculate:
+        molecule_features = bio.Metric.calculate_net_charge_at_ph(
+            molecule_features, 
+            'DRUG', 
+            options.capping_atoms_dict
+        )
+    if 'net_charge' in options.polymer_features_to_calculate:
+        polymer_features = bio.Metric.calculate_net_charge_at_ph(
+            polymer_features, 
+            'POLYMER_USED', 
+            options.capping_atoms_dict
+        )
+        
     if 'fingerprint' in options.molecule_features_to_calculate:
         molecule_features = bio.Metric.convert_smile_to_fingerprint(
             molecule_features, 
@@ -100,7 +113,7 @@ def calculate_logd(df, column_name, options):
             logger.warning(f"Found NaN WATER_PH for POLYMER_USED: {row['POLYMER_USED']}, DRUG: {row['DRUG']}.\nComplete row: {row}")
             return pd.Series({})
             
-        return bio.Metric.calculate_logd.compute_min_max_logd(
+        return bio.Metric.calculate_logd.compute_most_probable_logd(
             smiles_str = row[column_name], 
             ph_min = water_ph, 
             ph_max = water_ph, 
@@ -123,8 +136,8 @@ def expand_fingerprints(df):
     return df
 
 
-import pytest
-@pytest.mark.skip(reason="no reason") # LEAVE THIS COMMENETED!
+# import pytest
+# @pytest.mark.skip(reason="no reason") # LEAVE THIS COMMENETED!
 def test_():
     from bio.__global__ import PDCC_DATASET, PSMILES_DICT, SMILES_DICT
     from bio.Dataset.__global__ import HELPER_DIR

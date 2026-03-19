@@ -8,6 +8,39 @@ import lele, bio
 from experiment.__call__ import Experiment, DatasetConfig, ModelConfig, FeaturizerConfig, run
 from loguru import logger
 
+FINGERPRINT_FEATURIZER = FeaturizerConfig(
+    capping_atoms = ['H'],
+    molecule_features_to_calculate = ['fingerprint'],
+    polymer_features_to_calculate = ['fingerprint'],
+    molecule_polymetrix_features = [],
+    polymer_polymetrix_features = [],
+    sidechain_polymetrix_features = [],
+    backbone_polymetrix_features = [],
+)
+POLYMETRIX_FEATURIZER = FeaturizerConfig(
+    capping_atoms = ['H'],
+    molecule_features_to_calculate = [],
+    polymer_features_to_calculate = [],
+    molecule_polymetrix_features = ['ALL'],
+    polymer_polymetrix_features = ['ALL'],
+    sidechain_polymetrix_features = ['ALL'],
+    backbone_polymetrix_features = ['ALL'],
+)
+MIXED_FEATURIZER = FeaturizerConfig(
+    capping_atoms = ['H'],
+    molecule_features_to_calculate = ['fingerprint'],
+    polymer_features_to_calculate = [],
+    molecule_polymetrix_features = [],
+    polymer_polymetrix_features = ['ALL'],
+    sidechain_polymetrix_features = ['ALL'],
+    backbone_polymetrix_features = ['ALL'],
+)
+FEATURIZERS_DICT = {
+    'only_fingerprints': FINGERPRINT_FEATURIZER,
+    'only_polymetrix': POLYMETRIX_FEATURIZER,
+    'mixed_features': MIXED_FEATURIZER,
+}
+
 FORCE_RERUN = False
 EXPERIMENTS = [
     [Experiment(
@@ -22,30 +55,133 @@ EXPERIMENTS = [
         name="experiment_mae_loss",
         model=ModelConfig(criterion="mae")
     ), FORCE_RERUN],
-]
-
-grid_lrs = [
-    1e-3, 5e-4
-]
-grid_dropouts = [
-    0.1, 0.3
-]
-grid_hidden_dims = [
-    [128, 64, 32], 
-    [256, 128, 64]
-]
-
-GRID_EXPERIMENTS = [
     [Experiment(
-        # Dynamically name the experiment based on parameters
-        name=f"exp_lr{lr}_drop{drop}_hd{len(hd)}",
-        model=ModelConfig(learning_rate=lr, dropout=drop, hidden_dims=hd)
-    ), FORCE_RERUN]
-    for lr, drop, hd in product(grid_lrs, grid_dropouts, grid_hidden_dims)
+        name = "experiment_loocv_only_fingerprints_big",
+        model = ModelConfig(
+            k_fold=-1, 
+            hidden_dims=[256, 128, 64],
+        ),
+        features = FINGERPRINT_FEATURIZER,
+    ), FORCE_RERUN],
+    [Experiment(
+        name = "experiment_loocv_only_fingerprints_small",
+        model = ModelConfig(
+            k_fold=-1, 
+            hidden_dims=[8, 8, 8, 4], 
+            epochs = 100, 
+            early_stop_patience = 50,
+        ),
+        features = FINGERPRINT_FEATURIZER,
+    ), FORCE_RERUN],
+    [Experiment(
+        name = "experiment_loocv_only_polymetrix_big",
+        model = ModelConfig(
+            k_fold=-1, 
+            hidden_dims=[256, 128, 64],
+            epochs = 100, 
+            early_stop_patience = 50,
+        ),
+        features = POLYMETRIX_FEATURIZER,
+    ), FORCE_RERUN],
+    [Experiment(
+        name = "experiment_loocv_only_polymetrix_small",
+        model = ModelConfig(
+            k_fold=-1, 
+            hidden_dims=[8, 8, 8, 4], 
+            epochs = 100, 
+            early_stop_patience = 50,
+        ),
+        features = POLYMETRIX_FEATURIZER,
+    ), FORCE_RERUN],
+    [Experiment(
+        name = "experiment_loocv_mixed_features_big",
+        model = ModelConfig(
+            k_fold=-1, 
+            hidden_dims=[256, 128, 64],
+            epochs = 100, 
+            early_stop_patience = 50,
+        ),
+        features = MIXED_FEATURIZER,
+    ), FORCE_RERUN],
+    [Experiment(
+        name = "experiment_loocv_mixed_features_small",
+        model = ModelConfig(
+            k_fold=-1, 
+            hidden_dims=[8, 8, 8, 4], 
+            epochs = 100, 
+            early_stop_patience = 50,
+        ),
+        features = MIXED_FEATURIZER,
+    ), FORCE_RERUN],
 ]
+ALL_EXPERIMENTS = EXPERIMENTS
 
-# Combine all experiments to run
-ALL_EXPERIMENTS = EXPERIMENTS + GRID_EXPERIMENTS
+
+# grid_lrs = [
+#     1e-3, 5e-4
+# ]
+# grid_dropouts = [
+#     0.1, 0.3
+# ]
+# grid_hidden_dims = [
+#     [128, 64, 32], 
+#     [256, 128, 64]
+# ]
+# GRID_EXPERIMENTS_1 = [
+#     [Experiment(
+#         name=f"exp_lr{lr}_drop{drop}_hd{len(hd)} ({str(hd)})",
+#         model=ModelConfig(learning_rate=lr, dropout=drop, hidden_dims=hd)
+#     ), FORCE_RERUN]
+#     for lr, drop, hd in product(grid_lrs, grid_dropouts, grid_hidden_dims)
+# ]
+# ALL_EXPERIMENTS += GRID_EXPERIMENTS_1
+
+
+# grid_k_folds = [
+#     5, 10, 25, -1 # -1 means leave-one-out cross-validation
+# ]
+# grid_criterions = [
+#     "mae", "mse"
+# ]
+# grid_hidden_dims = [
+#     [128, 64, 32], 
+#     [256, 128, 64],
+#     [64, 32, 16],
+#     [32, 16, 8],
+#     [8, 8, 8, 4],
+# ]
+# GRID_EXPERIMENTS_2 = [
+#     [Experiment(
+#         name=f"exp_{k_fold}_fold_{criterion}_hd{len(hd)} ({str(hd)})",
+#         model=ModelConfig(k_fold=k_fold, criterion=criterion, hidden_dims=hd)
+#     ), FORCE_RERUN]
+#     for k_fold, criterion, hd in product(grid_k_folds, grid_criterions, grid_hidden_dims)
+# ]
+# ALL_EXPERIMENTS += GRID_EXPERIMENTS_2
+
+
+
+# grid_k_folds = [
+#     5, 10, 25, -1 # -1 means leave-one-out cross-validation
+# ]
+# grid_hidden_dims = [
+#     [128, 64, 32], 
+#     [256, 128, 64],
+#     [64, 32, 16],
+#     [32, 16, 8],
+#     [8, 8, 8, 4],
+# ]
+# GRID_EXPERIMENTS_3 = [
+#     [Experiment(
+#         name=f"exp_{feat_name}_{k_fold}_fold_hd{len(hd)} ({str(hd)})",
+#         model=ModelConfig(k_fold=k_fold, hidden_dims=hd),
+#         features=feat_config,
+#     ), FORCE_RERUN]
+#     for (feat_name, feat_config), k_fold, hd in product(
+#         FEATURIZERS.items(), grid_k_folds, grid_hidden_dims
+#     )
+# ]
+# ALL_EXPERIMENTS += GRID_EXPERIMENTS_3
 
 def test_(): 
     run_all_experiments()

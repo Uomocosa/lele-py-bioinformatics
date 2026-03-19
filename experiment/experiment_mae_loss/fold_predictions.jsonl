@@ -1,273 +1,273 @@
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 6, "actual": 13.170000076293945, "predicted": 14.937379837036133}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 9, "actual": 0.0, "predicted": 0.2193484604358673}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 15, "actual": 22.690000534057617, "predicted": 0.17331458628177643}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 19, "actual": 22.190000534057617, "predicted": 22.937658309936523}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 22, "actual": 45.13999938964844, "predicted": 43.899662017822266}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 24, "actual": 75.8933334350586, "predicted": 73.79547882080078}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 25, "actual": 91.2699966430664, "predicted": 85.45462036132812}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 30, "actual": 0.0, "predicted": -0.13190342485904694}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 42, "actual": 39.366668701171875, "predicted": 34.040992736816406}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 45, "actual": 78.15666961669922, "predicted": 69.2183609008789}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 46, "actual": 93.63999938964844, "predicted": 79.71499633789062}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 60, "actual": 24.459999084472656, "predicted": 0.14591501653194427}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 67, "actual": 0.07190000265836716, "predicted": 0.1503647118806839}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 68, "actual": 13.600000381469727, "predicted": 51.658409118652344}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 77, "actual": 0.0014199999859556556, "predicted": 0.010485075414180756}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 79, "actual": 0.006909999996423721, "predicted": 0.006892047822475433}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 82, "actual": 0.019500000402331352, "predicted": 0.011823482811450958}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 90, "actual": 0.4374600052833557, "predicted": 0.00990467518568039}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 93, "actual": 0.00041716330451890826, "predicted": 0.009660296142101288}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 104, "actual": 0.03297000005841255, "predicted": 0.006768867373466492}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 109, "actual": 0.2274799942970276, "predicted": 0.010475844144821167}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 113, "actual": 0.5240200161933899, "predicted": 0.0067817047238349915}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 115, "actual": 0.00021173669665586203, "predicted": 0.053898002952337265}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 117, "actual": 0.00023999999393709004, "predicted": 0.05489690601825714}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 119, "actual": 0.0002699999895412475, "predicted": 0.05294089764356613}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 120, "actual": 0.0002800000074785203, "predicted": 0.04510439187288284}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 126, "actual": 0.0012499999720603228, "predicted": 0.04790143668651581}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 132, "actual": 0.01964999921619892, "predicted": 0.04788064956665039}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 139, "actual": 0.42073333263397217, "predicted": 0.04845348000526428}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 146, "actual": 0.00031563331140205264, "predicted": 0.04411814361810684}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 148, "actual": 0.0004199999966658652, "predicted": 0.04328250139951706}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 154, "actual": 0.008969999849796295, "predicted": 0.04352341592311859}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 155, "actual": 0.012719999998807907, "predicted": 0.04373003542423248}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 167, "actual": 0.4257333278656006, "predicted": 0.04386842995882034}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 176, "actual": 0.0006000000284984708, "predicted": 0.006992705166339874}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 185, "actual": 0.0942699983716011, "predicted": 0.006847769021987915}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 196, "actual": 0.34200000762939453, "predicted": 0.29566335678100586}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 208, "actual": 11.762669563293457, "predicted": 11.97988510131836}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 211, "actual": 21.173330307006836, "predicted": 20.487939834594727}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 212, "actual": 25.3700008392334, "predicted": 24.076099395751953}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 213, "actual": 27.65666961669922, "predicted": 29.047016143798828}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 223, "actual": 5.658329963684082, "predicted": 5.587638854980469}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 226, "actual": 11.572669982910156, "predicted": 11.760519981384277}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 227, "actual": 15.706330299377441, "predicted": 15.504536628723145}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 229, "actual": 0.07254000008106232, "predicted": 0.0747406855225563}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 232, "actual": 0.1347000002861023, "predicted": 0.12252666056156158}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 234, "actual": 0.23837000131607056, "predicted": 0.20859181880950928}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 248, "actual": 6.676000118255615, "predicted": 8.725126266479492}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 249, "actual": 14.303999900817871, "predicted": 16.438072204589844}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 253, "actual": 47.49332809448242, "predicted": 46.41932678222656}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 256, "actual": 0.14159999787807465, "predicted": 0.048126816749572754}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 258, "actual": 0.15539999306201935, "predicted": 0.0671984851360321}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 264, "actual": 0.3937999904155731, "predicted": 0.43330079317092896}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 265, "actual": 0.5354300141334534, "predicted": 0.7425286173820496}
-{"log_type": "prediction_trace", "fold": 1, "sample_idx": 271, "actual": 0.08089999854564667, "predicted": 0.1115039512515068}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 2, "actual": 6.75, "predicted": 0.15937481820583344}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 10, "actual": 0.0, "predicted": 0.1351528763771057}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 16, "actual": 0.0, "predicted": 0.21689406037330627}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 18, "actual": 24.3799991607666, "predicted": 23.85222625732422}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 29, "actual": 0.0, "predicted": -0.04092584550380707}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 33, "actual": 20.280000686645508, "predicted": 23.46661376953125}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 37, "actual": 50.83332824707031, "predicted": 50.56044387817383}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 38, "actual": 61.040000915527344, "predicted": 61.76420974731445}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 55, "actual": 3.4600000381469727, "predicted": 5.32395076751709}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 66, "actual": 0.07169999927282333, "predicted": 0.12124108523130417}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 69, "actual": 0.00010676599777070805, "predicted": 0.04543929547071457}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 73, "actual": 0.0005499999970197678, "predicted": 0.04594641923904419}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 74, "actual": 0.0007800000021234155, "predicted": 0.04728095233440399}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 75, "actual": 0.0010122667299583554, "predicted": 0.04643481969833374}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 76, "actual": 0.0012100000167265534, "predicted": 0.046401992440223694}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 78, "actual": 0.0016180332750082016, "predicted": 0.04757649451494217}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 84, "actual": 0.023511666804552078, "predicted": 0.04788193851709366}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 86, "actual": 0.07918000221252441, "predicted": 0.045906178653240204}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 92, "actual": 0.6377999782562256, "predicted": 0.047436848282814026}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 96, "actual": 0.0007131000165827572, "predicted": 0.06923249363899231}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 97, "actual": 0.0007900000200606883, "predicted": 0.06931760907173157}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 101, "actual": 0.0010100000072270632, "predicted": 0.0686718225479126}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 108, "actual": 0.22265000641345978, "predicted": 0.06955721229314804}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 111, "actual": 0.23714999854564667, "predicted": 0.07014516741037369}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 112, "actual": 0.38058000802993774, "predicted": 0.06849955767393112}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 118, "actual": 0.0002519332920201123, "predicted": 0.10219599306583405}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 125, "actual": 0.001120000029914081, "predicted": 0.10277111828327179}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 127, "actual": 0.0013776000123471022, "predicted": 0.10300963371992111}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 140, "actual": 0.4552600085735321, "predicted": 0.10232412815093994}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 142, "actual": 0.524316668510437, "predicted": 0.1046726405620575}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 143, "actual": 3.6580000596586615e-05, "predicted": 0.08437687158584595}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 144, "actual": 0.00013000000035390258, "predicted": 0.08444001525640488}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 147, "actual": 0.0003699999942909926, "predicted": 0.08634960651397705}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 157, "actual": 0.04698000103235245, "predicted": 0.08501829206943512}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 168, "actual": 6.004999886499718e-05, "predicted": 0.04589805006980896}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 172, "actual": 0.0003100000030826777, "predicted": 0.046010345220565796}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 173, "actual": 0.00039999998989515007, "predicted": 0.04589788615703583}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 175, "actual": 0.0005499999970197678, "predicted": 0.04589889943599701}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 179, "actual": 0.0007900000200606883, "predicted": 0.04602447897195816}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 182, "actual": 0.04394000023603439, "predicted": 0.04590068757534027}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 183, "actual": 0.06547333300113678, "predicted": 0.046283967792987823}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 184, "actual": 0.07987000048160553, "predicted": 0.0459195077419281}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 186, "actual": 0.10866666585206985, "predicted": 0.04644209146499634}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 195, "actual": 0.29017001390457153, "predicted": 0.29622188210487366}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 197, "actual": 0.4456000030040741, "predicted": 0.38147038221359253}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 199, "actual": 0.6528000235557556, "predicted": 0.5136762857437134}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 201, "actual": 1.3575999736785889, "predicted": 0.7862904071807861}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 202, "actual": 1.7100000381469727, "predicted": 0.928680419921875}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 216, "actual": 1.1440000534057617, "predicted": 2.254507064819336}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 231, "actual": 0.1139800027012825, "predicted": 0.16306611895561218}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 251, "actual": 29.559999465942383, "predicted": 25.73982048034668}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 254, "actual": 56.459999084472656, "predicted": 55.29547882080078}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 259, "actual": 0.15886999666690826, "predicted": 0.18687738478183746}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 261, "actual": 0.16580000519752502, "predicted": 0.23525547981262207}
-{"log_type": "prediction_trace", "fold": 2, "sample_idx": 262, "actual": 0.241799995303154, "predicted": 0.32087355852127075}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 0, "actual": 50.810001373291016, "predicted": 16.333698272705078}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 4, "actual": 0.0, "predicted": 0.039411671459674835}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 5, "actual": 0.0, "predicted": 0.24462035298347473}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 11, "actual": 7.909999847412109, "predicted": 2.283876895904541}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 12, "actual": 0.0, "predicted": 0.07619330286979675}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 26, "actual": 0.0, "predicted": 12.550262451171875}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 27, "actual": 0.0, "predicted": 5.788118362426758}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 28, "actual": 0.0, "predicted": 0.369796484708786}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 31, "actual": 15.130000114440918, "predicted": 13.550384521484375}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 32, "actual": 15.210000038146973, "predicted": 13.537418365478516}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 35, "actual": 30.420000076293945, "predicted": 23.770845413208008}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 36, "actual": 40.626670837402344, "predicted": 35.693485260009766}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 41, "actual": 31.5433292388916, "predicted": 30.295581817626953}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 51, "actual": 47.0099983215332, "predicted": 48.94760513305664}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 56, "actual": 4.199999809265137, "predicted": 8.71375560760498}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 61, "actual": 5.599999904632568, "predicted": 23.59165382385254}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 65, "actual": 65.69999694824219, "predicted": 48.08390426635742}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 85, "actual": 0.04207000136375427, "predicted": 0.03281641751527786}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 95, "actual": 0.0006099999882280827, "predicted": -0.001636698842048645}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 98, "actual": 0.000859999970998615, "predicted": -0.0028433427214622498}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 100, "actual": 0.0009699999936856329, "predicted": -0.0019904151558876038}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 114, "actual": 0.6674500107765198, "predicted": -0.0015661045908927917}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 116, "actual": 0.0002300000051036477, "predicted": -0.007950909435749054}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 122, "actual": 0.0005300000193528831, "predicted": -0.008185043931007385}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 124, "actual": 0.0009964000200852752, "predicted": -0.007717728614807129}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 136, "actual": 0.3324166536331177, "predicted": -0.008525177836418152}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 137, "actual": 0.3618600070476532, "predicted": -0.008827075362205505}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 141, "actual": 0.4897899925708771, "predicted": -0.008166387677192688}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 150, "actual": 0.0008099999977275729, "predicted": 0.02155059576034546}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 152, "actual": 0.0014782999642193317, "predicted": 0.021389208734035492}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 158, "actual": 0.06410666555166245, "predicted": 0.021264679729938507}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 159, "actual": 0.08494000136852264, "predicted": 0.021205127239227295}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 164, "actual": 0.737500011920929, "predicted": 0.021578334271907806}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 165, "actual": 0.6335800290107727, "predicted": 0.021338291466236115}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 177, "actual": 0.0006555999862030149, "predicted": -0.00024696439504623413}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 178, "actual": 0.0007300000288523734, "predicted": 0.0003469884395599365}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 180, "actual": 0.000864333298522979, "predicted": 0.0002445727586746216}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 181, "actual": 0.02239999920129776, "predicted": -0.00033979862928390503}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 192, "actual": 0.43372833728790283, "predicted": 0.0002102106809616089}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 193, "actual": 0.18649999797344208, "predicted": 0.09902065247297287}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 194, "actual": 0.23833000659942627, "predicted": 0.1438436061143875}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 204, "actual": 2.8566699028015137, "predicted": 2.267313003540039}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 206, "actual": 9.727999687194824, "predicted": 7.39207649230957}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 209, "actual": 12.779999732971191, "predicted": 13.698986053466797}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 210, "actual": 16.976669311523438, "predicted": 17.5664119720459}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 217, "actual": 1.3983299732208252, "predicted": 1.464125394821167}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 220, "actual": 2.8606700897216797, "predicted": 2.8908843994140625}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 230, "actual": 0.09325999766588211, "predicted": 0.01988658308982849}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 233, "actual": 0.1865299940109253, "predicted": 0.12138137966394424}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 236, "actual": 0.49053001403808594, "predicted": 0.38945144414901733}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 246, "actual": 5.785999774932861, "predicted": 6.382369518280029}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 247, "actual": 6.230999946594238, "predicted": 8.31462574005127}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 255, "actual": 0.1347000002861023, "predicted": 0.000535622239112854}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 266, "actual": 0.6770700216293335, "predicted": 1.4223047494888306}
-{"log_type": "prediction_trace", "fold": 3, "sample_idx": 269, "actual": 0.08370000123977661, "predicted": 0.12985409796237946}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 1, "actual": 13.4399995803833, "predicted": 3.2067337036132812}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 3, "actual": 0.0, "predicted": 0.6554251909255981}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 7, "actual": 13.779999732971191, "predicted": 30.363203048706055}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 23, "actual": 60.51667022705078, "predicted": 59.88811492919922}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 34, "actual": 25.350000381469727, "predicted": 26.213552474975586}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 39, "actual": 22.8700008392334, "predicted": 25.427528381347656}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 40, "actual": 23.719999313354492, "predicted": 25.391277313232422}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 43, "actual": 47.189998626708984, "predicted": 47.21015930175781}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 44, "actual": 62.6733283996582, "predicted": 62.28432846069336}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 47, "actual": 24.170000076293945, "predicted": 28.404569625854492}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 49, "actual": 31.923330307006836, "predicted": 34.480159759521484}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 53, "actual": 78.3566665649414, "predicted": 73.46337127685547}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 62, "actual": 0.0, "predicted": 4.927106857299805}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 64, "actual": 43.5, "predicted": 57.6733512878418}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 70, "actual": 0.00018000000272877514, "predicted": 0.05873914808034897}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 80, "actual": 0.012199999764561653, "predicted": 0.060880161821842194}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 81, "actual": 0.017495334148406982, "predicted": 0.058526113629341125}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 83, "actual": 0.02150999940931797, "predicted": 0.05994338542222977}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 91, "actual": 0.537630021572113, "predicted": 0.059744227677583694}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 94, "actual": 0.0005200000014156103, "predicted": 0.08376864343881607}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 103, "actual": 0.017009999603033066, "predicted": 0.08351969718933105}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 105, "actual": 0.048926666378974915, "predicted": 0.08342237770557404}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 110, "actual": 0.23231999576091766, "predicted": 0.08285398781299591}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 123, "actual": 0.0007600000244565308, "predicted": 0.08764399588108063}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 128, "actual": 0.005379999987781048, "predicted": 0.08605241775512695}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 129, "actual": 0.009390000253915787, "predicted": 0.0867682695388794}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 133, "actual": 0.022771665826439857, "predicted": 0.08651210367679596}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 135, "actual": 0.22920000553131104, "predicted": 0.08769449591636658}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 138, "actual": 0.39129000902175903, "predicted": 0.08699806779623032}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 145, "actual": 0.00022000000171829015, "predicted": 0.07192379236221313}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 153, "actual": 0.005229999776929617, "predicted": 0.07074576616287231}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 156, "actual": 0.029850000515580177, "predicted": 0.07318896055221558}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 161, "actual": 0.1266166716814041, "predicted": 0.07218409329652786}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 162, "actual": 0.33024001121520996, "predicted": 0.07100378721952438}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 163, "actual": 0.5338699817657471, "predicted": 0.07080695033073425}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 170, "actual": 0.00016999999934341758, "predicted": 0.053283244371414185}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 171, "actual": 0.00022499330225400627, "predicted": 0.0536329448223114}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 190, "actual": 0.39798998832702637, "predicted": 0.052896950393915176}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 198, "actual": 0.5491999983787537, "predicted": 0.5064558982849121}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 200, "actual": 1.0052000284194946, "predicted": 0.7814719676971436}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 205, "actual": 3.430000066757202, "predicted": 4.195602893829346}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 215, "actual": 32.22999954223633, "predicted": 43.4385871887207}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 221, "actual": 3.8143301010131836, "predicted": 3.875847339630127}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 222, "actual": 4.76800012588501, "predicted": 4.847352981567383}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 224, "actual": 6.548669815063477, "predicted": 8.44019603729248}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 225, "actual": 7.439000129699707, "predicted": 10.003021240234375}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 238, "actual": 0.8912000060081482, "predicted": 0.6653566360473633}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 239, "actual": 1.329800009727478, "predicted": 0.9657399654388428}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 242, "actual": 3.243000030517578, "predicted": 4.09034538269043}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 243, "actual": 3.9423298835754395, "predicted": 4.57352876663208}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 244, "actual": 4.641670227050781, "predicted": 5.121623992919922}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 245, "actual": 5.341000080108643, "predicted": 5.725856304168701}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 263, "actual": 0.31779998540878296, "predicted": 0.3274766802787781}
-{"log_type": "prediction_trace", "fold": 4, "sample_idx": 268, "actual": 0.06909999996423721, "predicted": 0.46145516633987427}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 8, "actual": 22.6299991607666, "predicted": 20.442012786865234}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 13, "actual": 23.670000076293945, "predicted": 0.06701961159706116}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 14, "actual": 24.440000534057617, "predicted": 0.06446205079555511}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 17, "actual": 0.0, "predicted": 4.1297607421875}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 20, "actual": 29.84000015258789, "predicted": 30.329607009887695}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 21, "actual": 37.4900016784668, "predicted": 37.83203125}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 48, "actual": 24.3799991607666, "predicted": 24.488201141357422}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 50, "actual": 39.466670989990234, "predicted": 37.93002700805664}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 52, "actual": 62.68333053588867, "predicted": 61.810768127441406}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 54, "actual": 94.02999877929688, "predicted": 88.423828125}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 57, "actual": 13.260000228881836, "predicted": 0.5841518044471741}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 58, "actual": 0.0, "predicted": 0.1085721105337143}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 59, "actual": 0.0, "predicted": 0.093216173350811}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 63, "actual": 14.729999542236328, "predicted": 5.448141574859619}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 71, "actual": 0.0002500000118743628, "predicted": 0.026996329426765442}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 72, "actual": 0.00031751999631524086, "predicted": 0.029253743588924408}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 87, "actual": 0.16520999372005463, "predicted": 0.027896884828805923}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 88, "actual": 0.2512499988079071, "predicted": 0.027382314205169678}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 89, "actual": 0.33728334307670593, "predicted": 0.026954099535942078}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 99, "actual": 0.0009330332977697253, "predicted": 0.03257206082344055}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 102, "actual": 0.00105339998845011, "predicted": 0.03250777721405029}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 106, "actual": 0.10683000087738037, "predicted": 0.03107558563351631}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 107, "actual": 0.16473999619483948, "predicted": 0.03214161843061447}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 121, "actual": 0.0002941866987384856, "predicted": 0.04385269060730934}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 130, "actual": 0.013398666866123676, "predicted": 0.04624807834625244}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 131, "actual": 0.016519999131560326, "predicted": 0.04520465061068535}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 134, "actual": 0.12599000334739685, "predicted": 0.04296610504388809}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 149, "actual": 0.0004694832896348089, "predicted": 0.04171053692698479}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 151, "actual": 0.0011399999493733048, "predicted": 0.04115702956914902}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 160, "actual": 0.10577999800443649, "predicted": 0.04135414585471153}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 166, "actual": 0.5296599864959717, "predicted": 0.04236400127410889}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 169, "actual": 0.00011999999696854502, "predicted": 0.010507434606552124}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 174, "actual": 0.0004940499784424901, "predicted": 0.011639639735221863}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 187, "actual": 0.1991499960422516, "predicted": 0.011729061603546143}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 188, "actual": 0.28964000940322876, "predicted": 0.010495290160179138}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 189, "actual": 0.38012832403182983, "predicted": 0.0112089142203331}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 191, "actual": 0.41585999727249146, "predicted": 0.011631935834884644}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 203, "actual": 2.283329963684082, "predicted": 1.7873467206954956}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 207, "actual": 10.745329856872559, "predicted": 10.665740013122559}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 214, "actual": 29.943330764770508, "predicted": 34.74528503417969}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 218, "actual": 1.6526700258255005, "predicted": 1.8987432718276978}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 219, "actual": 1.906999945640564, "predicted": 2.324781656265259}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 228, "actual": 19.84000015258789, "predicted": 22.097068786621094}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 235, "actual": 0.29019999504089355, "predicted": 0.2623298168182373}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 237, "actual": 0.6908699870109558, "predicted": 0.7136314511299133}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 240, "actual": 1.768399953842163, "predicted": 1.7473256587982178}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 241, "actual": 2.2070000171661377, "predicted": 2.493149995803833}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 250, "actual": 21.93199920654297, "predicted": 19.752531051635742}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 252, "actual": 38.526668548583984, "predicted": 32.71151351928711}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 257, "actual": 0.148499995470047, "predicted": 0.096758633852005}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 260, "actual": 0.1623300015926361, "predicted": 0.1628575623035431}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 267, "actual": 0.8187000155448914, "predicted": 2.5512168407440186}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 270, "actual": 0.3619999885559082, "predicted": 0.022123299539089203}
-{"log_type": "prediction_trace", "fold": 5, "sample_idx": 272, "actual": 0.1860000044107437, "predicted": 0.051287561655044556}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 6, "drug": "C[C@@H]\\1C/C(=C/C[C@@H]2C[C@@H](C[C@@]3(O2)C/C(=N\\OC)/[C@@H]([C@H](O3)/C(=C/C(C)C)/C)C)OC(=O)[C@@H]4C=C([C@H]([C@@H]5[C@]4(/C(=C/C=C1)/CO5)O)O)C)/C", "polymer": "*CC(C)(C(=O)OCCOC(=O)C(CCN)N)*", "actual": 13.170000076293945, "predicted": 16.40215492248535}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 9, "drug": "Clc1cc(Cl)ccc1OCC(=O)O", "polymer": "*CC(C)(C(=O)O)*", "actual": 0.0, "predicted": 0.28271615505218506}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 15, "drug": "C[C@@H]\\1C/C(=C/C[C@@H]2C[C@@H](C[C@@]3(O2)C/C(=N\\OC)/[C@@H]([C@H](O3)/C(=C/C(C)C)/C)C)OC(=O)[C@@H]4C=C([C@H]([C@@H]5[C@]4(/C(=C/C=C1)/CO5)O)O)C)/C", "polymer": "*CC(C)(C(=O)O)*", "actual": 22.690000534057617, "predicted": 0.29349663853645325}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 19, "drug": "Clc1cc(Cl)ccc1OCC(=O)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 22.190000534057617, "predicted": 25.212671279907227}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 22, "drug": "Clc1cc(Cl)ccc1OCC(=O)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 45.13999938964844, "predicted": 47.469337463378906}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 24, "drug": "Clc1cc(Cl)ccc1OCC(=O)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 75.8933334350586, "predicted": 78.03532409667969}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 25, "drug": "Clc1cc(Cl)ccc1OCC(=O)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 91.2699966430664, "predicted": 89.14277648925781}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 30, "drug": "CN(C)C1=CC2=C(C=C1)N=C3C=CC(=O)C=C3S2", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 0.0, "predicted": 0.3786703944206238}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 42, "drug": "CN1C(=C(C2=CC=CC=C2S1(=O)=O)O)C(=O)NC3=CC=CC=N3", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 39.366668701171875, "predicted": 39.17523193359375}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 45, "drug": "CN1C(=C(C2=CC=CC=C2S1(=O)=O)O)C(=O)NC3=CC=CC=N3", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 78.15666961669922, "predicted": 73.24437713623047}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 46, "drug": "CN1C(=C(C2=CC=CC=C2S1(=O)=O)O)C(=O)NC3=CC=CC=N3", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 93.63999938964844, "predicted": 83.9499282836914}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 60, "drug": "CN(C)C1=CC2=C(C=C1)N=C3C=CC(=O)C=C3S2", "polymer": "*CC(C)(C(=O)OCCO)*", "actual": 24.459999084472656, "predicted": 0.015144839882850647}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 67, "drug": "nan", "polymer": "*CC(=C)C(=O)O*", "actual": 0.07190000265836716, "predicted": 0.17565281689167023}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 68, "drug": "C[C@@H](C1=CC2=C(C=C1)C=C(C=C2)OC)C(=O)O", "polymer": "*CC(=C)C(=O)O*", "actual": 13.600000381469727, "predicted": 55.50941467285156}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 77, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0014199999859556556, "predicted": 0.010416343808174133}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 79, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.006909999996423721, "predicted": 0.00606401264667511}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 82, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.019500000402331352, "predicted": 0.011987924575805664}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 90, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.4374600052833557, "predicted": 0.009451419115066528}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 93, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.00041716330451890826, "predicted": 0.004815950989723206}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 104, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.03297000005841255, "predicted": 0.001458585262298584}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 109, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.2274799942970276, "predicted": 0.00581909716129303}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 113, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.5240200161933899, "predicted": 0.001506701111793518}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 115, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.00021173669665586203, "predicted": 0.057056866586208344}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 117, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.00023999999393709004, "predicted": 0.05719456076622009}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 119, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0002699999895412475, "predicted": 0.05577726662158966}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 120, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0002800000074785203, "predicted": 0.047577567398548126}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 126, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0012499999720603228, "predicted": 0.051147252321243286}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 132, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.01964999921619892, "predicted": 0.05115587264299393}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 139, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.42073333263397217, "predicted": 0.05143804848194122}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 146, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.00031563331140205264, "predicted": 0.08709597587585449}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 148, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0004199999966658652, "predicted": 0.08685184270143509}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 154, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.008969999849796295, "predicted": 0.08634921908378601}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 155, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.012719999998807907, "predicted": 0.08705784380435944}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 167, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.4257333278656006, "predicted": 0.0868043452501297}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 176, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0006000000284984708, "predicted": 0.02676290273666382}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 185, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0942699983716011, "predicted": 0.02661903202533722}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 196, "drug": "nan", "polymer": "*C=CC1=CC=CC=N1*", "actual": 0.34200000762939453, "predicted": 0.3866273760795593}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 208, "drug": "CC(=O)OC1=CC=CC=C1C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 11.762669563293457, "predicted": 13.196013450622559}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 211, "drug": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 21.173330307006836, "predicted": 20.82289695739746}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 212, "drug": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 25.3700008392334, "predicted": 23.338972091674805}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 213, "drug": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 27.65666961669922, "predicted": 27.12510108947754}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 223, "drug": "CC1=C(C2=C(N1C(=O)C3=CC=C(C=C3)Cl)C=CC(=C2)OC)CC(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 5.658329963684082, "predicted": 5.91862678527832}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 226, "drug": "CC1=C(C2=C(N1C(=O)C3=CC=C(C=C3)Cl)C=CC(=C2)OC)CC(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 11.572669982910156, "predicted": 12.616691589355469}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 227, "drug": "CC1=C(C2=C(N1C(=O)C3=CC=C(C=C3)Cl)C=CC(=C2)OC)CC(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 15.706330299377441, "predicted": 17.029497146606445}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 229, "drug": "CC1=C(C2=C(N1C(=O)C3=CC=C(C=C3)Cl)C=CC(=C2)OC)CC(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.07254000008106232, "predicted": 0.0706169381737709}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 232, "drug": "CC1=C(C2=C(N1C(=O)C3=CC=C(C=C3)Cl)C=CC(=C2)OC)CC(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.1347000002861023, "predicted": 0.151470348238945}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 234, "drug": "CCN(CC)CCNC(=O)C1=CC(=C(C=C1OC)N)Cl", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.23837000131607056, "predicted": 0.29543131589889526}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 248, "drug": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 6.676000118255615, "predicted": 10.20365047454834}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 249, "drug": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 14.303999900817871, "predicted": 16.889070510864258}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 253, "drug": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 47.49332809448242, "predicted": 47.282413482666016}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 256, "drug": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.14159999787807465, "predicted": 0.05488373339176178}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 258, "drug": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.15539999306201935, "predicted": 0.10204751789569855}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 264, "drug": "CC1=C(C(=O)N(N1C)C2=CC=CC=C2)N(C)C", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.3937999904155731, "predicted": 0.5678856372833252}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 265, "drug": "CC1=C(C(=O)N(N1C)C2=CC=CC=C2)N(C)C", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.5354300141334534, "predicted": 0.8889807462692261}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 271, "drug": "CC1=C(C(=O)N(N1C)C2=CC=CC=C2)N(C)C", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.08089999854564667, "predicted": 0.16868072748184204}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 2, "drug": "C[C@@H]1[C@H]2[C@@H]([C@H]3[C@@H](C(=O)C(=C([C@]3(C(=O)C2=C(C4=C1C=CC=C4O)O)O)O)C(=O)N)N(C)C)O", "polymer": "*CC(C)(C(=O)OCCOC(=O)C(CCN)N)*", "actual": 6.75, "predicted": 0.21547672152519226}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 10, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=CC=C3)N)C(=O)O)C", "polymer": "*CC(C)(C(=O)O)*", "actual": 0.0, "predicted": 0.43022915720939636}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 16, "drug": "CN1C(=C(C2=CC=CC=C2S1(=O)=O)O)C(=O)NC3=CC=CC=N3", "polymer": "*CC(C)(C(=O)O)*", "actual": 0.0, "predicted": 0.5014523267745972}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 18, "drug": "Clc1cc(Cl)ccc1OCC(=O)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 24.3799991607666, "predicted": 24.60017967224121}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 29, "drug": "CCN1C=C(C(=O)C2=CC(=C(C(=C21)F)N3CCNC(C3)C)F)C(=O)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 0.0, "predicted": 0.02574273943901062}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 33, "drug": "C[C@@H]\\1C/C(=C/C[C@@H]2C[C@@H](C[C@@]3(O2)C/C(=N\\OC)/[C@@H]([C@H](O3)/C(=C/C(C)C)/C)C)OC(=O)[C@@H]4C=C([C@H]([C@@H]5[C@]4(/C(=C/C=C1)/CO5)O)O)C)/C", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 20.280000686645508, "predicted": 19.658103942871094}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 37, "drug": "C[C@@H]\\1C/C(=C/C[C@@H]2C[C@@H](C[C@@]3(O2)C/C(=N\\OC)/[C@@H]([C@H](O3)/C(=C/C(C)C)/C)C)OC(=O)[C@@H]4C=C([C@H]([C@@H]5[C@]4(/C(=C/C=C1)/CO5)O)O)C)/C", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 50.83332824707031, "predicted": 48.9334602355957}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 38, "drug": "C[C@@H]\\1C/C(=C/C[C@@H]2C[C@@H](C[C@@]3(O2)C/C(=N\\OC)/[C@@H]([C@H](O3)/C(=C/C(C)C)/C)C)OC(=O)[C@@H]4C=C([C@H]([C@@H]5[C@]4(/C(=C/C=C1)/CO5)O)O)C)/C", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 61.040000915527344, "predicted": 59.87846374511719}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 55, "drug": "Clc1cc(Cl)ccc1OCC(=O)O", "polymer": "*CC(C)(C(=O)OCCO)*", "actual": 3.4600000381469727, "predicted": 3.6462695598602295}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 66, "drug": "C1=CC=C(C(=C1)CC(=O)O)NC2=C(C=CC=C2Cl)Cl", "polymer": "*CC(=C)C(=O)O*", "actual": 0.07169999927282333, "predicted": 0.17163410782814026}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 69, "drug": "[Ag]", "polymer": "*CC(C(=O)NC(C)C)*", "actual": 0.00010676599777070805, "predicted": 0.0637228935956955}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 73, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0005499999970197678, "predicted": 0.0633273720741272}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 74, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0007800000021234155, "predicted": 0.059437427669763565}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 75, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0010122667299583554, "predicted": 0.06179220229387283}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 76, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0012100000167265534, "predicted": 0.06163357198238373}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 78, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0016180332750082016, "predicted": 0.06242053210735321}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 84, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.023511666804552078, "predicted": 0.06263962388038635}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 86, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.07918000221252441, "predicted": 0.06323076784610748}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 92, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.6377999782562256, "predicted": 0.06425977498292923}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 96, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0007131000165827572, "predicted": 0.00011440366506576538}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 97, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0007900000200606883, "predicted": 0.00022383779287338257}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 101, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0010100000072270632, "predicted": -8.769333362579346e-06}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 108, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.22265000641345978, "predicted": 0.0010221228003501892}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 111, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.23714999854564667, "predicted": 0.001495078206062317}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 112, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.38058000802993774, "predicted": -0.0005122721195220947}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 118, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0002519332920201123, "predicted": 0.015193507075309753}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 125, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.001120000029914081, "predicted": 0.015524156391620636}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 127, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0013776000123471022, "predicted": 0.015641190111637115}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 140, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.4552600085735321, "predicted": 0.015217356383800507}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 142, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.524316668510437, "predicted": 0.01678350567817688}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 143, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 3.6580000596586615e-05, "predicted": 0.06037324294447899}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 144, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.00013000000035390258, "predicted": 0.06067937985062599}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 147, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0003699999942909926, "predicted": 0.056004516780376434}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 157, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.04698000103235245, "predicted": 0.05829021334648132}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 168, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 6.004999886499718e-05, "predicted": 0.1578345149755478}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 172, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0003100000030826777, "predicted": 0.16425922513008118}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 173, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.00039999998989515007, "predicted": 0.1573568433523178}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 175, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0005499999970197678, "predicted": 0.15903852880001068}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 179, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0007900000200606883, "predicted": 0.16448555886745453}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 182, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.04394000023603439, "predicted": 0.15807867050170898}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 183, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.06547333300113678, "predicted": 0.15675228834152222}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 184, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.07987000048160553, "predicted": 0.1606869101524353}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 186, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.10866666585206985, "predicted": 0.1550024449825287}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 195, "drug": "C1=CC=C(C(=C1)CC(=O)O)NC2=C(C=CC=C2Cl)Cl", "polymer": "*C=CC1=CC=CC=N1*", "actual": 0.29017001390457153, "predicted": 0.20042751729488373}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 197, "drug": "C[C@@H](C1=CC2=C(C=C1)C=C(C=C2)OC)C(=O)O", "polymer": "*C=CC1=CC=CC=N1*", "actual": 0.4456000030040741, "predicted": 0.26524990797042847}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 199, "drug": "CC(=O)OC1=CC=CC=C1C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.6528000235557556, "predicted": 0.36538171768188477}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 201, "drug": "CC(=O)OC1=CC=CC=C1C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 1.3575999736785889, "predicted": 0.5959571599960327}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 202, "drug": "CC(=O)OC1=CC=CC=C1C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 1.7100000381469727, "predicted": 0.709301769733429}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 216, "drug": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 1.1440000534057617, "predicted": 0.7337722182273865}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 231, "drug": "CC1=C(C2=C(N1C(=O)C3=CC=C(C=C3)Cl)C=CC(=C2)OC)CC(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.1139800027012825, "predicted": 0.16576829552650452}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 251, "drug": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 29.559999465942383, "predicted": 25.132869720458984}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 254, "drug": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 56.459999084472656, "predicted": 57.899505615234375}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 259, "drug": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.15886999666690826, "predicted": 0.2416795939207077}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 261, "drug": "CC1=C(C(=O)N(N1C)C2=CC=CC=C2)N(C)C", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.16580000519752502, "predicted": 0.3095266819000244}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 262, "drug": "CC1=C(C(=O)N(N1C)C2=CC=CC=C2)N(C)C", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.241799995303154, "predicted": 0.38440048694610596}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 0, "drug": "Clc1cc(Cl)ccc1OCC(=O)O", "polymer": "*CC(C)(C(=O)OCCOC(=O)C(CCN)N)*", "actual": 50.810001373291016, "predicted": 14.1958589553833}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 4, "drug": "CCN1C=C(C(=O)C2=CC(=C(C(=C21)F)N3CCNC(C3)C)F)C(=O)O", "polymer": "*CC(C)(C(=O)OCCOC(=O)C(CCN)N)*", "actual": 0.0, "predicted": -0.0733744204044342}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 5, "drug": "CN(C)C1=CC2=C(C=C1)N=C3C=CC(=O)C=C3S2", "polymer": "*CC(C)(C(=O)OCCOC(=O)C(CCN)N)*", "actual": 0.0, "predicted": 0.2512980103492737}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 11, "drug": "C[C@@H]1[C@H]2[C@@H]([C@H]3[C@@H](C(=O)C(=C([C@]3(C(=O)C2=C(C4=C1C=CC=C4O)O)O)O)C(=O)N)N(C)C)O", "polymer": "*CC(C)(C(=O)O)*", "actual": 7.909999847412109, "predicted": 1.2860655784606934}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 12, "drug": "C1=CC(=C(C=C1F)F)C(CN2C=NC=N2)(CN3C=NC=N3)O", "polymer": "*CC(C)(C(=O)O)*", "actual": 0.0, "predicted": 0.1658908575773239}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 26, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=CC=C3)N)C(=O)O)C", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 0.0, "predicted": 16.553417205810547}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 27, "drug": "C[C@@H]1[C@H]2[C@@H]([C@H]3[C@@H](C(=O)C(=C([C@]3(C(=O)C2=C(C4=C1C=CC=C4O)O)O)O)C(=O)N)N(C)C)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 0.0, "predicted": 9.239449501037598}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 28, "drug": "C1=CC(=C(C=C1F)F)C(CN2C=NC=N2)(CN3C=NC=N3)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 0.0, "predicted": 0.3356219232082367}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 31, "drug": "C[C@@H]\\1C/C(=C/C[C@@H]2C[C@@H](C[C@@]3(O2)C/C(=N\\OC)/[C@@H]([C@H](O3)/C(=C/C(C)C)/C)C)OC(=O)[C@@H]4C=C([C@H]([C@@H]5[C@]4(/C(=C/C=C1)/CO5)O)O)C)/C", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 15.130000114440918, "predicted": 18.959667205810547}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 32, "drug": "C[C@@H]\\1C/C(=C/C[C@@H]2C[C@@H](C[C@@]3(O2)C/C(=N\\OC)/[C@@H]([C@H](O3)/C(=C/C(C)C)/C)C)OC(=O)[C@@H]4C=C([C@H]([C@@H]5[C@]4(/C(=C/C=C1)/CO5)O)O)C)/C", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 15.210000038146973, "predicted": 18.962230682373047}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 35, "drug": "C[C@@H]\\1C/C(=C/C[C@@H]2C[C@@H](C[C@@]3(O2)C/C(=N\\OC)/[C@@H]([C@H](O3)/C(=C/C(C)C)/C)C)OC(=O)[C@@H]4C=C([C@H]([C@@H]5[C@]4(/C(=C/C=C1)/CO5)O)O)C)/C", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 30.420000076293945, "predicted": 28.93221664428711}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 36, "drug": "C[C@@H]\\1C/C(=C/C[C@@H]2C[C@@H](C[C@@]3(O2)C/C(=N\\OC)/[C@@H]([C@H](O3)/C(=C/C(C)C)/C)C)OC(=O)[C@@H]4C=C([C@H]([C@@H]5[C@]4(/C(=C/C=C1)/CO5)O)O)C)/C", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 40.626670837402344, "predicted": 41.27876663208008}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 41, "drug": "CN1C(=C(C2=CC=CC=C2S1(=O)=O)O)C(=O)NC3=CC=CC=N3", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 31.5433292388916, "predicted": 31.07548713684082}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 51, "drug": "CC1=CC(=C(C=C1C2(C3=CC=CC=C3S(=O)(=O)O2)C4=CC(=C(C=C4C)O)C(C)C)C(C)C)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 47.0099983215332, "predicted": 46.5612678527832}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 56, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=CC=C3)N)C(=O)O)C", "polymer": "*CC(C)(C(=O)OCCO)*", "actual": 4.199999809265137, "predicted": 9.740711212158203}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 61, "drug": "C[C@@H]\\1C/C(=C/C[C@@H]2C[C@@H](C[C@@]3(O2)C/C(=N\\OC)/[C@@H]([C@H](O3)/C(=C/C(C)C)/C)C)OC(=O)[C@@H]4C=C([C@H]([C@@H]5[C@]4(/C(=C/C=C1)/CO5)O)O)C)/C", "polymer": "*CC(C)(C(=O)OCCO)*", "actual": 5.599999904632568, "predicted": 23.56419563293457}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 65, "drug": "[Pb+2]", "polymer": "*OC1C(O)C(O)C(*)OC1COC(=O)CC(O)(C(=O)O)CC(=O)NCCN", "actual": 65.69999694824219, "predicted": 47.60256576538086}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 85, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.04207000136375427, "predicted": 0.0735677182674408}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 95, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0006099999882280827, "predicted": 0.04809824377298355}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 98, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.000859999970998615, "predicted": 0.046385809779167175}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 100, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0009699999936856329, "predicted": 0.04733150452375412}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 114, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.6674500107765198, "predicted": 0.047385118901729584}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 116, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0002300000051036477, "predicted": 0.0486469492316246}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 122, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0005300000193528831, "predicted": 0.04866012930870056}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 124, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0009964000200852752, "predicted": 0.04923491179943085}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 136, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.3324166536331177, "predicted": 0.04846971482038498}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 137, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.3618600070476532, "predicted": 0.04819531738758087}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 141, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.4897899925708771, "predicted": 0.04864633083343506}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 150, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0008099999977275729, "predicted": 0.061580900102853775}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 152, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0014782999642193317, "predicted": 0.0615292564034462}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 158, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.06410666555166245, "predicted": 0.06123156100511551}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 159, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.08494000136852264, "predicted": 0.06163961440324783}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 164, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.737500011920929, "predicted": 0.06170939654111862}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 165, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.6335800290107727, "predicted": 0.06166762113571167}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 177, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0006555999862030149, "predicted": 0.061484284698963165}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 178, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0007300000288523734, "predicted": 0.06191082298755646}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 180, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.000864333298522979, "predicted": 0.06184107065200806}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 181, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.02239999920129776, "predicted": 0.06150418519973755}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 192, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.43372833728790283, "predicted": 0.06168247386813164}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 193, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.18649999797344208, "predicted": 0.14029401540756226}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 194, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.23833000659942627, "predicted": 0.1740976721048355}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 204, "drug": "CC(=O)OC1=CC=CC=C1C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 2.8566699028015137, "predicted": 2.2649664878845215}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 206, "drug": "CC(=O)OC1=CC=CC=C1C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 9.727999687194824, "predicted": 7.696986198425293}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 209, "drug": "CC(=O)OC1=CC=CC=C1C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 12.779999732971191, "predicted": 14.17349910736084}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 210, "drug": "CC(=O)OC1=CC=CC=C1C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 16.976669311523438, "predicted": 17.37175178527832}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 217, "drug": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 1.3983299732208252, "predicted": 1.700822114944458}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 220, "drug": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 2.8606700897216797, "predicted": 2.9935595989227295}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 230, "drug": "CC1=C(C2=C(N1C(=O)C3=CC=C(C=C3)Cl)C=CC(=C2)OC)CC(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.09325999766588211, "predicted": 0.09763196855783463}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 233, "drug": "CC1=C(C2=C(N1C(=O)C3=CC=C(C=C3)Cl)C=CC(=C2)OC)CC(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.1865299940109253, "predicted": 0.17412707209587097}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 236, "drug": "CCN(CC)CCNC(=O)C1=CC(=C(C=C1OC)N)Cl", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.49053001403808594, "predicted": 0.5123171806335449}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 246, "drug": "CCN(CC)CCNC(=O)C1=CC(=C(C=C1OC)N)Cl", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 5.785999774932861, "predicted": 6.082215785980225}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 247, "drug": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 6.230999946594238, "predicted": 7.314332008361816}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 255, "drug": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.1347000002861023, "predicted": 0.05419418215751648}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 266, "drug": "CC1=C(C(=O)N(N1C)C2=CC=CC=C2)N(C)C", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.6770700216293335, "predicted": 1.0971384048461914}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 269, "drug": "CC1=C(C(=O)N(N1C)C2=CC=CC=C2)N(C)C", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.08370000123977661, "predicted": 0.15985578298568726}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 1, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=CC=C3)N)C(=O)O)C", "polymer": "*CC(C)(C(=O)OCCOC(=O)C(CCN)N)*", "actual": 13.4399995803833, "predicted": 2.5151660442352295}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 3, "drug": "C1=CC(=C(C=C1F)F)C(CN2C=NC=N2)(CN3C=NC=N3)O", "polymer": "*CC(C)(C(=O)OCCOC(=O)C(CCN)N)*", "actual": 0.0, "predicted": 1.6497141122817993}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 7, "drug": "CN1C(=C(C2=CC=CC=C2S1(=O)=O)O)C(=O)NC3=CC=CC=N3", "polymer": "*CC(C)(C(=O)OCCOC(=O)C(CCN)N)*", "actual": 13.779999732971191, "predicted": 27.811351776123047}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 23, "drug": "Clc1cc(Cl)ccc1OCC(=O)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 60.51667022705078, "predicted": 53.94300842285156}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 34, "drug": "C[C@@H]\\1C/C(=C/C[C@@H]2C[C@@H](C[C@@]3(O2)C/C(=N\\OC)/[C@@H]([C@H](O3)/C(=C/C(C)C)/C)C)OC(=O)[C@@H]4C=C([C@H]([C@@H]5[C@]4(/C(=C/C=C1)/CO5)O)O)C)/C", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 25.350000381469727, "predicted": 25.05381202697754}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 39, "drug": "CN1C(=C(C2=CC=CC=C2S1(=O)=O)O)C(=O)NC3=CC=CC=N3", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 22.8700008392334, "predicted": 23.900272369384766}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 40, "drug": "CN1C(=C(C2=CC=CC=C2S1(=O)=O)O)C(=O)NC3=CC=CC=N3", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 23.719999313354492, "predicted": 23.876108169555664}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 43, "drug": "CN1C(=C(C2=CC=CC=C2S1(=O)=O)O)C(=O)NC3=CC=CC=N3", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 47.189998626708984, "predicted": 43.82059860229492}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 44, "drug": "CN1C(=C(C2=CC=CC=C2S1(=O)=O)O)C(=O)NC3=CC=CC=N3", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 62.6733283996582, "predicted": 56.88626480102539}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 47, "drug": "CC1=CC(=C(C=C1C2(C3=CC=CC=C3S(=O)(=O)O2)C4=CC(=C(C=C4C)O)C(C)C)C(C)C)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 24.170000076293945, "predicted": 27.410879135131836}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 49, "drug": "CC1=CC(=C(C=C1C2(C3=CC=CC=C3S(=O)(=O)O2)C4=CC(=C(C=C4C)O)C(C)C)C(C)C)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 31.923330307006836, "predicted": 33.48358917236328}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 53, "drug": "CC1=CC(=C(C=C1C2(C3=CC=CC=C3S(=O)(=O)O2)C4=CC(=C(C=C4C)O)C(C)C)C(C)C)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 78.3566665649414, "predicted": 67.53103637695312}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 62, "drug": "CN1C(=C(C2=CC=CC=C2S1(=O)=O)O)C(=O)NC3=CC=CC=N3", "polymer": "*CC(C)(C(=O)OCCO)*", "actual": 0.0, "predicted": 4.9963836669921875}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 64, "drug": "[Cd+2]", "polymer": "*OC1C(O)C(O)C(*)OC1COC(=O)CC(O)(C(=O)O)CC(=O)NCCN", "actual": 43.5, "predicted": 54.17378234863281}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 70, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.00018000000272877514, "predicted": 0.04093684256076813}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 80, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.012199999764561653, "predicted": 0.042263880372047424}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 81, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.017495334148406982, "predicted": 0.04133224859833717}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 83, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.02150999940931797, "predicted": 0.0413532629609108}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 91, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.537630021572113, "predicted": 0.041581541299819946}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 94, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0005200000014156103, "predicted": 0.05044625699520111}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 103, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.017009999603033066, "predicted": 0.05050474405288696}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 105, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.048926666378974915, "predicted": 0.04991469532251358}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 110, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.23231999576091766, "predicted": 0.049526363611221313}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 123, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0007600000244565308, "predicted": 0.04825342819094658}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 128, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.005379999987781048, "predicted": 0.04688884690403938}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 129, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.009390000253915787, "predicted": 0.04756893217563629}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 133, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.022771665826439857, "predicted": 0.047230929136276245}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 135, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.22920000553131104, "predicted": 0.04830452799797058}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 138, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.39129000902175903, "predicted": 0.047640539705753326}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 145, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.00022000000171829015, "predicted": 0.046466149389743805}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 153, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.005229999776929617, "predicted": 0.04564981162548065}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 156, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.029850000515580177, "predicted": 0.04726424068212509}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 161, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.1266166716814041, "predicted": 0.046707525849342346}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 162, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.33024001121520996, "predicted": 0.04578704386949539}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 163, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.5338699817657471, "predicted": 0.045676618814468384}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 170, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.00016999999934341758, "predicted": 0.03346364572644234}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 171, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.00022499330225400627, "predicted": 0.033907096832990646}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 190, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.39798998832702637, "predicted": 0.033764492720365524}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 198, "drug": "CC(=O)OC1=CC=CC=C1C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.5491999983787537, "predicted": 0.456284761428833}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 200, "drug": "CC(=O)OC1=CC=CC=C1C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 1.0052000284194946, "predicted": 0.7092792391777039}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 205, "drug": "CC(=O)OC1=CC=CC=C1C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 3.430000066757202, "predicted": 2.697819232940674}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 215, "drug": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 32.22999954223633, "predicted": 38.132659912109375}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 221, "drug": "CC1=C(C2=C(N1C(=O)C3=CC=C(C=C3)Cl)C=CC(=C2)OC)CC(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 3.8143301010131836, "predicted": 3.4593935012817383}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 222, "drug": "CC1=C(C2=C(N1C(=O)C3=CC=C(C=C3)Cl)C=CC(=C2)OC)CC(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 4.76800012588501, "predicted": 4.3900532722473145}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 224, "drug": "CC1=C(C2=C(N1C(=O)C3=CC=C(C=C3)Cl)C=CC(=C2)OC)CC(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 6.548669815063477, "predicted": 7.840099334716797}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 225, "drug": "CC1=C(C2=C(N1C(=O)C3=CC=C(C=C3)Cl)C=CC(=C2)OC)CC(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 7.439000129699707, "predicted": 8.909320831298828}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 238, "drug": "CCN(CC)CCNC(=O)C1=CC(=C(C=C1OC)N)Cl", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.8912000060081482, "predicted": 0.5686208605766296}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 239, "drug": "CCN(CC)CCNC(=O)C1=CC(=C(C=C1OC)N)Cl", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 1.329800009727478, "predicted": 0.804053008556366}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 242, "drug": "CCN(CC)CCNC(=O)C1=CC(=C(C=C1OC)N)Cl", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 3.243000030517578, "predicted": 3.205110788345337}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 243, "drug": "CCN(CC)CCNC(=O)C1=CC(=C(C=C1OC)N)Cl", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 3.9423298835754395, "predicted": 3.776996612548828}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 244, "drug": "CCN(CC)CCNC(=O)C1=CC(=C(C=C1OC)N)Cl", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 4.641670227050781, "predicted": 4.412055015563965}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 245, "drug": "CCN(CC)CCNC(=O)C1=CC(=C(C=C1OC)N)Cl", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 5.341000080108643, "predicted": 5.0843071937561035}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 263, "drug": "CC1=C(C(=O)N(N1C)C2=CC=CC=C2)N(C)C", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.31779998540878296, "predicted": 0.38877326250076294}
+{"log_type": "prediction_trace", "fold": 4, "sample_idx": 268, "drug": "CC1=C(C(=O)N(N1C)C2=CC=CC=C2)N(C)C", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.06909999996423721, "predicted": 0.5312135815620422}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 8, "drug": "CC1=CC(=C(C=C1C2(C3=CC=CC=C3S(=O)(=O)O2)C4=CC(=C(C=C4C)O)C(C)C)C(C)C)O", "polymer": "*CC(C)(C(=O)OCCOC(=O)C(CCN)N)*", "actual": 22.6299991607666, "predicted": 23.760385513305664}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 13, "drug": "CCN1C=C(C(=O)C2=CC(=C(C(=C21)F)N3CCNC(C3)C)F)C(=O)O", "polymer": "*CC(C)(C(=O)O)*", "actual": 23.670000076293945, "predicted": 0.040737539529800415}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 14, "drug": "CN(C)C1=CC2=C(C=C1)N=C3C=CC(=O)C=C3S2", "polymer": "*CC(C)(C(=O)O)*", "actual": 24.440000534057617, "predicted": 0.008038118481636047}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 17, "drug": "CC1=CC(=C(C=C1C2(C3=CC=CC=C3S(=O)(=O)O2)C4=CC(=C(C=C4C)O)C(C)C)C(C)C)O", "polymer": "*CC(C)(C(=O)O)*", "actual": 0.0, "predicted": 7.053647994995117}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 20, "drug": "Clc1cc(Cl)ccc1OCC(=O)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 29.84000015258789, "predicted": 34.64168930053711}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 21, "drug": "Clc1cc(Cl)ccc1OCC(=O)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 37.4900016784668, "predicted": 43.40042495727539}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 48, "drug": "CC1=CC(=C(C=C1C2(C3=CC=CC=C3S(=O)(=O)O2)C4=CC(=C(C=C4C)O)C(C)C)C(C)C)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 24.3799991607666, "predicted": 25.20561408996582}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 50, "drug": "CC1=CC(=C(C=C1C2(C3=CC=CC=C3S(=O)(=O)O2)C4=CC(=C(C=C4C)O)C(C)C)C(C)C)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 39.466670989990234, "predicted": 39.176143646240234}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 52, "drug": "CC1=CC(=C(C=C1C2(C3=CC=CC=C3S(=O)(=O)O2)C4=CC(=C(C=C4C)O)C(C)C)C(C)C)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 62.68333053588867, "predicted": 62.521305084228516}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 54, "drug": "CC1=CC(=C(C=C1C2(C3=CC=CC=C3S(=O)(=O)O2)C4=CC(=C(C=C4C)O)C(C)C)C(C)C)O", "polymer": "*CC(C1=CC=C(C=C1)CN(C)C[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O)*", "actual": 94.02999877929688, "predicted": 88.87578582763672}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 57, "drug": "C[C@@H]1[C@H]2[C@@H]([C@H]3[C@@H](C(=O)C(=C([C@]3(C(=O)C2=C(C4=C1C=CC=C4O)O)O)O)C(=O)N)N(C)C)O", "polymer": "*CC(C)(C(=O)OCCO)*", "actual": 13.260000228881836, "predicted": 3.4742021560668945}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 58, "drug": "C1=CC(=C(C=C1F)F)C(CN2C=NC=N2)(CN3C=NC=N3)O", "polymer": "*CC(C)(C(=O)OCCO)*", "actual": 0.0, "predicted": 0.09486284852027893}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 59, "drug": "CCN1C=C(C(=O)C2=CC(=C(C(=C21)F)N3CCNC(C3)C)F)C(=O)O", "polymer": "*CC(C)(C(=O)OCCO)*", "actual": 0.0, "predicted": 0.07128871977329254}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 63, "drug": "CC1=CC(=C(C=C1C2(C3=CC=CC=C3S(=O)(=O)O2)C4=CC(=C(C=C4C)O)C(C)C)C(C)C)O", "polymer": "*CC(C)(C(=O)OCCO)*", "actual": 14.729999542236328, "predicted": 6.267806053161621}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 71, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0002500000118743628, "predicted": 0.07149671018123627}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 72, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.00031751999631524086, "predicted": 0.07767010480165482}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 87, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.16520999372005463, "predicted": 0.07438826560974121}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 88, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.2512499988079071, "predicted": 0.07284744083881378}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 89, "drug": "CC1([C@@H](N2[C@H](S1)[C@@H](C2=O)NC(=O)[C@@H](C3=CC=C(C=C3)O)N)C(=O)O)C.O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.33728334307670593, "predicted": 0.072245292365551}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 99, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0009330332977697253, "predicted": 0.07330450415611267}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 102, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.00105339998845011, "predicted": 0.07279361039400101}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 106, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.10683000087738037, "predicted": 0.06979955732822418}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 107, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](N(C[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)O)C)C)C)O)(C)O.O.O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.16473999619483948, "predicted": 0.07203890383243561}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 121, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0002941866987384856, "predicted": 0.09379131346940994}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 130, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.013398666866123676, "predicted": 0.0996544137597084}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 131, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.016519999131560326, "predicted": 0.09764768183231354}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 134, "drug": "CC[C@@H]1[C@@]([C@@H]([C@H](C(=O)[C@@H](C[C@@]([C@@H]([C@H]([C@@H]([C@H](C(=O)O1)C)O[C@H]2C[C@@]([C@H]([C@@H](O2)C)O)(C)OC)C)O[C@H]3[C@@H]([C@H](C[C@H](O3)C)N(C)C)O)(C)OC)C)C)O)(C)O", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.12599000334739685, "predicted": 0.0923835039138794}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 149, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0004694832896348089, "predicted": 0.0965738594532013}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 151, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0011399999493733048, "predicted": 0.09542617201805115}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 160, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.10577999800443649, "predicted": 0.09590763598680496}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 166, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.5296599864959717, "predicted": 0.097590371966362}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 169, "drug": "CC1=CC(=NO1)NS(=O)(=O)C2=CC=C(C=C2)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.00011999999696854502, "predicted": 0.05586647242307663}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 174, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.0004940499784424901, "predicted": 0.05801098048686981}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 187, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.1991499960422516, "predicted": 0.058251410722732544}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 188, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.28964000940322876, "predicted": 0.05585021525621414}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 189, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.38012832403182983, "predicted": 0.05750265717506409}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 191, "drug": "COC1=CC(=CC(=C1OC)OC)CC2=CN=C(N=C2N)N", "polymer": "*NCCCCNC(=O)CCCC(=O)*", "actual": 0.41585999727249146, "predicted": 0.05812673270702362}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 203, "drug": "CC(=O)OC1=CC=CC=C1C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 2.283329963684082, "predicted": 1.5273358821868896}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 207, "drug": "CC(=O)OC1=CC=CC=C1C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 10.745329856872559, "predicted": 11.97274112701416}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 214, "drug": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 29.943330764770508, "predicted": 33.215675354003906}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 218, "drug": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 1.6526700258255005, "predicted": 2.598621368408203}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 219, "drug": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 1.906999945640564, "predicted": 2.9046640396118164}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 228, "drug": "CC1=C(C2=C(N1C(=O)C3=CC=C(C=C3)Cl)C=CC(=C2)OC)CC(=O)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 19.84000015258789, "predicted": 20.634525299072266}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 235, "drug": "CCN(CC)CCNC(=O)C1=CC(=C(C=C1OC)N)Cl", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.29019999504089355, "predicted": 0.2646658420562744}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 237, "drug": "CCN(CC)CCNC(=O)C1=CC(=C(C=C1OC)N)Cl", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.6908699870109558, "predicted": 0.5363369584083557}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 240, "drug": "CCN(CC)CCNC(=O)C1=CC(=C(C=C1OC)N)Cl", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 1.768399953842163, "predicted": 1.4684054851531982}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 241, "drug": "CCN(CC)CCNC(=O)C1=CC(=C(C=C1OC)N)Cl", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 2.2070000171661377, "predicted": 2.40427303314209}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 250, "drug": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 21.93199920654297, "predicted": 21.61602783203125}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 252, "drug": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 38.526668548583984, "predicted": 38.31008529663086}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 257, "drug": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)O", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.148499995470047, "predicted": 0.126231849193573}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 260, "drug": "CC1=C(C(=O)N(N1C)C2=CC=CC=C2)N(C)C", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.1623300015926361, "predicted": 0.1834091991186142}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 267, "drug": "CC1=C(C(=O)N(N1C)C2=CC=CC=C2)N(C)C", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.8187000155448914, "predicted": 2.2203941345214844}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 270, "drug": "CC1=C(C(=O)N(N1C)C2=CC=CC=C2)N(C)C", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.3619999885559082, "predicted": 0.034870460629463196}
+{"log_type": "prediction_trace", "fold": 5, "sample_idx": 272, "drug": "CC1=C(C(=O)N(N1C)C2=CC=CC=C2)N(C)C", "polymer": "*CN(CCO)C(=O)C(c1ccccc1)c2ccccc2*", "actual": 0.1860000044107437, "predicted": 0.08619654178619385}

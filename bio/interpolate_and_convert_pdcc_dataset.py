@@ -27,6 +27,9 @@ def main():
         n_points, 
         # interpolate_fn=PchipInterpolator
     )
+    # NOTE! If we add origin points, before interpolatation, 
+    #       we'll add many more data points, not sure if we want this!
+    df = add_origin_points(df)
     logger.debug(df)
     PDCC_DIR = INTERPOLATED_PDCC_CSV.parent
     # df.to_csv(INTERPOLATED_PDCC_CSV, index=False)
@@ -86,10 +89,10 @@ def polymer_division(
     
     combined_provided_polymers = train_set | val_set | test_set
     missing_from_lists = unique_polymers - combined_provided_polymers
-    assert not missing_from_lists, f"Polymers in dataframe but missing from split lists: {missing_from_lists}"
+    if missing_from_lists: logger.warning(f"Items in dataframe missing from split lists (these will be dropped): {missing_from_lists}")
     extra_in_lists = combined_provided_polymers - unique_polymers
-    assert not extra_in_lists, f"Polymers in split lists but missing from dataframe: {extra_in_lists}"
-    
+    if extra_in_lists: logger.warning(f"Polymers in split lists but missing from dataframe: {extra_in_lists}")
+
     train_df = df[df['POLYMER_USED'].isin(train_polymers)].copy()
     val_df = df[df['POLYMER_USED'].isin(validation_polymers)].copy()
     test_df = df[df['POLYMER_USED'].isin(test_polymers)].copy()
@@ -203,16 +206,25 @@ def group_shuffle(df: pd.DataFrame, group_lables: list[str]) -> SplittedDataFram
     )
     
 def convert(df: pd.DataFrame, psmiles_dict: dict, smiles_dict: dict):
-    missing_polymers = set(df['POLYMER_USED']) - set(psmiles_dict.keys())
-    missing_drugs = set(df['DRUG']) - set(smiles_dict.keys())
+    psmiles_dict_lower = {str(k).lower(): v for k, v in psmiles_dict.items()}
+    smiles_dict_lower = {str(k).lower(): v for k, v in smiles_dict.items()}
     
-    if missing_polymers:
-        logger.warning(f"Polymers missing from psmiles_dict: {missing_polymers}")
-    if missing_drugs:
-        logger.warning(f"Drugs missing from smiles_dict: {missing_drugs}")
+    poly_lower = df['POLYMER_USED'].astype(str).str.lower()
+    drug_lower = df['DRUG'].astype(str).str.lower()
+    
+    missing_polymers = set(poly_lower) - set(psmiles_dict_lower.keys())
+    missing_drugs = set(drug_lower) - set(smiles_dict_lower.keys())
+    
+    if missing_polymers: logger.warning(f"Polymers missing from psmiles_dict: {missing_polymers}")
+    if missing_drugs: logger.warning(f"Drugs missing from smiles_dict: {missing_drugs}")
 
-    df['POLYMER_USED'] = df['POLYMER_USED'].map(psmiles_dict)
-    df['DRUG'] = df['DRUG'].map(smiles_dict)
+    df['POLYMER_USED'] = poly_lower.map(psmiles_dict_lower)
+    df['DRUG'] = drug_lower.map(smiles_dict_lower)
+    
+    # Convert empty strings (""), spaces ("   "), and literal "nan" strings to true np.nan
+    df['POLYMER_USED'] = df['POLYMER_USED'].replace(r'^\s*$', np.nan, regex=True).replace(['nan', 'NaN', 'None'], np.nan)
+    df['DRUG'] = df['DRUG'].replace(r'^\s*$', np.nan, regex=True).replace(['nan', 'NaN', 'None'], np.nan)
+    df = df.dropna()
     return df
     
     
@@ -276,6 +288,27 @@ def get_middle_points(vector: np.array, n_middle_points: int) -> np.array:
     logger.debug(f"out: {out}")
     return np.sort(out)
     
+
+def add_origin_points(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Adds CONCENTRATION=0 and CAPACITY=0 for each unique 
+    (POLYMER_USED, DRUG, WATER_PH) group.
+    """
+    new_rows = []
+    groups = df.groupby(['POLYMER_USED', 'DRUG', 'WATER_PH'])
+    for (polymer, drug, water_ph), group in groups:
+        if not (group['CONCENTRATION'] == 0.0).any():
+            new_row = group.iloc[0].copy()
+            new_row['CONCENTRATION'] = 0.0
+            new_row['CAPACITY'] = 0.0
+            new_row['SOURCE'] = 'interpolated'
+            new_rows.append(new_row)
+    if new_rows:
+        origin_df = pd.DataFrame(new_rows)
+        df = pd.concat([df, origin_df], ignore_index=True)
+        logger.debug(f"Added {len(new_rows)} origin (0,0) points.")
+    return df
+
 
 def test_():
     main()

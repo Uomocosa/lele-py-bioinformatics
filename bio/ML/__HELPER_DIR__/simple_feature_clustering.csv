@@ -1,0 +1,59 @@
+CLUSTER,POLYMER_USED,DRUG,WATER_PH,CONCENTRATION,CAPACITY
+0,polyethyleneimine,Congo red,6.0,707.5,23.59
+0,polyethylene,carbamazepine,7.8,0.5,0.0837
+0,polyethylene,atorvastatin,7.8,0.5,0.0691
+0,polyethylene,propranolol,7.8,0.5,0.186
+0,polyethylene,ketamine,7.8,0.5,0.0809
+0,polyethylene,fluoxetine,7.8,0.5,0.362
+0,Methacrylic acid,diclofenac,6.0,2.0,0.0717
+0,Methacrylic acid,naproxen,6.0,2.0,0.0719
+0,Poly(N-isopropylacrylamide) ferrogel,Silver,6.6,100.0,13.6
+0,C-mA,Fluconazole,6.5,25.0,0.0
+0,C-mA,Ampicillin,6.5,25.0,0.0
+0,C-mA,Thymol Blue,6.5,25.0,0.0
+0,C-mA,Lomefloxacin,6.5,25.0,23.67
+0,C-mA,Methylene Violet,6.5,25.0,24.44
+0,C-mA,Piroxicam,6.5,25.0,0.0
+0,C-mA,Doxycycline,6.5,25.0,7.91
+0,C-mA,Moxidectin,6.5,25.0,22.69
+0,C-mA,2.4D,6.5,25.0,0.0
+0,C-ph,Fluconazole,6.5,25.0,0.0
+0,C-ph,Ampicillin,6.5,25.0,4.2
+0,C-ph,Thymol Blue,6.5,25.0,14.73
+0,C-ph,Lomefloxacin,6.5,25.0,0.0
+0,C-ph,Methylene Violet,6.5,25.0,24.46
+0,C-ph,Piroxicam,6.5,25.0,0.0
+0,C-ph,Doxycycline,6.5,25.0,13.26
+0,C-ph,Moxidectin,6.5,25.0,5.6
+0,C-ph,2.4D,6.5,25.0,3.46
+0,C-lys,Fluconazole,6.5,25.0,0.0
+0,C-lys,Ampicillin,6.5,25.0,13.44
+0,C-lys,Thymol Blue,6.5,25.0,22.63
+0,C-lys,Lomefloxacin,6.5,25.0,0.0
+0,C-lys,Methylene Violet,6.5,25.0,0.0
+0,C-lys,Piroxicam,6.5,25.0,13.78
+0,C-lys,Doxycycline,6.5,25.0,6.75
+0,C-lys,Moxidectin,6.5,25.0,13.17
+0,C-lys,2.4D,6.5,25.0,50.81
+1,C-megl,Fluconazole,6.5,25.0,0.0
+1,C-megl,Ampicillin,6.5,25.0,0.0
+1,C-megl,Thymol Blue,6.5,53.125,50.2525
+1,C-megl,Lomefloxacin,6.5,25.0,0.0
+1,C-megl,Methylene Violet,6.5,25.0,0.0
+1,C-megl,Piroxicam,6.5,53.125,49.895
+1,C-megl,Doxycycline,6.5,25.0,0.0
+1,C-megl,Moxidectin,6.5,53.125,32.36125
+1,C-megl,2.4D,6.5,53.125,48.34
+3,polyPhOx,Aspirin,8.2,72.6923076923077,1.1805692307692308
+3,polyPhOx,Ibuprofen,8.2,90.0,19.836599999999997
+3,polyPhOx,Pyramidone,8.2,72.6923076923077,0.3116769230769231
+3,polyPhOx,Indomethacin,8.2,72.6923076923077,6.485384615384616
+3,polyPhOx,Metoclopramide,8.2,72.6923076923077,0.6544138461538461
+3,polyPhOx,Oestradiol,8.2,72.6923076923077,18.77976923076923
+2,Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,7.96,0.008599544,0.10628299677200001
+2,Polyamide 4/6 Nanofibers,Sulfamethoxazole,7.96,0.0081429576,0.147246666532
+2,Polyamide 4/6 Nanofibers,Clarithromycin,7.985714285714286,0.0063776,0.12234924488571429
+2,Polyamide 4/6 Nanofibers,Azithromycin dihydrate,7.9818181818181815,0.008608522727272727,0.1304546983318182
+2,Polyamide 4/6 Nanofibers,Trimethoprim,8.008,0.0022337588,0.101483427728
+4,CP-APM,Cd(II),5.0,100.0,43.5
+4,CP-APM,Pb(II),5.0,100.0,65.7

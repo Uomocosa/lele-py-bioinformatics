@@ -24,8 +24,8 @@ BACKBONE_FEATURES = ALL_FEATURES
 
 DEFAULT_CAPPING_ATOMS = {
     'H': 1,
-    'C': 6,
-    'O': 8
+    # 'C': 6,
+    # 'O': 8
 }
 
 @dataclass
@@ -35,10 +35,10 @@ class Options:
     fingerprint_n_bits: int = 2048
     protonate_precision: float = 1.0
     molecule_features_to_calculate: list = field(default_factory=lambda: [
-        'logp', 'logd', 'homo_lumo_eV', 'fingerprint',
+        'logp', 'logd', 'homo_lumo_eV', 'net_charge', 'fingerprint',
     ])
     polymer_features_to_calculate: list = field(default_factory=lambda: [
-        'logp', 'logd', 'homo_lumo_eV', 'fingerprint',
+        'logp', 'logd', 'homo_lumo_eV', 'net_charge', 'fingerprint'
     ])
     molecule_polymetrix_features: list = field(default_factory=lambda: MOLECULE_FEATURES)
     polymer_polymetrix_features: list = field(default_factory=lambda: POLYMER_FEATURES)
@@ -72,8 +72,8 @@ def featurize(
     df = df.dropna()
     return df
 
-import pytest
-@pytest.mark.skip(reason="no reason") # LEAVE THIS COMMENETED!
+# import pytest
+# @pytest.mark.skip(reason="no reason") # LEAVE THIS COMMENETED!
 def test_():
     from bio.__global__ import PDCC_DATASET, PSMILES_DICT, SMILES_DICT
     from bio.Dataset.__global__ import HELPER_DIR

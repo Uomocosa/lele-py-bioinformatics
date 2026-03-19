@@ -26,7 +26,7 @@ def calculate_logd(
     if starting_lable: starting_lable = starting_lable + "_"
     if ph_min == ph_max: starting_lable = f'{starting_lable}logd_pH_{ph_max}'
     else: starting_lable = f'{starting_lable}logd_pH_{ph_min}-{ph_max}'
-    fn = lambda s: compute_min_max_logd(
+    fn = lambda s: compute_most_probable_logd(
         s, 
         ph_min, 
         ph_max, 
@@ -39,7 +39,7 @@ def calculate_logd(
     return df_out
 
 
-def compute_min_max_logd(
+def compute_most_probable_logd(
     smiles_str: str, 
     ph_min: float, 
     ph_max: float, 
@@ -70,11 +70,56 @@ def compute_min_max_logd(
         logger.debug(f"atom: {atom}")
         logger.debug(f"smile: {smile}")
         logger.debug(f"protonated_mols: {protonated_mols}")
+        # Convert the most dominant protonated SMILES to an RDKit Mol
+        # Dimorphite usually returns the most probable states first
+        mol = Chem.MolFromSmiles(protonated_mols[0])
+        if not mol: continue
+        key = f"{lable}_{atom}"
+        key = key.removesuffix('_')
+        df[key] = Descriptors.MolLogP(mol)
+    logger.debug(f"logd values: {df}")
+    return pd.Series(df)
+
+
+def compute_min_max_logd(
+    smiles_str: str, 
+    ph_min: float, 
+    ph_max: float, 
+    precision: float,
+    capping_atoms_dict: dict,
+    starting_lable: str,
+) -> pd.Series:
+    logger.warn("DEPRECATED! Use compute_most_probable_logd instead!")
+    """
+    DEPRECATED!
+    Protonates a single SMILES string across a pH range and 
+    calculates the min/max logD.
+    """
+    smiles_str = str(smiles_str)
+    null_result = pd.Series({})
+    if pd.isna(smiles_str): return null_result
+    lable = starting_lable
+    
+    valid_smiles_dict = bio.Bioinformatics.transform_into_smiles(smiles_str, capping_atoms_dict)
+    if not valid_smiles_dict: return null_result
+    # protonated_mols = protonate_smiles(valid_smiles_dict, ph_min=ph_min, ph_max=ph_max, precision=precision)
+    df = dict()
+    for atom, smile in valid_smiles_dict.items():
+        protonated_mols = protonate_smiles(
+            smile,
+            ph_min=ph_min, 
+            ph_max=ph_max, 
+            precision=precision,
+        )
+        logger.debug(f"atom: {atom}")
+        logger.debug(f"smile: {smile}")
+        logger.debug(f"protonated_mols: {protonated_mols}")
         mols = [Chem.MolFromSmiles(p_mol) for p_mol in protonated_mols]
         logd_values = [Descriptors.MolLogP(mol) for mol in mols]
         if not mols: continue
         key = f"{lable}_{atom}"
         key = key.removesuffix('_')
+        
         df[f"min_{key}"] = min(logd_values)
         df[f"max_{key}"] = max(logd_values)
     logger.debug(f"logd values: {df}")

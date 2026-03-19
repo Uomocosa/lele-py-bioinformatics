@@ -75,7 +75,7 @@ def featurize_v3(
         options.molecule_multi_featurizer,
     )
     molecule_features = bio.Metric.calculate_logp(molecule_features, "DRUG", options.capping_atoms_dict)
-    fn = lambda row: bio.Metric.calculate_logd.compute_min_max_logd(
+    fn = lambda row: bio.Metric.calculate_logd.compute_most_probable_logd(
         row['DRUG'], 
         ph_min = row['WATER_PH'], 
         ph_max = row['WATER_PH'], 

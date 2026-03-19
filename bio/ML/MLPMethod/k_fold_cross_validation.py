@@ -7,7 +7,6 @@ import copy
 import torch
 from loguru import logger
 
-
 def k_fold_cross_validation(model: MLP, k: int = 5):
     full_dataset = model.data.original
     n_samples = len(full_dataset)
@@ -46,10 +45,14 @@ def k_fold_cross_validation(model: MLP, k: int = 5):
                 target = y_val.item() if isinstance(y_val, torch.Tensor) else y_val
                 fold_predictions.append(prediction)
                 fold_targets.append(target)
+                poly_smiles = full_dataset.metadata.iloc[idx]['POLYMER_USED']
+                drug_smiles = full_dataset.metadata.iloc[idx]['DRUG']
                 logger.bind(
                     log_type="prediction_trace",
                     fold=current_fold,
                     sample_idx=int(idx),
+                    drug=str(drug_smiles),
+                    polymer=str(poly_smiles),
                     actual=float(target),
                     predicted=float(prediction)
                 ).trace("eval_prediction")

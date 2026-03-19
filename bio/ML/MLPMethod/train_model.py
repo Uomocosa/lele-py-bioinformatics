@@ -57,16 +57,19 @@ def train_model(model: MLP):
         
         train_loss /= len(train_ds)
 
-        model.eval() 
-        val_loss = 0.0
-        with torch.no_grad():
-            for batch_x, batch_y in val_loader:
-                batch_x, batch_y = batch_x.to(device), batch_y.to(device)
-                predictions = model(batch_x)
-                loss = model.config.criterion(predictions, batch_y)
-                val_loss += loss.item() * batch_x.size(0)
-        
-        val_loss /= len(val_ds)
+        val_loss = 0.0 
+        if len(val_ds) > 0:
+            model.eval()
+            with torch.no_grad():
+                for batch_x, batch_y in val_loader:
+                    batch_x, batch_y = batch_x.to(device), batch_y.to(device)
+                    predictions = model(batch_x)
+                    loss = model.config.criterion(predictions, batch_y)
+                    val_loss += loss.item() * batch_x.size(0)
+            
+            val_loss /= len(val_ds)
+        else:
+            val_loss = float('nan')
         
         logger.bind(
             log_type="epoch_trace",
