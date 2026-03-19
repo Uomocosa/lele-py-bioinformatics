@@ -71,7 +71,7 @@ def test_():
         featurize,
         scaler = None,
     )
-    # plot_aspirin(model)
+    plot_aspirin(model)
     plot_metformin(model)
     
     

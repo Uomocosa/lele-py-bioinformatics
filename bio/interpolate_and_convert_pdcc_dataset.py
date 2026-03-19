@@ -87,12 +87,6 @@ def polymer_division(
     assert not train_set.intersection(test_set), "Overlap found between train and test polymers!"
     assert not val_set.intersection(test_set), "Overlap found between validation and test polymers!"
     
-    combined_provided_polymers = train_set | val_set | test_set
-    missing_from_lists = unique_polymers - combined_provided_polymers
-    if missing_from_lists: logger.warning(f"Items in dataframe missing from split lists (these will be dropped): {missing_from_lists}")
-    extra_in_lists = combined_provided_polymers - unique_polymers
-    if extra_in_lists: logger.warning(f"Polymers in split lists but missing from dataframe: {extra_in_lists}")
-
     train_df = df[df['POLYMER_USED'].isin(train_polymers)].copy()
     val_df = df[df['POLYMER_USED'].isin(validation_polymers)].copy()
     test_df = df[df['POLYMER_USED'].isin(test_polymers)].copy()
@@ -212,11 +206,11 @@ def convert(df: pd.DataFrame, psmiles_dict: dict, smiles_dict: dict):
     poly_lower = df['POLYMER_USED'].astype(str).str.lower()
     drug_lower = df['DRUG'].astype(str).str.lower()
     
-    missing_polymers = set(poly_lower) - set(psmiles_dict_lower.keys())
-    missing_drugs = set(drug_lower) - set(smiles_dict_lower.keys())
+    missing_polymers = {p for p in poly_lower if is_missing_or_empty(p, psmiles_dict_lower)}
+    missing_drugs = {d for d in drug_lower if is_missing_or_empty(d, smiles_dict_lower)}
     
-    if missing_polymers: logger.warning(f"Polymers missing from psmiles_dict: {missing_polymers}")
-    if missing_drugs: logger.warning(f"Drugs missing from smiles_dict: {missing_drugs}")
+    if missing_polymers: logger.warning(f"Polymers missing from PSMILES_DICT!:\n{missing_polymers}")
+    if missing_drugs: logger.warning(f"Molecules missing from SMILES_DICT!:\n{missing_drugs}")
 
     df['POLYMER_USED'] = poly_lower.map(psmiles_dict_lower)
     df['DRUG'] = drug_lower.map(smiles_dict_lower)
@@ -226,7 +220,23 @@ def convert(df: pd.DataFrame, psmiles_dict: dict, smiles_dict: dict):
     df['DRUG'] = df['DRUG'].replace(r'^\s*$', np.nan, regex=True).replace(['nan', 'NaN', 'None'], np.nan)
     df = df.dropna()
     return df
+
+
+def is_missing_or_empty(item, mapping_dict):
+    # 1. Ignore items that are already NaN, empty, or literal "nan" in the dataset
+    if pd.isna(item) or str(item).strip().lower() in ["", "nan", "none", "null"]:
+        return False 
     
+    # 2. If the valid item is completely missing from the dictionary
+    if item not in mapping_dict:
+        return True
+        
+    # 3. If the item is in the dictionary, but the mapped value is invalid/empty
+    val = mapping_dict[item]
+    if pd.isna(val) or str(val).strip().lower() in ["", "nan", "none", "null"]:
+        return True
+        
+    return False
     
     
 def interpolate(

@@ -6,7 +6,7 @@ from loguru import logger
 def test_():
     smiles_to_find = [name for name, smile in SMILES_DICT.items() if smile == '']
     d = {name: get_smiles_from_name(name) for name in smiles_to_find}
-    print(d)
+    print("\n".join(f"\t\'{name}\': \'{smile}\'" for name, smile in d.items()))
 
     # get_smiles_from_name('2-benzhydryl-4,5-dihydro-1,3-oxazole') # C1COC(=N1)C(C2=CC=CC=C2)C3=CC=CC=C3
     # get_smiles_from_name('Granular Activated Carbon') # Not a polymer

@@ -70,7 +70,8 @@ class MLP(nn.Module):
     
     def forward(self, x):
         x = self.model(x)
-        return self.output(x)
+        return F.softplus(self.output(x))
+        # return F.relu(self.output(x))
         
     def scale(self, x_tensor: torch.Tensor) -> torch.Tensor:
         if self.scaler is not None:

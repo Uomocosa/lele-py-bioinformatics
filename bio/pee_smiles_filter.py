@@ -71,18 +71,28 @@ The FMO filter already implicitly screens for aromaticity. It's the reason the s
 def main():
     setup_loguru()
     config = tyro.cli(FilterConfig)
-    run_with_config(config)
+    filtered_df = run_with_config(config)
+    save_dir = bio.ML.__global__.HELPER_DIR
+    out_csv = save_dir / f"target_{target_molecule}_surviving_candidates.csv"
+    filtered_df.to_csv(out_csv, index=False)
+    logger.info(f"Saved {len(filtered_df)} candidates to {out_csv}")
+
 
 import pytest
 @pytest.mark.above10s
 def test_():
     setup_loguru()
+    run_for_target_molecule("aspirin", "CC(=O)OC1=CC=CC=C1C(=O)O") # present in pdcc
+    run_for_target_molecule("metformin", "CN(C)C(=N)N=C(N)N") # present in pdcc
+    run_for_target_molecule("lisinopril", "C1C[C@H](N(C1)C(=O)[C@H](CCCCN)N[C@@H](CCC2=CC=CC=C2)C(=O)O)C(=O)O") # not present in pdcc at the moment
+
+
+def run_for_target_molecule(target_molecule_name: str, target_molecule_smiles: str):
     config = FilterConfig()
     config.csv_train_data = TRAIN_CSV_FILE
     # config.max_size = 10
-    # config.max_size = 100
-    # config.target_molecule = "CC(=O)OC1=CC=CC=C1C(=O)O" # Aspirin
-    config.target_molecule = "CN(C)C(=N)N=C(N)N" # Metformin
+    config.max_size = 100
+    config.target_molecule = target_molecule_smiles
     config.water_ph = 8.2
     config.featurizer_options = FeaturizerOptions(
         molecule_features_to_calculate = [
@@ -100,9 +110,14 @@ def test_():
             # 'fingerprint'
         ],
     )
-    df = run_with_config(config)
-    
-    
+    filtered_df = run_with_config(config)
+    filtered_df = reorder_df(filtered_df)
+    save_dir = bio.ML.__global__.HELPER_DIR
+    out_csv = save_dir / f"target_{target_molecule_name}_surviving_candidates.csv"
+    filtered_df.to_csv(out_csv, index=False)
+    logger.info(f"Saved {len(filtered_df)} candidates to {out_csv}")
+
+
     
     
 def setup_loguru():
@@ -263,3 +278,12 @@ def apply_filters(df: pd.DataFrame, config: FilterConfig) -> pd.DataFrame:
         logger.info("No molecules survived the filters.")
         
     return filtered_df
+
+
+def reorder_df(df):
+    cols = df.columns.tolist()
+    front_cols = ['POLYMER_USED', 'DRUG']
+    for col in front_cols:
+        if col in cols: cols.remove(col)
+    df = df[front_cols + cols]
+    return df
