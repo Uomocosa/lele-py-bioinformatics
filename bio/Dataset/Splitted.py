@@ -1,6 +1,6 @@
 import torch
 from dataclasses import dataclass
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from loguru import logger
 
 @dataclass
@@ -34,6 +34,7 @@ class Splitted:
         scaler = scaler_fn.fit(train_features)
         scaler.fit(train_features)
         for split in [self.train, self.validation, self.test]:
+            if len(split) == 0: continue
             rows = torch.tensor(split.indices, dtype=torch.long).unsqueeze(1)
             features_to_scale = feature_tensor[rows, cols].numpy()
             scaled_features = scaler.transform(features_to_scale)

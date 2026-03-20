@@ -11,6 +11,9 @@ INTERPOLATED_PDCC_CSV = INTERPOLATED_CSV
 CONVERTED_PDCC_CSV = DATASETS_DIR / "PDCC" / "converted_pdcc.csv"
 LOGURU_SIMPLE_FORMAT = "<green>{time:HH:mm:ss}</green> | <level>{message}</level>"
 
+from joblib import Memory
+CACHE_MEMORY = Memory(location=".cache_dir", verbose=0)
+
 PSMILES_DICT = {
     # First I used https://decimer.ai/ to get the SMILES representation from the papers images.
     # Then I asked AI to transform it into a P-SMILES string. This passage especially can bring many errors.

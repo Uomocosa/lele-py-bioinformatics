@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
 from dataclasses import dataclass, field, replace
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.model_selection import GroupShuffleSplit
 from pathlib import Path
 from typing import Optional, Callable, Tuple
@@ -33,13 +33,13 @@ class ModelConfig(MLP.Config):
     """
     This settings are taken from the reults of k-fold cross validations
     """
-    hidden_dims: list = field(default_factory=lambda: [8, 8, 8, 4])
+    hidden_dims: list = field(default_factory=lambda: [8, 8, 8, 8, 8])
     dropout: float = 0.2
     criterion: nn.Module = nn.MSELoss()
-    epochs: int = 300
+    epochs: int = 400
     batch_size: int = 16
     learning_rate: float = 1e-3
-    early_stop_patience: int = 300
+    early_stop_patience: int = 400
     best_model_save_dir: Optional[Path] = MLP_DIR
     seed: int = 42
 
@@ -69,7 +69,6 @@ def test_():
         dataset_config,
         model_config,
         featurize,
-        scaler = None,
     )
     plot_aspirin(model)
     plot_metformin(model)
@@ -253,7 +252,6 @@ def run_with_config(
     dataset_config: PDCC.Config, 
     model_config: MLP.Config,
     featurize_fn: Optional[Callable[pd.DataFrame, pd.DataFrame]],
-    scaler = StandardScaler(),
 ):
     assert dataset_config.seed == model_config.seed
     bio.ML.set_seed(dataset_config.seed)
@@ -277,25 +275,28 @@ def run_with_config(
         test_percentage = tst,
         seed = dataset_config.seed,
     )
-    
-    if scaler is not None:
-        scaler = splitted_dataset.scale(
-            feature_col_indexes = range(torch_dataset.num_features),
-            scaler_fn = StandardScaler()
-        )
-
+    x_scaler = splitted_dataset.scale(
+        feature_col_indexes = range(torch_dataset.num_features),
+        scaler_fn = StandardScaler()
+    )
+    # y_scaler = splitted_dataset.scale(
+    #     feature_col_indexes = range(len(y_sample.shape)),
+    #     feature_attribute = "y",
+    #     scaler_fn = MinMaxScaler(feature_range=(0, 1))
+    # )
     model = MLP(
         splitted_dataset = splitted_dataset, 
         featurize = featurize_fn,
-        scaler = scaler,
+        x_scaler = x_scaler,
+        y_scaler = None,
         config = model_config,
     )
+    def forward_fn(mlp, x):
+        x = mlp.model(x)
+        return F.softplus(mlp.output(x))
     MLPMethod.train_model(model)
     MLPMethod.save_model(model)
-    accuracy = MLPMethod.check_model_accuracy(model)
-
     logger.info(f"Train dataset size: {len(model.data.train)}")
     logger.info(f"Validation dataset size: {len(model.data.validation)}")
     logger.info(f"Test dataset size: {len(model.data.test)}")
-
     return model

@@ -34,7 +34,23 @@ def check_model_accuracy(model: MLP) -> float:
     # Combine all batches into single 1D tensors
     preds_tensor = torch.cat(all_preds).squeeze()
     targets_tensor = torch.cat(all_targets).squeeze()
-
+    
+    if hasattr(model, 'y_scaler') and model.y_scaler is not None:
+        # Sklearn expects 2D numpy arrays [n_samples, 1]
+        preds_np = preds_tensor.cpu().numpy().reshape(-1, 1)
+        targets_np = targets_tensor.cpu().numpy().reshape(-1, 1)
+        
+        # Inverse transform to real CAPACITY units
+        real_preds = model.y_scaler.inverse_transform(preds_np)
+        real_targets = model.y_scaler.inverse_transform(targets_np)
+        
+        # Move back to PyTorch tensors for metric calculation
+        preds_tensor = torch.tensor(real_preds, dtype=torch.float32).squeeze()
+        targets_tensor = torch.tensor(real_targets, dtype=torch.float32).squeeze()
+    else:
+        preds_tensor = preds_tensor.squeeze()
+        targets_tensor = targets_tensor.squeeze()
+            
     # Calculate Regression Metrics
     mse = F.mse_loss(preds_tensor, targets_tensor).item()
     mae = F.l1_loss(preds_tensor, targets_tensor).item()

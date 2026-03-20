@@ -113,6 +113,42 @@ EXPERIMENTS = [
         ),
         features = MIXED_FEATURIZER,
     ), FORCE_RERUN],
+    [Experiment(
+        name = "experiment_loocv_all_features_256_128_64",
+        model = ModelConfig(
+            k_fold=-1, 
+            hidden_dims=[256, 128, 64],
+            epochs = 100, 
+            early_stop_patience = 50,
+        ),
+    ), FORCE_RERUN],
+    [Experiment(
+        name = "experiment_loocv_all_features_8_8_8_8_8",
+        model = ModelConfig(
+            k_fold=-1, 
+            hidden_dims=[8, 8, 8, 8, 8], 
+            epochs = 100, 
+            early_stop_patience = 50,
+        ),
+    ), FORCE_RERUN],
+    [Experiment(
+        name = "experiment_loocv_all_features_8_8_4_4_4_4",
+        model = ModelConfig(
+            k_fold=-1, 
+            hidden_dims=[8, 8, 4, 4, 4, 4], 
+            epochs = 100, 
+            early_stop_patience = 50,
+        ),
+    ), FORCE_RERUN],
+    [Experiment(
+        name = "experiment_loocv_all_features_8_8_8_4",
+        model = ModelConfig(
+            k_fold=-1, 
+            hidden_dims=[8, 8, 8, 4], 
+            epochs = 100, 
+            early_stop_patience = 50,
+        ),
+    ), FORCE_RERUN],
 ]
 ALL_EXPERIMENTS = EXPERIMENTS
 
