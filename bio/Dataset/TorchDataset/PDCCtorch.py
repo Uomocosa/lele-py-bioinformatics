@@ -17,7 +17,7 @@ class PDCCtorch(Dataset):
         """
         # Load the dataset
         self.config = dataset.config
-        self.df = pd.read_csv(dataset.config.csv_file)
+        self.df = dataset.df
         if dataset.config.max_size: self.df = self.df.head(dataset.config.max_size)
         
         required_columns = ['POLYMER_USED', 'DRUG', 'CONCENTRATION', 'CAPACITY']
@@ -27,7 +27,7 @@ class PDCCtorch(Dataset):
         
         self.metadata = self.df[['POLYMER_USED', 'DRUG']].copy()
         
-        self.df = dataset.featurize(self.df)
+        self.df = dataset.featurize_fn(self.df)
         
         y = self.df['CAPACITY'].values
         X = self.df.drop(columns=['CAPACITY']).select_dtypes(include='number').values

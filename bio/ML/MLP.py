@@ -21,12 +21,17 @@ MLP — Multilayer Perceptron
 
 MLP_TEST_DIR = BIOINFORMATICS_DIR / "MLP_checkpoints_test"
 
+CRITIRION_MAP = {
+    "mse": nn.MSELoss(),
+    "mae": nn.L1Loss(),
+}
+
 @dataclass
 class Config:
     hidden_dims: list = field(default_factory=lambda: [128, 64, 32])
     dropout: float = 0.2
     weight_decay: float = 1e-4
-    criterion: nn.Module = nn.MSELoss()
+    criterion_fn: str = "mse"
     learning_rate: float = 1e-3
     epochs: int = 1000
     early_stop_patience: int = 100
@@ -35,12 +40,16 @@ class Config:
     seed: int = 42
     best_model_save_dir: Optional[Path] = MLP_TEST_DIR
     
+    def get_criterion_fn(self):
+        assert self.criterion_fn in CRITIRION_MAP, f"Unknown criterion function: {self.criterion_fn}, valid options are: {list(CRITIRION_MAP.keys())}"
+        return CRITIRION_MAP[self.criterion_fn]
+    
 
 class MLP(nn.Module):
     def __init__(
         self, 
         splitted_dataset: bio.Dataset.Splitted,
-        featurize: Optional[Callable[pd.DataFrame, pd.DataFrame]],
+        featurize_fn: Optional[Callable[pd.DataFrame, pd.DataFrame]],
         x_scaler: Optional[StandardScaler] = None, 
         y_scaler: Optional[StandardScaler] = None,
         config: Config = Config()
@@ -53,7 +62,7 @@ class MLP(nn.Module):
         self.output_dim = sample_y.shape[0]
         logger.info(f"Inferred Architecture: Input({self.input_dim}) -> Hidden{config.hidden_dims} -> Output({self.output_dim})")
         self.data = splitted_dataset
-        self.featurize = featurize
+        self.featurize_fn = featurize_fn
         self.x_scaler = x_scaler
         self.y_scaler = y_scaler
         
@@ -81,7 +90,7 @@ class MLP(nn.Module):
         """Predicts capacity from raw inputs."""
         self.eval()
         device = next(self.parameters()).device
-        df_features = self.featurize(*args, **kwargs)
+        df_features = self.featurize_fn(*args, **kwargs)
         logger.debug(f"df_features:\n{df_features}")
         logger.debug(f"df_features.values:\n{df_features.values}")
         x_tensor = torch.tensor(df_features.values.astype(float), dtype=torch.float32)
@@ -100,8 +109,9 @@ class MLP(nn.Module):
 
 
 def test_():
+    from bio.__global__ import PDCC_CSV
     lele.Loguru.simple_format()
-    dataset_config = bio.Dataset.PDCC.Config()
+    dataset_config = bio.Dataset.PDCC.Config(csv_file=PDCC_CSV)
     model_config = Config(
         hidden_dims = [8, 8, 8, 8],
         dropout = 0.2,
@@ -111,8 +121,13 @@ def test_():
         batch_size = 8,
         seed = dataset_config.seed,
     )
+    
     bio.ML.set_seed(dataset_config.seed)
+    
     dataset = bio.Dataset.PDCC(dataset_config)
+    dataset.increment_dataset()
+    dataset.convert_names_to_smiles()
+    
     torch_dataset = dataset.to_torch_dataset()
     x_sample, y_sample = torch_dataset[0]
     logger.debug(f"Input features: {torch_dataset.num_features}")
@@ -144,9 +159,9 @@ def test_():
     logger.debug(f"(AFTER SCALING) Train[0] y: {y_after}")
     model = MLP(
         splitted_dataset = splitted_dataset, 
-        featurize = dataset.featurize,
+        featurize_fn = dataset.featurize_fn,
         x_scaler = x_scaler,
-        y_scaler = y_scaler,
+        y_scaler = None,
         config = model_config,
     )
     def forward_fn(mlp, x):
@@ -161,8 +176,8 @@ def test_():
     input_df = pd.DataFrame({
         'POLYMER_USED': ["*/CCC[Fe]CCCC(=O)OCCCCOCCCNCC(*)=O"],
         'DRUG': ["CC(=O)OC1=CC=CC=C1C(=O)O"],
-        'WATER_PH': ["6.5"],
-        'CONCENTRATION': ["12.5"],
+        'WATER_PH': [6.5],
+        'CONCENTRATION': [12.5],
     })
     
     prediction = model.predict(input_df)

@@ -53,7 +53,7 @@ EXPERIMENTS = [
     ), FORCE_RERUN],
     [Experiment(
         name="experiment_mae_loss",
-        model=ModelConfig(criterion="mae")
+        model=ModelConfig(criterion_fn="mae")
     ), FORCE_RERUN],
     [Experiment(
         name = "experiment_loocv_only_fingerprints_big",
@@ -188,10 +188,10 @@ ALL_EXPERIMENTS = EXPERIMENTS
 # ]
 # GRID_EXPERIMENTS_2 = [
 #     [Experiment(
-#         name=f"exp_{k_fold}_fold_{criterion}_hd{len(hd)} ({str(hd)})",
-#         model=ModelConfig(k_fold=k_fold, criterion=criterion, hidden_dims=hd)
+#         name=f"exp_{k_fold}_fold_{criterion_fn}_hd{len(hd)} ({str(hd)})",
+#         model=ModelConfig(k_fold=k_fold, criterion_fn=criterion_fn, hidden_dims=hd)
 #     ), FORCE_RERUN]
-#     for k_fold, criterion, hd in product(grid_k_folds, grid_criterions, grid_hidden_dims)
+#     for k_fold, criterion_fn, hd in product(grid_k_folds, grid_criterions, grid_hidden_dims)
 # ]
 # ALL_EXPERIMENTS += GRID_EXPERIMENTS_2
 

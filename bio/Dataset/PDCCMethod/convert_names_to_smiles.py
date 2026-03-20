@@ -71,4 +71,4 @@ def test_():
         )
     )
     df = convert_names_to_smiles(df)
-    print(df.head())
+    print(f"df.head(): {df.head()}")

@@ -17,6 +17,7 @@ def k_fold_cross_validation(model: MLP, k: int = 5):
     else:
         kf = KFold(n_splits=k, shuffle=True, random_state=model.config.seed)
     
+    eval_type = "LOOCV" if k == n_samples else f"{k}-Fold"
     untrained_weights = copy.deepcopy(model.state_dict())
     
     all_targets = []
@@ -64,6 +65,8 @@ def k_fold_cross_validation(model: MLP, k: int = 5):
         fold_rmse = np.sqrt(fold_mse)
         fold_mae = mean_absolute_error(fold_targets, fold_predictions)
         fold_r2 = r2_score(fold_targets, fold_predictions) if len(fold_targets) > 1 else np.nan
+        if eval_type == "LOOCV": f"Fold {fold + 1} Result | MSE: {fold_mse:.4f}"
+        else: log_msg = f"Fold {fold + 1} Result | MSE: {fold_mse:.4f} | R²: {fold_r2:.4f}"
         logger.bind(
             log_type="fold_metric_trace",
             fold=current_fold,
@@ -72,14 +75,14 @@ def k_fold_cross_validation(model: MLP, k: int = 5):
             mae=float(fold_mae),
             r2=float(fold_r2)
         ).trace("fold_metrics")
-        logger.info(f"Fold {fold + 1} Result | MSE: {fold_mse:.4f} | R²: {fold_r2:.4f}")
+        logger.info(log_msg)
 
     mse = mean_squared_error(all_targets, all_predictions)
     rmse = np.sqrt(mse)
     mae = mean_absolute_error(all_targets, all_predictions)
     r2 = r2_score(all_targets, all_predictions)
-    
-    eval_type = "LOOCV" if k == n_samples else f"{k}-Fold"
+    if eval_type == "LOOCV": log_msg = f"=== LOOCV Result === | MSE: {mse:.4f} | RMSE: {rmse:.4f} | MAE: {mae:.4f}"
+    else: log_msg = f"=== {eval_type} Result === | MSE: {mse:.4f} | RMSE: {rmse:.4f} | R²: {r2:.4f}"
     logger.bind(
         log_type="aggregate_metrics",
         eval_method=eval_type,
@@ -87,9 +90,7 @@ def k_fold_cross_validation(model: MLP, k: int = 5):
         rmse=float(rmse),
         mae=float(mae),
         r2=float(r2)
-    ).success(
-        f"=== {eval_type} Results === | MSE: {mse:.4f} | RMSE: {rmse:.4f} | R²: {r2:.4f}"
-    )
+    ).success(log_msg)
     return mse, rmse, mae, r2
 
 import pytest

@@ -1,8 +1,8 @@
-from bio.ML import MLP
 from torch.utils.data import DataLoader
 import torch
 import torch.optim as optim
 import copy
+from bio.ML import MLP
 from loguru import logger
 
 
@@ -39,6 +39,7 @@ def train_model(model: MLP):
     best_val_loss = float('inf')
     patience_counter = 0
     best_model_weights = None
+    criterion_fn = model.config.get_criterion_fn()
 
     for epoch in range(model.config.epochs):
         model.train() 
@@ -47,7 +48,7 @@ def train_model(model: MLP):
             batch_x, batch_y = batch_x.to(device), batch_y.to(device)
             
             predictions = model(batch_x)
-            loss = model.config.criterion(predictions, batch_y)
+            loss = criterion_fn(predictions, batch_y)
             
             optimizer.zero_grad()
             loss.backward()
@@ -64,7 +65,7 @@ def train_model(model: MLP):
                 for batch_x, batch_y in val_loader:
                     batch_x, batch_y = batch_x.to(device), batch_y.to(device)
                     predictions = model(batch_x)
-                    loss = model.config.criterion(predictions, batch_y)
+                    loss = criterion_fn(predictions, batch_y)
                     val_loss += loss.item() * batch_x.size(0)
             
             val_loss /= len(val_ds)
