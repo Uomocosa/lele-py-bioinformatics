@@ -81,7 +81,7 @@ def train_model(model: MLP):
         
         is_best = val_loss < best_val_loss
         if (epoch + 1) % 10 == 0 or epoch == 0 or is_best:
-            log_msg = f"Epoch {epoch+1:03d} | Train MSE: {train_loss:.4f} | Val MSE: {val_loss:.4f}"
+            log_msg = f"Epoch {epoch+1:03d} | Train MSE (scaled): {train_loss:.4f} | Val MSE (scaled): {val_loss:.4f}"
             if is_best: log_msg = f"<green>{log_msg}</green>"
             logger.opt(colors=True).info(log_msg)
         
@@ -98,7 +98,7 @@ def train_model(model: MLP):
 
     if best_model_weights is not None:
         model.load_state_dict(best_model_weights)
-        logger.info(f"Restored best model weights with Val MSE: {best_val_loss:.4f}")
+        logger.info(f"Restored best model weights with Val MSE (scaled): {best_val_loss:.4f}")
 
     logger.success("Training complete!")
     return model

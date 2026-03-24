@@ -1,0 +1,63 @@
+name: experiment_hd_32_16_8_4
+k_fold: -1
+save_dir: C:\Users\acer\Desktop\Samuele\Syncthing\LWF - LightWeigth Folder\[P] Python\lele-py-bioinformatics\RESULTS\mlp_experiments
+x_scaler_fn: standard
+y_scaler_fn: min_max_range01
+forward_fn: softplus
+seed: 42
+dataset_config:
+  csv_file: C:\Users\acer\Desktop\Samuele\Syncthing\LWF - LightWeigth Folder\[P] Python\lele-py-bioinformatics\DATASETS\PDCC\polymer_drug_concentration_capacity.csv
+  train_validation_test_pecentages:
+  - 1
+  - 0
+  - 0
+  max_size: null
+  seed: 42
+model_config:
+  hidden_dims:
+  - 32
+  - 16
+  - 8
+  - 4
+  dropout: 0.2
+  weight_decay: 0.0001
+  criterion_fn: mse
+  learning_rate: 0.001
+  epochs: 1000
+  early_stop_patience: 100
+  batch_size: 16
+  num_workers: 0
+  seed: 42
+  best_model_save_dir: C:\Users\acer\Desktop\Samuele\Syncthing\LWF - LightWeigth Folder\[P]
+    Python\lele-py-bioinformatics\MLP_checkpoints_test
+  save_dir: null
+featurizer_options:
+  capping_atoms:
+  - H
+  fingerprint_radius: 2
+  fingerprint_n_bits: 256
+  protonate_precision: 1.0
+  molecule_features_to_calculate:
+  - logp
+  - logd
+  - homo_lumo_eV
+  - net_charge
+  - fingerprint
+  polymer_features_to_calculate:
+  - logp
+  - logd
+  - homo_lumo_eV
+  - net_charge
+  - fingerprint
+  molecule_polymetrix_features:
+  - ALL
+  polymer_polymetrix_features:
+  - ALL
+  sidechain_polymetrix_features:
+  - ALL
+  backbone_polymetrix_features:
+  - ALL
+incerement_dataset_options:
+  method: interpolate_then_add_origins
+  interpolate_fn: linear
+  n_points: 2

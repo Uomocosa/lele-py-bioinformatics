@@ -32,10 +32,7 @@ def run_with_config(exp_config: ExperimentConfig):
         logger.warning(f"ModelConfig seed {exp_config.model_config.seed} does not match exp_config seed {exp_config.seed}, setting seed to {exp_config.seed}")
         exp_config.model_config.seed = exp_config.seed
     
-    x_scaler_fn = exp_config.get_x_scaler_fn()
-    y_scaler_fn = exp_config.get_y_scaler_fn()
-    forward_fn = exp_config.get_forward_fn()
-        
+    
     yaml.SafeDumper.add_multi_representer(
         Path, 
         lambda dumper, data: dumper.represent_str(str(data))
@@ -45,13 +42,23 @@ def run_with_config(exp_config: ExperimentConfig):
         default_flow_style=False, 
         sort_keys=False
     )
+    config_save_path = exp_config.save_dir / f"{exp_config.name}" / "exp_config.yaml"
+    config_save_path.parent.mkdir(parents=True, exist_ok=True) # Ensure dir exists
+    with open(config_save_path, "w") as f:
+        f.write(formatted_config)
     logger.info(f"Running Experiment '{exp_config.name}' with exp_config:\n{formatted_config}")
+        
+    x_scaler_fn = exp_config.get_x_scaler_fn()
+    y_scaler_fn = exp_config.get_y_scaler_fn()
+    forward_fn = exp_config.get_forward_fn()
+        
+    
         
     bio.ML.set_seed(exp_config.seed)
     
-    featurize_fn = lambda df: PDCCMethod.featurize(df, exp_config.featurizer_options)
+    featurize_fn = lambda df: PDCCMethod.featurize(df, options=exp_config.featurizer_options)
     dataset = bio.Dataset.PDCC(config = exp_config.dataset_config)
-    dataset.increment_dataset()
+    dataset.increment_dataset(options=exp_config.incerement_dataset_options)
     dataset.convert_names_to_smiles()
     dataset.featurize_fn = featurize_fn
     
@@ -91,16 +98,13 @@ def run_with_config(exp_config: ExperimentConfig):
     model.forward = types.MethodType(forward_fn, model)
     
     MLPMethod.k_fold_cross_validation(model, k=exp_config.k_fold)
-    
-    config_save_path = exp_config.save_dir / f"{exp_config.name}" / "exp_config.yaml"
-    with open(config_save_path, "w") as f:
-        yaml.safe_dump(asdict(exp_config), f, default_flow_style=False, sort_keys=False)
-
+            
     log = bio.mlp_experiment.get_log_files(exp_config, exp_config.save_dir)
     sns.set_theme(style="whitegrid", palette="muted")
     bio.mlp_experiment.plot_learning_curves(exp_config, exp_config.save_dir, log["traing_epochs"])
     bio.mlp_experiment.plot_parity(exp_config, exp_config.save_dir, log["fold_predictions"])
     bio.mlp_experiment.plot_fold_variance(exp_config, exp_config.save_dir, log["fold_metrics"])
+        
         
 def setup_loguru(exp_config: ExperimentConfig):
     log = bio.mlp_experiment.get_log_files(exp_config, exp_config.save_dir)

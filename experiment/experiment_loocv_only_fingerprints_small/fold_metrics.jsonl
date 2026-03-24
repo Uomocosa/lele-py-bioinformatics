@@ -1,8 +1,0 @@
-{"log_type": "fold_metric_trace", "fold": 1, "mse": 1474.3570968242275, "rmse": 38.39735794067383, "mae": 38.39735794067383, "r2": NaN}
-{"log_type": "fold_metric_trace", "fold": 2, "mse": 59.40612929205804, "rmse": 7.7075371742248535, "mae": 7.7075371742248535, "r2": NaN}
-{"log_type": "fold_metric_trace", "fold": 3, "mse": 0.0023847446173022036, "rmse": 0.04883384704589844, "mae": 0.04883384704589844, "r2": NaN}
-{"log_type": "fold_metric_trace", "fold": 4, "mse": 0.00194355913261135, "rmse": 0.04408581554889679, "mae": 0.04408581554889679, "r2": NaN}
-{"log_type": "fold_metric_trace", "fold": 5, "mse": 0.00511424729384502, "rmse": 0.07151396572589874, "mae": 0.07151396572589874, "r2": NaN}
-{"log_type": "fold_metric_trace", "fold": 6, "mse": 0.0027495553603609224, "rmse": 0.05243620276451111, "mae": 0.05243620276451111, "r2": NaN}
-{"log_type": "fold_metric_trace", "fold": 7, "mse": 0.0020934681097060093, "rmse": 0.045754432678222656, "mae": 0.045754432678222656, "r2": NaN}
-{"log_type": "fold_metric_trace", "fold": 8, "mse": 0.0002857733088603709, "rmse": 0.016904830932617188, "mae": 0.016904830932617188, "r2": NaN}

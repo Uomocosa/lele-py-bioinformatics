@@ -1,2 +1,0 @@
-import new_import_system
-new_import_system.install(__file__)

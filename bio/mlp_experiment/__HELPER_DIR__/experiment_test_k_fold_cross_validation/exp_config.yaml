@@ -56,3 +56,7 @@ featurizer_options:
   - ALL
   backbone_polymetrix_features:
   - ALL
+incerement_dataset_options:
+  method: interpolate_then_add_origins
+  interpolate_fn: linear
+  n_points: 2
