@@ -11,9 +11,11 @@ from lele.Path import P
 from lele.String import get_substring 
 from bio.Bioinformatics import Smile
 from bio.Dataset import PDCCMethod
-from bio.__global__ import PSMILES_DICT, SMILES_DICT
+from bio.__global__ import PSMILES_DICT, SMILES_DICT, RESULTS_DIR
 from loguru import logger
 import logging; logging.getLogger("deepchem").setLevel(logging.ERROR)
+
+SAVE_DIR = RESULTS_DIR / "filtered_synthetic_candidates"
 
 CHECKPOINT_FOLDER = lele.P(r"./PSMILES_checkpoints") 
 CHECKPOINT_TEST_FOLDER = lele.P(r"./PSMILES_checkpoints_test") 
@@ -25,6 +27,7 @@ FeaturizerOptions = bio.Dataset.PDCCMethod.featurize.Options
 @dataclass
 class FilterConfig():
     csv_file: Path = TEST_CSV_FILE
+    target_molecule_name: str = "None" # Common name of the target molecule
     target_molecule: Optional[str] = None # Expects SMILES format!
     water_ph: Optional[float] = None 
     csv_train_data: Optional[Path] = None
@@ -71,28 +74,48 @@ The FMO filter already implicitly screens for aromaticity. It's the reason the s
 def main():
     setup_loguru()
     config = tyro.cli(FilterConfig)
-    filtered_df = run_with_config(config)
-    save_dir = bio.ML.__global__.HELPER_DIR
-    out_csv = save_dir / f"target_{target_molecule}_surviving_candidates.csv"
-    filtered_df.to_csv(out_csv, index=False)
-    logger.info(f"Saved {len(filtered_df)} candidates to {out_csv}")
-
-
+    run_with_config_and_save(config)
+    
+        
 import pytest
 @pytest.mark.above10s
 def test_():
     setup_loguru()
-    run_for_target_molecule("aspirin", "CC(=O)OC1=CC=CC=C1C(=O)O") # present in pdcc
-    run_for_target_molecule("metformin", "CN(C)C(=N)N=C(N)N") # present in pdcc
-    run_for_target_molecule("lisinopril", "C1C[C@H](N(C1)C(=O)[C@H](CCCCN)N[C@@H](CCC2=CC=CC=C2)C(=O)O)C(=O)O") # not present in pdcc at the moment
+    max_size = 1000
+    # max_size = None
+    run_for_target_molecule(
+        target_molecule_name = "aspirin", # present in pdcc
+        target_molecule = "CC(=O)OC1=CC=CC=C1C(=O)O",
+        max_size = max_size,
+    ) 
+    run_for_target_molecule(
+        target_molecule_name = "metformin", # present in pdcc
+        target_molecule = "CN(C)C(=N)N=C(N)N",
+        max_size = max_size,
+    ) 
+    run_for_target_molecule(
+        target_molecule_name = "lisinopril", # not present in pdcc at the moment
+        target_molecule = "C1C[C@H](N(C1)C(=O)[C@H](CCCCN)N[C@@H](CCC2=CC=CC=C2)C(=O)O)C(=O)O",
+        max_size = max_size,
+    ) 
 
 
-def run_for_target_molecule(target_molecule_name: str, target_molecule_smiles: str):
+def run_with_config_and_save(config: FilterConfig):
+    filtered_df = run_with_config(config)
+    clean_df = clean_output_df(filtered_df)
+    save_dir = SAVE_DIR
+    save_dir.mkdir(parents=True, exist_ok=True)
+    out_csv = save_dir / f"target_{config.target_molecule_name}.csv"
+    clean_df.to_csv(out_csv, index=False, float_format="%.4f")
+    logger.info(f"Saved {len(clean_df)} candidates to {out_csv}")
+
+
+def run_for_target_molecule(target_molecule_name: str, target_molecule: str, max_size: Optional[int] = None):
     config = FilterConfig()
     config.csv_train_data = TRAIN_CSV_FILE
-    # config.max_size = 10
-    config.max_size = 100
-    config.target_molecule = target_molecule_smiles
+    config.max_size = max_size
+    config.target_molecule_name = target_molecule_name
+    config.target_molecule = target_molecule
     config.water_ph = 8.2
     config.featurizer_options = FeaturizerOptions(
         molecule_features_to_calculate = [
@@ -110,14 +133,28 @@ def run_for_target_molecule(target_molecule_name: str, target_molecule_smiles: s
             # 'fingerprint'
         ],
     )
-    filtered_df = run_with_config(config)
-    filtered_df = reorder_df(filtered_df)
-    save_dir = bio.ML.__global__.HELPER_DIR
-    out_csv = save_dir / f"target_{target_molecule_name}_surviving_candidates.csv"
-    filtered_df.to_csv(out_csv, index=False)
-    logger.info(f"Saved {len(filtered_df)} candidates to {out_csv}")
+    run_with_config_and_save(config)
 
 
+def clean_output_df(df: pd.DataFrame) -> pd.DataFrame:
+    """Keeps only the identifier and filtered property columns."""
+    cols_to_keep = [
+        'POLYMER_USED',
+        'DRUG',
+        'poly_logp_H',
+        'drug_logp',
+        'poly_topological_surface_area_sum_fullpolymerfeaturizer',
+        'sa_score_H',
+        'poly_homo_eV_H',
+        'poly_lumo_eV_H',
+        'drug_homo_eV',
+        'drug_lumo_eV',
+        'poly_charge_at_WATER_PH_H',
+        'drug_charge_at_WATER_PH'
+    ]
+    # Only keep the columns that actually exist to prevent KeyErrors
+    final_cols = [c for c in cols_to_keep if c in df.columns]
+    return df[final_cols]
     
     
 def setup_loguru():
