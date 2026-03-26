@@ -12,7 +12,7 @@ LOG_FILE="$LOG_DIR/session-$(date +%Y_%m_%d-%H_%M_%S).log"
 
 # This magic line redirects all future stdout and stderr to 'tee'
 # 'tee' will write output to *both* the log file and the VSCode terminal
-exec > >(tee -a "$LOG_FILE") 2>&1
+# exec > >(tee -a "$LOG_FILE") 2>&1
 
 echo "--- Starinting task: INSTALL PIXI ---"
 if ! command -v pixi &> /dev/null; then

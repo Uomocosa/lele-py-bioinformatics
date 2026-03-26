@@ -37,7 +37,7 @@ def main():
         dataset: DatasetConfig = field(default_factory=lambda: DatasetConfig(csv_file=PI1M))
         
     config = tyro.cli(PSmileModelConfig)
-    config.options.checkpoint_dir.mkdir(exist_ok=False, parents=True)
+    config.options.checkpoint_dir.mkdir(exist_ok=True, parents=True)
     config.dataset
     print(f'CUDA available: {torch.cuda.is_available()}')
     print(f'Device: {torch.cuda.get_device_name(0)}' if torch.cuda.is_available() else 'Device: CPU')
