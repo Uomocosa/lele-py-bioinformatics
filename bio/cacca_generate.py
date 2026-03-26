@@ -20,10 +20,6 @@ import logging; logging.getLogger("deepchem").setLevel(logging.ERROR)
 CHECKPOINT_FOLDER = lele.P(r"./SMILES_checkpoints") 
 CHECKPOINT_TEST_FOLDER = lele.P(r"./SMILES_checkpoints_test") 
 
-IS_SMILE_VALID_FN_DICT = {
-    "default": lambda smile: smile.is_valid,
-}
-
 @dataclass
 class GenerateConfig():
     smiles_to_generate: int = 10000
@@ -32,10 +28,7 @@ class GenerateConfig():
     temperature: float = 1.0 # 0.8 = conservative, 1.0 = standard, 1.2 = creative/chaotic
     max_new_tokens: int = 128
     use_best_model_in_subfolders: bool = True
-    is_smile_valid_fn: str = "default"
-    
-    def get_is_smile_valid_fn(self) -> Callable[[str], bool]:
-        return IS_SMILE_VALID_FN_DICT[self.is_smile_valid_fn]
+    is_smile_valid: Callable = lambda smile: smile.is_valid
 
 
 import pytest
@@ -144,11 +137,10 @@ def run_with_config(config: GenerateConfig):
                 if not smile: continue
                 logger.bind(type="GENERATED_SMILE").trace(smile)
                 generated_count += 1
-                is_smile_valid = config.get_is_smile_valid_fn()
-                if is_smile_valid(smile): 
-                    print("THIS SMILE PASSED THE FUNCTION is_smile_valid")
+                if config.is_smile_valid(smile): 
+                    print("THIS SMILE PASSED THE FUNCTION config.is_smile_valid")
                     print(f"smile: {smile}")
-                    print(f"is_smile_valid(smile): {is_smile_valid(smile)}")
+                    print(f"config.is_smile_valid(smile): {config.is_smile_valid(smile)}")
                     logger.bind(type="VALID_SMILE").info(smile)
                     num_smile_valid += 1
 

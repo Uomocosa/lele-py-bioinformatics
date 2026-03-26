@@ -19,7 +19,7 @@ SAVE_DIR = RESULTS_DIR / "filtered_synthetic_candidates"
 
 CHECKPOINT_FOLDER = lele.P(r"./PSMILES_checkpoints") 
 CHECKPOINT_TEST_FOLDER = lele.P(r"./PSMILES_checkpoints_test") 
-TEST_CSV_FILE = lele.P(r"./PSMILES_checkpoints/2026_02_07_121136_450914/generate_mnt128_t100000000/2026_02_10_094417_233255/valid_smiles.csv")
+TEST_CSV_FILE = lele.P(r"./RESULTS/pee_smiles_generator/generate_mnt128_t100000000/2026_03_26_172635_822854/valid_smiles.csv")
 TRAIN_CSV_FILE = lele.P(r"./DATASETS/PI1M/PI1M.csv")
 
 FeaturizerOptions = bio.Dataset.PDCCMethod.featurize.Options
