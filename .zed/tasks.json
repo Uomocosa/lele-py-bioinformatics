@@ -1,14 +1,11 @@
 [
     // I run this directly after done the ssh login: (I didnt like creating a task for this)
-    // Setup:
+    // >>> RUN SETUP:
     // cd $HOME/lele-py-bioinformatics; git fetch origin; git reset --hard origin/main; chmod +x setup.sh; ./setup.sh; source ~/.bashrc
-    // To train the models:
-    // cd $HOME/lele-py-bioinformatics; git fetch origin; git reset --hard origin/main; chmod +x setup.sh; ./setup.sh; chmod +x ssh_cacca_train.sh; ./ssh_cacca_train.sh
-    // cd $HOME/lele-py-bioinformatics; git fetch origin; git reset --hard origin/main; chmod +x setup.sh; ./setup.sh; chmod +x ssh_psmile_train.sh; ./ssh_psmile_train.sh
-    // cd $HOME/lele-py-bioinformatics; git fetch origin; git reset --hard origin/main; chmod +x setup.sh; ./setup.sh; chmod +x ssh_combined_train.sh; ./ssh_combined_train.sh
-    // cd $HOME/lele-py-bioinformatics; git fetch origin; git reset --hard origin/main; chmod +x setup.sh; ./setup.sh; chmod +x ssh_cacca_generate.sh; ./ssh_cacca_generate.sh
-    // cd $HOME/lele-py-bioinformatics; git fetch origin; git reset --hard origin/main; chmod +x setup.sh; ./setup.sh; chmod +x ssh_psmile_generate.sh; ./ssh_psmile_generate.sh
-    // cd $HOME/lele-py-bioinformatics; git fetch origin; git reset --hard origin/main; chmod +x setup.sh; ./setup.sh; chmod +x ssh_combined_generate.sh; ./ssh_combined_generate.sh
+    // >>> THEN run one of the commands exposed by pixi.
+    // pixi run generate_random_psmiles
+    // >>> FINALLY UPLOAD TO GIT:
+    // cd $HOME/lele-py-bioinformatics; chmod +x upload_to_git.sh; ./upload_to_git.sh
     {
         "label": "run",
         "command": "pixi run pytest -rFP -q -s $ZED_RELATIVE_FILE -o \"addopts=\"",

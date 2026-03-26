@@ -14,10 +14,10 @@
         "log_loss_data": true,
         "save_best_model": true,
         "save_checkpoint_every_n_iters": 1000,
-        "checkpoint_dir": "/home/maggiori/lele-py-bioinformatics/RESULTS/pee_smiles_generator"
+        "checkpoint_dir": "RESULTS/pee_smiles_generator"
     },
     "dataset": {
-        "csv_file": "/home/maggiori/lele-py-bioinformatics/DATASETS/PI1M/PI1M.csv",
+        "csv_file": "DATASETS/PI1M/PI1M.csv",
         "train_validation_test_pecentages": [
             0.6,
             0.2,

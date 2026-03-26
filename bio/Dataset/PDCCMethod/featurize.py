@@ -41,14 +41,27 @@ class Options:
     sidechain_polymetrix_features: list = field(default_factory=lambda: ["ALL"])
     backbone_polymetrix_features: list = field(default_factory=lambda: ["ALL"])
 
-    def parse(self):
-        self.capping_atoms_dict = _parse_capping_atoms_dict(self.capping_atoms)
-        self.molecule_polymetrix_features = _parse_polymetrix(self.molecule_polymetrix_features)
-        self.polymer_polymetrix_features = _parse_polymetrix(self.polymer_polymetrix_features)
-        self.sidechain_polymetrix_features = _parse_polymetrix(self.sidechain_polymetrix_features)
-        self.backbone_polymetrix_features = _parse_polymetrix(self.backbone_polymetrix_features)
-        return self
+    @property
+    def capping_atoms_dict(self) -> dict:
+        return _parse_capping_atoms_dict(self.capping_atoms)
 
+    @property
+    def parsed_molecule_polymetrix_features(self) -> list:
+        return _parse_polymetrix(self.molecule_polymetrix_features)
+
+    @property
+    def parsed_polymer_polymetrix_features(self) -> list:
+        return _parse_polymetrix(self.polymer_polymetrix_features)
+
+    @property
+    def parsed_sidechain_polymetrix_features(self) -> list:
+        return _parse_polymetrix(self.sidechain_polymetrix_features)
+
+    @property
+    def parsed_backbone_polymetrix_features(self) -> list:
+        return _parse_polymetrix(self.backbone_polymetrix_features)
+        
+        
 def _parse_capping_atoms_dict(capping_atoms: list) -> dict:
     pt = Chem.GetPeriodicTable()
     capping_atoms_dict = {
@@ -72,19 +85,20 @@ def featurize(
     df: pd.DataFrame,
     options: Options = Options()
 ) -> pd.DataFrame:
-    parsed_options = options.parse()
     polymetrix_options = PDCCMethod.get_poly_mol_features_polymetrix.Options(
-        molecule_features = parsed_options.molecule_polymetrix_features,
-        polymer_features = parsed_options.polymer_polymetrix_features,
-        sidechain_features = parsed_options.sidechain_polymetrix_features,
-        backbone_features = parsed_options.backbone_polymetrix_features,
+        molecule_features = options.parsed_molecule_polymetrix_features,
+        polymer_features = options.parsed_polymer_polymetrix_features,
+        sidechain_features = options.parsed_sidechain_polymetrix_features,
+        backbone_features = options.parsed_backbone_polymetrix_features,
     )
-    polymer_features_1, molecule_features_1 = PDCCMethod.get_poly_mol_features(df, parsed_options)
+    
+    polymer_features_1, molecule_features_1 = PDCCMethod.get_poly_mol_features(df, options)
     polymer_features_2, molecule_features_2 = PDCCMethod.get_poly_mol_features_polymetrix(df, polymetrix_options)
-    polymer_features_1 = polymer_features_1.add_prefix('poly_')
+    
     polymer_features_2 = polymer_features_2.add_prefix('poly_')
     molecule_features_1 = molecule_features_1.add_prefix('drug_')
     molecule_features_2 = molecule_features_2.add_prefix('drug_')
+    
     df = pd.concat([
         df.drop(columns=['POLYMER_USED', 'DRUG']),
         polymer_features_1, 
@@ -92,6 +106,7 @@ def featurize(
         molecule_features_1,
         molecule_features_2,
     ], axis=1)
+    
     df = df.dropna()
     return df
 

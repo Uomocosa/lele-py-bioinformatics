@@ -12,6 +12,7 @@ import platform
 import psutil
 from loguru import logger
 import lele, bio
+from bio.__global__ import BIOINFORMATICS_DIR
 from bio.MinGPT.__global__ import HELPER_DIR
 DatasetConfig = bio.Dataset.Config.Config
 
@@ -48,6 +49,21 @@ class ModelConfig:
     def save(self, path:Path):
         path = lele.P(path)
         config_dict = asdict(self)
+        if config_dict.get('dataset') and config_dict['dataset'].get('csv_file'):
+            abs_csv = Path(config_dict['dataset']['csv_file'])
+            try:
+                # Converts "C:\...\DATASETS\PI1M\PI1M.csv" -> "DATASETS/PI1M/PI1M.csv"
+                rel_csv = abs_csv.relative_to(BIOINFORMATICS_DIR)
+                config_dict['dataset']['csv_file'] = rel_csv.as_posix() 
+            except ValueError:
+                pass # If the path isn't inside the repo, leave it as is
+        if config_dict.get('options') and config_dict['options'].get('checkpoint_dir'):
+            abs_ckpt = Path(config_dict['options']['checkpoint_dir'])
+            try:
+                rel_ckpt = abs_ckpt.relative_to(BIOINFORMATICS_DIR)
+                config_dict['options']['checkpoint_dir'] = rel_ckpt.as_posix()
+            except ValueError:
+                pass
         config_dict['device_info'] = lele.Metaprogramming.get_device_specs()
         lele.Json.save_dict_to_jsonc_file(
             config_dict, path, header="Configuration used:"
@@ -59,6 +75,14 @@ class ModelConfig:
 def load(path: str, add_unique_id=True) -> ModelConfig:
     config_dict = lele.Json.get_dict_from_jsonc(lele.P(path))
     config_dict = remove_unserializable_data(config_dict)
+    if 'dataset' in config_dict and 'csv_file' in config_dict['dataset']:
+        saved_path = Path(config_dict['dataset']['csv_file'])
+        if not saved_path.is_absolute():
+            config_dict['dataset']['csv_file'] = BIOINFORMATICS_DIR / saved_path
+    if 'options' in config_dict and 'checkpoint_dir' in config_dict['options']:
+        saved_path = Path(config_dict['options']['checkpoint_dir'])
+        if not saved_path.is_absolute():
+            config_dict['options']['checkpoint_dir'] = BIOINFORMATICS_DIR / saved_path
     logger.debug(f"config_dict: {config_dict}")
     try:
         adapter = pydantic.TypeAdapter(ModelConfig)

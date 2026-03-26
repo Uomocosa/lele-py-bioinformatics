@@ -5,7 +5,7 @@ target_molecule: C1C[C@H](N(C1)C(=O)[C@H](CCCCN)N[C@@H](CCC2=CC=CC=C2)C(=O)O)C(=
 water_ph: 8.2
 csv_train_data: C:\Users\acer\Desktop\Samuele\Syncthing\LWF - LightWeigth Folder\[P]
   Python\lele-py-bioinformatics\DATASETS\PI1M\PI1M.csv
-max_size: 1000
+max_size: null
 column_name: unique_valid_psmiles
 poly_logp_H_min: 1.5
 poly_logp_H_max: null

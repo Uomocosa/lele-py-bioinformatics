@@ -5,6 +5,7 @@ platforms = ["win-64", "linux-64"]
 
 [tasks]
 train_pee_smile_model = "python -c 'from bio.pee_smiles_train import main; main()'"
+generate_random_psmiles = "python -c 'from bio.pee_smiles_generate import main; main()'"
 train_pscp_model = "python -c 'from bio.Bioinformatics.PeeSmileCapacityPredictor import train; train()'"
 mlp_experiment = "python -c 'from bio.mlp_experiment import run_with_config; run_with_config()'"
 pee_smile_filter = "python -c 'from bio.pee_smiles_filter import simple_main; simple_main()'"

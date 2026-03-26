@@ -152,11 +152,21 @@ def test_lisinopril():
     run_for_target_molecule(
         target_molecule_name = "lisinopril", # not present in pdcc at the moment
         max_size = None,
-    ) 
+    )
 
+import pytest
+@pytest.mark.above10s
+def test_ibuprofen():
+    # pixi run pytest -rFP -q -s bio\pee_smiles_filter.py::test_ibuprofen -o "addopts="
+    bio.setup_loguru()
+    run_for_target_molecule(
+        target_molecule_name = "ibuprofen", # not present in pdcc at the moment
+        max_size = None,
+    )
 
 
 def run_with_config_and_save(config: FilterConfig):
+    assert config.target_molecule is not None
     filtered_df = run_with_config(config)
     clean_df = clean_output_df(filtered_df)
     if config.save_dir is not None:
@@ -246,6 +256,7 @@ def run_with_config(config: FilterConfig) -> pd.DataFrame:
         df = df[~df[config.column_name].astype(str).isin(train_smiles)]
         logger.info(f"Dropped {pre_train_drop_count - len(df)} molecules already present in the training set.")
     
+    df = df.reset_index(drop=True)
     dataset_dir = config.csv_file.parent
     csv_file_unique = dataset_dir / "unique_valid_psmiles.csv"
     df = df.rename(columns={config.column_name: "unique_valid_psmiles"})
