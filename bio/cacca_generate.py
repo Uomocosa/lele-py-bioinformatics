@@ -43,7 +43,7 @@ import pytest
 def test_():
     config = GenerateConfig()
     config.smiles_to_generate = 10
-    config.batch_size = 1
+    config.batch_size = 128
     config.model_dir = CHECKPOINT_TEST_FOLDER
     bio.cacca_generate.run_with_config(config)
 
