@@ -3,7 +3,8 @@
     // >>> RUN SETUP:
     // cd $HOME/lele-py-bioinformatics; git fetch origin; git reset --hard origin/main; chmod +x setup.sh; ./setup.sh; source ~/.bashrc
     // >>> THEN run one of the commands exposed by pixi.
-    // pixi run generate_random_psmiles
+    // pixi
+    // pixi run -e cuda generate_random_psmiles
     // >>> FINALLY UPLOAD TO GIT:
     // cd $HOME/lele-py-bioinformatics; chmod +x upload_to_git.sh; ./upload_to_git.sh
     {
