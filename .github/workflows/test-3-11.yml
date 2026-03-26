@@ -15,19 +15,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
+      - name: Setup Pixi
+        uses: prefix-dev/setup-pixi@v0.9.4
         with:
-          # This enables caching to make your builds even faster
-          enable-cache: true
-
-      - name: Set up Python
-        run: uv python install 3.11
-
-      - name: Install dependencies
-        # This installs pytest and your local package in editable mode
-        run: uv sync --all-extras --dev
+          cache: true
 
       - name: Run Pytest
-        # We use your exact command here
-        run: uv run pytest
+        run: pixi run pytest

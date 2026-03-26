@@ -30,6 +30,7 @@ python_files = "*.py"
 testpaths = ["bio"]
 norecursedirs = [
   "__pycache__",
+  ".cache_dir",
   ".pytest_cache",
   ".git",
   ".zed",

@@ -206,7 +206,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/03/5d/f61bda8fa2b94b6c422b5c7471039cbcc00ee3c24f9eb4852ad043243f85/pymatgen-2026.3.23-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/7b/96/f222e6cb958f55fb60fad0aa6416e1b3c0d81ba0e667ca5b8975d1178ebb/pymatgen_core-2026.3.9-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/0f/cd/ebdc1aaca5deeaf47310c369ef4083e8550e04e7bf7e3752cfb7d95fcdb8/pymongo-4.16.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
-      - pypi: https://files.pythonhosted.org/packages/b8/c0/e580f33763c86d01edf58491bd58ed338c363e9a701fd5a67ba620176a5b/pystow-0.8.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/92/9f/959b609981dea4ac259322d538b808d80ab32b9e5695b488482a1e56dffd/pystow-0.8.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/3b/ab/b3226f0bd7cdcf710fbede2b3548584366da3b19b5021e74f5bde2a8fa3f/pytest-9.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/99/8f/fb06132f7dc816b9689d43294bf58dd979da702cbdfe9fb265c5e7d54e6f/python_rapidjson-1.23-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/16/fe/1016a5ccc1a7fadb3780cb3bb9b76cb917e1d1655a81151b12b3bfbfb3e2/qcelemental-0.30.1-py3-none-any.whl
@@ -410,7 +410,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/03/5d/f61bda8fa2b94b6c422b5c7471039cbcc00ee3c24f9eb4852ad043243f85/pymatgen-2026.3.23-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b4/a5/0df243029110c19e1333d9ae63b921ad70190fdb88b944efdbe6afb892b5/pymatgen_core-2026.3.9-cp311-cp311-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/4a/dd/a3aa1ade0cf9980744db703570afac70a62c85b432c391dea0577f6da7bb/pymongo-4.16.0-cp311-cp311-win_amd64.whl
-      - pypi: https://files.pythonhosted.org/packages/b8/c0/e580f33763c86d01edf58491bd58ed338c363e9a701fd5a67ba620176a5b/pystow-0.8.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/92/9f/959b609981dea4ac259322d538b808d80ab32b9e5695b488482a1e56dffd/pystow-0.8.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/3b/ab/b3226f0bd7cdcf710fbede2b3548584366da3b19b5021e74f5bde2a8fa3f/pytest-9.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/18/2c2836d38b0b19bbad406b1e3a138c8b28880a4f858ba008ad7ff31f1935/python_rapidjson-1.23-cp311-cp311-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/16/fe/1016a5ccc1a7fadb3780cb3bb9b76cb917e1d1655a81151b12b3bfbfb3e2/qcelemental-0.30.1-py3-none-any.whl
@@ -620,7 +620,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/03/5d/f61bda8fa2b94b6c422b5c7471039cbcc00ee3c24f9eb4852ad043243f85/pymatgen-2026.3.23-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/7b/96/f222e6cb958f55fb60fad0aa6416e1b3c0d81ba0e667ca5b8975d1178ebb/pymatgen_core-2026.3.9-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/0f/cd/ebdc1aaca5deeaf47310c369ef4083e8550e04e7bf7e3752cfb7d95fcdb8/pymongo-4.16.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
-      - pypi: https://files.pythonhosted.org/packages/b8/c0/e580f33763c86d01edf58491bd58ed338c363e9a701fd5a67ba620176a5b/pystow-0.8.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/92/9f/959b609981dea4ac259322d538b808d80ab32b9e5695b488482a1e56dffd/pystow-0.8.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/3b/ab/b3226f0bd7cdcf710fbede2b3548584366da3b19b5021e74f5bde2a8fa3f/pytest-9.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/99/8f/fb06132f7dc816b9689d43294bf58dd979da702cbdfe9fb265c5e7d54e6f/python_rapidjson-1.23-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/16/fe/1016a5ccc1a7fadb3780cb3bb9b76cb917e1d1655a81151b12b3bfbfb3e2/qcelemental-0.30.1-py3-none-any.whl
@@ -797,7 +797,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/03/5d/f61bda8fa2b94b6c422b5c7471039cbcc00ee3c24f9eb4852ad043243f85/pymatgen-2026.3.23-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b4/a5/0df243029110c19e1333d9ae63b921ad70190fdb88b944efdbe6afb892b5/pymatgen_core-2026.3.9-cp311-cp311-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/4a/dd/a3aa1ade0cf9980744db703570afac70a62c85b432c391dea0577f6da7bb/pymongo-4.16.0-cp311-cp311-win_amd64.whl
-      - pypi: https://files.pythonhosted.org/packages/b8/c0/e580f33763c86d01edf58491bd58ed338c363e9a701fd5a67ba620176a5b/pystow-0.8.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/92/9f/959b609981dea4ac259322d538b808d80ab32b9e5695b488482a1e56dffd/pystow-0.8.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/3b/ab/b3226f0bd7cdcf710fbede2b3548584366da3b19b5021e74f5bde2a8fa3f/pytest-9.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/40/18/2c2836d38b0b19bbad406b1e3a138c8b28880a4f858ba008ad7ff31f1935/python_rapidjson-1.23-cp311-cp311-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/16/fe/1016a5ccc1a7fadb3780cb3bb9b76cb917e1d1655a81151b12b3bfbfb3e2/qcelemental-0.30.1-py3-none-any.whl
@@ -907,7 +907,7 @@ packages:
 - pypi: ./
   name: bio
   version: 0.0.1
-  sha256: ce27a3743cea35c0634bbc11285f795345c46e887ff39c13531bc6da8dd19b8b
+  sha256: 38d3122f99782c11dee233283b4f80bce6636e7efdd6729f44e26d1c3fde7450
   requires_python: ==3.11
 - conda: https://conda.anaconda.org/conda-forge/linux-64/blas-2.116-mkl.tar.bz2
   build_number: 16
@@ -4601,10 +4601,10 @@ packages:
   - pkg:pypi/pysocks?source=hash-mapping
   size: 21085
   timestamp: 1733217331982
-- pypi: https://files.pythonhosted.org/packages/b8/c0/e580f33763c86d01edf58491bd58ed338c363e9a701fd5a67ba620176a5b/pystow-0.8.0-py3-none-any.whl
+- pypi: https://files.pythonhosted.org/packages/92/9f/959b609981dea4ac259322d538b808d80ab32b9e5695b488482a1e56dffd/pystow-0.8.2-py3-none-any.whl
   name: pystow
-  version: 0.8.0
-  sha256: 0bb82ebaab5d03703e76715a595bc68d3aa8e9ebb2427fa76c414a9614f72dcc
+  version: 0.8.2
+  sha256: a8fb99230a59a7decd98805914466724d2293061f54fc2e46b17c19db635086e
   requires_dist:
   - tqdm
   - typing-extensions

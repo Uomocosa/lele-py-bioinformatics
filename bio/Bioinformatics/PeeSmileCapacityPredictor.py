@@ -35,9 +35,13 @@ def train():
     assert trained_model is not None, "Failed to load trained model"
 
 
+import pytest
+@pytest.mark.above10s
 def test_train(): 
     train()
 
+import pytest
+@pytest.mark.above10s
 def test_usage():
     pscp = PeeSmileCapacityPredictor()
     trained_model = pscp.load_trained_model()
