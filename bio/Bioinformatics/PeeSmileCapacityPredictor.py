@@ -25,11 +25,21 @@ Note! The defaults for PeeSmileCapacityPredictor were taken after the
       best result obtained from 'bio.mlp_experiments.run_all_experiments'
 """
 
-def test_usage():
+def train():
     pscp = PeeSmileCapacityPredictor()
     trained_model = pscp.get_trained_model()
     pscp.save_trained_model(trained_model)
+    pscp.plot_learning_curve()
     trained_model = None
+    trained_model = pscp.load_trained_model()
+    assert trained_model is not None, "Failed to load trained model"
+
+
+def test_train(): 
+    train()
+
+def test_usage():
+    pscp = PeeSmileCapacityPredictor()
     trained_model = pscp.load_trained_model()
     assert trained_model is not None, "Failed to load trained model"
     
@@ -55,6 +65,7 @@ class DatasetConfig(PDCC.Config):
 class ModelConfig(MLP.Config):
     save_dir: Optional[Path] = SAVE_MODEL_DIR
     hidden_dims: list = field(default_factory=lambda: [16, 8, 4, 4, 4])
+    epochs: int = 100
     
 FeaturizerOptions = PDCCMethod.featurize.Options
 IncrementDatasetOptions = PDCCMethod.increment_dataset.Options
@@ -160,30 +171,34 @@ class PeeSmileCapacityPredictor():
         return model
         
 
-    def plot_learning_curves(self):
-        log = _get_log_files(pscp)
-        log_file = log_files["traing_epochs"]
-        """Plots Training and Validation loss against the number of epochs for a single split."""
+    def plot_learning_curve(self):
+        """Plots Training loss (and Validation if available) against the number of epochs."""
+        log = _get_log_files(self)  # FIXED: use self, not pscp
+        log_file = log["traing_epochs"]  # FIXED: use log dictionary directly
+        
         if not log_file.exists(): 
             logger.error(f"Cannot plot: Log file not found at {log_file}")
             return
 
         df_epochs = pd.read_json(log_file, lines=True)
         if not df_epochs.empty:
-            plt.figure(figsize=(10, 6))
-            sns.lineplot(data=df_epochs, x="epoch", y="train_loss", label="Train Loss", linewidth=2)
+            import matplotlib.pyplot as plt # Ensure plt is imported
             
-            # Only plot val_loss if it exists/isn't completely NaN
+            plt.figure(figsize=(10, 6))
+            sns.lineplot(data=df_epochs, x="epoch", y="train_loss", label="Train Loss", linewidth=2, color="blue")
+            
+            # Safely plot validation loss only if it contains real numbers
             if "val_loss" in df_epochs.columns and not df_epochs["val_loss"].isna().all():
-                sns.lineplot(data=df_epochs, x="epoch", y="val_loss", label="Validation Loss", linewidth=2)
+                sns.lineplot(data=df_epochs, x="epoch", y="val_loss", label="Validation Loss", linewidth=2, color="orange")
             
             criterion_name = self.model_config.criterion_fn
             plt.title("PeeSmileCapacityPredictor - Learning Curve")
             plt.xlabel("Epoch")
             plt.ylabel(f"Loss ({criterion_name.upper()})")
+            plt.grid(True, linestyle='--', alpha=0.7) # Added grid for readability
             plt.legend()
             
-            img_path = self.save_dir / "plot_learning_curves.png"
+            img_path = self.save_dir / "plot_learning_curve.png"
             plt.tight_layout()
             plt.savefig(img_path, dpi=300)
             plt.close()

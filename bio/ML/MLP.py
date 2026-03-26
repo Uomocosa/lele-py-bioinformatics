@@ -95,7 +95,8 @@ class MLP(nn.Module):
         logger.debug(f"df_features.values:\n{df_features.values}")
         x_tensor = torch.tensor(df_features.values.astype(float), dtype=torch.float32)
         if self.x_scaler is not None:
-            x_scaled = self.x_scaler.transform(x_tensor.numpy().reshape(1, -1))
+            # x_scaled = self.x_scaler.transform(x_tensor.numpy().reshape(1, -1))
+            x_scaled = self.x_scaler.transform(x_tensor.numpy().reshape(x_tensor.shape[0], -1))
             x_tensor = torch.tensor(x_scaled, dtype=torch.float32)
         x_tensor = x_tensor.to(device)
         if x_tensor.dim() == 1: x_tensor = x_tensor.unsqueeze(0)
@@ -104,7 +105,10 @@ class MLP(nn.Module):
             real_prediction = self.y_scaler.inverse_transform(scaled_prediction)
         else:
             real_prediction = scaled_prediction
-        return float(real_prediction.item())
+        if real_prediction.size == 1: 
+            return float(real_prediction.item())
+        else: 
+            return real_prediction.flatten()
 
 
 

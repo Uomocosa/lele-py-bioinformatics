@@ -20,6 +20,10 @@ import logging; logging.getLogger("deepchem").setLevel(logging.ERROR)
 CHECKPOINT_FOLDER = lele.P(r"./SMILES_checkpoints") 
 CHECKPOINT_TEST_FOLDER = lele.P(r"./SMILES_checkpoints_test") 
 
+IS_SMILE_VALID_FN_DICT = {
+    "default": lambda smile: smile.is_valid,
+}
+
 @dataclass
 class GenerateConfig():
     smiles_to_generate: int = 10000
@@ -28,7 +32,10 @@ class GenerateConfig():
     temperature: float = 1.0 # 0.8 = conservative, 1.0 = standard, 1.2 = creative/chaotic
     max_new_tokens: int = 128
     use_best_model_in_subfolders: bool = True
-    is_smile_valid: Callable[[str], bool] = lambda smile: smile.is_valid
+    is_smile_valid_fn: str = "default"
+    
+    def get_is_smile_valid_fn(self) -> Callable[[str], bool]:
+        return IS_SMILE_VALID_FN_DICT[self.is_smile_valid_fn]
 
 
 import pytest
@@ -53,7 +60,7 @@ def run_with_config(config: GenerateConfig):
         model_file = find_latest_best_model(config.model_dir)
         config.model_dir = model_file.parent
     else: 
-        model_files = config.model_dir.glob("*.pt")
+        model_files = list(config.model_dir.glob("*.pt"))
         assert len(model_files) > 0, "No models found in the directory"
         assert len(model_files) == 1, "Found multiple models in the directory"
         model_file = model_files[0]
@@ -134,14 +141,14 @@ def run_with_config(config: GenerateConfig):
                 smiles_str = smiles_str.replace(" ", "")
                 smile = bio.Bioinformatics.Smile(smiles_str)
                 # smile = bio.Bioinformatics.Smile(smiles_str).canonicalize() # cannot do this, it returns single atoms like: C, N, ...
-                
-                if smile: 
-                    logger.bind(type="GENERATED_SMILE").trace(smile)
-                    generated_count += 1
-                if config.is_smile_valid(smile): 
-                    print("THIS SMILE PASSED THE FUNCTION config.is_smile_valid")
+                if not smile: continue
+                logger.bind(type="GENERATED_SMILE").trace(smile)
+                generated_count += 1
+                is_smile_valid = config.get_is_smile_valid_fn()
+                if is_smile_valid(smile): 
+                    print("THIS SMILE PASSED THE FUNCTION is_smile_valid")
                     print(f"smile: {smile}")
-                    print(f"config.is_smile_valid(smile): {config.is_smile_valid(smile)}")
+                    print(f"is_smile_valid(smile): {is_smile_valid(smile)}")
                     logger.bind(type="VALID_SMILE").info(smile)
                     num_smile_valid += 1
 

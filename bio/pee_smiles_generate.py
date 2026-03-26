@@ -6,17 +6,18 @@ from loguru import logger
 from typing import Optional, Callable
 from dataclasses import dataclass
 import lele, bio
+from bio.__global__ import RESULTS_DIR
 from lele.Path import P
 from lele.String import get_substring 
 from bio.Bioinformatics import Smile
 import logging; logging.getLogger("deepchem").setLevel(logging.ERROR)
 
-CHECKPOINT_FOLDER = lele.P(r"./PSMILES_checkpoints") 
+SAVE_DIR = RESULTS_DIR / "pee_smiles_generator"
 CHECKPOINT_TEST_FOLDER = lele.P(r"./PSMILES_checkpoints_test") 
 
 @dataclass
 class PSmileGenerateConfig(bio.cacca_generate.GenerateConfig):
-    model_dir: Path = CHECKPOINT_FOLDER
+    model_dir: Path = SAVE_DIR
     is_smile_valid: Callable[[str], bool] = lambda psmile: bio.Bioinformatics.is_psmiles_string_valid(psmile)
 
 import pytest

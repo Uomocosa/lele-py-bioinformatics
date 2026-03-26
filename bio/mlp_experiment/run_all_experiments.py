@@ -172,10 +172,12 @@ def run_all_experiments():
     for exp_config in EXPERIMENTS:
         bio.mlp_experiment.run_with_config(exp_config)
         
-        
+
+def test_rank_all_experiments():
+    # pixi run pytest -rFP -q -s bio\mlp_experiment\run_all_experiments.py::test_rank_all_experiments -o "addopts="
+    rank_experiments()
         
 def rank_experiments(base_dir: Path = RESULTS_DIR / "mlp_experiments"):
-    # 
     """
     Reads the individual fold predictions for LOOCV by scanning the file system,
     aggregates them, and calculates global metrics to rank the experiments.

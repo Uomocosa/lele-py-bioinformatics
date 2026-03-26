@@ -1,72 +1,215 @@
-from bio.Bioinformatics import PeeSmileCapacityPredictor
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Optional
+import tyro
+import yaml
+import numpy as np 
 import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
+import bio
+from bio.ML import MLP
+from bio.Bioinformatics import PeeSmileCapacityPredictor
+from bio.__global__ import RESULTS_DIR  # Make sure this is imported!
 from loguru import logger
+
 CANDIDATES_DIR = RESULTS_DIR / "filtered_synthetic_candidates"
-# MODEL_DIR = RESULTS_DIR / "PeeSmileCapacityPredictor"
+PREDICTIONS_DIR = RESULTS_DIR / "predicted_capacities"
 
+@dataclass
+class CLIArgs:
+    target_molecule: str
+    base_concentration: float = 12.5
 
-def predict_absorbant_polymer_for_filtered_candidates(
-    target_molecule_name: str, 
-    water_ph: float = 6.5, 
-    concentration: float = 12.5
-) -> pd.DataFrame:
-    """Predicts capacity for filtered candidates and ranks them from best to worst."""
-    candidates_csv = CANDIDATES_DIR / f"target_{target_molecule_name}.csv"
+def main():
+    bio.setup_loguru()
+    cli_args = tyro.cli(CLIArgs)
+    predict_single_candidate(cli_args.target_molecule, cli_args.base_concentration)
+
+import pytest
+@pytest.mark.above10s
+def test_predict_aspirin():
+    # pixi run pytest -rFP -q -s bio\predict_absorbant_polymer_for_filtered_candidates.py::test_predict_aspirin -o "addopts="
+    bio.setup_loguru()
+    predict_single_candidate("aspirin")
     
-    if not candidates_csv.exists():
-        logger.error(f"Could not find filtered candidates at {candidates_csv}. Did you run the filters first?")
-        return pd.DataFrame()
-        
-    df = pd.read_csv(candidates_csv)
-    if df.empty:
-        logger.warning(f"The filtered candidates dataframe for {target_molecule_name} is empty.")
-        return df
+import pytest
+@pytest.mark.above10s
+def test_predict_lisinopril():
+    # pixi run pytest -rFP -q -s bio\predict_absorbant_polymer_for_filtered_candidates.py::test_predict_aspirin -o "addopts="
+    bio.setup_loguru()
+    predict_single_candidate("lisinopril")
+    
+import pytest
+@pytest.mark.above10s
+def test_predict_metformin():
+    # pixi run pytest -rFP -q -s bio\predict_absorbant_polymer_for_filtered_candidates.py::test_predict_metformin -o "addopts="
+    bio.setup_loguru()
+    predict_single_candidate("metformin")
 
-    # 2. Add the required environmental variables for the predictor
-    df['WATER_PH'] = water_ph
-    df['CONCENTRATION'] = concentration
-
-    # 3. Load the Prediction Model
+    
+def get_trained_model() -> MLP:
     pscp = PeeSmileCapacityPredictor()
     trained_model = pscp.load_trained_model()
-    
-    # Fallback just in case the model hasn't been saved yet
-    if trained_model is None:
-        logger.info("No saved model found, retrieving and saving a new trained model...")
-        trained_model = pscp.get_trained_model()
-        pscp.save_trained_model(trained_model)
-        
     assert trained_model is not None, "Failed to load trained model"
-    if hasattr(trained_model, "eval"): trained_model.eval()
+    trained_model.eval()
+    return trained_model
 
-    # 4. Predict
-    # Subset only the columns the predictor needs to avoid confusing the model
-    predict_df = df[['POLYMER_USED', 'DRUG', 'WATER_PH', 'CONCENTRATION']].copy()
     
-    logger.info(f"Running capacity predictions on {len(df)} candidates for {target_molecule_name}...")
-    predictions = trained_model.predict(predict_df)
+def predict_single_candidate(
+    target_molecule_name: str, 
+    base_concentration: float = 12.5,
+    trained_model: Optional[MLP] = None, 
+):
+    assert CANDIDATES_DIR.exists()
+    csv_file = CANDIDATES_DIR / f"target_{target_molecule_name}.csv"
+    assert csv_file.exists(), f"No candidate CSV file found in {CANDIDATES_DIR}.\nYou need to run first 'pixi run pee_smile_filter --target_molecule {target_molecule_name}'"
     
-    # 5. Rank and Sort (Assuming higher capacity is better)
-    df['PREDICTED_CAPACITY'] = predictions
-    df = df.sort_values(by='PREDICTED_CAPACITY', ascending=False).reset_index(drop=True)
+    yaml_file = CANDIDATES_DIR / f"target_{target_molecule_name}_filter_config.yaml"
+    if yaml_file.exists():
+        with open(yaml_file, "r") as f:
+            config_dict = yaml.safe_load(f)
+            # Default to 8.2 if water_ph isn't found in the yaml for some reason
+            water_ph = config_dict.get("water_ph", 8.2) 
+    else:
+        logger.warning(f"No YAML config found at {yaml_file}. Defaulting water_ph to 8.2")
+        water_ph = 8.2
     
-    # 6. Save the ranked results
-    ranked_csv = save_dir / f"target_{target_molecule_name}_ranked.csv"
-    
-    # Reorder columns to put the target metric up front for easy viewing
-    cols = df.columns.tolist()
-    front_cols = ['POLYMER_USED', 'DRUG', 'PREDICTED_CAPACITY', 'WATER_PH', 'CONCENTRATION']
-    for col in front_cols:
-        if col in cols: cols.remove(col)
-    df = df[front_cols + cols]
-    
-    df.to_csv(ranked_csv, index=False, float_format="%.4f")
-    logger.info(f"Saved ranked candidates to {ranked_csv}")
-    
-    # 7. Celebrate the winners
-    logger.info("\n" + "="*70 + f"\n🏆 TOP 5 PREDICTED POLYMERS FOR {target_molecule_name.upper()}\n" + "="*70)
-    for i, row in df.head(5).iterrows():
-        logger.info(f"Rank {i+1}: Capacity = {row['PREDICTED_CAPACITY']:.4f} | Polymer: {row['POLYMER_USED']}")
-    logger.info("="*70)
+    if not trained_model: trained_model = get_trained_model()
+    logger.info(f"Predicting for target molecule: {target_molecule_name}")
+    df = predict_absorbant_polymer_for_filtered_candidates(
+        trained_model = trained_model,
+        csv_file = csv_file,
+        water_ph = water_ph,
+        concentration = base_concentration
+    )
+    if df.empty: return
+    logger.info(f"Best predicted capacity for {target_molecule_name}: {df['PREDICTED_CAPACITY'].max()} (from {df.shape[0]} candidates)")
+    PREDICTIONS_DIR.mkdir(exist_ok=True, parents=True)
+    df.to_csv(PREDICTIONS_DIR / f"best_predictions_for_{target_molecule_name}.csv", index=False)
+    best_prediction = df.loc[df['PREDICTED_CAPACITY'].idxmax()]
+    polymer = best_prediction['POLYMER_USED']
+    drug = best_prediction['DRUG']
+    plot_capacity_vs_concentration(
+        drug_name = target_molecule_name,
+        polymer = polymer, 
+        drug = drug, 
+        concentration = np.linspace(0, 50, 100).tolist(), 
+        water_ph = water_ph,
+    )
+    plot_capacity_vs_ph(
+        drug_name = target_molecule_name,
+        polymer = polymer, 
+        drug = drug, 
+        water_ph = np.linspace(0, 14, 100).tolist(), 
+        concentration = base_concentration,
+    )
         
-    return df
+
+def predict_absorbant_polymer_for_filtered_candidates(
+    trained_model: MLP,
+    csv_file: Path,
+    water_ph: float = 8.2, 
+    concentration: float = 12.5
+) -> pd.DataFrame:
+    df = pd.read_csv(csv_file)
+    if df.empty:
+        logger.warning(f"The filtered candidates dataframe for {csv_file.stem} is empty.")
+        return pd.DataFrame()
+    input_df = df[['POLYMER_USED', 'DRUG']].copy()
+    input_df['WATER_PH'] = water_ph
+    input_df['CONCENTRATION'] = concentration 
+    logger.info(f"Predicting capacities for {len(input_df)} candidates in batch...")
+    predictions = trained_model.predict(input_df)
+    out_df = input_df.copy()
+    out_df['PREDICTED_CAPACITY'] = predictions
+    out_df = out_df.sort_values(by='PREDICTED_CAPACITY', ascending=False).reset_index(drop=True)
+    return out_df
+
+
+
+def plot_capacity_vs_concentration(
+    drug_name: str,
+    polymer: str, 
+    drug: str, 
+    concentration: list[float],
+    water_ph: float = 8.2,
+) -> None:
+    """Plots predicted capacity for a single polymer/drug pair across varying concentrations."""
+    logger.info(f"Plotting capacity vs. concentration for {drug_name} (Fixed pH: {water_ph})")
+    
+    # 1. Load Model (Loads once per function call)
+    pscp = PeeSmileCapacityPredictor()
+    model = pscp.load_trained_model()
+    if hasattr(model, 'eval'): model.eval()
+    
+    # 2. Prepare Batch Data
+    df = pd.DataFrame({
+        'POLYMER_USED': [polymer] * len(concentration),
+        'DRUG': [drug] * len(concentration),
+        'WATER_PH': [water_ph] * len(concentration),
+        'CONCENTRATION': concentration
+    })
+    
+    # 3. Predict
+    df['PREDICTED_CAPACITY'] = model.predict(df)
+    
+    # 4. Plot
+    plt.figure(figsize=(8, 5))
+    sns.lineplot(data=df, x='CONCENTRATION', y='PREDICTED_CAPACITY', marker='o', color='b', linewidth=2)
+    plt.title(f'Capacity vs. Concentration\nDrug: {drug_name} | Fixed pH: {water_ph}')
+    plt.xlabel('Concentration')
+    plt.ylabel('Predicted Capacity')
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.tight_layout()
+    
+    # 5. Save
+    PREDICTIONS_DIR.mkdir(parents=True, exist_ok=True)
+    save_path = PREDICTIONS_DIR / f"plot_conc_{drug_name}.png"
+    plt.savefig(save_path, dpi=300)
+    plt.close()
+    logger.info(f"Saved concentration plot to {save_path}")
+
+
+
+def plot_capacity_vs_ph(
+    drug_name: str,
+    polymer: str, 
+    drug: str, 
+    water_ph: list[float],
+    concentration: float = 12.5,
+) -> None:
+    """Plots predicted capacity for a single polymer/drug pair across varying pH levels."""
+    logger.info(f"Plotting capacity vs. pH for {drug_name} (Fixed Conc: {concentration})")
+    
+    # 1. Load Model
+    pscp = PeeSmileCapacityPredictor()
+    model = pscp.load_trained_model()
+    if hasattr(model, 'eval'): model.eval()
+    
+    # 2. Prepare Batch Data
+    df = pd.DataFrame({
+        'POLYMER_USED': [polymer] * len(water_ph),
+        'DRUG': [drug] * len(water_ph),
+        'WATER_PH': water_ph,
+        'CONCENTRATION': [concentration] * len(water_ph)
+    })
+    
+    # 3. Predict (This will trigger the featurizer to recalculate protonation states per pH)
+    df['PREDICTED_CAPACITY'] = model.predict(df)
+    
+    # 4. Plot
+    plt.figure(figsize=(8, 5))
+    sns.lineplot(data=df, x='WATER_PH', y='PREDICTED_CAPACITY', marker='o', color='r', linewidth=2)
+    plt.title(f'Capacity vs. Water pH\nDrug: {drug_name} | Fixed Conc: {concentration}')
+    plt.xlabel('Water pH')
+    plt.ylabel('Predicted Capacity')
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.tight_layout()
+    
+    # 5. Save
+    PREDICTIONS_DIR.mkdir(parents=True, exist_ok=True)
+    save_path = PREDICTIONS_DIR / f"plot_ph_{drug_name}.png"
+    plt.savefig(save_path, dpi=300)
+    plt.close()
+    logger.info(f"Saved pH plot to {save_path}")

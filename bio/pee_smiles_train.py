@@ -14,11 +14,12 @@ from lele.Metaprogramming import CSV_Logger
 from bio.ML import set_seed, get_torch_device
 from bio.MinGPT.__global__ import MIN_GPT_CONFIG_FILE
 from bio.Dataset.__global__ import PI1M
+from bio.__global__ import RESULTS_DIR
 from pathlib import Path
 from loguru import logger
 import logging; logging.getLogger("deepchem").setLevel(logging.ERROR)
 
-CHECKPOINT_FOLDER = lele.P(r"./PSMILES_checkpoints") 
+SAVE_DIR = RESULTS_DIR / "pee_smiles_generator"
 CHECKPOINT_TEST_FOLDER = lele.P(r"./PSMILES_checkpoints_test") 
 
 def main():
@@ -28,11 +29,14 @@ def main():
     
     @dataclass
     class PSmileModelConfig(ModelConfig):
-        options: tyro.conf.OmitArgPrefixes[Options] = field(default_factory=Options)
+        options: tyro.conf.OmitArgPrefixes[Options] = field(
+            default_factory=lambda: Options(
+                checkpoint_dir=SAVE_DIR,
+            )
+        )
         dataset: DatasetConfig = field(default_factory=lambda: DatasetConfig(csv_file=PI1M))
         
     config = tyro.cli(PSmileModelConfig)
-    config.options.checkpoint_dir = config.options.checkpoint_dir/lele.String.unique()
     config.options.checkpoint_dir.mkdir(exist_ok=False, parents=True)
     config.dataset
     print(f'CUDA available: {torch.cuda.is_available()}')

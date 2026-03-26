@@ -1,11 +1,11 @@
 import sys
+from typing import Optional, Callable
+from pathlib import Path
+from dataclasses import dataclass, field, asdict
 import tyro
+import yaml
 import torch
 import pandas as pd
-import time, warnings
-from pathlib import Path
-from typing import Optional, Callable
-from dataclasses import dataclass, field
 import lele, bio
 from lele.Path import P
 from lele.String import get_substring 
@@ -27,6 +27,7 @@ FeaturizerOptions = bio.Dataset.PDCCMethod.featurize.Options
 @dataclass
 class FilterConfig():
     csv_file: Path = TEST_CSV_FILE
+    save_dir: Optional[Path] = SAVE_DIR
     target_molecule_name: str = "None" # Common name of the target molecule
     target_molecule: Optional[str] = None # Expects SMILES format!
     water_ph: Optional[float] = None 
@@ -48,6 +49,25 @@ class FilterConfig():
     # LogP -> Higher is better (but how much higher???).
     # TPSA -> Higher is better (but how much higher???).
     # Gruppo funzionale specifici, gruppi aromatici -> Se entrambi cel'hanno bene. (da riveredere)
+    
+    def parse(self) -> 'Self':
+        if not self.target_molecule_name or self.target_molecule_name == "None":
+            logger.warning("target_molecule_name is not set or is 'None'.")
+            self.target_molecule_name = 'None'
+            return self
+        smile_str = bio.get_smiles_from_name(self.target_molecule_name)
+        if not smile_str and not self.target_molecule:
+            logger.error(f"Could not find SMILES for target_molecule_name: {self.target_molecule_name}. Also no existing target_molecule found.")
+            return self
+        if not smile_str and self.target_molecule:
+            logger.info(f"Could not find SMILES for target_molecule_name: {self.target_molecule_name}, using existing target_molecule: {self.target_molecule}")
+            return self
+        if smile_str and self.target_molecule:
+            if smile_str != self.target_molecule:
+                logger.info(f"Found SMILES for target_molecule_name: {self.target_molecule_name}. But it is different from the existing target_molecule: {self.target_molecule}, we will use the most common one.")
+        self.target_molecule = smile_str
+        return self
+
 
 """
 # FMO (Frontier Molecular Orbital) Theory
@@ -72,50 +92,100 @@ The FMO filter already implicitly screens for aromaticity. It's the reason the s
 """
 
 def main():
-    setup_loguru()
+    bio.setup_loguru()
     config = tyro.cli(FilterConfig)
     run_with_config_and_save(config)
-    
-        
+
+@dataclass
+class SimplerConfig:
+    target_molecule_name: str
+    max_size: Optional[int] = None
+
+def simple_main():
+    bio.setup_loguru()
+    cli_args = tyro.cli(SimpleArgs)
+    run_for_target_molecule(
+        target_molecule_name = cli_args.target_molecule_name,
+        max_size = cli_args.max_size,
+    )
+
+
 import pytest
 @pytest.mark.above10s
 def test_():
-    setup_loguru()
-    max_size = 1000
-    # max_size = None
+    # pixi run pytest -rFP -q -s bio\pee_smiles_filter.py::test_ -o "addopts="
+    filter_config = FilterConfig(
+        target_molecule_name = "aspirin",
+        water_ph = 8.2,
+        max_size = 10,
+        save_dir = None,
+    )
+    df = run_with_config(filter_config)
+    df = clean_output_df(df)
+    print(df)
+    
+import pytest
+@pytest.mark.above10s
+def test_aspirin():
+    # pixi run pytest -rFP -q -s bio\pee_smiles_filter.py::test_aspirin -o "addopts="
+    bio.setup_loguru()
     run_for_target_molecule(
         target_molecule_name = "aspirin", # present in pdcc
-        target_molecule = "CC(=O)OC1=CC=CC=C1C(=O)O",
-        max_size = max_size,
-    ) 
+        max_size = None,
+    )
+
+import pytest
+@pytest.mark.above10s
+def test_metformin():
+    # pixi run pytest -rFP -q -s bio\pee_smiles_filter.py::test_metformin -o "addopts="
+    bio.setup_loguru()
     run_for_target_molecule(
         target_molecule_name = "metformin", # present in pdcc
-        target_molecule = "CN(C)C(=N)N=C(N)N",
-        max_size = max_size,
-    ) 
+        max_size = None,
+    )
+
+import pytest
+@pytest.mark.above10s
+def test_lisinopril():
+    # pixi run pytest -rFP -q -s bio\pee_smiles_filter.py::test_lisinopril -o "addopts="
+    bio.setup_loguru()
     run_for_target_molecule(
         target_molecule_name = "lisinopril", # not present in pdcc at the moment
-        target_molecule = "C1C[C@H](N(C1)C(=O)[C@H](CCCCN)N[C@@H](CCC2=CC=CC=C2)C(=O)O)C(=O)O",
-        max_size = max_size,
+        max_size = None,
     ) 
+
 
 
 def run_with_config_and_save(config: FilterConfig):
     filtered_df = run_with_config(config)
     clean_df = clean_output_df(filtered_df)
-    save_dir = SAVE_DIR
-    save_dir.mkdir(parents=True, exist_ok=True)
-    out_csv = save_dir / f"target_{config.target_molecule_name}.csv"
-    clean_df.to_csv(out_csv, index=False, float_format="%.4f")
-    logger.info(f"Saved {len(clean_df)} candidates to {out_csv}")
+    if config.save_dir is not None:
+        config.save_dir.mkdir(parents=True, exist_ok=True)
+        out_csv = config.save_dir / f"target_{config.target_molecule_name}.csv"
+        clean_df.to_csv(out_csv, index=False, float_format="%.4f")
+        logger.info(f"Saved {len(clean_df)} candidates to {out_csv}")
+        
+        out_yaml = config.save_dir / f"target_{config.target_molecule_name}_filter_config.yaml"
+        yaml.SafeDumper.add_multi_representer(
+            Path, 
+            lambda dumper, data: dumper.represent_str(str(data))
+        )
+        formatted_config = yaml.safe_dump(
+            asdict(config), 
+            default_flow_style=False, 
+            sort_keys=False
+        )
+        with open(out_yaml, "w") as f: f.write(formatted_config)
+        logger.info(f"Saved configuration to {out_yaml}")
 
 
-def run_for_target_molecule(target_molecule_name: str, target_molecule: str, max_size: Optional[int] = None):
+
+def run_for_target_molecule(target_molecule_name: str, max_size: Optional[int] = None):
     config = FilterConfig()
     config.csv_train_data = TRAIN_CSV_FILE
     config.max_size = max_size
     config.target_molecule_name = target_molecule_name
-    config.target_molecule = target_molecule
+    config.target_molecule = bio.get_smiles_from_name(target_molecule_name)
     config.water_ph = 8.2
     config.featurizer_options = FeaturizerOptions(
         molecule_features_to_calculate = [
@@ -155,21 +225,11 @@ def clean_output_df(df: pd.DataFrame) -> pd.DataFrame:
     # Only keep the columns that actually exist to prevent KeyErrors
     final_cols = [c for c in cols_to_keep if c in df.columns]
     return df[final_cols]
-    
-    
-def setup_loguru():
-    logger.remove()
-    logger.add(
-        sys.stderr,
-        format = bio.__global__.LOGURU_SIMPLE_FORMAT,
-        filter = {
-            # "bio.ML.MLPMethod.train_model": "WARNING",
-        },
-        level = "INFO"
-    )
+
 
     
-def run_with_config(config: FilterConfig):
+def run_with_config(config: FilterConfig) -> pd.DataFrame:
+    config.parse()
     df = pd.read_csv(config.csv_file)
     if config.max_size: df = df.head(config.max_size)
     
@@ -296,24 +356,7 @@ def apply_filters(df: pd.DataFrame, config: FilterConfig) -> pd.DataFrame:
     filtered_df = df[mask].dropna(subset=subset_cols)
     logger.info(f"Filtered out a total of {initial_count - len(filtered_df)} molecules (out of {initial_count})")
     
-    if not filtered_df.empty:
-        log_msg = "\n" + "="*70 + "\nSURVIVING CANDIDATES\n" + "="*70 + "\n"
-        for _, row in filtered_df.iterrows():
-            log_msg += f"🧪 POLYMER_USED: {row['POLYMER_USED']}\n"
-            log_msg += f"🎯 DRUG TARGET:  {row['DRUG']}\n"
-            log_msg += f"📈 Filtered properties:\n"
-            for col in subset_cols:
-                val = row[col]
-                # Format floats to 4 decimal places for readability
-                if isinstance(val, float):
-                    log_msg += f"\t{col:<60} = {val:.4f}\n"
-                else:
-                    log_msg += f"\t{col:<60} = {val}\n"
-            log_msg += "-"*70 + "\n"
-        logger.info(log_msg)
-    else:
-        logger.info("No molecules survived the filters.")
-        
+    if filtered_df.empty: logger.info("No molecules survived the filters.")
     return filtered_df
 
 

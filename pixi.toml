@@ -4,8 +4,12 @@ channels = ["pytorch", "nvidia", "conda-forge", "anaconda"]
 platforms = ["win-64", "linux-64"]
 
 [tasks]
-mlp_train = "python -c 'from bio.mlp_train import main; main()'"
-experiment = "python -c 'import experiment; experiment()'"
+train_pee_smile_model = "python -c 'from bio.pee_smiles_train import main; main()'"
+train_pscp_model = "python -c 'from bio.Bioinformatics.PeeSmileCapacityPredictor import train; train()'"
+mlp_experiment = "python -c 'from bio.mlp_experiment import run_with_config; run_with_config()'"
+pee_smile_filter = "python -c 'from bio.pee_smiles_filter import simple_main; simple_main()'"
+pee_smile_filter_with_config = "python -c 'from bio.pee_smiles_filter import main; main()'"
+pscp_predict = "python -c 'from bio.predict_absorbant_polymer_for_filtered_candidates import main; main()'"
 # interpolate_pdcc_dataset = "python -c 'from bio.interpolate_pdcc_dataset import main; main()'"
 
 [dependencies]
@@ -26,7 +30,8 @@ tyro = ">=1.0.9, <2"
 # torch = "*"
 # torchvision = "*"
 # transformers = { version = "== 4.46.*", extras = ["torch"] }
-transformers = ">=5.3.0, <6"
+transformers = "<4.42.0"
+# transformers = ">=5.3.0, <6"
 polymetrix = ">=0.2.0, <0.3"
 pydantic = ">=2.12.5, <3"
 numpy = "*"

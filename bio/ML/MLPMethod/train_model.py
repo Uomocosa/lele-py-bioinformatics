@@ -79,30 +79,34 @@ def train_model(model: MLP):
             val_loss=float(val_loss)
         ).trace("epoch_metrics")
         
-        is_best = val_loss < best_val_loss
+        current_loss = val_loss if len(val_ds) > 0 else train_loss
+        is_best = current_loss < best_val_loss
+        
         if (epoch + 1) % 10 == 0 or epoch == 0 or is_best:
             log_msg = f"Epoch {epoch+1:03d} | Train MSE (scaled): {train_loss:.4f} | Val MSE (scaled): {val_loss:.4f}"
             if is_best: log_msg = f"<green>{log_msg}</green>"
             logger.opt(colors=True).info(log_msg)
         
         if model.config.early_stop_patience > 0:
-            if val_loss < best_val_loss:
-                best_val_loss = val_loss
+            if current_loss < best_val_loss:  # 2. Use current_loss here
+                best_val_loss = current_loss
                 patience_counter = 0
                 best_model_weights = copy.deepcopy(model.state_dict())
             else:
                 patience_counter += 1
                 if patience_counter >= model.config.early_stop_patience:
-                    logger.warning(f"EARLY STOPPING: Validation loss hasn't improved for {model.config.early_stop_patience} epochs.")
+                    # 3. Updated log message to reflect the dynamic loss
+                    loss_name = "Validation" if len(val_ds) > 0 else "Training"
+                    logger.warning(f"EARLY STOPPING: {loss_name} loss hasn't improved for {model.config.early_stop_patience} epochs.")
                     break 
 
     if best_model_weights is not None:
         model.load_state_dict(best_model_weights)
-        logger.info(f"Restored best model weights with Val MSE (scaled): {best_val_loss:.4f}")
+        loss_name = "Val" if len(val_ds) > 0 else "Train"
+        logger.info(f"Restored best model weights with {loss_name} MSE (scaled): {best_val_loss:.4f}")
 
     logger.success("Training complete!")
     return model
-
 
 import pytest
 @pytest.mark.todo
