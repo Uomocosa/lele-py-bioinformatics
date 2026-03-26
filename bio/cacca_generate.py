@@ -28,7 +28,7 @@ IS_SMILE_VALID_FN_DICT = {
 class GenerateConfig():
     smiles_to_generate: int = 10000
     model_dir: Path = CHECKPOINT_FOLDER
-    batch_size: int = 1
+    batch_size: int = 256
     temperature: float = 1.0 # 0.8 = conservative, 1.0 = standard, 1.2 = creative/chaotic
     max_new_tokens: int = 128
     use_best_model_in_subfolders: bool = True
@@ -43,7 +43,7 @@ import pytest
 def test_():
     config = GenerateConfig()
     config.smiles_to_generate = 10
-    config.batch_size = 128
+    config.batch_size = 1
     config.model_dir = CHECKPOINT_TEST_FOLDER
     bio.cacca_generate.run_with_config(config)
 
