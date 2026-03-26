@@ -14,10 +14,10 @@
         "log_loss_data": true,
         "save_best_model": true,
         "save_checkpoint_every_n_iters": 1000,
-        "checkpoint_dir": "C:\\Users\\acer\\Desktop\\Samuele\\Syncthing\\LWF - LightWeigth Folder\\[P] Python\\lele-py-bioinformatics\\RESULTS\\pee_smiles_generator"
+        "checkpoint_dir": "/home/maggiori/lele-py-bioinformatics/RESULTS/pee_smiles_generator"
     },
     "dataset": {
-        "csv_file": "C:\\Users\\acer\\Desktop\\Samuele\\Syncthing\\LWF - LightWeigth Folder\\[P] Python\\lele-py-bioinformatics\\DATASETS\\PI1M\\PI1M.csv",
+        "csv_file": "/home/maggiori/lele-py-bioinformatics/DATASETS/PI1M/PI1M.csv",
         "train_validation_test_pecentages": [
             0.6,
             0.2,
@@ -27,11 +27,15 @@
         "process_raw_smiles": null
     },
     "device_info": {
-        "system": "Windows",
-        "platform": "Windows-10-10.0.26200-SP0",
-        "processor": "AMD64 Family 23 Model 104 Stepping 1, AuthenticAMD",
-        "python_version": "3.11.15",
-        "pytorch_version": "2.3.1",
-        "device_type": "cpu"
+        "system": "Linux",
+        "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.31",
+        "processor": "x86_64",
+        "python_version": "3.11.9",
+        "pytorch_version": "2.5.1",
+        "device_type": "cuda",
+        "device_count": 2,
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "gpu_total_memory_gb": 23.65,
+        "cuda_version": "11.8"
     }
 }
