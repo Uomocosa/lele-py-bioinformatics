@@ -1,10 +1,9 @@
-csv_file: C:\Users\acer\Desktop\Samuele\Syncthing\LWF - LightWeigth Folder\[P] Python\lele-py-bioinformatics\PSMILES_checkpoints\2026_02_07_121136_450914\generate_mnt128_t100000000\2026_02_10_094417_233255\valid_smiles.csv
-save_dir: C:\Users\acer\Desktop\Samuele\Syncthing\LWF - LightWeigth Folder\[P] Python\lele-py-bioinformatics\RESULTS\filtered_synthetic_candidates
+csv_file: /home/maggiori/lele-py-bioinformatics/RESULTS/pee_smiles_generator/generate_mnt128_t100000000/2026_03_26_175008_619942/valid_smiles.csv
+save_dir: /home/maggiori/lele-py-bioinformatics/RESULTS/filtered_synthetic_candidates
 target_molecule_name: metformin
 target_molecule: CN(C)C(=N)N=C(N)N
 water_ph: 8.2
-csv_train_data: C:\Users\acer\Desktop\Samuele\Syncthing\LWF - LightWeigth Folder\[P]
-  Python\lele-py-bioinformatics\DATASETS\PI1M\PI1M.csv
+csv_train_data: /home/maggiori/lele-py-bioinformatics/DATASETS/PI1M/PI1M.csv
 max_size: null
 column_name: unique_valid_psmiles
 poly_logp_H_min: 1.5
