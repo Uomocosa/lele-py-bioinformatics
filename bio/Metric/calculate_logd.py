@@ -72,6 +72,7 @@ def compute_most_probable_logd(
         logger.debug(f"protonated_mols: {protonated_mols}")
         # Convert the most dominant protonated SMILES to an RDKit Mol
         # Dimorphite usually returns the most probable states first
+        if len(protonated_mols) == 0: continue
         mol = Chem.MolFromSmiles(protonated_mols[0])
         if not mol: continue
         key = f"{lable}_{atom}"

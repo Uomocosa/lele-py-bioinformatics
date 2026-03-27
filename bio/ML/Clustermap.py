@@ -91,6 +91,8 @@ class Clustermap:
 
 
 
+import pytest
+@pytest.mark.above10s
 def test_without_fingerprints_clustermap():
     """
     Hierarchical Clustering on calculated chemical features only.
@@ -120,7 +122,7 @@ def test_without_fingerprints_clustermap():
     df_features = PDCCMethod.featurize(
         df,
         options = PDCCMethod.featurize.Options(
-            capping_atoms_dict = {'H': 1},
+            capping_atoms = ['H'],
             molecule_features_to_calculate = ['logp', 'logd', 'homo_lumo_eV'],
             polymer_features_to_calculate = ['logp', 'logd', 'homo_lumo_eV'],
         )

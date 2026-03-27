@@ -1,58 +1,71 @@
 CLUSTER,POLYMER_USED,DRUG,WATER_PH,CONCENTRATION,CAPACITY
-0,polyethylene,carbamazepine,7.8,0.5,0.0837
-0,polyethylene,atorvastatin,7.8,0.5,0.0691
-0,polyethylene,propranolol,7.8,0.5,0.186
-0,polyethylene,ketamine,7.8,0.5,0.0809
-0,polyethylene,fluoxetine,7.8,0.5,0.362
-0,Methacrylic acid,diclofenac,6.0,2.0,0.0717
-0,Methacrylic acid,naproxen,6.0,2.0,0.0719
-0,Poly(N-isopropylacrylamide) ferrogel,Silver,6.6,100.0,13.6
-0,C-mA,Fluconazole,6.5,25.0,0.0
-0,C-mA,Ampicillin,6.5,25.0,0.0
-0,C-mA,Thymol Blue,6.5,25.0,0.0
-0,C-mA,Lomefloxacin,6.5,25.0,23.67
-0,C-mA,Methylene Violet,6.5,25.0,24.44
-0,C-mA,Piroxicam,6.5,25.0,0.0
-0,C-mA,Doxycycline,6.5,25.0,7.91
-4,C-mA,Moxidectin,6.5,25.0,22.69
-0,C-mA,2.4D,6.5,25.0,0.0
-0,C-ph,Fluconazole,6.5,25.0,0.0
-0,C-ph,Ampicillin,6.5,25.0,4.2
-0,C-ph,Thymol Blue,6.5,25.0,14.73
-0,C-ph,Lomefloxacin,6.5,25.0,0.0
-0,C-ph,Methylene Violet,6.5,25.0,24.46
-0,C-ph,Piroxicam,6.5,25.0,0.0
-0,C-ph,Doxycycline,6.5,25.0,13.26
-4,C-ph,Moxidectin,6.5,25.0,5.6
-0,C-ph,2.4D,6.5,25.0,3.46
-0,C-lys,Fluconazole,6.5,25.0,0.0
-0,C-lys,Ampicillin,6.5,25.0,13.44
-0,C-lys,Thymol Blue,6.5,25.0,22.63
-0,C-lys,Lomefloxacin,6.5,25.0,0.0
-0,C-lys,Methylene Violet,6.5,25.0,0.0
-0,C-lys,Piroxicam,6.5,25.0,13.78
-0,C-lys,Doxycycline,6.5,25.0,6.75
-4,C-lys,Moxidectin,6.5,25.0,13.17
-0,C-lys,2.4D,6.5,25.0,50.81
-0,C-megl,Fluconazole,6.5,25.0,0.0
-0,C-megl,Ampicillin,6.5,25.0,0.0
-0,C-megl,Thymol Blue,6.5,53.125,50.2525
-0,C-megl,Lomefloxacin,6.5,25.0,0.0
-0,C-megl,Methylene Violet,6.5,25.0,0.0
-0,C-megl,Piroxicam,6.5,53.125,49.895
-0,C-megl,Doxycycline,6.5,25.0,0.0
-4,C-megl,Moxidectin,6.5,53.125,32.36125
-0,C-megl,2.4D,6.5,53.125,48.34
-1,polyPhOx,Aspirin,8.2,72.6923076923077,1.1805692307692308
-1,polyPhOx,Ibuprofen,8.2,90.0,19.836599999999997
-1,polyPhOx,Pyramidone,8.2,72.6923076923077,0.3116769230769231
-1,polyPhOx,Indomethacin,8.2,72.6923076923077,6.485384615384616
-1,polyPhOx,Metoclopramide,8.2,72.6923076923077,0.6544138461538461
-1,polyPhOx,Oestradiol,8.2,72.6923076923077,18.77976923076923
-0,Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,7.96,0.008599544,0.10628299677200001
-0,Polyamide 4/6 Nanofibers,Sulfamethoxazole,7.96,0.0081429576,0.147246666532
-2,Polyamide 4/6 Nanofibers,Clarithromycin,7.985714285714286,0.0063776,0.12234924488571429
-2,Polyamide 4/6 Nanofibers,Azithromycin dihydrate,7.9818181818181815,0.008608522727272727,0.1304546983318182
-0,Polyamide 4/6 Nanofibers,Trimethoprim,8.008,0.0022337588,0.101483427728
-3,CP-APM,Cd(II),5.0,100.0,43.5
-3,CP-APM,Pb(II),5.0,100.0,65.7
+1,Poly(N-isopropylacrylamide) ferrogel,Silver,6.6,50.0,6.8
+1,Poly(acrylic acid) grafted chitosan/Graphite oxide,Dorzolamide,3.0,50.0,167.0
+1,Methacrylic acid,Fluconazole,6.5,12.5,0.0
+1,Methacrylic acid,diclofenac,6.0,1.0,0.03585
+1,Methacrylic acid,Ibuprofen,6.0,1.0,0.035
+1,Methacrylic acid,Ampicillin,6.5,12.5,0.0
+1,Methacrylic acid,Thymol Blue,6.5,12.5,0.0
+1,Methacrylic acid,Lomefloxacin,6.5,12.5,11.835
+1,Methacrylic acid,Methylene Violet,6.5,12.5,12.22
+1,Methacrylic acid,Piroxicam,6.5,12.5,0.0
+1,Methacrylic acid,naproxen,6.0,1.0,0.03595
+1,Methacrylic acid,Doxycycline,6.5,12.5,3.955
+2,Methacrylic acid,Moxidectin,6.5,12.5,11.345
+1,Methacrylic acid,2.4D,6.5,12.5,0.0
+1,C-ph,Fluconazole,6.5,12.5,0.0
+1,C-ph,Ampicillin,6.5,12.5,2.1
+1,C-ph,Thymol Blue,6.5,12.5,7.365
+1,C-ph,Lomefloxacin,6.5,12.5,0.0
+1,C-ph,Methylene Violet,6.5,12.5,12.23
+1,C-ph,Piroxicam,6.5,12.5,0.0
+1,C-ph,Doxycycline,6.5,12.5,6.63
+2,C-ph,Moxidectin,6.5,12.5,2.8
+1,C-ph,2.4D,6.5,12.5,1.73
+1,C-lys,Fluconazole,6.5,12.5,0.0
+1,C-lys,Ampicillin,6.5,12.5,6.72
+1,C-lys,Thymol Blue,6.5,12.5,11.315
+1,C-lys,Lomefloxacin,6.5,12.5,0.0
+1,C-lys,Methylene Violet,6.5,12.5,0.0
+1,C-lys,Piroxicam,6.5,12.5,6.89
+1,C-lys,Doxycycline,6.5,12.5,3.375
+2,C-lys,Moxidectin,6.5,12.5,6.585
+1,C-lys,2.4D,6.5,12.5,25.405
+0,C-megl,Fluconazole,6.5,12.5,0.0
+0,C-megl,Ampicillin,6.5,12.5,0.0
+0,C-megl,Thymol Blue,6.5,47.22222222222222,44.66888888888889
+0,C-megl,Lomefloxacin,6.5,12.5,0.0
+0,C-megl,Methylene Violet,6.5,12.5,0.0
+0,C-megl,Piroxicam,6.5,47.22222222222222,44.351111111111116
+1,C-megl,Doxycycline,6.5,12.5,0.0
+2,C-megl,Moxidectin,6.5,47.22222222222222,28.765555555555554
+0,C-megl,2.4D,6.5,47.22222222222222,42.96888888888889
+1,Amberlite-XAD-4 polymer,Cephalexin,3.0,12.5,118.25
+1,Vinylpyridine,diclofenac,6.0,1.0,0.0364
+1,Vinylpyridine,Ibuprofen,6.0,1.0,0.03945
+1,Vinylpyridine,naproxen,6.0,1.0,0.0399
+1,polyethylene,Carbamazepine,7.8,0.25,0.04185
+1,polyethylene,atorvastatin,7.8,0.25,0.03455
+1,polyethylene,Propranolol,7.8,0.25,0.093
+1,polyethylene,ketamine,7.8,0.25,0.04045
+1,polyethylene,fluoxetine,7.8,0.25,0.181
+0,polyPhOx,Acetylsalicylic acid,8.2,67.5,1.096242857142857
+0,polyPhOx,Ibuprofen,8.2,81.81818181818181,18.033272727272728
+0,polyPhOx,Pyramidone,8.2,67.5,0.28941428571428574
+0,polyPhOx,Indomethacin,8.2,67.5,6.022142857142858
+0,polyPhOx,Metoclopramide,8.2,67.5,0.6076699999999999
+0,polyPhOx,Oestradiol,8.2,67.5,17.438357142857143
+1,Polyaniline-coated magnetic nanoparticles,diclofenac,4.0,12.5,17.215
+1,Polyaniline-coated magnetic nanoparticles,Ciprofloxacin,6.0,50.0,53.19
+1,Polyaniline-coated magnetic nanoparticles,Ibuprofen,7.0,25.0,306.75
+1,Polyaniline-coated magnetic nanoparticles,Chloroxylenol,7.0,25.0,214.59
+4,Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,7.933333333333333,0.00796254074074074,0.09841018219629631
+4,Polyamide 4/6 Nanofibers,Sulfamethoxazole,7.933333333333333,0.007539775555555556,0.13633950604814815
+4,Polyamide 4/6 Nanofibers,Clarithromycin,7.959999999999999,0.0059524266666666666,0.11419262856
+4,Polyamide 4/6 Nanofibers,Azithromycin dihydrate,7.949999999999999,0.007891145833333333,0.11958347347083333
+4,Polyamide 4/6 Nanofibers,Trimethoprim,7.977777777777777,0.0020682951851851853,0.09396613678518519
+3,CP-APM,Cd(II),5.0,50.0,21.75
+3,CP-APM,Pb(II),5.0,50.0,32.85
+1,Polypyrrole/Zinc oxide (PPy/ZnO),diclofenac,6.0,0.75,110.615
+1,Polypyrrole/Zinc oxide (PPy/ZnO),Paracetamol,7.0,2.5,12.755
+2,Polypyrrole/Zinc oxide (PPy/ZnO),Moxidectin,6.0,0.75,43.73

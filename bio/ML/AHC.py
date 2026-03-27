@@ -69,6 +69,7 @@ def run_and_save_ahc(model: AHC, output_name: str, print_pca: bool = True):
         
 
 @pytest.mark.skip(reason="useless")
+# pixi run pytest -rFP -q -s bio\ML\AHC.py::test_ahc_cluster -o "addopts="
 def test_ahc_cluster():
     import bio
     from bio.Dataset import PDCC, PDCCMethod
@@ -85,6 +86,7 @@ def test_ahc_cluster():
 
 @pytest.mark.skip(reason="useless")
 def test_one_hot_clustering():
+    # pixi run pytest -q -s bio\ML\AHC.py::test_one_hot_clustering
     import bio
     from bio.Dataset import PDCC, PDCCMethod
     from bio.__global__ import CONVERTED_PDCC_CSV
@@ -130,10 +132,12 @@ def cluster_by_features(
         print(members.sort_values(by='CAPACITY', ascending=False).to_string(index=False))
         
     system_labels.to_csv(HELPER_DIR / f"{name}.csv", index=False)
+    # matplotlib.use('Agg')
     model.plot(output_path=HELPER_DIR / f"{name}.png")
 
 
 def test_simple_feature_clustering(pytest_logger_setup):
+    # pixi run pytest -rFP -q -s bio\ML\AHC.py::test_simple_feature_clustering -o "addopts="
     name = "simple_feature_clustering"
     model_options = Options(
         n_clusters=5, 
@@ -141,14 +145,15 @@ def test_simple_feature_clustering(pytest_logger_setup):
         scaler=StandardScaler(),
     )
     featurizer_options = PDCCMethod.featurize.Options(
-        capping_atoms_dict={'H': 1},
-        molecule_features_to_calculate=['logp', 'logd'],
-        polymer_features_to_calculate=[],
+        capping_atoms = ['H'],
+        molecule_features_to_calculate = ['logp', 'logd'],
+        polymer_features_to_calculate = [],
     )
     cluster_by_features(name, model_options, featurizer_options)
 
 
 def test_full_feature_clustering_n3_pca15(pytest_logger_setup):
+    # pixi run pytest -rFP -q -s bio\ML\AHC.py::test_full_feature_clustering_n3_pca15 -o "addopts="
     name = "full_feature_clustering_n3_pca15"
     model_options = Options(
         n_clusters=3, 
@@ -156,14 +161,15 @@ def test_full_feature_clustering_n3_pca15(pytest_logger_setup):
         scaler=StandardScaler(),
     )
     featurizer_options = PDCCMethod.featurize.Options(
-        capping_atoms_dict={'H': 1},
-        # molecule_features_to_calculate=['logp', 'logd'],
-        # polymer_features_to_calculate=[],
+        capping_atoms = ['H'],
+        # molecule_features_to_calculate = ['logp', 'logd'],
+        # polymer_features_to_calculate = [],
     )
     cluster_by_features(name, model_options, featurizer_options)
 
 
 def test_full_feature_clustering_n5_pca25(pytest_logger_setup):
+    # pixi run pytest -q -s bio\ML\AHC.py::test_full_feature_clustering_n5_pca25
     name = "full_feature_clustering_n5_pca25"
     model_options = Options(
         n_clusters=5, 
@@ -171,8 +177,8 @@ def test_full_feature_clustering_n5_pca25(pytest_logger_setup):
         scaler=StandardScaler(),
     )
     featurizer_options = PDCCMethod.featurize.Options(
-        capping_atoms_dict={'H': 1},
-        # molecule_features_to_calculate=['logp', 'logd'],
-        # polymer_features_to_calculate=[],
+        capping_atoms = ['H'],
+        # molecule_features_to_calculate = ['logp', 'logd'],
+        # polymer_features_to_calculate = [],
     )
     cluster_by_features(name, model_options, featurizer_options)

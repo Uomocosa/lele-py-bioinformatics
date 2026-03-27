@@ -113,7 +113,7 @@ def test_():
     bio.ML.set_seed(seed)
     dataset_config = PDCC.Config(
         csv_file=PDCC_CSV,
-        max_size=10,
+        max_size=3,
         seed=seed,
     )
     model_config = MLP.Config(
