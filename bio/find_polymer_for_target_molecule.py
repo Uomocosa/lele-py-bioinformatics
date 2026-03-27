@@ -44,7 +44,7 @@ class FilterConfig(bio.pee_smiles_filter.FilterConfig):
 @dataclass
 class Config:
     target_molecule: tyro.conf.Positional[str]
-    target_capacity: float = 10.0
+    target_capacity: float = 1.0
     concentration: float = 12.5
     water_ph: float = 8.2
     seed: int = 42

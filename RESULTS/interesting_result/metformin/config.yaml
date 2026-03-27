@@ -1,0 +1,56 @@
+target_molecule: metformin
+target_capacity: 10.0
+concentration: 12.5
+water_ph: 8.2
+seed: 42
+save_dir: /home/maggiori/lele-py-bioinformatics/RESULTS/find_polymer_for_target_molecule
+model_config:
+  model_pt_file: /home/maggiori/lele-py-bioinformatics/RESULTS/pee_smiles_generator/pretrained_model_best.pt
+  polymers_to_generate_per_loop: 1024
+  batch_size: 256
+  temperature: 1.0
+  max_new_tokens: 128
+filter_config:
+  csv_file: null
+  save_dir: null
+  target_molecule_name: null
+  target_molecule: null
+  water_ph: null
+  csv_train_data: null
+  max_size: null
+  column_name: null
+  poly_logp_H_min: 1.5
+  poly_logp_H_max: null
+  mol_logp_min: null
+  mol_logp_max: null
+  poly_tpsa_min: 60.0
+  poly_tpsa_max: null
+  max_intermolecular_fmo_gap: 4.0
+  filter_inverse_net_charge: true
+  poly_sa_score_H_max: 4.5
+  featurizer_options:
+    capping_atoms:
+    - H
+    fingerprint_radius: 2
+    fingerprint_n_bits: 256
+    protonate_precision: 1.0
+    molecule_features_to_calculate:
+    - logp
+    - logd
+    - homo_lumo_eV
+    - net_charge
+    - fingerprint
+    polymer_features_to_calculate:
+    - logp
+    - logd
+    - homo_lumo_eV
+    - net_charge
+    - fingerprint
+    molecule_polymetrix_features:
+    - ALL
+    polymer_polymetrix_features:
+    - ALL
+    sidechain_polymetrix_features:
+    - ALL
+    backbone_polymetrix_features:
+    - ALL
