@@ -117,41 +117,41 @@ def add_origin_points(df: pd.DataFrame) -> pd.DataFrame:
 
 
 
-
-import pytest
-@pytest.fixture(autouse=True)
-def mute_loguru():
-    import loguru
-    loguru.logger.remove()
-
-
 def test_interpolate():
     from bio.__global__ import PDCC_CSV
+    bio.setup_loguru()
     df = pd.read_csv(PDCC_CSV)
     len_before = len(df)
-    df = increment_dataset(df, Options(method="interpolate", n_points=10))
+    df = increment_dataset(df, Options(method="interpolate"))
+    logger.info(f"Interpolated: gained {len(df) - len_before} data.")
     assert len(df) > len_before
 
 
 def test_add_origins():
     from bio.__global__ import PDCC_CSV
+    bio.setup_loguru()
     df = pd.read_csv(PDCC_CSV)
     len_before = len(df)
     df = increment_dataset(df, Options(method="add_origins"))
-    assert len(df) > len_before
-
-
-def test_add_origins_then_interpolate():
-    from bio.__global__ import PDCC_CSV
-    df = pd.read_csv(PDCC_CSV)
-    len_before = len(df)
-    df = increment_dataset(df, Options(method="add_origins_then_interpolate", n_points=10))
+    logger.info(f"Added origin points: gained {len(df) - len_before} data.")
     assert len(df) > len_before
 
 
 def test_interpolate_then_add_origins():
     from bio.__global__ import PDCC_CSV
+    bio.setup_loguru()
     df = pd.read_csv(PDCC_CSV)
     len_before = len(df)
-    df = increment_dataset(df, Options(method="interpolate_then_add_origins", n_points=10))
+    df = increment_dataset(df, Options(method="interpolate_then_add_origins"))
+    logger.info(f"Interpolated and then added origin points: gained {len(df) - len_before} data.")
+    assert len(df) > len_before
+    
+    
+def test_add_origins_then_interpolate():
+    from bio.__global__ import PDCC_CSV
+    bio.setup_loguru()
+    df = pd.read_csv(PDCC_CSV)
+    len_before = len(df)
+    df = increment_dataset(df, Options(method="add_origins_then_interpolate"))
+    logger.info(f"Added origin points and then interpolated: gained {len(df) - len_before} data.")
     assert len(df) > len_before

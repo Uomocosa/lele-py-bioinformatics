@@ -1,1 +1,1 @@
-{"log_type": "aggregate_metrics", "eval_method": "LOOCV", "mse": 19015.067911056958, "rmse": 137.89513374683298, "mae": 126.55625843205905, "r2": -0.7057269571244127}
+{"log_type": "aggregate_metrics", "eval_method": "LOOCV", "mse": 19715.679942468276, "rmse": 140.41253484809778, "mae": 128.0522807569056, "r2": -0.7685746331913004}

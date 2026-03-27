@@ -16,6 +16,16 @@ DatasetConfig = bio.mlp_experiment.Config.DatasetConfig
 ModelConfig = bio.mlp_experiment.Config.ModelConfig
 FeaturizerOptions = bio.mlp_experiment.Config.FeaturizerOptions
 
+    
+def test_run_all_experiments(): 
+    # pixi run pytest -rFP -q -s bio\mlp_experiment\run_all_experiments.py::test_run_all_experiments -o "addopts="
+    rank_experiments()
+
+
+def test_rank_all_experiments():
+    # pixi run pytest -rFP -q -s bio\mlp_experiment\run_all_experiments.py::test_rank_all_experiments -o "addopts="
+    rank_experiments()
+
 FINGERPRINT_FEATURIZER = FeaturizerOptions(
     capping_atoms = ['H'],
     molecule_features_to_calculate = ['fingerprint'],
@@ -55,27 +65,27 @@ Note! The first 4 experiments were run, but they are missing the
       again, it takes too long.
 """ 
 EXPERIMENTS = [
-    # ExperimentConfig(
-    #     name="experiment_default",
-    # ),
-    # ExperimentConfig(
-    #     name="experiment_hd_32_32_32",
-    #     model_config=ModelConfig(
-    #         hidden_dims = [32, 32, 32],
-    #     ),
-    # ),
-    # ExperimentConfig(
-    #     name="experiment_hd_16_16_16",
-    #     model_config=ModelConfig(
-    #         hidden_dims = [16, 16, 16],
-    #     ),
-    # ),
-    # ExperimentConfig(
-    #     name="experiment_hd_8_8_8_8",
-    #     model_config=ModelConfig(
-    #         hidden_dims = [8, 8, 8, 8],
-    #     ),
-    # ),
+    ExperimentConfig(
+        name="experiment_default",
+    ),
+    ExperimentConfig(
+        name="experiment_hd_32_32_32",
+        model_config=ModelConfig(
+            hidden_dims = [32, 32, 32],
+        ),
+    ),
+    ExperimentConfig(
+        name="experiment_hd_16_16_16",
+        model_config=ModelConfig(
+            hidden_dims = [16, 16, 16],
+        ),
+    ),
+    ExperimentConfig(
+        name="experiment_hd_8_8_8_8",
+        model_config=ModelConfig(
+            hidden_dims = [8, 8, 8, 8],
+        ),
+    ),
     ExperimentConfig(
         name="experiment_hd_16_8_8_8",
         model_config=ModelConfig(
@@ -172,10 +182,6 @@ def run_all_experiments():
     for exp_config in EXPERIMENTS:
         bio.mlp_experiment.run_with_config(exp_config)
         
-
-def test_rank_all_experiments():
-    # pixi run pytest -rFP -q -s bio\mlp_experiment\run_all_experiments.py::test_rank_all_experiments -o "addopts="
-    rank_experiments()
         
 def rank_experiments(base_dir: Path = RESULTS_DIR / "mlp_experiments"):
     """
@@ -246,8 +252,3 @@ def rank_experiments(base_dir: Path = RESULTS_DIR / "mlp_experiments"):
     
     logger.info(f"--- LOOCV Leaderboard (Ranked by Q2) ---")
     print(df_results.to_markdown())
-
-    
-def test_(): 
-    run_all_experiments()
-    rank_experiments()

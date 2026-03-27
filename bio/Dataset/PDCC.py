@@ -35,7 +35,10 @@ class PDCC:
         return PDCCMethod.featurize(df)
         
     def increment_dataset(self, options = PDCCMethod.increment_dataset.Options()):
+        orginal_len = len(self.df)
         self.df = PDCCMethod.increment_dataset(self.df, options)
+        logger.info(f"Incremented dataset: gained {len(self.df) - orginal_len} data.")
+        
         
     def convert_names_to_smiles(self, options = PDCCMethod.convert_names_to_smiles.Options()):
         self.df = PDCCMethod.convert_names_to_smiles(self.df, options)
@@ -44,12 +47,25 @@ class PDCC:
         return bio.Dataset.TorchDataset.PDCCtorch(self)
 
 
+def _count_origins(df: pd.DataFrame) -> int:
+    origins_mask = (df['CONCENTRATION'] == 0.0) & (df['CAPACITY'] == 0.0)
+    origins_df = df[oarigins_mask]
+    return len(origins_df)
+
+
 def test_usage():
     from bio.__global__ import PDCC_CSV
+    bio.setup_loguru()
     config = Config(csv_file=PDCC_CSV)
     dataset = PDCC(config)
-    dataset.increment_dataset()
+    dataset.increment_dataset(
+        options = PDCCMethod.increment_dataset.Options(
+            method="interpolate_then_add_origins",
+            n_points=2,
+        )
+    )
     dataset.convert_names_to_smiles()
+    logger.info(f"Found {_count_origins(dataset.df)} origin points in the DataFrame.")
     
     torch_dataset = dataset.to_torch_dataset()
     x_sample, y_sample = torch_dataset[0]
