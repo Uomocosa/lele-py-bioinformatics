@@ -1,4 +1,4 @@
-target_molecule: metformin
+target_molecule: aspirin
 target_capacity: 10.0
 concentration: 12.5
 water_ph: 8.2
