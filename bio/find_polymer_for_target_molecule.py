@@ -130,23 +130,30 @@ def find_polymer_for_target_molecule(
     while True:
         config.filter_config.column_name = column_name # needs to be set before each run
         generated_polymers = generate_polymers(model, dataset, config.model_config)
+        polymer_count = len(generated_polymers)
         logger.trace(f"generated_polymers:\n{generated_polymers}")
         unique_new_polymers = [p for p in generated_polymers if p not in seen_smiles]
         seen_smiles.update(unique_new_polymers)
         df = pd.DataFrame({"PSMILES": unique_new_polymers})
+        logger.info(f"Dropped: {polymer_count - len(unique_new_polymers)} non-unique polymers")
+        polymer_count = len(unique_new_polymers)
         if df.empty: continue
         append_to_csv(df, save_dir / "01_generated_polymers.csv")
         
         df[column_name] = df["PSMILES"].apply(is_polymer_valid)
         df = df[df[column_name] == True].copy()
         df[column_name] = df["PSMILES"]
-        logger.debug(f"valid_polymers:\n{df}")
+        logger.trace(f"valid_polymers:\n{df}")
+        logger.info(f"Dropped: {polymer_count - len(df)} / {polymer_count} invalid polymers")
+        polymer_count = len(df)
         if df.empty: continue
         append_to_csv(df, save_dir / "02_valid_polymers.csv")
         
         df = bio.pee_smiles_filter.run_for_dataframe(df, config.filter_config)
         df = bio.pee_smiles_filter.clean_output_df(df)
-        logger.info(f"filtered_polymers:\n{df}")
+        logger.trace(f"filtered_polymers:\n{df}")
+        # logger.info(f"Dropped: {polymer_count - len(df)} / {polymer_count} invalid polymers")
+        # polymer_count = len(df)
         if df.empty: continue
         append_to_csv(df, save_dir / "03_filtered_polymers.csv")
         
@@ -156,7 +163,7 @@ def find_polymer_for_target_molecule(
             water_ph = config.water_ph,
             concentration = config.concentration,
         )
-        logger.info(f"generated_polymers with prediction:\n{df}")
+        logger.trace(f"generated_polymers with prediction:\n{df}")
         if df.empty: continue
         append_to_csv(df, save_dir / "04_predicted_capacities.csv")
         
