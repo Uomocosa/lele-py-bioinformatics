@@ -9,7 +9,7 @@
 
 # My personal bioinformatics library
 - I used this library and apps for my master's thesis.
-- It uses my [new-python-import-system](https://github.com/Uomocosa/new-python-import-system). The imports might seem more _magical_ than the usual.
+- It uses my [new-python-import-system](https://github.com/Uomocosa/new-python-import-system). The imports might seem more _magical_ than usual.
 
 # Data and Outputs
 - The **datasets** used can be found in the `DATASET/` folder.

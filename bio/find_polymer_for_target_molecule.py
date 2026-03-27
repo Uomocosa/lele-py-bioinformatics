@@ -144,7 +144,7 @@ def find_polymer_for_target_molecule(
         df = df[df[column_name] == True].copy()
         df[column_name] = df["PSMILES"]
         logger.trace(f"valid_polymers:\n{df}")
-        logger.info(f"Dropped: {polymer_count - len(df)} / {polymer_count} invalid polymers")
+        logger.info(f"Dropped: {polymer_count - len(df)} invalid polymers")
         polymer_count = len(df)
         if df.empty: continue
         append_to_csv(df, save_dir / "02_valid_polymers.csv")
