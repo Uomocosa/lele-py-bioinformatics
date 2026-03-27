@@ -19,7 +19,8 @@ FeaturizerOptions = bio.mlp_experiment.Config.FeaturizerOptions
     
 def test_run_all_experiments(): 
     # pixi run pytest -rFP -q -s bio\mlp_experiment\run_all_experiments.py::test_run_all_experiments -o "addopts="
-    rank_experiments()
+    # pixi run -e cuda pytest -rFP -q -s bio/mlp_experiment/run_all_experiments.py::test_run_all_experiments -o "addopts="
+    run_all_experiments()
 
 
 def test_rank_all_experiments():
