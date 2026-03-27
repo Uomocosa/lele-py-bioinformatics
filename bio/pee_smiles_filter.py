@@ -128,6 +128,7 @@ import pytest
 @pytest.mark.above10s
 def test_aspirin():
     # pixi run pytest -rFP -q -s bio\pee_smiles_filter.py::test_aspirin -o "addopts="
+    # pixi run -e cuda pytest -rFP -q -s bio/pee_smiles_filter.py::test_aspirin -o "addopts="
     bio.setup_loguru()
     run_for_target_molecule(
         target_molecule_name = "aspirin", # present in pdcc
@@ -138,6 +139,7 @@ import pytest
 @pytest.mark.above10s
 def test_metformin():
     # pixi run pytest -rFP -q -s bio\pee_smiles_filter.py::test_metformin -o "addopts="
+    # pixi run -e cuda pytest -rFP -q -s bio/pee_smiles_filter.py::test_metformin -o "addopts="
     bio.setup_loguru()
     run_for_target_molecule(
         target_molecule_name = "metformin", # present in pdcc
@@ -148,6 +150,7 @@ import pytest
 @pytest.mark.above10s
 def test_lisinopril():
     # pixi run pytest -rFP -q -s bio\pee_smiles_filter.py::test_lisinopril -o "addopts="
+    # pixi run -e cuda pytest -rFP -q -s bio/pee_smiles_filter.py::test_lisinopril -o "addopts="
     bio.setup_loguru()
     run_for_target_molecule(
         target_molecule_name = "lisinopril", # not present in pdcc at the moment
@@ -158,6 +161,7 @@ import pytest
 @pytest.mark.above10s
 def test_ibuprofen():
     # pixi run pytest -rFP -q -s bio\pee_smiles_filter.py::test_ibuprofen -o "addopts="
+    # pixi run -e cuda pytest -rFP -q -s bio/pee_smiles_filter.py::test_ibuprofen -o "addopts="
     bio.setup_loguru()
     run_for_target_molecule(
         target_molecule_name = "ibuprofen", # not present in pdcc at the moment
@@ -237,19 +241,22 @@ def clean_output_df(df: pd.DataFrame) -> pd.DataFrame:
     return df[final_cols]
 
 
-    
+
+
 def run_with_config(config: FilterConfig) -> pd.DataFrame:
-    config.parse()
     df = pd.read_csv(config.csv_file)
     if config.max_size: df = df.head(config.max_size)
-    
+    return run_for_dataframe(df, config)
+
+def run_for_dataframe(df: pd.DataFrame, config: FilterConfig) -> pd.DataFrame:
+    config.parse()
     initial_count = len(df)
     df = df.drop_duplicates(subset=[config.column_name])
     logger.info(f"Dropped {initial_count - len(df)} duplicate molecules from generation.")
     
     if config.csv_train_data and config.csv_train_data.exists():
         train_df = pd.read_csv(config.csv_train_data)
-        possible_cols = ['smiles', 'SMILES', 'psmiles', 'PSMILES', 'valid_smiles']
+        possible_cols = ['smiles', 'SMILES', 'psmiles', 'PSMILES', 'valid_smiles', 'valid_psmiles']
         train_col = next((col for col in possible_cols if col in train_df.columns), train_df.columns[0])
         train_smiles = set(train_df[train_col].dropna().astype(str))
         pre_train_drop_count = len(df)
@@ -257,12 +264,14 @@ def run_with_config(config: FilterConfig) -> pd.DataFrame:
         logger.info(f"Dropped {pre_train_drop_count - len(df)} molecules already present in the training set.")
     
     df = df.reset_index(drop=True)
-    dataset_dir = config.csv_file.parent
-    csv_file_unique = dataset_dir / "unique_valid_psmiles.csv"
     df = df.rename(columns={config.column_name: "unique_valid_psmiles"})
-    df.to_csv(csv_file_unique, index=False, na_rep='NaN')
     config.column_name = "unique_valid_psmiles"
     
+    if config.csv_file is not None:
+        dataset_dir = config.csv_file.parent
+        csv_file_unique = dataset_dir / "unique_valid_psmiles.csv"
+        df.to_csv(csv_file_unique, index=False, na_rep='NaN')
+            
     target_col = "POLYMER_USED" if "POLYMER_USED" in df.columns else config.column_name
     df = bio.Metric.calculate_sa_score(df, column_name=target_col)
         

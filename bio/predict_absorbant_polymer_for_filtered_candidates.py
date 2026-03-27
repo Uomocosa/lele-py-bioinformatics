@@ -116,6 +116,14 @@ def predict_absorbant_polymer_for_filtered_candidates(
     if df.empty:
         logger.warning(f"The filtered candidates dataframe for {csv_file.stem} is empty.")
         return pd.DataFrame()
+    return from_df(trained_model, df, water_ph, concentration)
+        
+def from_df(
+    trained_model: MLP,
+    df: pd.DataFrame,
+    water_ph: float = 8.2, 
+    concentration: float = 12.5
+) -> pd.DataFrame:
     input_df = df[['POLYMER_USED', 'DRUG']].copy()
     input_df['WATER_PH'] = water_ph
     input_df['CONCENTRATION'] = concentration 

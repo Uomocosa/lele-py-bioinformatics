@@ -1,7 +1,8 @@
 import sys
 import pandas as pd
-import seaborn as sns
+import matplotlib; matplotlib.use('Agg') # tryin to solve a pytest error caused by this file
 import matplotlib.pyplot as mplot
+import seaborn as sns
 from pathlib import Path
 from sklearn.feature_selection import VarianceThreshold
 from sklearn.preprocessing import StandardScaler

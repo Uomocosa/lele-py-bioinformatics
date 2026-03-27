@@ -1,4 +1,15 @@
-PSMILES,unique_valid_psmiles
+PSMILES,valid_psmiles
+*CCCCCCCCCOC(=O)NCCOCCCCCCCNC(=O)OCCCCCOC(=O)O*,*CCCCCCCCCOC(=O)NCCOCCCCCCCNC(=O)OCCCCCOC(=O)O*
+*[Si](*)(Cl)CCCCCCOCCOc1ccc(/N=N/c2ccc(C)c([N+](=O)[O-])c2)cc1,*[Si](*)(Cl)CCCCCCOCCOc1ccc(/N=N/c2ccc(C)c([N+](=O)[O-])c2)cc1
+*/C=C/c1cc([N+](=O)[O-])c(C(C)(C)c2ccc(C(C)(C)c3ccc(C(*)=O)cc3)cc2)cc1-c1ccccc1,*/C=C/c1cc([N+](=O)[O-])c(C(C)(C)c2ccc(C(C)(C)c3ccc(C(*)=O)cc3)cc2)cc1-c1ccccc1
+*C(=O)C(OCCCCCCCOc1ccc(C(*)=O)cc1)c1ccc(OCC)cc1,*C(=O)C(OCCCCCCCOc1ccc(C(*)=O)cc1)c1ccc(OCC)cc1
+*NC(=O)SSC(=O)NCCCNC(=O)Nc1ccc(C(=O)NCCCCCCCCNC(=O)Oc2ccc(*)cc2)cc1,*NC(=O)SSC(=O)NCCCNC(=O)Nc1ccc(C(=O)NCCCCCCCCNC(=O)Oc2ccc(*)cc2)cc1
+*CCCCS(=O)(=O)C(*)CC,*CCCCS(=O)(=O)C(*)CC
+*C(=O)C(*)CCCCCCC,*C(=O)C(*)CCCCCCC
+*CCC(CC)CCCOC(=O)NCCSSCCCCCNC(=O)OCCCCO*,*CCC(CC)CCCOC(=O)NCCSSCCCCCNC(=O)OCCCCO*
+*Oc1ccc(OC(=O)c2ccc(NC(=O)CCCCCCCCCCCCCCCCCCC(=O)Oc3ccc(/C=C/c4ccc(*)cc4)cc3)cc2)cc1,*Oc1ccc(OC(=O)c2ccc(NC(=O)CCCCCCCCCCCCCCCCCCC(=O)Oc3ccc(/C=C/c4ccc(*)cc4)cc3)cc2)cc1
+*CC(*)(C)C(=O)OCC(O)OCC,*CC(*)(C)C(=O)OCC(O)OCC
+*CC(O*)COc1ccc(COC(C)=O)cc1C,*CC(O*)COc1ccc(COC(C)=O)cc1C
 *CC(CC(=O)O*)C(=O)OC(C#N)c1ccc(/C=C/c2ccc(Br)cc2)cc1,*CC(CC(=O)O*)C(=O)OC(C#N)c1ccc(/C=C/c2ccc(Br)cc2)cc1
 *CCCCCCCCCCNC(=O)c1ccc(Cc2ccc(C(=O)N*)cc2)cc1,*CCCCCCCCCCNC(=O)c1ccc(Cc2ccc(C(=O)N*)cc2)cc1
 *CC(*)(C)C(=O)OCCCCCOc1ccc(-c2ccc(C#N)cc2)cc1,*CC(*)(C)C(=O)OCCCCCOc1ccc(-c2ccc(C#N)cc2)cc1

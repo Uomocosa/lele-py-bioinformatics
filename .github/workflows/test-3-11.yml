@@ -21,4 +21,4 @@ jobs:
           cache: true
 
       - name: Run Pytest
-        run: pixi run pytest
+        run: pixi run pytest --durations=10 .
