@@ -1,6 +1,9 @@
 import tyro
 import torch
+import numpy as np
 import pandas as pd
+import seaborn as sns
+from matplotlib import pyplot as plt
 
 import yaml
 import warnings
@@ -52,15 +55,38 @@ class Config:
 def main():
     bio.setup_loguru()
     config = tyro.cli(Config)
-    polymer = find_polymer_for_target_molecule(config)
+    run_with_config(config)
 
 def test_():
     config = Config(target_molecule="metformin")
     config.model_config.polymers_to_generate_per_loop = 16
     config.model_config.batch_size = 4
+    run_with_config(config)
+    
+
+def run_with_config(config: Config):
     polymer = find_polymer_for_target_molecule(config)
+    bio.predict_absorbant_polymer_for_filtered_candidates.plot_capacity_vs_concentration(
+        drug_name = config.target_molecule,
+        polymer = polymer, 
+        drug = bio.get_smiles_from_name(config.target_molecule), 
+        concentration = np.linspace(0, 50, 100).tolist(), 
+        water_ph = config.water_ph,
+        save_dir = get_actual_save_dir(config),
+    )
+    bio.predict_absorbant_polymer_for_filtered_candidates.plot_capacity_vs_ph(
+        drug_name = config.target_molecule,
+        polymer = polymer, 
+        drug = bio.get_smiles_from_name(config.target_molecule), 
+        water_ph = np.linspace(0, 14, 100).tolist(), 
+        concentration = config.concentration,
+        save_dir = get_actual_save_dir(config),
+    )
     
-    
+
+def get_actual_save_dir(config):
+    return config.save_dir / f"{config.target_molecule}"
+
 def append_to_csv(df, csv_path):
     write_header = not csv_path.exists() or csv_path.stat().st_size == 0
     df.to_csv(csv_path, mode='a', index=False, na_rep='NaN', header=write_header)
@@ -71,7 +97,7 @@ def find_polymer_for_target_molecule(
 ):
     bio.ML.set_seed(config.seed)
     
-    save_dir = config.save_dir / f"{config.target_molecule}"
+    save_dir = get_actual_save_dir(config)
     save_dir.mkdir(parents=True, exist_ok=True)
     logger.info(f"Cleaning up old run files in {save_dir}...")
     for file in save_dir.glob("*.csv"):

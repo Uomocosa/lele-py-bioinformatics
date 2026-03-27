@@ -142,6 +142,7 @@ def plot_capacity_vs_concentration(
     drug: str, 
     concentration: list[float],
     water_ph: float = 8.2,
+    save_dir: Path = PREDICTIONS_DIR,
 ) -> None:
     """Plots predicted capacity for a single polymer/drug pair across varying concentrations."""
     logger.info(f"Plotting capacity vs. concentration for {drug_name} (Fixed pH: {water_ph})")
@@ -172,8 +173,8 @@ def plot_capacity_vs_concentration(
     plt.tight_layout()
     
     # 5. Save
-    PREDICTIONS_DIR.mkdir(parents=True, exist_ok=True)
-    save_path = PREDICTIONS_DIR / f"plot_conc_{drug_name}.png"
+    save_dir.mkdir(parents=True, exist_ok=True)
+    save_path = save_dir / f"plot_conc_{drug_name}.png"
     plt.savefig(save_path, dpi=300)
     plt.close()
     logger.info(f"Saved concentration plot to {save_path}")
@@ -186,6 +187,7 @@ def plot_capacity_vs_ph(
     drug: str, 
     water_ph: list[float],
     concentration: float = 12.5,
+    save_dir: Path = PREDICTIONS_DIR,
 ) -> None:
     """Plots predicted capacity for a single polymer/drug pair across varying pH levels."""
     logger.info(f"Plotting capacity vs. pH for {drug_name} (Fixed Conc: {concentration})")
@@ -216,8 +218,8 @@ def plot_capacity_vs_ph(
     plt.tight_layout()
     
     # 5. Save
-    PREDICTIONS_DIR.mkdir(parents=True, exist_ok=True)
-    save_path = PREDICTIONS_DIR / f"plot_ph_{drug_name}.png"
+    save_dir.mkdir(parents=True, exist_ok=True)
+    save_path = save_dir / f"plot_ph_{drug_name}.png"
     plt.savefig(save_path, dpi=300)
     plt.close()
     logger.info(f"Saved pH plot to {save_path}")
