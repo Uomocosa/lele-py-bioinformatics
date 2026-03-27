@@ -6,6 +6,10 @@
 3. `cd lele-py-bioinformatics`
 3. `pixi install -e cpu` or you can try `pixi install -e cuda`.
     - ***Note!*** To make `pixi install -e cuda` work you might need to change the `pixi.toml`.
+4. To test if it works run the following command:
+    - (cpu) `pixi run find_polymer_for_target_molecule "aspirin"`
+    - (cuda) `pixi run -e cuda find_polymer_for_target_molecule "aspirin"`
+    - Also run `pixi run find_polymer_for_target_molecule --help` to see the options and default values.
 
 # My personal bioinformatics library
 - I used this library and apps for my master's thesis.

@@ -166,7 +166,8 @@ def plot_capacity_vs_concentration(
     # 4. Plot
     plt.figure(figsize=(8, 5))
     sns.lineplot(data=df, x='CONCENTRATION', y='PREDICTED_CAPACITY', marker='o', color='b', linewidth=2)
-    plt.title(f'Capacity vs. Concentration\nDrug: {drug_name} | Fixed pH: {water_ph}')
+    plt.suptitle('Capacity vs. Concentration', fontsize=14, y=0.98)
+    plt.title(f'Drug: {drug_name} | Fixed pH: {water_ph}\nPolymer PSMILES: {polymer}', fontsize=10, color='dimgray')
     plt.xlabel('Concentration')
     plt.ylabel('Predicted Capacity')
     plt.grid(True, linestyle='--', alpha=0.7)
@@ -175,7 +176,7 @@ def plot_capacity_vs_concentration(
     # 5. Save
     save_dir.mkdir(parents=True, exist_ok=True)
     save_path = save_dir / f"plot_conc_{drug_name}.png"
-    plt.savefig(save_path, dpi=300)
+    plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.close()
     logger.info(f"Saved concentration plot to {save_path}")
 
@@ -211,7 +212,8 @@ def plot_capacity_vs_ph(
     # 4. Plot
     plt.figure(figsize=(8, 5))
     sns.lineplot(data=df, x='WATER_PH', y='PREDICTED_CAPACITY', marker='o', color='r', linewidth=2)
-    plt.title(f'Capacity vs. Water pH\nDrug: {drug_name} | Fixed Conc: {concentration}')
+    plt.suptitle('Capacity vs. Water pH', fontsize=14, y=0.98)
+    plt.title(f'Drug: {drug_name} | Fixed Conc: {concentration}\nPolymer PSMILES: {polymer}', fontsize=10, color='dimgray')
     plt.xlabel('Water pH')
     plt.ylabel('Predicted Capacity')
     plt.grid(True, linestyle='--', alpha=0.7)
@@ -220,6 +222,6 @@ def plot_capacity_vs_ph(
     # 5. Save
     save_dir.mkdir(parents=True, exist_ok=True)
     save_path = save_dir / f"plot_ph_{drug_name}.png"
-    plt.savefig(save_path, dpi=300)
+    plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.close()
     logger.info(f"Saved pH plot to {save_path}")

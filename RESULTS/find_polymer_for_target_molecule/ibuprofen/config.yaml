@@ -1,4 +1,4 @@
-target_molecule: lisinopril
+target_molecule: ibuprofen
 target_capacity: 1.0
 concentration: 12.5
 water_ph: 8.2
