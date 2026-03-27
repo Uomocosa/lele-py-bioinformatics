@@ -24,8 +24,8 @@ SAVE_DIR = RESULTS_DIR / "find_polymer_for_target_molecule"
 @dataclass
 class PSmileGeneratorConfig():
     model_pt_file: Path = RESULTS_DIR / "pee_smiles_generator" / "pretrained_model_best.pt"
-    polymers_to_generate_per_loop: int = 256
-    batch_size: int = 256
+    polymers_to_generate_per_loop: int = 16
+    batch_size: int = 16
     temperature: float = 1.0 # 0.8 = conservative, 1.0 = standard, 1.2 = creative/chaotic
     max_new_tokens: int = 128
 

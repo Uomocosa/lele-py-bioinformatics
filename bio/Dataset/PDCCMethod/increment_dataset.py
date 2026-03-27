@@ -119,39 +119,47 @@ def add_origin_points(df: pd.DataFrame) -> pd.DataFrame:
 
 def test_interpolate():
     from bio.__global__ import PDCC_CSV
+    from bio.Dataset.__global__ import HELPER_DIR
     bio.setup_loguru()
     df = pd.read_csv(PDCC_CSV)
     len_before = len(df)
     df = increment_dataset(df, Options(method="interpolate"))
     logger.info(f"Interpolated: gained {len(df) - len_before} data.")
     assert len(df) > len_before
+    df.to_csv(HELPER_DIR / "pdcc_interpolate.csv", index=False)
 
 
 def test_add_origins():
     from bio.__global__ import PDCC_CSV
+    from bio.Dataset.__global__ import HELPER_DIR
     bio.setup_loguru()
     df = pd.read_csv(PDCC_CSV)
     len_before = len(df)
     df = increment_dataset(df, Options(method="add_origins"))
     logger.info(f"Added origin points: gained {len(df) - len_before} data.")
     assert len(df) > len_before
+    df.to_csv(HELPER_DIR / "pdcc_add_origins.csv", index=False)
 
 
 def test_interpolate_then_add_origins():
     from bio.__global__ import PDCC_CSV
+    from bio.Dataset.__global__ import HELPER_DIR
     bio.setup_loguru()
     df = pd.read_csv(PDCC_CSV)
     len_before = len(df)
     df = increment_dataset(df, Options(method="interpolate_then_add_origins"))
     logger.info(f"Interpolated and then added origin points: gained {len(df) - len_before} data.")
     assert len(df) > len_before
+    df.to_csv(HELPER_DIR / "pdcc_interpolate_then_add_origins.csv", index=False)
     
     
 def test_add_origins_then_interpolate():
     from bio.__global__ import PDCC_CSV
+    from bio.Dataset.__global__ import HELPER_DIR
     bio.setup_loguru()
     df = pd.read_csv(PDCC_CSV)
     len_before = len(df)
     df = increment_dataset(df, Options(method="add_origins_then_interpolate"))
     logger.info(f"Added origin points and then interpolated: gained {len(df) - len_before} data.")
     assert len(df) > len_before
+    df.to_csv(HELPER_DIR / "pdcc_add_origins_then_interpolate.csv", index=False)
