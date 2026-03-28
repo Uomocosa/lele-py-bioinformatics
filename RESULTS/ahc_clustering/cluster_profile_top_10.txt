@@ -1,0 +1,17 @@
+======================================================================
+ TOP 10 DEFINING FEATURES FOR CLUSTERS (Ranked by Scaled Variance)
+======================================================================
+
+CLUSTER                                                  0      1      2      3      4
+drug_heteroatom_density_sum_fullmolecularfeaturizer  0.332  0.291  0.391  0.223  0.270
+drug_chlorine_count_sum_fullmolecularfeaturizer      0.324  0.389  0.000  0.346  0.000
+drug_fingerprint_bit_136                             0.118  0.167  0.000  0.000  0.032
+drug_fingerprint_bit_144                             0.324  0.056  0.333  0.000  0.968
+fingerprint_H_bit_118                                0.059  0.000  1.000  0.000  0.871
+fingerprint_H_bit_197                                0.059  0.000  1.000  0.000  0.871
+fingerprint_H_bit_155                                0.059  0.000  1.000  0.000  0.871
+drug_fingerprint_bit_191                             0.059  0.083  0.000  0.000  0.032
+drug_fingerprint_bit_4                               0.000  0.056  0.333  0.000  0.000
+drug_fingerprint_bit_249                             0.162  0.028  0.333  0.346  0.097
+
+======================================================================

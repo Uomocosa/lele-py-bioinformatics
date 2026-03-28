@@ -5,6 +5,7 @@ platforms = ["win-64", "linux-64"]
 
 [tasks]
 find_polymer_for_target_molecule = "python -c 'from bio.find_polymer_for_target_molecule import main; main()'"
+ahc_clustering = "python -c 'from bio.ahc_clustering import main; main()'"
 train_pee_smile_model = "python -c 'from bio.pee_smiles_train import main; main()'"
 generate_random_psmiles = "python -c 'from bio.pee_smiles_generate import main; main()'"
 train_pscp_model = "python -c 'from bio.Bioinformatics.PeeSmileCapacityPredictor import train; train()'"

@@ -11,6 +11,9 @@ import lele, bio
 from bio.__global__ import RESULTS_DIR
 from loguru import logger
 
+SAVE_DIR = RESULTS_DIR / "mlp_experiments"
+SAVE_DIR.mkdir(parents=True, exist_ok=True)
+
 ExperimentConfig = bio.mlp_experiment.Config
 DatasetConfig = bio.mlp_experiment.Config.DatasetConfig
 ModelConfig = bio.mlp_experiment.Config.ModelConfig
@@ -184,7 +187,7 @@ def run_all_experiments():
         bio.mlp_experiment.run_with_config(exp_config)
         
         
-def rank_experiments(base_dir: Path = RESULTS_DIR / "mlp_experiments"):
+def rank_experiments(base_dir: Path = SAVE_DIR):
     """
     Reads the individual fold predictions for LOOCV by scanning the file system,
     aggregates them, and calculates global metrics to rank the experiments.
@@ -250,6 +253,16 @@ def rank_experiments(base_dir: Path = RESULTS_DIR / "mlp_experiments"):
     # Sort the dataframe: Q2 is higher-is-better
     df_results = df_results.sort_values(by="Q2", ascending=False)
     df_results.reset_index(drop=True, inplace=True)
+    
+    SAVE_DIR.mkdir(parents=True, exist_ok=True)
+    csv_path = SAVE_DIR / f"q2_leaderboard.csv"
+    md_path = SAVE_DIR / f"q2_leaderboard.md"
+    df_results.to_csv(csv_path, index=False)
+    with open(md_path, "w") as f:
+        f.write(f"# LOOCV Experiment Leaderboard\n")
+        f.write(f"Generated on: {pd.Timestamp.now()}\n\n")
+        f.write(df_results.to_markdown(index=False))
+    logger.info(f"Leaderboard saved to:\n - {csv_path}\n - {md_path}")
     
     logger.info(f"--- LOOCV Leaderboard (Ranked by Q2) ---")
     print(df_results.to_markdown())

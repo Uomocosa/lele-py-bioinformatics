@@ -2,20 +2,22 @@ import seaborn as sns
 import matplotlib.pyplot as mplot
 from pathlib import Path
 from sklearn.decomposition import PCA
+import bio
 from bio.ML import AHC
+from loguru import logger
 
-def plot(model: AHC, output_path: Path):
+def plot(model: AHC):
     """
-    Plots the first two Principal Components and colors by Cluster using Seaborn.
+    Plots the first two Principal Components and colors by CLUSTER using Seaborn.
     """
     df = model.df
     # Set a clean seaborn theme
     sns.set_theme(style="whitegrid")
     mplot.figure(figsize=(10, 8))
     
-    # We convert the Cluster IDs to strings so Seaborn treats them as distinct 
+    # We convert the CLUSTER IDs to strings so Seaborn treats them as distinct 
     # categories rather than a continuous numerical gradient.
-    df['Cluster_Label'] = 'Cluster ' + df['Cluster'].astype(str)
+    df['Cluster_Label'] = 'Cluster ' + df['CLUSTER'].astype(str)
     
     # Seaborn does all the heavy lifting here
     sns.scatterplot(
@@ -37,12 +39,28 @@ def plot(model: AHC, output_path: Path):
     mplot.legend(title='Clusters', bbox_to_anchor=(1.05, 1), loc='upper left')
     
     mplot.tight_layout()
-    mplot.savefig(output_path, dpi=300)
+    save_path = model.options.save_dir / "cluster_plot.png"
+    save_path.parent.mkdir(parents=True, exist_ok=True)
+    mplot.savefig(save_path, dpi=300)
     mplot.close()
-    print(f"Cluster plot saved to: {output_path}")
+    print(f"Cluster plot saved to: {save_path}")
 
 
-import pytest
-@pytest.mark.todo
 def test_():
-    pass
+    import pandas as pd
+    from sklearn.preprocessing import StandardScaler
+    from bio.Dataset import PDCCMethod
+    from bio.__global__ import PDCC_CSV
+    bio.setup_loguru()
+    model_options = AHC.Options(
+        n_clusters=5, 
+        pca_components=10, 
+        scaler=StandardScaler(),
+    )
+    df = pd.read_csv(PDCC_CSV)
+    df = df.head(10)
+    df = PDCCMethod.increment_dataset(df)
+    df = PDCCMethod.convert_names_to_smiles(df)
+    df = PDCCMethod.featurize(df)
+    ahc = AHC.cluster(df, model_options)
+    plot(ahc)
