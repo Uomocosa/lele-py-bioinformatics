@@ -35,8 +35,7 @@ def main():
     basic_dataset_config = DatasetConfig(
         csv_file=ZINC_BASE_CSV,
         train_validation_test_pecentages=(0.8, 0.2, 0.0),
-        max_size=None,
-        process_raw_smiles=canonicalize
+        # process_raw_smiles=canonicalize
     )
     
     @dataclass
@@ -69,7 +68,7 @@ def test_():
         early_stop_patience=2,
         dataset=bio.Dataset.Config(
             max_size=1000,
-            process_raw_smiles=canonicalize,
+            # process_raw_smiles=canonicalize,
             train_validation_test_pecentages=(0.8, 0.2, 0.0),
         ),
         options=bio.MinGPT.ModelConfig.Options(
@@ -84,7 +83,8 @@ def test_():
 def canonicalize(raw_smiles: pd.Series) -> pd.Series:
     logger.debug("Canonicalizing SMILES...")
     smiles = raw_smiles.apply(lambda s: Smile(s).canonicalize())
-    smiles = smiles.dropna().drop_duplicates()
+    # smiles = smiles.dropna().drop_duplicates()
+    smiles = smiles.dropna().drop_duplicates().reset_index(drop=True)
     return smiles
     
     
