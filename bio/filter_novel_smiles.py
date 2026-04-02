@@ -1,10 +1,10 @@
 import pandas as pd
-from bio.__global__ import REPO_DIR
-from bio.Dataset.__global__ import ZINC_BASE_CSV, PI1M
+from bio.__global__ import RESULTS_DIR
+from bio.Dataset.__global__ import ZINC_BASE_CSV, PI1M, COMBINED_PI1M_ZINC
 from loguru import logger
 
 def test_smiles():
-    dir = REPO_DIR / 'SMILES_checkpoints' / '2026_02_07_110058_333737' / 'generate_mnt128_t100000000' / '2026_02_10_103702_472515' 
+    dir = RESULTS_DIR / 'smiles_generator' / 'generate_mnt128_t100000000' / '2026_04_02_133739_018144'
     generated_csv_path = dir / 'valid_smiles.csv'
     output_csv_path = generated_csv_path.parent / 'novel_and_valid_smiles.csv'
     filter_novel_smiles(
@@ -14,7 +14,7 @@ def test_smiles():
     )
 
 def test_psmiles():
-    dir = REPO_DIR / 'PSMILES_checkpoints' / '2026_02_07_121136_450914' / 'generate_mnt128_t100000000' / '2026_02_10_094417_233255'
+    dir = RESULTS_DIR / 'pee_smiles_generator' / 'generate_mnt128_t100000000' / '2026_04_02_162307_599048'
     generated_csv_path = dir / 'valid_smiles.csv'
     output_csv_path = generated_csv_path.parent / 'novel_and_valid_smiles.csv'
     training_csv_path = PI1M
@@ -25,13 +25,13 @@ def test_psmiles():
     )
     
 def test_combined():
-    dir = REPO_DIR / 'SMILES_checkpoints' / '2026_02_07_110058_333737' / 'generate_mnt128_t100000000' / '2026_02_10_103702_472515' 
+    dir = RESULTS_DIR / 'smiles_and_psmiles_generator' / 'generate_mnt128_t100000000' / '2026_04_02_172641_275118'
     generated_csv_path = dir / 'valid_smiles.csv'
     output_csv_path = generated_csv_path.parent / 'novel_and_valid_smiles.csv'
     filter_novel_smiles(
         generated_csv_path = generated_csv_path, 
         output_csv_path = output_csv_path,
-        df_training_data = pd.read_csv(ZINC_BASE_CSV, header=None, names=['smiles']),
+        df_training_data = pd.read_csv(COMBINED_PI1M_ZINC, header=None, names=['smiles']),
     )
 
 
@@ -63,7 +63,6 @@ def filter_novel_smiles(
         memorized_count = len(df_unique_gen) - len(df_novel)
         logger.info(f"Removed {memorized_count} SMILES that were already present in the training set.")
     
-    # 4. Save the filtered results
     logger.info(f"Total fully novel & unique SMILES remaining: {len(df_novel)}")
     df_novel.to_csv(output_csv_path, index=False, header=False)
     logger.info(f"Saved to {output_csv_path}")
