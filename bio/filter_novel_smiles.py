@@ -23,6 +23,16 @@ def test_psmiles():
         output_csv_path = output_csv_path,
         df_training_data = pd.read_csv(PI1M, header=0, names=['smiles']),
     )
+    
+def test_combined():
+    dir = REPO_DIR / 'SMILES_checkpoints' / '2026_02_07_110058_333737' / 'generate_mnt128_t100000000' / '2026_02_10_103702_472515' 
+    generated_csv_path = dir / 'valid_smiles.csv'
+    output_csv_path = generated_csv_path.parent / 'novel_and_valid_smiles.csv'
+    filter_novel_smiles(
+        generated_csv_path = generated_csv_path, 
+        output_csv_path = output_csv_path,
+        df_training_data = pd.read_csv(ZINC_BASE_CSV, header=None, names=['smiles']),
+    )
 
 
 def filter_novel_smiles(
