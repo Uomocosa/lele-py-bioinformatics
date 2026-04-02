@@ -1,0 +1,6 @@
+// Smiles generated with the following options
+// NOTE! If you generate other SMILES with these options and same model, they will be saved in this folder.
+{
+    "temperature": 1.0,
+    "max_new_tokens": 128
+}

@@ -13,18 +13,20 @@ from typing import Optional, Callable
 from dataclasses import dataclass
 import lele, bio
 from lele.Path import P
-from lele.String import get_substring 
+from lele.String import get_substring
+from bio.ML.__global__ import HELPER_DIR
+from bio.__global__ import RESULTS_DIR
 from bio.Bioinformatics import Smile
 import logging; logging.getLogger("deepchem").setLevel(logging.ERROR)
 
-CHECKPOINT_FOLDER = lele.P(r"./SMILES_checkpoints") 
-CHECKPOINT_TEST_FOLDER = lele.P(r"./SMILES_checkpoints_test") 
+SAVE_DIR = RESULTS_DIR / "smiles_generator"
+CHECKPOINT_TEST_FOLDER = HELPER_DIR / 'SMILES_checkpoints_test'
 
 @dataclass
 class GenerateConfig():
-    smiles_to_generate: int = 10000
-    model_dir: Path = CHECKPOINT_FOLDER
-    batch_size: int = 256
+    smiles_to_generate: int = 128*1024 # 128 times batch size (closest to 10^5)
+    model_dir: Path = SAVE_DIR
+    batch_size: int = 1024
     temperature: float = 1.0 # 0.8 = conservative, 1.0 = standard, 1.2 = creative/chaotic
     max_new_tokens: int = 128
     use_best_model_in_subfolders: bool = True
@@ -34,6 +36,7 @@ class GenerateConfig():
 import pytest
 @pytest.mark.above10s
 def test_():
+    # pixi run pytest -rFP -q -s bio\cacca_generate.py -o "addopts="
     config = GenerateConfig()
     config.smiles_to_generate = 10
     config.batch_size = 1

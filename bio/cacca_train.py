@@ -18,11 +18,14 @@ from bio.ML import set_seed, get_torch_device
 from bio.Bioinformatics import Smile
 from bio.MinGPT.__global__ import MIN_GPT_CONFIG_FILE
 from bio.Dataset.__global__ import ZINC_BASE_CSV
+from bio.ML.__global__ import HELPER_DIR
+from bio.__global__ import RESULTS_DIR
 from loguru import logger
 import logging; logging.getLogger("deepchem").setLevel(logging.ERROR)
 
-CHECKPOINT_FOLDER = lele.P(r"./SMILES_checkpoints") 
-CHECKPOINT_TEST_FOLDER = lele.P(r"./SMILES_checkpoints_test") 
+
+SAVE_DIR = RESULTS_DIR / "smiles_generator"
+CHECKPOINT_TEST_FOLDER = HELPER_DIR / 'SMILES_checkpoints_test'
 
 def main():
     ModelConfig = bio.MinGPT.ModelConfig.ModelConfig
@@ -38,7 +41,11 @@ def main():
     
     @dataclass
     class SmileModelConfig(ModelConfig):
-        options: tyro.conf.OmitArgPrefixes[Options] = field(default_factory=Options)
+        options: tyro.conf.OmitArgPrefixes[Options] = field(
+            default_factory=lambda: Options(
+                checkpoint_dir=SAVE_DIR,
+            )
+        )
         dataset: DatasetConfig = field(default_factory=lambda: basic_dataset_config)
         
     config = tyro.cli(SmileModelConfig)
@@ -53,6 +60,7 @@ def main():
 import pytest
 @pytest.mark.above10s    
 def test_():
+    # pixi run pytest -rFP -q -s bio\cacca_train.py -o "addopts="
     simple_config = bio.MinGPT.ModelConfig(
         model_type='gpt-nano',
         learning_rate=3e-3,

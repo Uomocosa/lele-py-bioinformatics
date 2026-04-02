@@ -14,13 +14,14 @@ from lele.Metaprogramming import CSV_Logger
 from bio.ML import set_seed, get_torch_device
 from bio.MinGPT.__global__ import MIN_GPT_CONFIG_FILE
 from bio.Dataset.__global__ import PI1M
+from bio.ML.__global__ import HELPER_DIR
 from bio.__global__ import RESULTS_DIR
 from pathlib import Path
 from loguru import logger
 import logging; logging.getLogger("deepchem").setLevel(logging.ERROR)
 
 SAVE_DIR = RESULTS_DIR / "pee_smiles_generator"
-CHECKPOINT_TEST_FOLDER = lele.P(r"./PSMILES_checkpoints_test") 
+CHECKPOINT_TEST_FOLDER = HELPER_DIR / 'PSMILES_checkpoints_test'
 
 def main():
     ModelConfig = bio.MinGPT.ModelConfig.ModelConfig
@@ -51,6 +52,7 @@ def main():
 import pytest
 @pytest.mark.above10s    
 def test_():
+    # pixi run pytest -rFP -q -s bio\pee_smiles_train.py -o "addopts="
     simple_config = bio.MinGPT.ModelConfig(
         model_type='gpt-nano',
         learning_rate=3e-3,

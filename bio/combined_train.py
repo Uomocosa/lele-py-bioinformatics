@@ -14,12 +14,14 @@ from lele.Metaprogramming import CSV_Logger
 from bio.ML import set_seed, get_torch_device
 from bio.MinGPT.__global__ import MIN_GPT_CONFIG_FILE
 from bio.Dataset.__global__ import COMBINED_PI1M_ZINC
+from bio.ML.__global__ import HELPER_DIR
+from bio.__global__ import RESULTS_DIR
 from pathlib import Path
 from loguru import logger
 import logging; logging.getLogger("deepchem").setLevel(logging.ERROR)
 
-CHECKPOINT_FOLDER = lele.P(r"./COMBINED_checkpoints") 
-CHECKPOINT_TEST_FOLDER = lele.P(r"./COMBINED_checkpoints_test") 
+SAVE_DIR = RESULTS_DIR / "smiles_and_psmiles_generator"
+CHECKPOINT_TEST_FOLDER = HELPER_DIR / 'COMBINED_checkpoints_test'
 
 def main():
     ModelConfig = bio.MinGPT.ModelConfig.ModelConfig
@@ -28,7 +30,11 @@ def main():
     
     @dataclass
     class PSmileModelConfig(ModelConfig):
-        options: tyro.conf.OmitArgPrefixes[Options] = field(default_factory=Options)
+        options: tyro.conf.OmitArgPrefixes[Options] = field(
+            default_factory=lambda: Options(
+                checkpoint_dir=SAVE_DIR,
+            )
+        )
         dataset: DatasetConfig = field(default_factory=lambda: DatasetConfig(
             csv_file=COMBINED_PI1M_ZINC,
             train_validation_test_pecentages=(0.8, 0.2, 0.0),
@@ -47,6 +53,7 @@ def main():
 import pytest
 @pytest.mark.above10s    
 def test_():
+    # pixi run pytest -rFP -q -s bio\combined_train.py -o "addopts="
     simple_config = bio.MinGPT.ModelConfig(
         model_type='gpt-nano',
         learning_rate=3e-3,
