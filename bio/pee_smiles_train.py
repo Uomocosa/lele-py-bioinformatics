@@ -42,7 +42,6 @@ def main():
         
     config = tyro.cli(PSmileModelConfig)
     config.options.checkpoint_dir.mkdir(exist_ok=True, parents=True)
-    config.dataset
     print(f'CUDA available: {torch.cuda.is_available()}')
     print(f'Device: {torch.cuda.get_device_name(0)}' if torch.cuda.is_available() else 'Device: CPU')
     print(f"Running with epochs: {config.epochs}")
