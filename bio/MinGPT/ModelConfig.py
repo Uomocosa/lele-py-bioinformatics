@@ -37,7 +37,9 @@ class ModelConfig:
     starting_state_dict: Optional[Path] = None 
     early_stop_patience: Optional[int] = 1000 
     options: Options = field(default_factory=Options)
-    dataset: DatasetConfig = field(default_factory=DatasetConfig)
+    dataset: DatasetConfig = field(default_factory= lambda: DatasetConfig(
+        train_validation_test_pecentages = (0.8, 0.2, 0.0)
+    ))
     
     def __post_init__(self):
         bio.ML.set_seed(self.seed)

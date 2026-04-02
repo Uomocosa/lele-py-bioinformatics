@@ -31,7 +31,7 @@ def main():
         
     basic_dataset_config = DatasetConfig(
         csv_file=ZINC_BASE_CSV,
-        train_validation_test_pecentages=(0.6, 0.2, 0.2),
+        train_validation_test_pecentages=(0.8, 0.2, 0.0),
         max_size=None,
         process_raw_smiles=canonicalize
     )
@@ -62,6 +62,7 @@ def test_():
         dataset=bio.Dataset.Config(
             max_size=1000,
             process_raw_smiles=canonicalize,
+            train_validation_test_pecentages=(0.8, 0.2, 0.0),
         ),
         options=bio.MinGPT.ModelConfig.Options(
             save_checkpoint_every_n_iters=10

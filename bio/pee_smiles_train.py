@@ -34,7 +34,10 @@ def main():
                 checkpoint_dir=SAVE_DIR,
             )
         )
-        dataset: DatasetConfig = field(default_factory=lambda: DatasetConfig(csv_file=PI1M))
+        dataset: DatasetConfig = field(default_factory=lambda: DatasetConfig(
+            csv_file=PI1M,
+            train_validation_test_pecentages = (0.8, 0.2, 0.0),
+        ))
         
     config = tyro.cli(PSmileModelConfig)
     config.options.checkpoint_dir.mkdir(exist_ok=True, parents=True)
@@ -57,6 +60,7 @@ def test_():
         dataset=bio.Dataset.Config(
             csv_file=PI1M,
             max_size=1000,
+            train_validation_test_pecentages = (0.8, 0.2, 0.0),
         ),
         options=bio.MinGPT.ModelConfig.Options(
             save_checkpoint_every_n_iters=10

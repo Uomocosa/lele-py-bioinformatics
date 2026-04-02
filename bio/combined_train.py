@@ -29,7 +29,10 @@ def main():
     @dataclass
     class PSmileModelConfig(ModelConfig):
         options: tyro.conf.OmitArgPrefixes[Options] = field(default_factory=Options)
-        dataset: DatasetConfig = field(default_factory=lambda: DatasetConfig(csv_file=COMBINED_PI1M_ZINC))
+        dataset: DatasetConfig = field(default_factory=lambda: DatasetConfig(
+            csv_file=COMBINED_PI1M_ZINC,
+            train_validation_test_pecentages=(0.8, 0.2, 0.0),
+        ))
         
     config = tyro.cli(PSmileModelConfig)
     config.options.checkpoint_dir = config.options.checkpoint_dir/lele.String.unique()
@@ -53,6 +56,7 @@ def test_():
         dataset=bio.Dataset.Config(
             csv_file=COMBINED_PI1M_ZINC,
             max_size=1000,
+            train_validation_test_pecentages=(0.8, 0.2, 0.0),
         ),
         options=bio.MinGPT.ModelConfig.Options(
             save_checkpoint_every_n_iters=10
