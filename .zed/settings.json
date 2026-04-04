@@ -3,13 +3,20 @@
   "hard_tabs": false,
   "format_on_save": "off",
   "remove_trailing_whitespace_on_save": false,
-  "autosave": "on_focus_change",
-  "project_panel": {
-    "auto_reveal_entries": true
-  },
+  // "autosave": "on_focus_change",
+  // "project_panel": {
+  //   "auto_reveal_entries": true
+  // },
   "terminal": {
     "detect_venv": "off"
   },
+  "agent_servers": {
+      "opencode": {
+        "type": "custom",
+        "command": "opencode",
+        "args": ["acp"]
+      }
+  },  
   "file_scan_exclusions": [
     // "**/.venv",
     "**/build",

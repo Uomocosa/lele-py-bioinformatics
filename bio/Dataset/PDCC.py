@@ -49,7 +49,7 @@ class PDCC:
 
 def _count_origins(df: pd.DataFrame) -> int:
     origins_mask = (df['CONCENTRATION'] == 0.0) & (df['CAPACITY'] == 0.0)
-    origins_df = df[oarigins_mask]
+    origins_df = df[origins_mask]
     return len(origins_df)
 
 

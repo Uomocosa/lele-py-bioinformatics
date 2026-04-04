@@ -3,12 +3,11 @@ target_capacity: 1.0
 concentration: 12.5
 water_ph: 8.2
 seed: 42
-save_dir: C:\Users\acer\Desktop\Samuele\Syncthing\LWF - LightWeigth Folder\[P] Python\lele-py-bioinformatics\RESULTS\find_polymer_for_target_molecule
+save_dir: /home/uomocosa/Syncthing/LWF - LightWeigth Folder/[P] Python/lele-py-bioinformatics/RESULTS/find_polymer_for_target_molecule
 model_config:
-  model_pt_file: C:\Users\acer\Desktop\Samuele\Syncthing\LWF - LightWeigth Folder\[P]
-    Python\lele-py-bioinformatics\RESULTS\pee_smiles_generator\pretrained_model_best.pt
+  model_pt_file: /home/uomocosa/Syncthing/LWF - LightWeigth Folder/[P] Python/lele-py-bioinformatics/RESULTS/pee_smiles_generator/pretrained_model_best.pt
   polymers_to_generate_per_loop: 16
-  batch_size: 16
+  batch_size: 4
   temperature: 1.0
   max_new_tokens: 128
 filter_config:
