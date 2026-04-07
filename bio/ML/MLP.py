@@ -11,7 +11,7 @@ import lele, bio
 from pathlib import Path
 from typing import Optional, Callable, Any
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
-from bio.__global__ import BIOINFORMATICS_DIR
+from bio.ML.__global__ import HELPER_DIR
 from loguru import logger
 SplittedDataset = bio.Dataset.Splitted.Splitted
 
@@ -19,7 +19,7 @@ SplittedDataset = bio.Dataset.Splitted.Splitted
 MLP — Multilayer Perceptron
 """
 
-MLP_TEST_DIR = BIOINFORMATICS_DIR / "MLP_checkpoints_test"
+MLP_TEST_DIR = HELPER_DIR / "MLP_checkpoints_test"
 
 CRITIRION_MAP = {
     "mse": nn.MSELoss(),
