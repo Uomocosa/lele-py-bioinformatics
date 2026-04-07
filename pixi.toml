@@ -17,6 +17,7 @@ train_pscp_model = "python -c 'from bio.Bioinformatics.PeeSmileCapacityPredictor
 
 mlp_experiment = "python -c 'from bio.mlp_experiment import run_with_config; run_with_config()'"
 ahc_clustering = "python -c 'from bio.ahc_clustering import main; main()'"
+explain_high_prediction = "python -c 'from bio.explain_high_prediction import main; main()'"
 
 
 [dependencies]
@@ -49,6 +50,7 @@ seaborn = ">=0.13.2, <0.14"
 dimorphite_dl = ">=2.0.2, <3"
 qcelemental = ">=0.30.1, <0.31"
 pubchempy = ">=1.0.5, <2"
+shap = "*"
 
 [feature.cpu.dependencies]
 pytorch = ">=2.3.1,<3"

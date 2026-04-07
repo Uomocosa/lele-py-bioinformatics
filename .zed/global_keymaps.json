@@ -4,7 +4,7 @@
 // USEFUL:  (Ctrl+Shift+P, then "dev: open key context view")
 [
     {
-        "context": "Editor || Workspace || ProjectPanel || Terminal || Pane || Diagnostics || ImageViewer",
+        "context": "Editor || Workspace || ProjectPanel || Terminal || Pane || Diagnostics || ImageViewer || AgentPanel",
         "bindings": {
             "ctrl-p": "command_palette::Toggle",
             "ctrl-1": "project_panel::Toggle",
