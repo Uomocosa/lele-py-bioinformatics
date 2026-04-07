@@ -47,3 +47,42 @@ Here is the simple breakdown of what each file means and how to read it.
 * Find your polymer using the **`polymer_idx`** (which matches the comparison table).
 * Look at the **`shap_value`**. This is the exact number of points that feature contributed. 
 * **Example:** If the `shap_value` is `+4.5`, it means that specific feature bumped the polymer's capacity up by 4.5 units. If it is `-2.1`, the feature dragged the capacity down by 2.1 units.
+
+---
+
+### 5. `shap_dependence_*.png` (Feature Relationships)
+**What it is:** Three separate plots (one for each of the top 3 most important features) showing the relationship between feature values and their impact on capacity.
+
+**How to read it:**
+* **X-axis:** The actual feature value for each polymer
+* **Y-axis:** The SHAP value (how much that feature impacted the prediction)
+* **Each dot:** One polymer
+* **Positive slope (upward):** Higher feature value leads to higher capacity
+* **Negative slope (downward):** Higher feature value leads to lower capacity
+* **Color:** Shows the value of the most correlated feature (red = high, blue = low)
+
+---
+
+### 6. `shap_decision.png` (The Decision Path)
+**What it is:** Shows how each polymer's prediction builds up from the baseline score, stacked together for comparison.
+
+**How to read it:**
+* **X-axis:** Features ordered by importance (most important on the left)
+* **Y-axis:** Cumulative impact on the prediction
+* **Each colored line:** Represents one polymer
+* **Where lines diverge:** Shows where polymers differ most in how features affect their prediction
+* **Steep sections:** Indicate features with large impact (either positive or negative)
+* **Ending point:** Where each line ends is the final predicted capacity
+
+---
+
+### 7. `shap_waterfall_polymer_*.png` (Per-Polymer Breakdown)
+**What it is:** One waterfall plot per polymer showing exactly how that specific prediction was built from the baseline.
+
+**How to read it:**
+* **Left side:** Feature name and its value for that polymer
+* **Middle arrows:** Shows the direction of impact → (increases capacity) or ← (decreases capacity)
+* **Right numbers:** How much that feature contributed (positive = increases, negative = decreases)
+* **`base_value`:** The starting baseline score (the model's average prediction)
+* **`f(x)`:** The final predicted capacity for this specific polymer
+* **Reading order:** Start from `base_value` at the bottom, add each feature's contribution going up, end at `f(x)`

@@ -36,6 +36,7 @@ from bio.__global__ import PDCC_CSV, RESULTS_DIR
 
 SAVE_DIR = RESULTS_DIR / "explain_capacity_prediction"
 
+
 @dataclass
 class Config:
     """Configuration for capacity prediction explanation using SHAP."""
@@ -60,13 +61,15 @@ def main():
     bio.setup_loguru()
     config = tyro.cli(Config)
     explain_capacity_prediction(config)
-    
+
+
 def test_():
     bio.setup_loguru()
     config = Config(
         molecule_name="aspirin",
         polymer_smiles=["*Nc1ccc(NC(=O)c2ccc(C(=O)NNC(=O)c3ccc(*)cc3)cc2)cc1"],
-        save_dir=bio.Bioinformatics.__global__.HELPER_DIR / "explain_capacity_prediction",
+        save_dir=bio.Bioinformatics.__global__.HELPER_DIR
+        / "explain_capacity_prediction",
     )
     explain_capacity_prediction(config)
 
@@ -74,7 +77,7 @@ def test_():
 @pytest.mark.above10s
 def test_aspirin_above_threshold():
     bio.setup_loguru()
-    polymers = get_polymers_above_threshold("aspirin", threshold = 50)
+    polymers = get_polymers_above_threshold("aspirin", threshold=50)
     config = Config(
         molecule_name="aspirin",
         polymer_smiles=polymers,
@@ -85,7 +88,7 @@ def test_aspirin_above_threshold():
 @pytest.mark.above10s
 def test_lisinopril_above_threshold():
     bio.setup_loguru()
-    polymers = get_polymers_above_threshold("lisinopril", threshold = 50)
+    polymers = get_polymers_above_threshold("lisinopril", threshold=50)
     config = Config(
         molecule_name="lisinopril",
         polymer_smiles=polymers,
@@ -96,13 +99,12 @@ def test_lisinopril_above_threshold():
 @pytest.mark.above10s
 def test_metformin_above_threshold():
     bio.setup_loguru()
-    polymers = get_polymers_above_threshold("metformin", threshold = 50)
+    polymers = get_polymers_above_threshold("metformin", threshold=50)
     config = Config(
         molecule_name="metformin",
         polymer_smiles=polymers,
     )
     explain_capacity_prediction(config)
-
 
 
 def get_polymers_above_threshold(
@@ -127,13 +129,10 @@ def explain_capacity_prediction(config: Config):
 
     config_yaml_path = save_dir / "config.yaml"
     yaml.SafeDumper.add_multi_representer(
-        Path, 
-        lambda dumper, data: dumper.represent_str(str(data))
+        Path, lambda dumper, data: dumper.represent_str(str(data))
     )
     formatted_config = yaml.safe_dump(
-        asdict(config), 
-        default_flow_style=False, 
-        sort_keys=False
+        asdict(config), default_flow_style=False, sort_keys=False
     )
     with open(config_yaml_path, "w") as f:
         f.write(formatted_config)
@@ -216,7 +215,7 @@ def explain_capacity_prediction(config: Config):
             prediction = scaled_prediction
 
         return prediction.flatten()
-        
+
     explainer = shap.Explainer(model_predict, background_numeric, silent=True)
 
     all_shap_values = []
@@ -260,7 +259,7 @@ def explain_capacity_prediction(config: Config):
         shap_values = explainer.shap_values(polymer_numeric)
         all_shap_values.append(shap_values)
         all_features.append(polymer_features)
-        
+
     logger.info("PREDICTION SUMMARY:")
     for i, (polymer, pred) in enumerate(zip(config.polymer_smiles, all_predictions)):
         logger.info(f"Polymer {i + 1}: {pred:.2f}")
@@ -286,6 +285,62 @@ def explain_capacity_prediction(config: Config):
     plt.savefig(save_dir / "shap_summary_bar.png", dpi=300)
     plt.close()
     logger.info(f"Saved shap_summary_bar.png")
+
+    feature_importance_mean = np.abs(combined_shap).mean(axis=0)
+    top_3_indices = np.argsort(feature_importance_mean)[-3:][::-1]
+    top_3_feature_names = [combined_features.columns[i] for i in top_3_indices]
+
+    for idx, feature_name in enumerate(top_3_indices):
+        plt.figure(figsize=(10, 6))
+        shap.dependence_plot(
+            feature_name,
+            combined_shap,
+            combined_features,
+            show=False,
+            interaction_index="auto",
+        )
+        plt.tight_layout()
+        plt.savefig(save_dir / f"shap_dependence_{idx + 1}_{feature_name}.png", dpi=300)
+        plt.close()
+        logger.info(f"Saved shap_dependence_{idx + 1}_{feature_name}.png")
+
+    baseline_value = model_predict(background_numeric).mean()
+
+    plt.figure(figsize=(14, 10))
+    shap.decision_plot(
+        baseline_value,
+        combined_shap,
+        combined_features,
+        show=False,
+    )
+    plt.tight_layout()
+    plt.savefig(save_dir / "shap_decision.png", dpi=300)
+    plt.close()
+    logger.info(f"Saved shap_decision.png")
+
+    for i, (polymer, shap_vals) in enumerate(
+        zip(config.polymer_smiles, all_shap_values)
+    ):
+        shap_arr = np.array(shap_vals)
+        if shap_arr.ndim == 1:
+            shap_arr = shap_arr.flatten()
+        elif shap_arr.ndim > 1:
+            shap_arr = shap_arr[0]
+
+        plt.figure(figsize=(12, 5))
+        shap.plots.waterfall(
+            shap.Explanation(
+                values=shap_arr,
+                base_values=baseline_value,
+                data=all_features[i].iloc[0].values,
+                feature_names=all_features[i].columns.tolist(),
+            ),
+            show=False,
+        )
+        plt.tight_layout()
+        plt.savefig(save_dir / f"shap_waterfall_polymer_{i + 1}.png", dpi=300)
+        plt.close()
+        logger.info(f"Saved shap_waterfall_polymer_{i + 1}.png")
 
     top_features_data = []
     for i, (polymer, shap_vals) in enumerate(
@@ -327,6 +382,6 @@ def explain_capacity_prediction(config: Config):
 
     polymer_comparison.to_csv(save_dir / "polymer_comparison.csv", index=False)
     logger.info(f"Saved polymer_comparison.csv")
-    
+
     logger.info(f"POLYMER COMPARISON:\n{polymer_comparison.to_string(index=False)}")
     logger.info(f"All outputs saved to: {save_dir}")
