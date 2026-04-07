@@ -1,3 +1,7 @@
 polymer_idx,polymer_smiles,predicted_capacity,top_5_features
-1,*Nc1ccc(NC(=O)c2ccc(C(=O)NNC(=O)c3ccc(*)cc3)cc2)cc1,115.5983657836914,fingerprint_H_bit_12; fingerprint_H_bit_177; poly_num_rotatable_bonds_sum_fullpolymerfeaturizer; fingerprint_H_bit_183; poly_slogp_vsa1_sum_backbonefeaturizer
-2,*Nc1ccc(NC(=O)CCCC(=O)Nc2ccc(-c3ccc(*)s3)cc2)cc1,97.47627258300781,fingerprint_H_bit_12; fingerprint_H_bit_177; fingerprint_H_bit_42; poly_slogp_vsa1_sum_fullpolymerfeaturizer; poly_molecular_weight_sidechainfeaturizer_sum
+1,*Nc1ccc(NC(=O)c2ccc(C(=O)NNC(=O)c3ccc(*)cc3)cc2)cc1,115.5983657836914,fingerprint_H_bit_12; fingerprint_H_bit_177; fingerprint_H_bit_33; poly_num_hbond_donors_sum_backbonefeaturizer; poly_slogp_vsa1_sum_fullpolymerfeaturizer
+2,*Nc1ccc(NC(=O)CCCC(=O)Nc2ccc(-c3ccc(*)s3)cc2)cc1,97.47627258300781,fingerprint_H_bit_12; fingerprint_H_bit_120; fingerprint_H_bit_177; fingerprint_H_bit_42; logd_at_WATER_PH_H
+3,*OC(=O)C(=O)N([2H])C(C)C(*)=O,69.81865692138672,fingerprint_H_bit_177; fingerprint_H_bit_201; fingerprint_H_bit_48; poly_num_hbond_acceptors_sum_backbonefeaturizer; poly_balaban_j_index_sum_backbonefeaturizer
+4,*Nc1ccc(C(C)(C)c2ccc(C(=O)NCCCNC(*)=O)cc2)cc1,57.07862854003906,fingerprint_H_bit_12; fingerprint_H_bit_177; fingerprint_H_bit_120; fingerprint_H_bit_85; logd_at_WATER_PH_H
+5,*NNC(=O)c1ccc(C(=O)NC(*)=O)c(Cl)c1,55.18056106567383,fingerprint_H_bit_2; fingerprint_H_bit_1; poly_heteroatom_density_sidechainfeaturizer_sum; poly_sp2_carbon_count_sidechainfeaturizer_sum; poly_slogp_vsa1_sum_fullpolymerfeaturizer
+6,*OC(=O)NCc1ccc(C(=O)OCCOC(*)=O)cc1,66.86856842041016,fingerprint_H_bit_2; fingerprint_H_bit_120; fingerprint_H_bit_58; fingerprint_H_bit_33; poly_heteroatom_density_sidechainfeaturizer_sum
