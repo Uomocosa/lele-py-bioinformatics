@@ -1,0 +1,6 @@
+molecule_name: aspirin
+polymer_smiles:
+- '*Nc1ccc(NC(=O)c2ccc(C(=O)NNC(=O)c3ccc(*)cc3)cc2)cc1'
+water_ph: 8.2
+concentration: 12.5
+save_dir: /home/uomocosa/Syncthing/LWF - LightWeigth Folder/[P] Python/lele-py-bioinformatics/bio/Bioinformatics/__HELPER_DIR__/explain_capacity_prediction

@@ -1,0 +1,2 @@
+polymer_idx,polymer_smiles,predicted_capacity,top_5_features
+1,*Nc1ccc(NC(=O)c2ccc(C(=O)NNC(=O)c3ccc(*)cc3)cc2)cc1,94.64566040039062,fingerprint_H_bit_12; fingerprint_H_bit_177; logd_at_WATER_PH_H; fingerprint_H_bit_232; poly_num_aromatic_rings_sum_backbonefeaturizer

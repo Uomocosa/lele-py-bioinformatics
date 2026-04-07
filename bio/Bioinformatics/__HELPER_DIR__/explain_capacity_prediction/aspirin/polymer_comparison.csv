@@ -1,0 +1,2 @@
+polymer_idx,polymer_smiles,predicted_capacity,top_5_features
+1,*Nc1ccc(NC(=O)c2ccc(C(=O)NNC(=O)c3ccc(*)cc3)cc2)cc1,115.5983657836914,fingerprint_H_bit_12; fingerprint_H_bit_177; poly_slogp_vsa1_sum_backbonefeaturizer; poly_fp_density_morgan1_sum_backbonefeaturizer; poly_sp2_carbon_count_sidechainfeaturizer_sum

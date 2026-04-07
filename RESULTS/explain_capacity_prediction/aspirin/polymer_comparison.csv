@@ -1,0 +1,3 @@
+polymer_idx,polymer_smiles,predicted_capacity,top_5_features
+1,*Nc1ccc(NC(=O)c2ccc(C(=O)NNC(=O)c3ccc(*)cc3)cc2)cc1,115.5983657836914,fingerprint_H_bit_12; fingerprint_H_bit_177; poly_num_rotatable_bonds_sum_fullpolymerfeaturizer; fingerprint_H_bit_183; poly_slogp_vsa1_sum_backbonefeaturizer
+2,*Nc1ccc(NC(=O)CCCC(=O)Nc2ccc(-c3ccc(*)s3)cc2)cc1,97.47627258300781,fingerprint_H_bit_12; fingerprint_H_bit_177; fingerprint_H_bit_42; poly_slogp_vsa1_sum_fullpolymerfeaturizer; poly_molecular_weight_sidechainfeaturizer_sum

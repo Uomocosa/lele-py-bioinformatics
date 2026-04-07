@@ -927,7 +927,7 @@ packages:
 - pypi: ./
   name: bio
   version: 0.0.1
-  sha256: 38d3122f99782c11dee233283b4f80bce6636e7efdd6729f44e26d1c3fde7450
+  sha256: 1f232ac43e215f9466729c4c017bc2a04607f43fd110b82d2d0cc50ef8ee3d37
   requires_python: ==3.11
 - conda: https://conda.anaconda.org/conda-forge/linux-64/blas-2.116-mkl.tar.bz2
   build_number: 16

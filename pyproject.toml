@@ -42,6 +42,13 @@ filterwarnings = [
     "ignore:invalid escape sequence:DeprecationWarning",
     "ignore:.*GraphNetwork:DeprecationWarning",
     "ignore:.*SelfAttention Layer:DeprecationWarning",
+    "ignore:.*pyparsing.*:DeprecationWarning",
+    "ignore:.*NumPy global RNG.*:FutureWarning",
+    "ignore::pyparsing.PyparsingDeprecationWarning",
+    # "ignore:.*oneOf.*:PyparsingDeprecationWarning",
+    # "ignore:.*parseString.*:PyparsingDeprecationWarning",
+    # "ignore:.*resetCache.*:PyparsingDeprecationWarning",
+    # "ignore:.*enablePackrat.*:PyparsingDeprecationWarning",
 ]
 markers = [
     "verbose: tests that have some kind of output",
