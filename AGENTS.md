@@ -1,13 +1,25 @@
 # Project Rules
 
 This workspace is Python-only (bioinformatics package). Skills under `.agents/skills/`
-are auto-discovered. `project-conventions` is always loaded — it defines import rules,
+are auto-discovered. `lele-python-syntax` is always loaded — it defines import rules,
 code organization, testing conventions, and naming.
 
 Use `pixi` for environment and testing (see pixi skill).
 
 ## Git Workflow
 See `.agents/skills/git-workflow/SKILL.md` — loaded on demand for git tasks.
+
+## Project Commands
+
+Values shared across skills use the `[[AGENTS.md::KEY]]` convention.
+Agents resolve these by reading this section.
+
+- `[[AGENTS.md::RUN_ALL_TESTS]]`: `pixi run pytest`
+- `[[AGENTS.md::BUILD]]`: `pixi run build`
+- `[[AGENTS.md::LINT]]`: `pixi run ruff`
+
+Contextual template variables (`{{package}}`, `{{Module}}`, etc.) are
+resolved at runtime by the agent based on context — they are not defined here.
 
 ## CRITICAL: Commit Authorization
 
