@@ -1,7 +1,7 @@
 # Project Rules
 
-This workspace is Python-only (bioinformatics package). Skills under `.agents/skills/`
-are auto-discovered. `lele-python-syntax` is always loaded — it defines import rules,
+This workspace is Python-only (bioinformatics package). Skills under `~/.config/opencode/skills/`
+are auto-discovered. `lele-syntax-py` is always loaded — it defines import rules,
 code organization, testing conventions, and naming.
 
 Use `pixi` for environment and testing (see pixi skill).
