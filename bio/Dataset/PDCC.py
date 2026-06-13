@@ -39,7 +39,6 @@ class PDCC:
         self.df = PDCCMethod.increment_dataset(self.df, options)
         logger.info(f"Incremented dataset: gained {len(self.df) - orginal_len} data.")
         
-        
     def convert_names_to_smiles(self, options = PDCCMethod.convert_names_to_smiles.Options()):
         self.df = PDCCMethod.convert_names_to_smiles(self.df, options)
         
