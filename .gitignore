@@ -32,3 +32,6 @@ venv.bak/
 
 # PEP 582; __pypackages__
 __pypackages__/
+
+# Build artifacts
+build/
