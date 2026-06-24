@@ -1,7 +1,7 @@
 import torch.nn.functional as F
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Optional, Tuple
+from typing import Optional, Tuple, List
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 import lele, bio
 from bio.ML import MLP, MLPMethod
@@ -14,6 +14,11 @@ from loguru import logger
 class DatasetConfig(PDCC.Config):
     csv_file: Path = PDCC_CSV
     train_validation_test_pecentages: Tuple[float, float, float] = (1, 0, 0)
+    psmiles_dicts: List[str] = field(default_factory=lambda: ["builtin"])
+    """Polymer name -> P-SMILES dict sources (the 'builtin' global dict and/or JSON paths),
+    merged in order. Default reproduces the original global-dict resolution."""
+    smiles_dicts: List[str] = field(default_factory=lambda: ["builtin"])
+    """Drug name -> SMILES dict sources; same semantics as psmiles_dicts."""
     
 @dataclass
 class ModelConfig(MLP.Config):
@@ -47,6 +52,7 @@ FORWARD_FN_MAP = {
 class Config():
     name: str = "experiment_0"
     k_fold: int = -1 # Note! if you set it to -1 -> implies LOOCV otherwise k-fold cross validation
+    cv_method: str = "sample" # "sample" = KFold/LeaveOneOut over rows; "group" = GroupKFold/LeaveOneGroupOut over polymer-drug pairs
     save_dir: Path = RESULTS_DIR / "mlp_experiments"
     x_scaler_fn: Optional[str] = "standard"
     y_scaler_fn: Optional[str] = "min_max_range01"

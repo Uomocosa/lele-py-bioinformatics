@@ -36,7 +36,10 @@ def convert_names_to_smiles(df: pd.DataFrame, options=Options()):
     # Convert empty strings (""), spaces ("   "), and literal "nan" strings to true np.nan
     df['POLYMER_USED'] = df['POLYMER_USED'].replace(r'^\s*$', np.nan, regex=True).replace(['nan', 'NaN', 'None'], np.nan)
     df['DRUG'] = df['DRUG'].replace(r'^\s*$', np.nan, regex=True).replace(['nan', 'NaN', 'None'], np.nan)
-    df = df.dropna()
+    # Only drop rows whose name resolution actually failed. A blanket df.dropna()
+    # would also drop rows missing pure-metadata columns (e.g. an empty SOURCE),
+    # silently throwing away otherwise-trainable data.
+    df = df.dropna(subset=['POLYMER_USED', 'DRUG'])
     return df
     
     

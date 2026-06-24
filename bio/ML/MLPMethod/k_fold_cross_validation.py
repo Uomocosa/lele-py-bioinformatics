@@ -1,6 +1,6 @@
 import numpy as np
 from bio.ML import MLP, MLPMethod
-from sklearn.model_selection import LeaveOneOut, KFold
+from sklearn.model_selection import LeaveOneOut, KFold, GroupKFold, LeaveOneGroupOut
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from torch.utils.data import Subset
 import copy
@@ -8,24 +8,50 @@ import torch
 import bio
 from loguru import logger
 
-def k_fold_cross_validation(model: MLP, k: int = 5):
+def k_fold_cross_validation(model: MLP, k: int = 5, cv_method: str = "sample"):
+    """
+    cv_method:
+      - "sample": KFold over individual samples (k folds), or LeaveOneOut if k == -1.
+      - "group":  GroupKFold over polymer-drug groups (no augmented point of a curve
+                  leaks across the split), or LeaveOneGroupOut if k == -1 or k >= n_groups.
+    """
     full_dataset = model.data.original
     n_samples = len(full_dataset)
-    if k == -1: 
-        k = n_samples
-        kf = LeaveOneOut()
-        logger.info(f"Running LOOCV for {n_samples} samples...")
+
+    if cv_method == "group":
+        meta = full_dataset.metadata
+        groups = (meta['POLYMER_USED'].astype(str) + ' || ' + meta['DRUG'].astype(str)).to_numpy()
+        n_groups = len(set(groups))
+        if n_groups < 2:
+            logger.warning(f"Grouped CV needs >= 2 polymer-drug groups, found {n_groups}. Skipping CV.")
+            return None
+        if k == -1 or k >= n_groups:
+            kf = LeaveOneGroupOut()
+            k = n_groups
+            eval_type = "Grouped-LOGO"
+            logger.info(f"Grouped leave-one-group-out over {n_groups} groups ({n_samples} samples)...")
+        else:
+            kf = GroupKFold(n_splits=k)
+            eval_type = f"Grouped-{k}-Fold"
+            logger.info(f"GroupKFold k={k} over {n_groups} groups ({n_samples} samples)...")
+        split_iter = kf.split(range(n_samples), groups=groups)
     else:
-        kf = KFold(n_splits=k, shuffle=True, random_state=model.config.seed)
-    
-    eval_type = "LOOCV" if k == n_samples else f"{k}-Fold"
+        if k == -1:
+            k = n_samples
+            kf = LeaveOneOut()
+            logger.info(f"Running LOOCV for {n_samples} samples...")
+        else:
+            kf = KFold(n_splits=k, shuffle=True, random_state=model.config.seed)
+        eval_type = "LOOCV" if k == n_samples else f"{k}-Fold"
+        split_iter = kf.split(range(n_samples))
+
     untrained_weights = copy.deepcopy(model.state_dict())
-    
+
     all_targets = []
     all_predictions = []
-    
-    logger.info(f"K-Fold Training for {n_samples} samples (k={k})...")
-    for fold, (train_index, val_index) in enumerate(kf.split(range(n_samples))):
+
+    logger.info(f"{eval_type} training for {n_samples} samples (k={k})...")
+    for fold, (train_index, val_index) in enumerate(split_iter):
         current_fold = fold + 1
         logger.info(f"--- K-Fold {current_fold}/{k} ---")
         model.load_state_dict(copy.deepcopy(untrained_weights))

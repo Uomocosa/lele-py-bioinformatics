@@ -40,8 +40,17 @@ def increment_dataset(
 
 def interpolate(df: pd.DataFrame, n_points: int, interpolate_fn):
     df = bio.Dataset.convert_from_scientific_notation(df, column_name="CAPACITY")
-    df['CONCENTRATION'] = pd.to_numeric(df['CONCENTRATION'])
-    df['CAPACITY'] = pd.to_numeric(df['CAPACITY'])
+    # Coerce instead of crash: some datasets carry range strings (e.g.
+    # CONCENTRATION="50-900"). Non-numeric values become NaN and those rows are
+    # discarded — wrong data is dropped, not crashed on. Clean data is unaffected.
+    df = df.copy()
+    df['CONCENTRATION'] = pd.to_numeric(df['CONCENTRATION'], errors='coerce')
+    df['CAPACITY'] = pd.to_numeric(df['CAPACITY'], errors='coerce')
+    n_before = len(df)
+    df = df.dropna(subset=['CONCENTRATION', 'CAPACITY'])
+    if len(df) < n_before:
+        logger.warning(f"increment_dataset: dropped {n_before - len(df)} row(s) with "
+                       f"non-numeric CONCENTRATION/CAPACITY before interpolation.")
     core_cols = ['POLYMER_USED', 'DRUG', 'CONCENTRATION', 'CAPACITY', 'SOURCE']
     static_cols = [col for col in df.columns if col not in core_cols]
     

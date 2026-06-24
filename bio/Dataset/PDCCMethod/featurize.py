@@ -79,12 +79,32 @@ def _parse_polymetrix(features: list) -> list:
 
 
 
+# Condition/label columns that must be numeric to be featurized or trained on.
+# paper-scraper occasionally emits range strings (e.g. WATER_PH="6.6-6.8"); left
+# as-is these either crash featurization (a non-numeric pH trips dimorphite_dl's
+# `assert isinstance(ph_min, (int, float))`) or get silently dropped from the
+# feature matrix by select_dtypes. Coercing them to NaN here lets the dropna below
+# discard such rows cleanly — wrong data is discarded, not mangled or crashed-on.
+NUMERIC_PDCC_COLUMNS = ['WATER_PH', 'CONCENTRATION', 'CAPACITY']
+
+
 from bio.__global__ import CACHE_MEMORY
 @CACHE_MEMORY.cache
 def featurize(
     df: pd.DataFrame,
     options: Options = Options()
 ) -> pd.DataFrame:
+    df = df.copy()
+    for col in NUMERIC_PDCC_COLUMNS:
+        if col not in df.columns:
+            continue
+        coerced = pd.to_numeric(df[col], errors='coerce')
+        n_invalid = int(coerced.isna().sum() - df[col].isna().sum())
+        if n_invalid:
+            logger.warning(f"Coerced {n_invalid} non-numeric value(s) in '{col}' to NaN; "
+                           f"those rows will be discarded.")
+        df[col] = coerced
+
     polymetrix_options = PDCCMethod.get_poly_mol_features_polymetrix.Options(
         molecule_features = options.parsed_molecule_polymetrix_features,
         polymer_features = options.parsed_polymer_polymetrix_features,
@@ -107,7 +127,11 @@ def featurize(
         molecule_features_2,
     ], axis=1)
     
-    df = df.dropna()
+    # Drop rows with NaN in any feature/label/condition column, but ignore pure
+    # metadata columns (e.g. SOURCE) — a row with an empty SOURCE is still trainable.
+    metadata_cols = ['SOURCE']
+    feature_cols = [c for c in df.columns if c not in metadata_cols]
+    df = df.dropna(subset=feature_cols)
     return df
 
 

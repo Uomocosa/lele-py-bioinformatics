@@ -56,10 +56,22 @@ def run_with_config(exp_config: ExperimentConfig):
         
     bio.ML.set_seed(exp_config.seed)
     
+    psmiles_dict = bio.integrate_paper_scraper.resolve_dict_sources(
+        exp_config.dataset_config.psmiles_dicts, "psmiles"
+    )
+    smiles_dict = bio.integrate_paper_scraper.resolve_dict_sources(
+        exp_config.dataset_config.smiles_dicts, "smiles"
+    )
+
     featurize_fn = lambda df: PDCCMethod.featurize(df, options=exp_config.featurizer_options)
     dataset = bio.Dataset.PDCC(config = exp_config.dataset_config)
     dataset.increment_dataset(options=exp_config.incerement_dataset_options)
-    dataset.convert_names_to_smiles()
+    dataset.convert_names_to_smiles(
+        PDCCMethod.convert_names_to_smiles.Options(
+            psmiles_dict=psmiles_dict,
+            smiles_dict=smiles_dict,
+        )
+    )
     dataset.featurize_fn = featurize_fn
     
     torch_dataset = dataset.to_torch_dataset()
@@ -97,7 +109,7 @@ def run_with_config(exp_config: ExperimentConfig):
     )
     model.forward = types.MethodType(forward_fn, model)
     
-    MLPMethod.k_fold_cross_validation(model, k=exp_config.k_fold)
+    MLPMethod.k_fold_cross_validation(model, k=exp_config.k_fold, cv_method=exp_config.cv_method)
             
     log = bio.mlp_experiment.get_log_files(exp_config, exp_config.save_dir)
     sns.set_theme(style="whitegrid", palette="muted")
