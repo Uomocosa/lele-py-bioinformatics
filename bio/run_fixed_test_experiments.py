@@ -71,7 +71,30 @@ PHASE1_REGISTRY = {
     "plus_gemma":    dict(llm_csvs=[_ps("pdcc_gemma4_image_without_conflicts.csv")]),
 }
 
-PHASE2_REGISTRY: dict = {}   # populated after seeing Phase 1 results
+_DS  = _ps("pdcc_deepseek_without_conflicts.csv")
+_KM  = _ps("pdcc_kimi_without_conflicts.csv")
+_OP  = _ps("pdcc_opus_without_conflicts.csv")
+_GM  = _ps("pdcc_gemma4_image_without_conflicts.csv")
+
+PHASE2_REGISTRY = {
+    "plus_deepseek_kimi":  dict(llm_csvs=[_DS, _KM]),
+    "plus_deepseek_opus":  dict(llm_csvs=[_DS, _OP]),
+    "plus_deepseek_gemma": dict(llm_csvs=[_DS, _GM]),
+    "plus_kimi_opus":      dict(llm_csvs=[_KM, _OP]),
+    "plus_kimi_gemma":     dict(llm_csvs=[_KM, _GM]),
+    "plus_opus_gemma":     dict(llm_csvs=[_OP, _GM]),
+}
+
+PHASE3_REGISTRY = {
+    "plus_deepseek_kimi_opus":  dict(llm_csvs=[_DS, _KM, _OP]),
+    "plus_deepseek_kimi_gemma": dict(llm_csvs=[_DS, _KM, _GM]),
+    "plus_deepseek_opus_gemma": dict(llm_csvs=[_DS, _OP, _GM]),
+    "plus_kimi_opus_gemma":     dict(llm_csvs=[_KM, _OP, _GM]),
+}
+
+PHASE4_REGISTRY = {
+    "plus_all": dict(llm_csvs=[_DS, _KM, _OP, _GM]),
+}
 
 ARCHITECTURES = {
     "hd_16_8_4_4_4":   [16, 8, 4, 4, 4],
@@ -85,7 +108,7 @@ ARCHITECTURES = {
 @dataclass
 class Config:
     phase: int = 1
-    """1 = PHASE1_REGISTRY (one LLM at a time), 2 = PHASE2_REGISTRY (combinations)."""
+    """1 = single LLM, 2 = pairs, 3 = triples, 4 = all four combined."""
     architectures: List[str] = field(default_factory=lambda: list(ARCHITECTURES))
     seeds: List[int] = field(default_factory=lambda: [42, 123, 7])
     """Seeds for the train/test group split. Run multiple seeds for robust comparison.
@@ -356,7 +379,8 @@ def run_with_config(config: Config):
     config.save_dir.mkdir(parents=True, exist_ok=True)
     build_dir = config.save_dir / "_data"
 
-    registry = PHASE1_REGISTRY if config.phase == 1 else PHASE2_REGISTRY
+    _REGISTRIES = {1: PHASE1_REGISTRY, 2: PHASE2_REGISTRY, 3: PHASE3_REGISTRY, 4: PHASE4_REGISTRY}
+    registry = _REGISTRIES.get(config.phase, {})
     if not registry:
         logger.error(f"Phase {config.phase} registry is empty. Nothing to run.")
         return
@@ -391,11 +415,14 @@ def run_with_config(config: Config):
         return
 
     df = pd.DataFrame(all_results)
-    df = df.sort_values(["Experiment", "Architecture", "Seed"]).reset_index(drop=True)
-
     detail_path = config.save_dir / "all_runs.csv"
+    if detail_path.exists():
+        df = pd.concat([pd.read_csv(detail_path), df], ignore_index=True)
+    df = (df.drop_duplicates(subset=["Experiment", "Architecture", "Seed"])
+            .sort_values(["Experiment", "Architecture", "Seed"])
+            .reset_index(drop=True))
     df.to_csv(detail_path, index=False)
-    logger.info(f"Per-run results saved to {detail_path}")
+    logger.info(f"Per-run results saved to {detail_path} ({len(df)} total rows)")
 
     rank(config.save_dir)
 
