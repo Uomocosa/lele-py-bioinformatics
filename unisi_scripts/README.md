@@ -15,6 +15,7 @@ Run in order (each is idempotent):
 | `04_rank.sh` | Rebuild the Q2/MAE/RMSE leaderboard. |
 | `05_save_results.sh` | Tar `RESULTS/thesis_experiments/` for scp. |
 | `06_search_config.sh` | (Optional) curated grid search for a good config on one dataset → `RESULTS/config_search/`. |
+| `07_run_fixed_test_experiments.sh` | Fixed-test-set augmentation study (Phase 1: baseline vs each LLM) → `RESULTS/fixed_test_experiments/`. |
 
 `03_run_experiments.sh` passes args through, e.g.:
 ```bash
