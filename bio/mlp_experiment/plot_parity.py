@@ -16,7 +16,11 @@ def plot_parity(exp_config: ExperimentConfig, save_dir: Path, log_file: Path):
 
     # 1. Load predictions from the log
     df = pd.read_json(log_file, lines=True)
+    if df.empty or "log_type" not in df.columns:
+        return
     df = df[df["log_type"] == "prediction_trace"]
+    if df.empty:
+        return
 
     # 2. Translate SMILES to Readable Names
     def get_pair_name(row):
