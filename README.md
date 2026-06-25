@@ -73,4 +73,14 @@ LOOCV-over-augmented runs, whose scores are optimistic). Results and a Q2 leader
 pixi run -e cuda run_integrated_paper_scraper_experiments                       # default sweep
 pixi run -e cuda run_integrated_paper_scraper_experiments --datasets original opus deepseek
 ```
-Server-ready scripts (bootstrap → smoke test → build → run → rank → archive) live in `unisi_scripts/`.
+
+To hunt for a better config under the same grouped CV, `bio.search_for_best_config` runs a curated
+grid (architecture × loss × output activation × y-scaler) on one dataset → `RESULTS/config_search/`:
+```bash
+pixi run -e cuda search_for_best_config --dataset original
+```
+⚠️ The leaderboard's **top** Q2 is optimistic (best-of-many = selection bias). Use it to pick a
+candidate config, then confirm that config on held-out polymer–drug groups before quoting the number.
+
+Server-ready scripts (bootstrap → smoke test → build → run → rank → archive → search) live in
+`unisi_scripts/`.

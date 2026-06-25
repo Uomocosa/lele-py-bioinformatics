@@ -20,6 +20,7 @@ ahc_clustering = "python -c 'from bio.ahc_clustering import main; main()'"
 explain_high_prediction = "python -c 'from bio.explain_high_prediction import main; main()'"
 integrate_paper_scraper = "python -c 'from bio.integrate_paper_scraper import main; main()'"
 run_integrated_paper_scraper_experiments = "python -c 'from bio.run_all_integrated_paper_scraper_experiments import main; main()'"
+search_for_best_config = "python -c 'from bio.search_for_best_config import main; main()'"
 
 
 [dependencies]

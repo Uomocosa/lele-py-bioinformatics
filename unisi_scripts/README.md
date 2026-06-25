@@ -14,6 +14,7 @@ Run in order (each is idempotent):
 | `03_run_experiments.sh` | Run the sweep (datasets × architectures, grouped CV) → `RESULTS/thesis_experiments/`. |
 | `04_rank.sh` | Rebuild the Q2/MAE/RMSE leaderboard. |
 | `05_save_results.sh` | Tar `RESULTS/thesis_experiments/` for scp. |
+| `06_search_config.sh` | (Optional) curated grid search for a good config on one dataset → `RESULTS/config_search/`. |
 
 `03_run_experiments.sh` passes args through, e.g.:
 ```bash
