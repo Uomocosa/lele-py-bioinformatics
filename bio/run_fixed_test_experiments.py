@@ -96,6 +96,16 @@ PHASE4_REGISTRY = {
     "plus_all": dict(llm_csvs=[_DS, _KM, _OP, _GM]),
 }
 
+# Re-run only the top positive-Q2 candidates + baseline with extra seeds
+# to check whether the DeepSeek+Gemma result is robust or a 3-seed fluke.
+# Usage: --phase 5 --seeds 0 1 2 5 10
+PHASE5_REGISTRY = {
+    "baseline":          dict(llm_csvs=[]),
+    "plus_deepseek":     dict(llm_csvs=[_DS]),
+    "plus_deepseek_gemma": dict(llm_csvs=[_DS, _GM]),
+    "plus_all":          dict(llm_csvs=[_DS, _KM, _OP, _GM]),
+}
+
 ARCHITECTURES = {
     "hd_16_8_4_4_4":   [16, 8, 4, 4, 4],
     "hd_32_16_8_4_4":  [32, 16, 8, 4, 4],
@@ -108,7 +118,8 @@ ARCHITECTURES = {
 @dataclass
 class Config:
     phase: int = 1
-    """1 = single LLM, 2 = pairs, 3 = triples, 4 = all four combined."""
+    """1 = single LLM, 2 = pairs, 3 = triples, 4 = all four combined,
+    5 = top-candidate validation (baseline / deepseek / deepseek+gemma / all)."""
     architectures: List[str] = field(default_factory=lambda: list(ARCHITECTURES))
     seeds: List[int] = field(default_factory=lambda: [42, 123, 7])
     """Seeds for the train/test group split. Run multiple seeds for robust comparison.
@@ -379,7 +390,7 @@ def run_with_config(config: Config):
     config.save_dir.mkdir(parents=True, exist_ok=True)
     build_dir = config.save_dir / "_data"
 
-    _REGISTRIES = {1: PHASE1_REGISTRY, 2: PHASE2_REGISTRY, 3: PHASE3_REGISTRY, 4: PHASE4_REGISTRY}
+    _REGISTRIES = {1: PHASE1_REGISTRY, 2: PHASE2_REGISTRY, 3: PHASE3_REGISTRY, 4: PHASE4_REGISTRY, 5: PHASE5_REGISTRY}
     registry = _REGISTRIES.get(config.phase, {})
     if not registry:
         logger.error(f"Phase {config.phase} registry is empty. Nothing to run.")
