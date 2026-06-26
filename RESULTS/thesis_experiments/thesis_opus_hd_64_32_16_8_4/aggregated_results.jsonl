@@ -1,0 +1,1 @@
+{"log_type": "aggregate_metrics", "eval_method": "Grouped-5-Fold", "mse": 730.8495357860952, "rmse": 27.034228965999663, "mae": 23.351348305935506, "r2": -0.15741227649169098}

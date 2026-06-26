@@ -1,0 +1,40 @@
+POLYMER_USED,DRUG,WATER_PH,CONCENTRATION,CAPACITY,SOURCE
+polyPhOx,Ibuprofen,8.2,25.0,9.728,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Ibuprofen,8.2,50.0,12.78,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Ibuprofen,8.2,100.0,25.37,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Ibuprofen,8.2,200.0,32.23,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Metoclopramide,8.2,10.0,0.07254,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Metoclopramide,8.2,25.0,0.1347,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Metoclopramide,8.2,50.0,0.2902,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Metoclopramide,8.2,100.0,0.8912,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Metoclopramide,8.2,200.0,2.207,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,8.2,10.0,3.243,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,8.2,25.0,5.341,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,8.2,50.0,6.676,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,8.2,100.0,29.56,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,8.2,200.0,56.46,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+C-mA,Piroxicam,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Lomefloxacin,6.5,25.0,23.67,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Methylene Violet,6.5,25.0,24.44,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Fluconazole,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,2.4D,6.5,25.0,3.46,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+Methacrylic acid,naproxen,6.0,2.0,0.0719,https://link.springer.com/article/10.1007/s11356-022-19130-0
+Vinylpyridine,ibuprofen,6.0,2.0,0.0789,https://link.springer.com/article/10.1007/s11356-022-19130-0
+Magnetic graphene oxide functionalized with nitricacid(NDMGO),Ciprofloxacin,9.0,50.0,334.78,https://link.springer.com/article/10.1007/s41742-025-00825-4
+GO/calcium alginate fibers,Ciprofloxacin,5.9,60.0,66.25,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Graphene oxide-ionic liquids,Carbamazepine,2.0,50.0,61.88,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4 nanoparticle,Levofloxacin,6.5,20.0,6.848,https://link.springer.com/article/10.1007/s41742-025-00825-4
+NiFe2O4/biochar composites,Levofloxacin,6.0,40.0,172.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Biochar/MgFe2O4,Levofloxacin,5.0,100.0,115.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Magnetic mesoporous silica microspheres,Acetaminophen,5.0,150.0,311.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4/Douglas fir biochar,Acetylsalicylic acid,8.0,100.0,150.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Magnetic Fe3O4 NPs coated zeolite,Cephalexin,7.0,40.0,25.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4/CD/AC/SA,Ciprofloxacin,5.0,20.0,3.125,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polyacrylonitrile/Polyaniline (PAN/PANI),Chloroxylenol,7.0,50.0,429.18,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polypyrrole functionalized Calotropis gigantea fiber (PPy-O-CGF),Ciprofloxacin,6.0,100.0,76.61,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polypyrrole/Zinc oxide (PPy/ZnO),Paracetamol,7.0,5.0,25.51,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Poly(styrene-block-acrylic acid) deblock copolymer/Fe3O4 magnetic,Ciprofloxacin,7.0,5.0,15.52,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4 coated polymer (clay: chitosan) composite,Atenolol,10.0,40.0,15.6,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4 coated polymer (clay: chitosan) composite,Ciprofloxacin,7.0,40.0,39.1,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Chitosan-carbon nanotubes,Amoxicillin,7.0,40.0,23.1,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Poly(acrylic acid) grafted chitosan/Graphite oxide,Dorzolamide,3.0,100.0,334.0,https://link.springer.com/article/10.1007/s41742-025-00825-4

@@ -1,0 +1,21 @@
+{
+    "hidden_dims": [
+        2048,
+        1024,
+        512,
+        256,
+        128,
+        64,
+        32,
+        16,
+        8,
+        4
+    ],
+    "dropout": 0.2,
+    "epochs": 10000,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "early_stop_patience": 1000,
+    "best_model_save_dir": "/home/maggiori/lele-py-bioinformatics/MLP_checkpoints",
+    "seed": 42
+}

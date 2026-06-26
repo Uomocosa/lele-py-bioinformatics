@@ -1,0 +1,13 @@
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 0, "drug": "CN(C)c1ccc(cc1)[C+](c1ccc(N(C)C)cc1)c1ccc(N(C)C)cc1.[Cl-]", "polymer": "*C(C(C(C(CO)O)O)O)*", "actual": 32.99999901652339, "predicted": 16.33925910773101}
+{"log_type": "prediction_trace", "fold": 1, "sample_idx": 6, "drug": "CN(C)c1ccc(cc1)[C+](c1ccc(N(C)C)cc1)c1ccc(N(C)C)cc1.[Cl-]", "polymer": "*C(C(C(C(CO)O)O)O)*", "actual": 0.0, "predicted": 16.32161455388026}
+{"log_type": "prediction_trace", "fold": 2, "sample_idx": 7, "drug": "CN(C)c1ccc(cc1)[C+](c1ccccc1)c1ccc(N(C)C)cc1.[Cl-]", "polymer": "*C(C(C(C(CO)O)O)O)*", "actual": 0.0, "predicted": 0.6214277056179134}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 1, "drug": "[As]", "polymer": "*CC(C(=O)N)*", "actual": 22.109999891817573, "predicted": 14.466349856068199}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 2, "drug": "[As]", "polymer": "*CC(C(=O)N)*", "actual": 20.299999704957017, "predicted": 14.39101456430511}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 3, "drug": "[As]", "polymer": "*CC(C(=O)N)*", "actual": 15.369999636113654, "predicted": 14.466363624740731}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 4, "drug": "[As]", "polymer": "*CC(C(=O)N)*", "actual": 15.980000019669532, "predicted": 14.466297731807895}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 5, "drug": "[As]", "polymer": "*CC(C(=O)N)*", "actual": 14.289999714791783, "predicted": 14.466349856068199}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 8, "drug": "[As]", "polymer": "*CC(C(=O)N)*", "actual": 0.0, "predicted": 12.697064617363672}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 9, "drug": "[As]", "polymer": "*CC(C(=O)N)*", "actual": 0.0, "predicted": 12.697072485176548}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 10, "drug": "[As]", "polymer": "*CC(C(=O)N)*", "actual": 0.0, "predicted": 12.69707051822333}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 11, "drug": "[As]", "polymer": "*CC(C(=O)N)*", "actual": 0.0, "predicted": 12.684618720870652}
+{"log_type": "prediction_trace", "fold": 3, "sample_idx": 12, "drug": "[As]", "polymer": "*CC(C(=O)N)*", "actual": 0.0, "predicted": 12.697081336466034}
