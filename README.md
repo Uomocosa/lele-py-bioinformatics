@@ -100,7 +100,7 @@ Three architecture sizes were compared:
 1. The original PDCC is split **once per seed** by polymer–drug groups (80% train groups, 20% test groups) — saved as `original_train_groups_s{seed}.csv` / `original_test_groups_s{seed}.csv`.
 2. LLM data is **leakage-filtered**: any LLM row whose `(polymer, drug)` resolves to the same SMILES pair as a test group is removed before merging.
 3. Every experiment trains on `original_train + optional_LLM_data` and evaluates on the **same fixed test set** — enabling direct apples-to-apples comparison.
-4. Three seeds (42, 123, 7) → mean ± std Q2 to reduce single-split variance.
+4. Seeds (42, 123, 7) → mean ± std Q2 to reduce single-split variance. A Phase 5 validation extended to 8 seeds (adding 0, 1, 2, 5, 10) to check robustness of apparent positive results.
 
 **Phases:**
 
@@ -111,13 +111,13 @@ Three architecture sizes were compared:
 | 3 | 4 | all triples of LLM sources |
 | 4 | 1 | all four combined |
 
-**Results** (`RESULTS/fixed_test_experiments/leaderboard.md`, 3 seeds, N_test = 51 rows):
+**Results** (`RESULTS/fixed_test_experiments/leaderboard.md`, 3 seeds 42/123/7, N_test varies 18–51 by seed):
 
-#### Complete leaderboard — top results across all 4 phases
+#### Complete leaderboard — top results across all 4 phases (3-seed run)
 
 | Rank | Experiment | Architecture | Q2 mean | Q2 std | MAE mean | Phase |
 |---:|---|---|---:|---:|---:|---:|
-| 1 | **plus_deepseek_gemma** | hd_64_32_16_8_4 | **+0.220** | 0.129 | 23.1 | 2 — pair |
+| 1 | plus_deepseek_gemma ⚠ | hd_64_32_16_8_4 | +0.220 | 0.129 | 23.1 | 2 — pair |
 | 2 | plus_all | hd_64_32_16_8_4 | +0.041 | 0.071 | 24.4 | 4 — all four |
 | 3 | plus_all | hd_32_16_8_4_4 | +0.006 | 0.091 | 24.3 | 4 — all four |
 | 4 | plus_deepseek_opus | hd_64_32_16_8_4 | +0.023 | 0.090 | 25.4 | 2 — pair |
@@ -127,17 +127,30 @@ Three architecture sizes were compared:
 | 8 | baseline | hd_64_32_16_8_4 | -0.015 | 0.132 | 25.7 | 1 — baseline |
 | … | *(triples — all negative)* | | | | | 3 — triple |
 
+⚠ **Phase 5 validation (8 seeds):** `plus_deepseek_gemma / hd_64` was retested with 5 additional seeds. All 5 new seeds gave negative Q2; the 8-seed mean drops to **−0.064** (std = 0.30). The initial +0.220 was a statistical artifact of 3 favorable splits. Per-seed breakdown:
+
+| Seed | Q2 | N_test | Note |
+|---:|---:|---:|---|
+| 42 | +0.367 | 51 | original seed |
+| 123 | +0.163 | 24 | original seed |
+| 7 | +0.129 | 51 | original seed |
+| 0 | −0.532 | 20 | validation seed |
+| 1 | −0.057 | 24 | validation seed |
+| 2 | −0.411 | 18 | validation seed |
+| 5 | −0.076 | 20 | validation seed |
+| 10 | −0.099 | 49 | validation seed |
+
 *(Full 48-row table in `RESULTS/fixed_test_experiments/leaderboard.md`)*
 
-#### Phase summary — best Q2 per phase
+#### Phase summary — best Q2 per phase (3-seed run; see ⚠ above for validated result)
 
-| Phase | Best experiment | Best Q2 | Interpretation |
-|---|---|---:|---|
-| Baseline | baseline / hd_64 | -0.015 | Original PDCC alone cannot extrapolate |
-| 1 — singles | plus_deepseek / hd_16 | -0.004 | DeepSeek alone nearly matches predicting the mean |
-| 2 — pairs | **plus_deepseek_gemma / hd_64** | **+0.220** | **Best overall — clear winner** |
-| 3 — triples | plus_deepseek_kimi_opus / hd_16 | -0.038 | Every triple is worse than the winning pair |
-| 4 — all four | plus_all / hd_64 | +0.041 | Second best — large dataset rescues the big architecture |
+| Phase | Best experiment | Best Q2 (3-seed) | 8-seed Q2 | Interpretation |
+|---|---|---:|---:|---|
+| Baseline | baseline / hd_64 | −0.015 | ≈ −0.4 | Original PDCC alone cannot extrapolate |
+| 1 — singles | plus_deepseek / hd_16 | −0.004 | n/a | DeepSeek alone nearly matches predicting the mean |
+| 2 — pairs | plus_deepseek_gemma / hd_64 | +0.220 ⚠ | **−0.064** | Not confirmed with more seeds |
+| 3 — triples | plus_deepseek_kimi_opus / hd_16 | −0.038 | n/a | Every triple is worse than any pair |
+| 4 — all four | plus_all / hd_64 | +0.041 | n/a | Marginal; high seed-to-seed variance |
 
 ---
 
@@ -145,17 +158,15 @@ Three architecture sizes were compared:
 
 1. **Baseline fails at extrapolation:** all models have Q2 < 0 on the fixed test when trained on original PDCC alone — the model interpolates well within known pairs but cannot generalise to new polymer–drug pairs.
 
-2. **DeepSeek is the required anchor:** every positive-Q2 result includes DeepSeek. It is the largest (~239 rows) and most chemically diverse LLM source. No combination without DeepSeek achieves positive Q2.
+2. **No augmentation strategy produces robust improvement:** the initial 3-seed result (DeepSeek+Gemma, Q2=+0.220) appeared positive, but Phase 5 validation with 8 seeds showed Q2=−0.064. The Q2 varies enormously across seeds (−0.53 to +0.37 for the same configuration), driven by which polymer–drug groups happen to fall in the test split — not by the augmentation strategy.
 
-3. **DeepSeek + Gemma is the clear winner (Q2 = +0.220):** despite Gemma alone being near the worst single-source (Q2 = -0.156), pairing it with DeepSeek produces the best result. The two sources cover complementary polymer–drug chemistry that is too sparse to be useful individually.
+3. **DeepSeek is associated with the highest observed Q2:** every experiment that produced positive Q2 in the 3-seed run included DeepSeek (the largest, ~239 rows). No combination without DeepSeek exceeded the baseline in the initial study, consistent with its being the primary source of chemical diversity.
 
-4. **Triples are the worst group:** removing any one source from the full set to form a triple consistently hurts more than using all four or the winning pair. Every triple achieves Q2 < 0. This suggests the full four-source pool has complementary coverage that no subset of three preserves.
+4. **Triples are the worst group in the initial study:** every combination of exactly 3 LLM sources achieved Q2 < 0 (3-seed run), worse than both pairs and the full four-source pool. This pattern was not confirmed with additional seeds but is noted as an exploratory observation.
 
-5. **All four combined is second best (Q2 = +0.041):** with all ~297 LLM rows, the large architecture (`hd_64_32_16_8_4`) achieves the second-highest Q2. The Opus noise is diluted enough by the combined volume that the model still extracts useful signal.
+5. **Architecture size is gated by training data volume:** `hd_64_32_16_8_4` is unstable in Phase 1 (too little data) and the most variable across seeds in all phases. `hd_16_8_4_4_4` is the most consistent choice when data is limited.
 
-6. **Opus is harmful in isolation but tolerable in the full pool:** Opus alone (Q2 = -0.09) and in pairs (Q2 down to -1.9) degrades performance, but within all four combined its negative effect is diluted.
-
-7. **Architecture size is gated by training data volume:** `hd_64_32_16_8_4` is catastrophic in Phase 1 (too little data) but the best in Phases 2 and 4 (enough LLM rows to justify the capacity). `hd_16_8_4_4_4` is the most robust choice when data is limited.
+6. **The evaluation is fundamentally limited by dataset size:** ~70 polymer–drug groups in the PDCC yield ~14 test groups per seed. Q2 computed on ~14–51 test rows is highly sensitive to the specific groups selected, making any single-seed or small-sample estimate unreliable. More polymer–drug groups — not more LLM rows per group — are needed for a reliable extrapolation benchmark.
 
 ---
 
@@ -165,13 +176,13 @@ Three architecture sizes were compared:
 
 2. **Cross-group extrapolation (Paradigm 2):** no model generalises to unseen polymer–drug pairs when trained on the original PDCC alone (Q2 < 0 for all architectures). This reveals a fundamental limitation: the original dataset covers too few unique polymer–drug combinations to learn generalisable chemistry.
 
-3. **LLM augmentation can improve extrapolation:** the best combination (DeepSeek + Gemma, large architecture) raises Q2 from ≈ −0.06 to +0.22, demonstrating that literature-mined data provides real signal for generalisation to new pairs. This is the main positive finding of the augmentation study.
+3. **LLM augmentation did not produce a robust improvement:** the initial 3-seed study showed DeepSeek+Gemma reaching Q2=+0.220 — but Phase 5 validation with 8 seeds demonstrated this was a statistical artifact. The 8-seed mean for the same configuration is −0.064 (std = 0.30). No augmentation strategy achieves consistently positive Q2 across varied test splits.
 
-4. **LLM source quality and combination matter more than quantity:** DeepSeek is the essential anchor (largest, most chemically diverse); Gemma pairs synergistically with it to form the best combination; Opus is harmful in isolation but tolerable when diluted across all four sources; Kimi is marginal. The best single pair (DeepSeek+Gemma, Q2=0.22) outperforms the best triple (Q2=−0.04) and is comparable to all-four (Q2=0.04).
+4. **The bottleneck is the number of polymer–drug groups, not the number of rows per group:** Q2 is computed over ~14–51 test rows (14 test groups × variable concentration points). The high inter-seed variance (Q2 from −2.8 to +0.37 depending on the split) shows that the result depends on which groups land in the test set, not on model quality. Expanding the LLM corpus does not address this; more diverse hand-curated polymer–drug pairs do.
 
-5. **Triples are uniquely poor:** every combination of exactly 3 LLM sources achieves Q2 < 0, worse than both pairs and the full four-source pool. This suggests each triple excludes chemistry that the missing source covers, while the full pool dilutes noise enough to recover.
+5. **DeepSeek is the most useful LLM source:** it is the largest (~239 rows) and most chemically diverse. All experiments that produced the highest (though not robust) Q2 values in the 3-seed study included DeepSeek. Opus degrades performance in small combinations; Kimi and Gemma contribute negligible novel pairs after deduplication.
 
-6. **Recommendation for future work:** expand the hand-curated PDCC dataset with more diverse polymer–drug groups; use DeepSeek and Gemma as primary LLM extraction sources; consider quality-filtering LLM rows by extraction confidence before training; and investigate why Opus data degrades performance (possible systematic extraction bias or unit errors).
+6. **Recommendation for future work:** expand the hand-curated PDCC with more unique polymer–drug pairs (target >200 distinct groups) to make the fixed-test evaluation statistically meaningful; re-run the augmentation study under this larger baseline before drawing conclusions about LLM data quality; consider using Bayesian or ensemble methods that report calibrated uncertainty instead of single-point Q2.
 
 ---
 
