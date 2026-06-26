@@ -1,0 +1,184 @@
+POLYMER_USED,DRUG,WATER_PH,CONCENTRATION,CAPACITY,SOURCE
+polyPhOx,Aspirin,8.2,10.0,0.1865,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Aspirin,8.2,25.0,0.342,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Aspirin,8.2,50.0,0.6528,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Aspirin,8.2,100.0,1.71,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Aspirin,8.2,200.0,3.43,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Ibuprofen,8.2,25.0,9.728,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Ibuprofen,8.2,50.0,12.78,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Ibuprofen,8.2,100.0,25.37,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Ibuprofen,8.2,200.0,32.23,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Metoclopramide,8.2,10.0,0.07254,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Metoclopramide,8.2,25.0,0.1347,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Metoclopramide,8.2,50.0,0.2902,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Metoclopramide,8.2,100.0,0.8912,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Metoclopramide,8.2,200.0,2.207,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Pyramidone,8.2,10.0,0.1347,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Pyramidone,8.2,25.0,0.1554,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Pyramidone,8.2,50.0,0.1658,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Pyramidone,8.2,100.0,0.3938,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Pyramidone,8.2,200.0,0.8187,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,8.2,10.0,3.243,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,8.2,25.0,5.341,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,8.2,50.0,6.676,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,8.2,100.0,29.56,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,8.2,200.0,56.46,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+C-megl,Ampicillin,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Lomefloxacin,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Fluconazole,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Moxidectin,6.5,25.0,15.13,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,2.4D,6.5,25.0,24.38,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Thymol Blue,6.5,25.0,24.17,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Methylene Violet,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Piroxicam,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Ampicillin,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Doxycycline,6.5,25.0,7.91,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Lomefloxacin,6.5,25.0,23.67,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Fluconazole,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,2.4D,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Methylene Violet,6.5,25.0,24.44,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Ampicillin,6.5,25.0,13.44,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Doxycycline,6.5,25.0,6.75,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Lomefloxacin,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Fluconazole,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Moxidectin,6.5,25.0,13.17,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,2.4D,6.5,25.0,50.81,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Thymol Blue,6.5,25.0,22.63,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Methylene Violet,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Piroxicam,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Ampicillin,6.5,25.0,4.2,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Doxycycline,6.5,25.0,13.26,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Lomefloxacin,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Fluconazole,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,2.4D,6.5,25.0,3.46,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Thymol Blue,6.5,25.0,14.73,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Methylene Violet,6.5,25.0,24.46,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Moxidectin,6.5,25.0,15.21,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Moxidectin,6.5,50.0,30.42,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Moxidectin,6.5,100.0,61.04,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,2.4D,6.5,25.0,22.19,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,2.4D,6.5,50.0,45.14,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,2.4D,6.5,100.0,91.27,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Thymol Blue,6.5,25.0,24.38,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Thymol Blue,6.5,50.0,47.01,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Thymol Blue,6.5,100.0,94.03,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+polyethylene,fluoxetine,7.8,0.5,0.362,https://www.sciencedirect.com/science/article/pii/S0048969721071473
+polyethylene,ketamine,7.8,0.5,0.0809,https://www.sciencedirect.com/science/article/pii/S0048969721071473
+polyethylene,atorvastatin,7.8,0.5,0.0691,https://www.sciencedirect.com/science/article/pii/S0048969721071473
+polyethylene,carbamazepine,7.8,0.5,0.0837,https://www.sciencedirect.com/science/article/pii/S0048969721071473
+Methacrylic acid,ibuprofen,6.0,2.0,0.07,https://link.springer.com/article/10.1007/s11356-022-19130-0
+Vinylpyridine,diclofenac,6.0,2.0,0.0728,https://link.springer.com/article/10.1007/s11356-022-19130-0
+Vinylpyridine,naproxen,6.0,2.0,0.0798,https://link.springer.com/article/10.1007/s11356-022-19130-0
+CP-APM,Cd(II),5.0,100.0,43.5,https://www.sciencedirect.com/science/article/pii/S0141813022004779
+polyethyleneimine,Congo red,6.0,300.0,105.0,https://link.springer.com/article/10.1007/s13369-023-08604-z
+polyethyleneimine,Congo red,6.0,525.0,2.1,https://link.springer.com/article/10.1007/s13369-023-08604-z
+polyethyleneimine,Congo red,6.0,700.0,2.8,https://link.springer.com/article/10.1007/s13369-023-08604-z
+polyethyleneimine,Congo red,6.0,1400.0,5.6,https://link.springer.com/article/10.1007/s13369-023-08604-z
+Polyamide 4/6 Nanofibers,Clarithromycin,7.0,0.002521,0.0133986666666667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,7.0,0.004369,0.0227716666666667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,7.0,0.01741,0.332416666666667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,7.0,0.01916,0.420733333333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,7.0,0.02191,0.524316666666667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,7.0,0.005519,0.0174953333333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,7.0,0.006967,0.0235116666666667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,7.0,0.01446,0.07918,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,7.0,0.02465,0.337283333333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,7.0,0.0285,0.6378,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,7.0,0.001572,0.01272,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,7.0,0.008116,0.0641066666666667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,7.0,0.01591,0.126616666666667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,7.0,0.0254,0.425733333333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,7.0,0.0246,0.7375,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,7.0,0.006568,0.0489266666666667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,7.0,0.01851,0.22265,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,7.0,0.01911,0.23715,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,7.0,0.02685,0.66745,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,7.0,0.001922,0.0654733333333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,7.0,0.00352,0.108666666666667,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,7.0,0.007217,0.380128333333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,7.0,0.007517,0.433728333333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,8.2,0.000118,0.0002117366666666,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,8.2,0.0001376,0.0002519333333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,8.2,0.0001573,0.0002941866666666,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,8.2,0.0004803,0.0009964,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Clarithromycin,8.2,0.0006096,0.0013776,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,8.2,0.0003904,0.0010122666666666,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,8.2,0.0004691,0.0016180333333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,8.2,0.0001713,0.00031752,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Amoxicillin trihydrate,8.2,6.18e-05,0.000106766,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,8.2,1.404e-05,3.658e-05,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,8.2,0.0001826,0.0003156333333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,8.2,0.0002444,0.0004694833333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Sulfamethoxazole,8.2,0.0002949,0.0014783,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,8.2,0.0002051,0.0004171633333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,8.2,0.000264,0.0007131,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,8.2,0.0003146,0.0009330333333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Azithromycin dihydrate,8.2,0.0003258,0.0010534,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,8.2,2.247e-05,6.005e-05,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,8.2,0.0001124,0.0002249933333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,8.2,0.0002388,0.00049405,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,8.2,0.0002781,0.0006556,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Polyamide 4/6 Nanofibers,Trimethoprim,8.2,0.0003062,0.0008643333333333,https://link.springer.com/article/10.1007/s11270-023-06281-0
+Graphene oxide (GO),Atenolol,2.0,60.0,116.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Graphene oxide,Doxorubicin,3.4,350.0,1428.57,https://link.springer.com/article/10.1007/s41742-025-00825-4
+GO/sodium alginate hydrogels,Ciprofloxacin,4.0,50.0,86.12,https://link.springer.com/article/10.1007/s41742-025-00825-4
+GO/calcium alginate fibers,Ciprofloxacin,5.9,60.0,66.25,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Porous graphene oxide-chitosan aerogel (PGO-CS),Tetracycline,9.0,2000.0,1470.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4@SiO2 Chitosan/GO,Tetracycline,6.0,50.0,32.5,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Graphene oxide,Tetracycline,7.0,20.0,323.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+NDMGO,Tetracycline,4.0,50.0,400.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Thiourea-dioxide-reduced magnetic graphene oxide (TDMGO),Tetracycline,4.0,100.0,1233.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Diethylenetriaminepenta-acetic acid-functionalized magnetic graphene oxide (DDMGO),Ciprofloxacin,8.0,50.0,300.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Graphene oxide nanoparticles,Metformin,6.26,300.0,122.61,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Graphene oxide,Ketoprofen,4.0,50.0,16.45,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Nitrogen-doped reduced graphene oxide/Fe3O4 nanocomposite,Norfloxacin,10.0,20.0,158.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Magnetic genipin-crosslinked chitosan/graphene oxide-SO3H composite,Ibuprofen,6.0,10.0,138.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Magnetically modified graphene nanoplatelets,Amoxicillin,5.0,10.0,14.1,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Graphene oxide,Carbamazepine,2.0,50.0,28.24,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4 nanoparticle,Levofloxacin,6.5,20.0,6.848,https://link.springer.com/article/10.1007/s41742-025-00825-4
+NiFe2O4/biochar composites,Levofloxacin,6.0,40.0,172.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Biochar/MgFe2O4,Levofloxacin,5.0,100.0,115.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Magnetic NPs coated with Rhamnolipids (Rh-cMNP),Acetaminophen,5.0,60.0,96.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Magnetic mesoporous silica microspheres,Acetaminophen,5.0,150.0,311.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+"Iron, copper oxides composite particles (Fe/Cu oxides CPs)",Ofloxacin,8.87,15.0,1.26,https://link.springer.com/article/10.1007/s41742-025-00825-4
+MgFe2O4,Chlorpyrifos,10.0,20.0,4461.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+MgO,Linezolid antibiotic,10.0,100.0,123.45,https://link.springer.com/article/10.1007/s41742-025-00825-4
+ZnO-MgO nanocomposites,Linezolid antibiotic,10.0,100.0,140.28,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4@C Matrix,Acetylsalicylic acid,3.0,100.0,234.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4/Douglas fir biochar,Acetylsalicylic acid,8.0,100.0,150.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+(α-Fe2O3),Cephalexin,7.5,150.0,70.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Magnetic Fe3O4 NPs coated zeolite,Cephalexin,7.0,40.0,25.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+MnO2@carbonmicrospheres,Amoxicillin,7.0,40.0,16.094,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Magnetic cadmiumbased MOFs modified with chitosan ,,,,,
+(Fe3O4@Cd-MOF@CS),Amoxicillin,8.0,50.0,103.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Mn-Zn ferrite/biochar (MZF-BC),Tetracycline,3.0,50.0,142.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+NiFe2O4-COF-chitosanterphthalaldehyde nanocomposites film,Tetracycline,8.0,100.0,388.52,https://link.springer.com/article/10.1007/s41742-025-00825-4
+NiFe2O4-COF-chitosanterphthalaldehyde nanocomposites film,Cefotaxime,4.0,100.0,309.26,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4/CD/AC/SA,Norfloxacin,5.0,20.0,2.551,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4/CD/AC/SA,Ciprofloxacin,5.0,20.0,3.125,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4/red mud,Ciprofloxacin,6.0,3.0,110.15,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Amine-coated magnetic Nanocomposite NiFe2O4@SiO2,Ibuprofen,7.0,12.0,59.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Rape straw biomass fiber/β-Cyclodextrin/Fe3O4,Ibuprofen,6.0,100.0,48.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polyacrylonitrile/Polyaniline (PAN/PANI),Chloroxylenol,7.0,50.0,429.18,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polyacrylonitrile/Polyaniline (PAN/PANI),N-diethyl-meta-toluamide,7.0,50.0,384.61,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polypyrrole functionalized Calotropis gigantea fiber (PPy-O-CGF),Ciprofloxacin,6.0,100.0,76.61,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polypyrrole functionalized Calotropis gigantea fiber (PPy-O-CGF),Norfloxacin,6.0,100.0,68.9,https://link.springer.com/article/10.1007/s41742-025-00825-4
+PPy-PANI copolymer,Metronidazole,6.2,10.0,63.84,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Poly(aniline-co-pyrrole),Phenylbutazone,6.0,0.1,238.8,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Poly(aniline-co-pyrrole),Ceftiofur,6.0,0.1,13.66,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Poly(aniline-co-pyrrole),Prednisolone,6.0,0.1,35.62,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Functional Polyaniline/multiwalled carbon nanotube composite (PANI/MWCNT),Meloxicam,2.0,0.1,221.2,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Poly(aniline-co-pyrrole)/multi-walled carbon nanotubes,Anti-inflammatory,6.0,0.1,159.9,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Poly(aniline-co-pyrrole)/multi-walled carbon nanotubes,Phenylbutazone,6.0,0.1,172.7,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Pristine polypyrrole,Moxidectin,6.0,1.5,87.46,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polypyrrole/Zinc oxide (PPy/ZnO),Paracetamol,7.0,5.0,25.51,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Amberlite-XAD-16 polymer,Cephalexin,3.0,25.0,116.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Amberlite-XAD-4 polymer,Cephalexin,3.0,25.0,357.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Poly(styrene-block-acrylic acid) deblock copolymer/Fe3O4 magnetic,Ciprofloxacin,7.0,5.0,15.52,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polyaniline-coated magnetic nanoparticles,Diclofenac,4.0,25.0,34.43,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4 coated polymer (clay: chitosan) composite,Atenolol,10.0,40.0,15.6,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4 coated polymer (clay: chitosan) composite,Ciprofloxacin,7.0,40.0,39.1,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4 coated polymer (clay: chitosan) composite,Gemfibrozil,4.0,40.0,24.8,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Chitosan-carbon nanotubes,Amoxicillin,7.0,40.0,23.1,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Chitosan-carbon nanotubes,Ciprofloxacin,7.0,40.0,23.7,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Chitosan-carbon nanotubes,Sulfamethoxazole,7.0,40.0,25.17,https://link.springer.com/article/10.1007/s41742-025-00825-4

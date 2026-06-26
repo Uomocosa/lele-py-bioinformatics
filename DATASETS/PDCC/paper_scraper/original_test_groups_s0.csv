@@ -1,0 +1,38 @@
+POLYMER_USED,DRUG,WATER_PH,CONCENTRATION,CAPACITY,SOURCE
+polyPhOx,Ibuprofen,8.2,25.0,9.728,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Ibuprofen,8.2,50.0,12.78,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Ibuprofen,8.2,100.0,25.37,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Ibuprofen,8.2,200.0,32.23,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+C-megl,Moxidectin,6.5,25.0,15.13,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Thymol Blue,6.5,25.0,24.17,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Ampicillin,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,2.4D,6.5,25.0,3.46,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Moxidectin,6.5,25.0,15.21,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Moxidectin,6.5,50.0,30.42,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Moxidectin,6.5,100.0,61.04,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Thymol Blue,6.5,25.0,24.38,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Thymol Blue,6.5,50.0,47.01,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Thymol Blue,6.5,100.0,94.03,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+polyethylene,fluoxetine,7.8,0.5,0.362,https://www.sciencedirect.com/science/article/pii/S0048969721071473
+Vinylpyridine,diclofenac,6.0,2.0,0.0728,https://link.springer.com/article/10.1007/s11356-022-19130-0
+Vinylpyridine,ibuprofen,6.0,2.0,0.0789,https://link.springer.com/article/10.1007/s11356-022-19130-0
+CP-APM,Pb(II),5.0,100.0,65.7,https://www.sciencedirect.com/science/article/pii/S0141813022004779
+Graphene oxide,Doxorubicin,3.4,350.0,1428.57,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Porous graphene oxide-chitosan aerogel (PGO-CS),Tetracycline,9.0,2000.0,1470.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4 nanoparticle,Levofloxacin,6.5,20.0,6.848,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Biochar/MgFe2O4,Levofloxacin,5.0,100.0,115.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Magnetic NPs coated with Rhamnolipids (Rh-cMNP),Acetaminophen,5.0,60.0,96.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+MgFe2O4,Chlorpyrifos,10.0,20.0,4461.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4/CD/AC/SA,Ciprofloxacin,5.0,20.0,3.125,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4/red mud,Ciprofloxacin,6.0,3.0,110.15,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Rape straw biomass fiber/β-Cyclodextrin/Fe3O4,Ibuprofen,6.0,100.0,48.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polypyrrole functionalized Calotropis gigantea fiber (PPy-O-CGF),Norfloxacin,6.0,100.0,68.9,https://link.springer.com/article/10.1007/s41742-025-00825-4
+PPy-PANI copolymer,Metronidazole,6.2,10.0,63.84,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Poly(aniline-co-pyrrole),Phenylbutazone,6.0,0.1,238.8,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Poly(aniline-co-pyrrole)/multi-walled carbon nanotubes,Anti-inflammatory,6.0,0.1,159.9,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Pristine polypyrrole,Diclofenac,6.0,1.5,221.23,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polyaniline/Graphene Oxide Based Nanocomposites,Ciprofloxacin,6.0,100.0,106.38,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4 coated polymer (clay: chitosan) composite,Atenolol,10.0,40.0,15.6,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4 coated polymer (clay: chitosan) composite,Ciprofloxacin,7.0,40.0,39.1,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Chitosan-carbon nanotubes,Ciprofloxacin,7.0,40.0,23.7,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Chitosan-carbon nanotubes,Sulfamethoxazole,7.0,40.0,25.17,https://link.springer.com/article/10.1007/s41742-025-00825-4

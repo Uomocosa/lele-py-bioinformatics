@@ -1,0 +1,36 @@
+POLYMER_USED,DRUG,WATER_PH,CONCENTRATION,CAPACITY,SOURCE
+polyPhOx,Indomethacin,8.2,10.0,1.144,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Indomethacin,8.2,25.0,1.907,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Indomethacin,8.2,50.0,4.768,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Indomethacin,8.2,100.0,7.439,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Indomethacin,8.2,200.0,19.84,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+C-megl,Piroxicam,6.5,25.0,22.87,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Doxycycline,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Moxidectin,6.5,25.0,22.69,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Thymol Blue,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Piroxicam,6.5,25.0,13.78,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-ph,Moxidectin,6.5,25.0,5.6,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Piroxicam,6.5,25.0,23.72,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Piroxicam,6.5,50.0,47.19,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Piroxicam,6.5,100.0,93.64,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+polyethylene,propranolol,7.8,0.5,0.186,https://www.sciencedirect.com/science/article/pii/S0048969721071473
+Methacrylic acid,diclofenac,6.0,2.0,0.0717,https://link.springer.com/article/10.1007/s11356-022-19130-0
+Methacrylic acid,naproxen,6.0,2.0,0.0719,https://link.springer.com/article/10.1007/s11356-022-19130-0
+Vinylpyridine,ibuprofen,6.0,2.0,0.0789,https://link.springer.com/article/10.1007/s11356-022-19130-0
+CP-APM,Pb(II),5.0,100.0,65.7,https://www.sciencedirect.com/science/article/pii/S0141813022004779
+Poly(N-isopropylacrylamide) ferrogel,Silver,6.6,100.0,13.6,https://www.sciencedirect.com/science/article/pii/S2213343718305608
+Graphene oxide (GO),Propranolol,1.0,60.0,67.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Magnetic graphene oxide functionalized with nitricacid(NDMGO),Ciprofloxacin,9.0,50.0,334.78,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Diethylenetriaminepenta-acetic acid-functionalized magnetic graphene oxide (DDMGO),Tetracycline,3.0,50.0,110.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Pristine graphene,Sulfamethoxazole,2.0,100.0,239.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Graphene oxide-ionic liquids,Ketoprofen,8.0,50.0,87.88,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Nitrogen-doped reduced graphene oxide/Fe3O4 nanocomposite,Ketoprofen,7.0,20.0,468.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Graphene oxide-ionic liquids,Carbamazepine,2.0,50.0,61.88,https://link.springer.com/article/10.1007/s41742-025-00825-4
+"Iron, copper oxides composite particles (Fe/Cu oxides CPs)",Norfloxacin,8.12,15.0,1.64,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Plantain peel activated carbon-supported zinc oxide (PPAC-ZnO) nanocomposite,Chloroquine for COVID-19 treatment,5.0,50.0,50.5,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polyacrylonitrile/Polyaniline (PAN/PANI),Ibuprofen,7.0,50.0,613.5,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polypyrrole functionalized Calotropis gigantea fiber (PPy-O-CGF),Enrofloxacin,6.0,100.0,78.27,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polyaniline-deposited cellulose fiber composite,Meloxicam,2.0,2.0,169.5,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Pristine polypyrrole,Diclofenac,6.0,1.5,221.23,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polyaniline/Graphene Oxide Based Nanocomposites,Ciprofloxacin,6.0,100.0,106.38,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Poly(acrylic acid) grafted chitosan/Graphite oxide,Dorzolamide,3.0,100.0,334.0,https://link.springer.com/article/10.1007/s41742-025-00825-4

@@ -1,0 +1,36 @@
+POLYMER_USED,DRUG,WATER_PH,CONCENTRATION,CAPACITY,SOURCE
+polyPhOx,Oestradiol,8.2,10.0,3.243,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,8.2,25.0,5.341,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,8.2,50.0,6.676,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,8.2,100.0,29.56,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+polyPhOx,Oestradiol,8.2,200.0,56.46,https://www.researchgate.net/publication/384556501_2-Oxazoline-Based_Polymer_for_Pharmaceutical_Products_Adsorption_in_Aqueous_Media
+C-megl,Ampicillin,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-megl,Methylene Violet,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Piroxicam,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-mA,Methylene Violet,6.5,25.0,24.44,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Doxycycline,6.5,25.0,6.75,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+C-lys,Lomefloxacin,6.5,25.0,0.0,https://www.researchgate.net/publication/363374372_Single_and_Dual_polymeric_sponges_for_emerging_pollutants_removal
+polyethylene,atorvastatin,7.8,0.5,0.0691,https://www.sciencedirect.com/science/article/pii/S0048969721071473
+Methacrylic acid,ibuprofen,6.0,2.0,0.07,https://link.springer.com/article/10.1007/s11356-022-19130-0
+CP-APM,Cd(II),5.0,100.0,43.5,https://www.sciencedirect.com/science/article/pii/S0141813022004779
+polyethyleneimine,Congo red,6.0,300.0,105.0,https://link.springer.com/article/10.1007/s13369-023-08604-z
+polyethyleneimine,Congo red,6.0,525.0,2.1,https://link.springer.com/article/10.1007/s13369-023-08604-z
+polyethyleneimine,Congo red,6.0,700.0,2.8,https://link.springer.com/article/10.1007/s13369-023-08604-z
+polyethyleneimine,Congo red,6.0,1400.0,5.6,https://link.springer.com/article/10.1007/s13369-023-08604-z
+GO/sodium alginate hydrogels,Ciprofloxacin,4.0,50.0,86.12,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Graphene oxide nanoparticles,Metformin,6.26,300.0,122.61,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4 nanoparticle,Levofloxacin,6.5,20.0,6.848,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Biochar/MgFe2O4,Levofloxacin,5.0,100.0,115.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Magnetic mesoporous silica microspheres,Acetaminophen,5.0,150.0,311.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+"Iron, copper oxides composite particles (Fe/Cu oxides CPs)",Norfloxacin,8.12,15.0,1.64,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4/Douglas fir biochar,Acetylsalicylic acid,8.0,100.0,150.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Amine-coated magnetic Nanocomposite NiFe2O4@SiO2,Ibuprofen,7.0,12.0,59.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polypyrrole functionalized Calotropis gigantea fiber (PPy-O-CGF),Enrofloxacin,6.0,100.0,78.27,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polypyrrole functionalized Calotropis gigantea fiber (PPy-O-CGF),Ciprofloxacin,6.0,100.0,76.61,https://link.springer.com/article/10.1007/s41742-025-00825-4
+PPy-PANI copolymer,Metronidazole,6.2,10.0,63.84,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Poly(aniline-co-pyrrole),Ceftiofur,6.0,0.1,13.66,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polypyrrole/Zinc oxide (PPy/ZnO),Paracetamol,7.0,5.0,25.51,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Amberlite-XAD-4 polymer,Cephalexin,3.0,25.0,357.0,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polyaniline/Graphene Oxide Based Nanocomposites,Ciprofloxacin,6.0,100.0,106.38,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Polyaniline-coated magnetic nanoparticles,Diclofenac,4.0,25.0,34.43,https://link.springer.com/article/10.1007/s41742-025-00825-4
+Fe3O4 coated polymer (clay: chitosan) composite,Gemfibrozil,4.0,40.0,24.8,https://link.springer.com/article/10.1007/s41742-025-00825-4
